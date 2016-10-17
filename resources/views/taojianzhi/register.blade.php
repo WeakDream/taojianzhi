@@ -40,14 +40,16 @@
         var count=document.getElementById('count');
         var aEm=document.getElementsByTagName('em');
         var name_length=0;
+        var hello="5到20位数字或字母或下划线";
 
         <!--匹配非法字符-->
 
 
         //用户名
-        oName.onfocus=function(){
-            name_msg.style.display="block";
-            name_msg.innerHTML='<i class="ati"></i>5-20个字符，一个汉字为两个字符';
+        oName.onclick=function(){
+           // name_msg.style.display="block";
+            //name_msg.innerHTML='<i class="ati"></i>5-20个字符，一个汉字为两个字符';
+           $('.tishiyi').html(hello);
         }
         oName.onkeyup=function(){
             count.style.display="block";
@@ -61,48 +63,48 @@
             //含有非法字符
             var re=/[^\w\u4e00-\u9fa5]/g;
             if(re.test(this.value)){
-                name_msg.innerHTML='<i style="display:inline-block;width:25px;height:20px;vertical-align:middle;background:url(img/busy.png)no-repeat;"></i>含有非法字符！';
+                $('.tishiyi').html("含有非法字符!!!");
             }
             //不能为空
             else if((this.value)==""){
-                name_msg.innerHTML='<i style="display:inline-block;width:25px;height:20px;vertical-align:middle;background:url(img/busy.png)no-repeat;"></i>不能为空！';
+                $('.tishiyi').html("不能为空！！");
             }
             //长度超过25个字符
             else if(name_length>20){
-                name_msg.innerHTML='<i style="display:inline-block;width:25px;height:20px;vertical-align:middle;background:url(img/busy.png)no-repeat;"></i>长度不能超过20个字符！';
+                $('.tishiyi').html("长度不能超过20！");
             }
             //长度少于6个字符
             else if(name_length<5){
-                name_msg.innerHTML='<i style="display:inline-block;width:25px;height:20px;vertical-align:middle;background:url(img/busy.png)no-repeat;"></i>长度不能少于5个字符！';
+               $('.tishiyi').html("长度不能小于5！");
             }
             //OK!
             else{
-                name_msg.innerHTML='<i style="display:inline-block;width:25px;height:20px;vertical-align:middle;background:url(img/check.png)no-repeat;"></i>OK！';
+               $('.tishiyi').html("ok");
             }
         }
         //邮箱
-        pwd.onfocus=function(){
-            pwd_msg.style.display="block";
-            pwd_msg.innerHTML='<i class="ati"></i>邮箱格式应为xxx@xxx.xxx';
-        }
-        pwd.onkeyup=function(){
+        pwd.onclick=function(){
+            $('.tishiy2').html("邮箱格式为：xxx@xxx.xxx");
         }
         pwd.onblur=function(){
             var myreg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/g;
-            if(!myreg.test(this.value)){
-                pwd_msg.innerHTML='<i style="display:inline-block;width:25px;height:20px;vertical-align:middle;background:url(img/busy.png)no-repeat;"></i>请输入正确的邮箱格式！';
+            if((this.value)=="")
+            {
+                $('.tishiy2').html("不能为空！！");
+            }
+            else if(!myreg.test(this.value)){
+                $('.tishiy2').html("请输入正确的邮箱");
             }
             //OK!
             else{
-                pwd_msg.innerHTML='<i style="display:inline-block;width:25px;height:20px;vertical-align:middle;background:url(img/check.png)no-repeat;"></i>OK！';
+               $('.tishiy2').html("ok");
             }
         }
         //密码
-        pwd2.onfocus=function(){
-            pwd2_msg.style.display="block";
-            pwd2_msg.innerHTML='<i class="ati"></i>5-16个字符';
+        pwd2.onclick=function(){
+                $('.tishiy3').html("长度为5到16个字符");
         }
-        pwd2.onkeyup=function(){
+      /*  pwd2.onkeyup=function(){
             //大于5个字符中
             if(this.value.length>5){
                 aEm[1].className="active";
@@ -122,35 +124,49 @@
             else{
                 aEm[2].className="";
             }
-        }
+        }*/
         pwd2.onblur=function(){
-            var m=findStr(pwd2.value,pwd2.value[0]);
+           // var m=findStr(pwd2.value,pwd2.value[0]);
 
             //不能为空
             if(this.value==""){
-                pwd2_msg.innerHTML='<i style="display:inline-block;width:25px;height:20px;vertical-align:middle;background:url(img/busy.png)no-repeat;"></i>不能为空！';
+               // pwd2_msg.innerHTML='<i style="display:inline-block;width:25px;height:20px;vertical-align:middle;background:url(img/busy.png)no-repeat;"></i>不能为空！';
+                $('.tishiy3').html("不能为空!!");
             }
             //不能用相同字符
-            else if(m==this.value.length){
-                pwd2_msg.innerHTML='<i style="display:inline-block;width:25px;height:20px;vertical-align:middle;background:url(img/busy.png)no-repeat;"></i>不能使用相同字符！';
-            }
+            //else if(m==this.value.length){
+             //   pwd2_msg.innerHTML='<i style="display:inline-block;width:25px;height:20px;vertical-align:middle;background:url(img/busy.png)no-repeat;"></i>不能使用相同字符！';
+            //}
             //长度应为5-16字符
             else if(this.value.length<5||this.value.length>16){
-                pwd2_msg.innerHTML='<i style="display:inline-block;width:25px;height:20px;vertical-align:middle;background:url(img/busy.png)no-repeat;"></i>长度应为5-16个字符！';
+               // pwd2_msg.innerHTML='<i style="display:inline-block;width:25px;height:20px;vertical-align:middle;background:url(img/busy.png)no-repeat;"></i>长度应为5-16个字符！';
+                $('.tishiy3').html("请注意密码的长度");
             }
             //OK
             else{
-                pwd2_msg.innerHTML='<i style="display:inline-block;width:25px;height:20px;vertical-align:middle;background:url(img/check.png)no-repeat;"></i>OK！';
+               $('.tishiy3').html("ok");
             }
         }
 
         //确认密码
+      // pwd3.onclick=function () {
+        //    $('.tishiy4').html("请确认密码");
+        //}
+        $('#foo').click(function () {
+            $('.tishiy4').html("请确认密码");
+        });
         pwd3.onblur=function(){
-            if(this.value!=pwd2.value){
-                pwd3_msg.innerHTML='<i style="display:inline-block;width:25px;height:20px;vertical-align:middle;background:url(img/busy.png)no-repeat;"></i>两次输入密码不一致！';
+            if(this.value=="")
+            {
+                $('.tishiy4').html("不能为空!!");
+            }
+            else if(this.value==pwd2.value&&this.value!=""){
+                //pwd3_msg.innerHTML='<i style="display:inline-block;width:25px;height:20px;vertical-align:middle;background:url(img/busy.png)no-repeat;"></i>两次输入密码不一致！';
+                $('.tishiy4').html("ok");
             }
             else{
-                pwd3_msg.innerHTML='<i style="display:inline-block;width:25px;height:20px;vertical-align:middle;background:url(img/check.png)no-repeat;"></i>OK！';
+                //pwd3_msg.innerHTML='<i style="display:inline-block;width:25px;height:20px;vertical-align:middle;background:url(img/check.png)no-repeat;"></i>OK！';
+                $('.tishiy4').html("请再次确认密码");
             }
         }
 
@@ -306,25 +322,37 @@
         <p style="color:#666666;font-size:27px;margin-left:185px;margin-top:-40px;">用户注册</p>
     </div>
     <!--注册-->
-    <div style="width:650px;height:400px;border:1px solid white;margin-left:200px;margin-top:20px;">
+    <div style="width:700px;height:400px;border:1px solid blue;margin-left:200px;margin-top:20px;">
         <p style="color:#8888A5;font-size:17px;font-weight:700;margin-left:30px;">邮箱注册</p>
         <div style="width:100%;height:1px;background:#CDCFD1;"></div>
         <div class="zhuce" style="border:0px solid green;width:700px;height:250px;margin-left:30px;margin-top:40px;">
             <form action="register_check" method="post">
-               <input type='hidden' name='_token' value='{{csrf_token()}}'>
-                <div><label><span style="font-size:16px;">用户名</span>
-                        <input type="text" name="nickName" class="text"></label><p class="msg"><i class="ati"></i>5-25个字符，一个汉字为两个字符</p>
+                <div style="float: right;height: auto;width: 300px;">
+                    <p class="tishiyi" style="font-size: 18px;color: red;word-break: keep-all;"></p>
                 </div>
+                <div ><label><span style="font-size:16px;">用户名</span>
+                        <input type="text" name="nickName" class="text" ></label>
+                </div>
+
                 <div><label><span></span><b id="count">0个字符</b></label></div>
+                <div style="float: right;height: auto;width: 300px;">
+                    <p class="tishiy2" style="font-size: 18px;color: red;word-break: keep-all;"></p>
+                </div>
                 <div style="margin-bottom:5px;"><label><span style="font-size:16px;">电子邮箱</span>
-                        <input type="text" name="email" class="text"></label><p class="msg"><i class="ati"></i>请输入正确的邮箱格式</p>
+                        <input type="text" name="email" class="text"></label>
+                </div>
+                <div style="float: right;height: auto;width: 300px;">
+                    <p class="tishiy3" style="font-size: 18px;color: red;word-break: keep-all;"></p>
                 </div>
                 <div style="margin-bottom:5px;"><label><span style="font-size:16px;">密码</span>
-                        <input type="password"  name="password" class="text"></label><p class="msg" ><i class="ati"></i>密码由字母、数字组成</p>
+                        <input type="password"  name="password" class="text"></label>
                 </div>
                 <div style="margin:3px 0 10px 0"><label><span></span><em class="active" style="margin-left:15px;">弱</em><em>中</em><em>强</em></label></div>
+                <div style="float: right;height: auto;width: 300px;">
+                    <p class="tishiy4" style="font-size: 18px;color: red;word-break: keep-all;"></p>
+                </div>
                 <div style="margin-bottom:5px;"><label><span style="font-size:16px;">确认密码</span>
-                        <input type="password" name="checkpassword" class="text"></label><p class="msg"><i class="ati"></i>请再输入一次</p>
+                        <input type="password" name="checkpassword" class="text" id="foo"></label>
                 </div>
 
                 <div style="margin-bottom:5px;"><label><span style="font-size:16px;">我的身份</span><span>我是卖家</span><input type="radio" name="maijia" value="1" /><span>我是买家</span><input type="radio" name="maijia" value="2" /></label>

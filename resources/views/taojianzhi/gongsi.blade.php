@@ -213,9 +213,9 @@
 <!--灰色导航栏-->
 <div class="hui">
     <div class="daohang">
-        <div class="daohang1"><a href="index.html">首页</a></div>
-        <div class="daohang2"><a href="denglu.html">登录</a></div>
-        <div class="daohang3"><a href="zhuce.html">注册</a></div>
+        <div class="daohang1"><a href="{{url('index')}}">首页</a></div>
+        <div class="daohang2"><a href="{{url('login')}}">登录</a></div>
+        <div class="daohang3"><a href="{{url('register')}}">注册</a></div>
         <div class="daohang4"><a href="#">我的淘兼职</a></div>
         <div class="daohang5"><a href="#">关于我们</a></div>
     </div>
