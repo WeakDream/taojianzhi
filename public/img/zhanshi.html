@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="GBK">
+    <title>展示</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <script type="text/javascript" src="../js/jquery-1.11.3.min.js" /></script>
+    <script type="text/javascript">
+$(document).ready(function(){
+	$(".daohang4tan").hide();
+	$(".daohang5tan").hide();
+    $(".xinzijiesuan2").hide();
+    $(".jianzhishijian2").hide();
+    $(".gongzuodidian2").hide();
+
+	$(".daohang4,.daohang4tan").hover(function(){
+		$(".daohang4").css({"background":"white","border":"1px solid #EEEEEE"});
+		$(".daohang4tan").show();
+	},function(){
+		$(".daohang4").css({"background":"#F5F5F5","border":"0px"});
+		$(".daohang4tan").hide();
+	});
+	
+	$(".daohang5,.daohang5tan").hover(function(){
+		$(".daohang5").css({"background":"white","border":"1px solid #EEEEEE"});
+		$(".daohang5tan").show();
+	},function(){
+		$(".daohang5").css({"background":"#F5F5F5","border":"0px"});
+		$(".daohang5tan").hide();
+	});
+	
+	
+	
+	
+	$(".riqi ul li").click(function(){
+		$(this).css({"background":"white","color":"#F85337"});
+		$(this).siblings().css({"background":"#F85337","color":"white"});
+	});
+	
+	var num=0;
+	$(".you").click(function(){
+		if(num>2){
+			return;
+		}
+		if(num==-1){
+			num=0;
+		}
+		num++;
+	    $('.riqi ul').animate({marginLeft:'-'+num*800+'px'});
+	});
+	$(".zuo").click(function(){	
+	    if(num<0){
+			return;
+		}
+		num--;
+	    $('.riqi ul').animate({marginLeft:'-'+num*800+'px'});
+	});
+	
+	$("#add").click(function(){
+		var $options = $('#select1 option:selected');
+		$options.appendTo('#select2');
+	});
+	$("#add_all").click(function(){
+		var $options = $('#select1 option');
+		$options.appendTo('#select2');
+	});
+	$("#select1").dblclick(function(){
+		var $options = $("option:selected",this);
+		$options.appendTo("#select2");
+	});
+	
+	$("#remove").click(function(){
+		var $options = $('#select2 option:selected');
+		$options.appendTo('#select1');
+	});
+	$("#remove_all").click(function(){
+		var $options = $('#select2 option');
+		$options.appendTo('#select1');
+	});
+	$("#select2").dblclick(function(){
+		var $options = $("option:selected",this);
+		$options.appendTo("#select1");
+	});
+	
+
+	
+	$("#ri2tan").hide();
+        $("#ri3tan").hide();
+        $("#ri4tan").hide();
+        $("#ri5tan").hide();
+	$(".ri1").click(function(){
+		$("#ri1tan").fadeIn();
+		$("#ri1tan").siblings().hide();
+	});
+	$(".ri2").click(function(){
+		$("#ri2tan").fadeIn();
+		$("#ri2tan").siblings().hide();
+	});
+	$(".ri3").click(function(){
+		$("#ri3tan").fadeIn();
+		$("#ri3tan").siblings().hide();
+	});
+	$(".ri4").click(function(){
+		$("#ri4tan").fadeIn();
+		$("#ri4tan").siblings().hide();
+	});
+	$(".ri5").click(function(){
+		$("#ri5tan").fadeIn();
+		$("#ri5tan").siblings().hide();
+	});
+	
+});
+	</script>
+<style type="text/css">
+body{
+	font-family:微软雅黑;
+	margin:0px;
+	padding:0px;
+}
+.hui{
+	background: #f5f5f5;
+	width:100%;
+	height:40px;
+	position:relative;
+	margin:0px;	
+	border:1px solid #EEEEEE;
+}
+.daohang{
+
+	width:420px;
+	height:40px;
+	position:absolute;
+	right:162px;
+}
+.daohang div a{
+	font-size:14px;
+	margin-left:20px;
+	margin-top:10px;
+	text-decoration:none;
+	display:block;
+	color:black;
+}
+.daohang div a:hover{
+	font-size:14px;
+	margin-left:20px;
+	margin-top:10px;
+	text-decoration:none;
+	display:block;
+	color:#F22E00;
+}
+.daohang1{
+	width:70px;
+	height:40px;
+	position:absolute;
+}
+.daohang2{
+	width:70px;
+	height:40px;
+	position:absolute;
+	margin-left:70px;
+}
+.daohang3{
+	width:70px;
+	height:40px;
+	position:absolute;
+	margin-left:140px;
+}
+.daohang4{
+	width:110px;
+	height:40px;
+	position:absolute;
+	margin-left:210px;
+	border:0px;
+}
+.daohang5{
+	width:100px;
+	height:40px;
+	position:absolute;
+	margin-left:320px;
+}
+.daohang4tan{
+	width:110px;
+	height:100px;
+	border:1px solid #EEEEEE;
+	margin-left:210px;
+	margin-top:40px;
+	position:absolute;
+	background:white;
+	z-index:9;
+}
+.daohang5tan{
+	width:100px;
+	height:100px;
+	border:1px solid #EEEEEE;
+	margin-left:320px;
+	margin-top:40px;
+	position:absolute;
+	background:white;
+	z-index:9;
+}
+.riqi{
+    overflow:hidden;
+}
+.riqi ul{
+	list-style-type:none;
+	width:30000px;
+	padding:0px;
+}
+.riqi ul li{
+	float:left;
+	color:white;
+	width:100px;
+	border-right:1px solid white;
+	
+}
+.riqi ul li p{
+    cursor:pointer;
+	width:100px;
+	text-decoration:none;
+	padding-left:16px;
+	padding-top:5px;
+	font-size:15px;
+}
+.riqi ul li span{
+	cursor:pointer;
+	padding-left:25px;
+	margin-top:-10px;
+	display:block;
+	font-size:14px;
+}
+.ri1tan{
+	background:white;
+	width:800px;
+	height:350px;
+	margin-left:100px;
+	margin-top:30px;
+	overflow-y:auto; 
+	overflow-x:auto;
+
+}
+.ri1tan table tr{
+    height:40px;
+	border-bottom:1px dashed #CCCCCC;
+}
+.ri1tan table tr:hover{
+    background:#E8F4FF;
+}
+#add{
+	cursor:pointer;
+}
+#add_all{
+	cursor:pointer;
+}
+#remove{
+	cursor:pointer;
+}
+#remove_all{
+	cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+<!--灰色导航栏-->
+<div class="hui">
+<div class="daohang">
+<div class="daohang1"><a href="../php/index.php">首页</a></div>
+<div class="daohang2"><a href="denglu.html">登录</a></div>
+<div class="daohang3"><a href="zhuce.html">注册</a></div>
+<div class="daohang4"><a href="#">我的淘兼职</a></div>
+<div class="daohang5"><a href="#">关于我们</a></div>
+
+<div class="daohang4tan"><a href="gerenzhongxin.html">个人中心</a><a href="#">添加修改简历</a><a href="#">查看招聘信息</a></div>
+<div class="daohang5tan"><a href="#">网站简介</a><a href="#">组织结构</a><a href="#">发展历程</a></div>
+</div>
+</div>
+
+<div class="rongqi" style="border:1px solid white;width:1024px;top:20px;height:1200px;position:relative;margin:0 auto;cursor:default;">
+
+<div class="header" style="width:100%;height:100px;border-bottom:3px solid #EAEAEA;position:absolute;cursor:default;">
+<!--LOGO-->
+<img src="../img/taologo.jpg" style="width:160px;">
+
+</div>
+
+<!--身体-->
+<form>
+<div class="shenti" style="top:120px;background:#F85337;width:100%;height:550px;border:1px solid white;position:absolute;cursor:default;">
+<p style="color:white;font-size:20px;margin-left:450px;margin-top:20px;">我的时间轴</p>
+<div style="position:absolute;width:50px;height:48px;left:50px;top:78px;padding-left:8px;padding-top:4px;cursor:pointer;border:1px solid white;"><img class="zuo" src="../img/zuo.jpg" style="width:30px;"></div>
+<div style="position:absolute;width:50px;height:48px;left:900px;top:78px;padding-left:8px;padding-top:7px;cursor:pointer;border:1px solid white;"><img class="you" src="../img/you.jpg" style="width:30px;"></div>
+
+<div class="riqi" style="width:800px;height:48px;border:1px solid white;margin-left:100px;margin-top:30px;">
+    <ul>     
+        <li class="ri1" style="background:white;color:#F85337;"><p>11月1日</p><span>星期天</span></li>
+        <li class="ri2"><p>11月2日</p><span>星期一</span></li>
+        <li class="ri3"><p>11月3日</p><span>星期二</span></li>
+        <li class="ri4"><p>11月4日</p><span>星期三</span></li>
+        <li class="ri5"><p>11月5日</p><span>星期四</span></li>
+        <li class="ri6"><p>11月6日</p><span>星期五</span></li>
+        <li class="ri7"><p>11月7日</p><span>星期六</span></li>
+        <li class="ri8"><p>11月8日</p><span>星期天</span></li>
+        <li class="ri9"><p>11月9日</p><span>星期一</span></li>
+        <li class="ri10"><p>11月10日</p><span>星期二</span></li>
+        <li class="ri11"><p>11月11日</p><span>星期三</span></li>
+        <li class="ri12"><p>11月12日</p><span>星期四</span></li>
+        <li class="ri13"><p>11月13日</p><span>星期五</span></li>
+        <li class="ri14"><p>11月14日</p><span>星期六</span></li>
+        <li class="ri15"><p>11月15日</p><span>星期天</span></li>
+        <li class="ri16"><p>11月16日</p><span>星期一</span></li>
+        <li class="ri17"><p>11月17日</p><span>星期二</span></li>
+        <li class="ri18"><p>11月18日</p><span>星期三</span></li>
+        <li class="ri19"><p>11月19日</p><span>星期四</span></li>
+        <li class="ri20"><p>11月20日</p><span>星期五</span></li>
+        <li class="ri21"><p>11月21日</p><span>星期六</span></li>
+        <li class="ri22"><p>11月22日</p><span>星期天</span></li>
+        <li class="ri23"><p>11月23日</p><span>星期一</span></li>
+        <li class="ri24"><p>11月24日</p><span>星期二</span></li>
+        <li class="ri25"><p>11月25日</p><span>星期三</span></li>
+        <li class="ri26"><p>11月26日</p><span>星期四</span></li>
+        <li class="ri27"><p>11月27日</p><span>星期五</span></li>
+        <li class="ri28"><p>11月28日</p><span>星期六</span></li>
+        <li class="ri29"><p>11月29日</p><span>星期天</span></li>
+        <li class="ri30"><p>11月30日</p><span>星期一</span></li>
+    </ul>
+</div>
+<div style="border:0px solid yellow;width:1000px;height:400px;">
+<div class="ri1tan" id="ri1tan">    
+    <table>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">8:00</td>
+            <td width="100" style="color:green;font-size:16px;">空闲</td>
+            <td width="200"></td>
+            <td width="280"></td>
+            <td width="100"><button style="background:#FFB000;border:1px solid #FF9913;color:white;width:70px;height:30px;border-radius:3px;">可选择</button></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">9:00</td>
+            <td width="100" style="color:green;font-size:16px;">不空闲</td>
+            <td width="200">在马路上发传单</td>
+            <td width="280">CCC奶茶店</td>
+            <td width="100"></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">10:00</td>
+            <td width="100" style="color:green;font-size:16px;">不空闲</td>
+            <td width="200">在马路上发传单</td>
+            <td width="280">CCC奶茶店</td>
+            <td width="100"></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">11:00</td>
+            <td width="100" style="color:green;font-size:16px;">不空闲</td>
+            <td width="200">在马路上发传单</td>
+            <td width="280">CCC奶茶店</td>
+            <td width="100"></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">12:00</td>
+            <td width="100" style="color:green;font-size:16px;">空闲</td>
+            <td width="200"></td>
+            <td width="280"></td>
+            <td width="100"><button style="background:#FFB000;border:1px solid #FF9913;color:white;width:70px;height:30px;border-radius:3px;">可选择</button></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">13:00</td>
+            <td width="100" style="color:green;font-size:16px;">空闲</td>
+            <td width="200"></td>
+            <td width="280"></td>
+            <td width="100"><button style="background:#FFB000;border:1px solid #FF9913;color:white;width:70px;height:30px;border-radius:3px;">可选择</button></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">14:00</td>
+            <td width="100" style="color:green;font-size:16px;">不空闲</td>
+            <td width="200">整理图书</td>
+            <td width="280">XXX学校图书馆</td>
+            <td width="100"></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">15:00</td>
+            <td width="100" style="color:green;font-size:16px;">不空闲</td>
+            <td width="200">整理图书</td>
+            <td width="280">XXX学校图书馆</td>
+            <td width="100"></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">16:00</td>
+            <td width="100" style="color:green;font-size:16px;">空闲</td>
+            <td width="200"></td>
+            <td width="280"></td>
+            <td width="100"><button style="background:#FFB000;border:1px solid #FF9913;color:white;width:70px;height:30px;border-radius:3px;">可选择</button></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">17:00</td>
+            <td width="100" style="color:green;font-size:16px;">空闲</td>
+            <td width="200"></td>
+            <td width="280"></td>
+            <td width="100"><button style="background:#FFB000;border:1px solid #FF9913;color:white;width:70px;height:30px;border-radius:3px;">可选择</button></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">18:00</td>
+            <td width="100" style="color:green;font-size:16px;">空闲</td>
+            <td width="200"></td>
+            <td width="280"></td>
+            <td width="100"><button style="background:#FFB000;border:1px solid #FF9913;color:white;width:70px;height:30px;border-radius:3px;">可选择</button></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">19:00</td>
+            <td width="100" style="color:green;font-size:16px;">空闲</td>
+            <td width="200"></td>
+            <td width="280"></td>
+            <td width="100"><button style="background:#FFB000;border:1px solid #FF9913;color:white;width:70px;height:30px;border-radius:3px;">可选择</button></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">20:00</td>
+            <td width="100" style="color:green;font-size:16px;">空闲</td>
+            <td width="200"></td>
+            <td width="280"></td>
+            <td width="100"><button style="background:#FFB000;border:1px solid #FF9913;color:white;width:70px;height:30px;border-radius:3px;">可选择</button></td>
+        </tr>
+    </table>
+</div> 
+<div class="ri1tan" id="ri2tan">    
+    <table>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">8:00</td>
+            <td width="100" style="color:green;font-size:16px;">不空闲</td>
+            <td width="200">扫地</td>
+            <td width="280">XXX学校</td>
+            <td width="100"></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">9:00</td>
+            <td width="100" style="color:green;font-size:16px;">不空闲</td>
+            <td width="200">扫地</td>
+            <td width="280">XXX学校</td>
+            <td width="100"></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">10:00</td>
+            <td width="100" style="color:green;font-size:16px;">空闲</td>
+            <td width="200"></td>
+            <td width="280"></td>
+            <td width="100"><button style="background:#FFB000;border:1px solid #FF9913;color:white;width:70px;height:30px;border-radius:3px;">可选择</button></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">11:00</td>
+            <td width="100" style="color:green;font-size:16px;">空闲</td>
+            <td width="200"></td>
+            <td width="280"></td>
+            <td width="100"><button style="background:#FFB000;border:1px solid #FF9913;color:white;width:70px;height:30px;border-radius:3px;">可选择</button></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">12:00</td>
+            <td width="100" style="color:green;font-size:16px;">空闲</td>
+            <td width="200"></td>
+            <td width="280"></td>
+            <td width="100"><button style="background:#FFB000;border:1px solid #FF9913;color:white;width:70px;height:30px;border-radius:3px;">可选择</button></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">13:00</td>
+            <td width="100" style="color:green;font-size:16px;">空闲</td>
+            <td width="200"></td>
+            <td width="280"></td>
+            <td width="100"><button style="background:#FFB000;border:1px solid #FF9913;color:white;width:70px;height:30px;border-radius:3px;">可选择</button></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">14:00</td>
+            <td width="100" style="color:green;font-size:16px;">空闲</td>
+            <td width="200"></td>
+            <td width="280"></td>
+            <td width="100"><button style="background:#FFB000;border:1px solid #FF9913;color:white;width:70px;height:30px;border-radius:3px;">可选择</button></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">15:00</td>
+            <td width="100" style="color:green;font-size:16px;">空闲</td>
+            <td width="200"></td>
+            <td width="280"></td>
+            <td width="100"><button style="background:#FFB000;border:1px solid #FF9913;color:white;width:70px;height:30px;border-radius:3px;">可选择</button></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">16:00</td>
+            <td width="100" style="color:green;font-size:16px;">空闲</td>
+            <td width="200"></td>
+            <td width="280"></td>
+            <td width="100"><button style="background:#FFB000;border:1px solid #FF9913;color:white;width:70px;height:30px;border-radius:3px;">可选择</button></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">17:00</td>
+            <td width="100" style="color:green;font-size:16px;">空闲</td>
+            <td width="200"></td>
+            <td width="280"></td>
+            <td width="100"><button style="background:#FFB000;border:1px solid #FF9913;color:white;width:70px;height:30px;border-radius:3px;">可选择</button></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">18:00</td>
+            <td width="100" style="color:green;font-size:16px;">空闲</td>
+            <td width="200"></td>
+            <td width="280"></td>
+            <td width="100"><button style="background:#FFB000;border:1px solid #FF9913;color:white;width:70px;height:30px;border-radius:3px;">可选择</button></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">19:00</td>
+            <td width="100" style="color:green;font-size:16px;">空闲</td>
+            <td width="200"></td>
+            <td width="280"></td>
+            <td width="100"><button style="background:#FFB000;border:1px solid #FF9913;color:white;width:70px;height:30px;border-radius:3px;">可选择</button></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">20:00</td>
+            <td width="100" style="color:green;font-size:16px;">空闲</td>
+            <td width="200"></td>
+            <td width="280"></td>
+            <td width="100"><button style="background:#FFB000;border:1px solid #FF9913;color:white;width:70px;height:30px;border-radius:3px;">可选择</button></td>
+        </tr>
+    </table>
+</div>
+<div class="ri1tan" id="ri3tan">    
+    <table>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">8:00</td>
+            <td width="100" style="color:green;font-size:16px;">空闲</td>
+            <td width="200"></td>
+            <td width="280"></td>
+            <td width="100"><button style="background:#FFB000;border:1px solid #FF9913;color:white;width:70px;height:30px;border-radius:3px;">可选择</button></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">9:00</td>
+            <td width="100" style="color:green;font-size:16px;">空闲</td>
+            <td width="200"></td>
+            <td width="280"></td>
+            <td width="100"><button style="background:#FFB000;border:1px solid #FF9913;color:white;width:70px;height:30px;border-radius:3px;">可选择</button></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">10:00</td>
+            <td width="100" style="color:green;font-size:16px;">空闲</td>
+            <td width="200"></td>
+            <td width="280"></td>
+            <td width="100"><button style="background:#FFB000;border:1px solid #FF9913;color:white;width:70px;height:30px;border-radius:3px;">可选择</button></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">11:00</td>
+            <td width="100" style="color:green;font-size:16px;">空闲</td>
+            <td width="200"></td>
+            <td width="280"></td>
+            <td width="100"><button style="background:#FFB000;border:1px solid #FF9913;color:white;width:70px;height:30px;border-radius:3px;">可选择</button></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">12:00</td>
+            <td width="100" style="color:green;font-size:16px;">空闲</td>
+            <td width="200"></td>
+            <td width="280"></td>
+            <td width="100"><button style="background:#FFB000;border:1px solid #FF9913;color:white;width:70px;height:30px;border-radius:3px;">可选择</button></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">13:00</td>
+            <td width="100" style="color:green;font-size:16px;">不空闲</td>
+            <td width="200">整理资料</td>
+            <td width="280">易家</td>
+            <td width="100"></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">14:00</td>
+            <td width="100" style="color:green;font-size:16px;">不空闲</td>
+            <td width="200">整理资料</td>
+            <td width="280">易家</td>
+            <td width="100"></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">15:00</td>
+            <td width="100" style="color:green;font-size:16px;">不空闲</td>
+            <td width="200">整理资料</td>
+            <td width="280">易家</td>
+            <td width="100"></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">16:00</td>
+            <td width="100" style="color:green;font-size:16px;">不空闲</td>
+            <td width="200">整理资料</td>
+            <td width="280">易家</td>
+            <td width="100"></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">17:00</td>
+            <td width="100" style="color:green;font-size:16px;">不空闲</td>
+            <td width="200">整理资料</td>
+            <td width="280">易家</td>
+            <td width="100"></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">18:00</td>
+            <td width="100" style="color:green;font-size:16px;">空闲</td>
+            <td width="200"></td>
+            <td width="280"></td>
+            <td width="100"><button style="background:#FFB000;border:1px solid #FF9913;color:white;width:70px;height:30px;border-radius:3px;">可选择</button></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">19:00</td>
+            <td width="100" style="color:green;font-size:16px;">空闲</td>
+            <td width="200"></td>
+            <td width="280"></td>
+            <td width="100"><button style="background:#FFB000;border:1px solid #FF9913;color:white;width:70px;height:30px;border-radius:3px;">可选择</button></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">20:00</td>
+            <td width="100" style="color:green;font-size:16px;">空闲</td>
+            <td width="200"></td>
+            <td width="280"></td>
+            <td width="100"><button style="background:#FFB000;border:1px solid #FF9913;color:white;width:70px;height:30px;border-radius:3px;">可选择</button></td>
+        </tr>
+    </table>
+</div>
+<div class="ri1tan" id="ri4tan">    
+    <table>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">8:00</td>
+            <td width="100" style="color:green;font-size:16px;">不空闲</td>
+            <td width="200">食品销售</td>
+            <td width="280">XX小卖部</td>
+            <td width="100"></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">9:00</td>
+            <td width="100" style="color:green;font-size:16px;">不空闲</td>
+            <td width="200">食品销售</td>
+            <td width="280">XX小卖部</td>
+            <td width="100"></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">10:00</td>
+            <td width="100" style="color:green;font-size:16px;">不空闲</td>
+            <td width="200">食品销售</td>
+            <td width="280">XX小卖部</td>
+            <td width="100"></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">11:00</td>
+            <td width="100" style="color:green;font-size:16px;">不空闲</td>
+            <td width="200">食品销售</td>
+            <td width="280">XX小卖部</td>
+            <td width="100"></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">12:00</td>
+            <td width="100" style="color:green;font-size:16px;">不空闲</td>
+            <td width="200">食品销售</td>
+            <td width="280">XX小卖部</td>
+            <td width="100"></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">13:00</td>
+            <td width="100" style="color:green;font-size:16px;">不空闲</td>
+            <td width="200">食品销售</td>
+            <td width="280">XX小卖部</td>
+            <td width="100"></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">14:00</td>
+            <td width="100" style="color:green;font-size:16px;">不空闲</td>
+            <td width="200">食品销售</td>
+            <td width="280">XX小卖部</td>
+            <td width="100"></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">15:00</td>
+            <td width="100" style="color:green;font-size:16px;">不空闲</td>
+            <td width="200">食品销售</td>
+            <td width="280">XX小卖部</td>
+            <td width="100"></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">16:00</td>
+            <td width="100" style="color:green;font-size:16px;">不空闲</td>
+            <td width="200">食品销售</td>
+            <td width="280">XX小卖部</td>
+            <td width="100"></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">17:00</td>
+            <td width="100" style="color:green;font-size:16px;">空闲</td>
+            <td width="200"></td>
+            <td width="280"></td>
+            <td width="100"><button style="background:#FFB000;border:1px solid #FF9913;color:white;width:70px;height:30px;border-radius:3px;">可选择</button></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">18:00</td>
+            <td width="100" style="color:green;font-size:16px;">空闲</td>
+            <td width="200"></td>
+            <td width="280"></td>
+            <td width="100"><button style="background:#FFB000;border:1px solid #FF9913;color:white;width:70px;height:30px;border-radius:3px;">可选择</button></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">19:00</td>
+            <td width="100" style="color:green;font-size:16px;">空闲</td>
+            <td width="200"></td>
+            <td width="280"></td>
+            <td width="100"><button style="background:#FFB000;border:1px solid #FF9913;color:white;width:70px;height:30px;border-radius:3px;">可选择</button></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">20:00</td>
+            <td width="100" style="color:green;font-size:16px;">空闲</td>
+            <td width="200"></td>
+            <td width="280"></td>
+            <td width="100"><button style="background:#FFB000;border:1px solid #FF9913;color:white;width:70px;height:30px;border-radius:3px;">可选择</button></td>
+        </tr>
+    </table>
+</div>
+<div class="ri1tan" id="ri5tan">    
+    <table>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">8:00</td>
+            <td width="100" style="color:green;font-size:16px;">空闲</td>
+            <td width="200"></td>
+            <td width="280"></td>
+            <td width="100"><button style="background:#FFB000;border:1px solid #FF9913;color:white;width:70px;height:30px;border-radius:3px;">可选择</button></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">9:00</td>
+            <td width="100" style="color:green;font-size:16px;">空闲</td>
+            <td width="200"></td>
+            <td width="280"></td>
+            <td width="100"><button style="background:#FFB000;border:1px solid #FF9913;color:white;width:70px;height:30px;border-radius:3px;">可选择</button></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">10:00</td>
+            <td width="100" style="color:green;font-size:16px;">空闲</td>
+            <td width="200"></td>
+            <td width="280"></td>
+            <td width="100"><button style="background:#FFB000;border:1px solid #FF9913;color:white;width:70px;height:30px;border-radius:3px;">可选择</button></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">11:00</td>
+            <td width="100" style="color:green;font-size:16px;">空闲</td>
+            <td width="200"></td>
+            <td width="280"></td>
+            <td width="100"><button style="background:#FFB000;border:1px solid #FF9913;color:white;width:70px;height:30px;border-radius:3px;">可选择</button></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">12:00</td>
+            <td width="100" style="color:green;font-size:16px;">空闲</td>
+            <td width="200"></td>
+            <td width="280"></td>
+            <td width="100"><button style="background:#FFB000;border:1px solid #FF9913;color:white;width:70px;height:30px;border-radius:3px;">可选择</button></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">13:00</td>
+            <td width="100" style="color:green;font-size:16px;">空闲</td>
+            <td width="200"></td>
+            <td width="280"></td>
+            <td width="100"><button style="background:#FFB000;border:1px solid #FF9913;color:white;width:70px;height:30px;border-radius:3px;">可选择</button></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">14:00</td>
+            <td width="100" style="color:green;font-size:16px;">空闲</td>
+            <td width="200"></td>
+            <td width="280"></td>
+            <td width="100"><button style="background:#FFB000;border:1px solid #FF9913;color:white;width:70px;height:30px;border-radius:3px;">可选择</button></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">15:00</td>
+            <td width="100" style="color:green;font-size:16px;">空闲</td>
+            <td width="200"></td>
+            <td width="280"></td>
+            <td width="100"><button style="background:#FFB000;border:1px solid #FF9913;color:white;width:70px;height:30px;border-radius:3px;">可选择</button></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">16:00</td>
+            <td width="100" style="color:green;font-size:16px;">空闲</td>
+            <td width="200"></td>
+            <td width="280"></td>
+            <td width="100"><button style="background:#FFB000;border:1px solid #FF9913;color:white;width:70px;height:30px;border-radius:3px;">可选择</button></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">17:00</td>
+            <td width="100" style="color:green;font-size:16px;">空闲</td>
+            <td width="200"></td>
+            <td width="280"></td>
+            <td width="100"><button style="background:#FFB000;border:1px solid #FF9913;color:white;width:70px;height:30px;border-radius:3px;">可选择</button></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">18:00</td>
+            <td width="100" style="color:green;font-size:16px;">空闲</td>
+            <td width="200"></td>
+            <td width="280"></td>
+            <td width="100"><button style="background:#FFB000;border:1px solid #FF9913;color:white;width:70px;height:30px;border-radius:3px;">可选择</button></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">19:00</td>
+            <td width="100" style="color:green;font-size:16px;">空闲</td>
+            <td width="200"></td>
+            <td width="280"></td>
+            <td width="100"><button style="background:#FFB000;border:1px solid #FF9913;color:white;width:70px;height:30px;border-radius:3px;">可选择</button></td>
+        </tr>
+        <tr>
+            <td width="30"></td>
+            <td width="100" style="font-size:16px;">20:00</td>
+            <td width="100" style="color:green;font-size:16px;">空闲</td>
+            <td width="200"></td>
+            <td width="280"></td>
+            <td width="100"><button style="background:#FFB000;border:1px solid #FF9913;color:white;width:70px;height:30px;border-radius:3px;">可选择</button></td>
+        </tr>
+    </table>
+</div>
+ 
+</div>
+
+</div>
+<!--身体2-->
+<div class="shenti2" style="background:#1ABC9C;width:530px;height:530px;position:absolute;top:700px;left:490px;">
+    <div style="border:0px solid white;width:300px;height:200px;margin-left:80px;margin-top:60px;">
+        <label>选择简历：</label>
+        <select>
+            <option value="qing">请选择</option>
+        </select></br></br>
+        <label>时间：</label>
+         <div class="xiala" style="width:160px;height:220px;">
+        <select multiple id="select1" style="width:120px;height:220px;">
+            <option value="1">1:00</option>
+            <option value="2">2:00</option>
+            <option value="3">3:00</option>
+            <option value="4">4:00</option>
+            <option value="5">5:00</option>
+            <option value="6">6:00</option>
+            <option value="7">7:00</option>
+            <option value="8">8:00</option>
+            <option value="9">9:00</option>
+            <option value="10">10:00</option>
+            <option value="11">11:00</option>
+            <option value="12">12:00</option>
+            <option value="13">13:00</option>
+            <option value="14">14:00</option>
+            <option value="15">15:00</option>
+            <option value="16">16:00</option>
+            <option value="17">17:00</option>
+            <option value="18">18:00</option>
+            <option value="19">19:00</option>
+            <option value="20">20:00</option>
+            <option value="21">21:00</option>
+            <option value="22">22:00</option>
+            <option value="23">23:00</option>
+            <option value="24">24:00</option>
+        </select>
+        <div>
+            <span id="add">选中添加到右边&gt;&gt;</span></br>
+            <span id="add_all">全部选中添加到右边&gt;&gt;</span>
+        </div>
+    </div>
+    <div class="xiala2" style="margin-left:180px;margin-top:-220px;width:160px;height:220px;">
+        <select multiple id="select2" style="width:120px;height:220px;">
+        </select>
+        <div>
+            <span id="remove">&lt;&lt;选中删除到左边</span></br>
+            <span id="remove_all">&lt;&lt;全部删除到左边</span>
+        </div>
+    </div></br></br></br>
+        <label>有效期：</label>
+        <input type="radio" name="youxiaoqi" value="yi" />仅一天
+        <input type="radio" name="youxiaoqi" value="er" />以后三天
+        <input type="radio" name="youxiaoqi" value="san" />一周
+        <input type="radio" name="youxiaoqi" value="si" />一月
+        </br></br>
+        <div class="btn-group" role="group" aria-label="..." >
+        <button type="button" class="btn btn-default" style="width:300px;">提交</button>
+        </div>
+</div> 
+</div> 
+</form>
+        <div style="height:60px;width:100%;border-top:1px solid #eaeaea;top:1320px;position:absolute;padding-top:20px;">
+           <p align="center">@Taojianzhi.com</p>
+        </div>
+</div>
+
+
+
+</body>
+</html>
