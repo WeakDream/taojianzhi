@@ -70,11 +70,11 @@
                 $('.tishiyi').html("不能为空！！");
             }
             //长度超过25个字符
-            else if(name_length>20){
+            else if(getLength(this.value)>20){
                 $('.tishiyi').html("长度不能超过20！");
             }
             //长度少于6个字符
-            else if(name_length<5){
+            else if(getLength(this.value)<5){
                $('.tishiyi').html("长度不能小于5！");
             }
             //OK!
