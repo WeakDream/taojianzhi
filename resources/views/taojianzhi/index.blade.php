@@ -503,6 +503,7 @@
     <div style="position:absolute;margin-left:135px;"><a href="{{url('logout')}}">退出登录</a></div>
     @endif
     @if(!Session::get('username'))
+
         <div class="daohang2"><a href="{{url('login')}}">登录</a></div>
         <div class="daohang3"><a href="{{url('register')}}">注册</a></div>
     @endif

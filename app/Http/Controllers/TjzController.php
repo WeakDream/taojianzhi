@@ -27,7 +27,7 @@ class TjzController extends Controller {
 	public function index(){
         //$test=new\App\company();
 		$inputs=DB::table('jobs')->paginate(8);
-    	return view('taojianzhi/index',compact('inputs'));
+    	return view('taojianzhi/index3',compact('inputs'));
        // $inputs=$test->where('id','=',1)->first();
         //dd($inputs->logo);
 	}
@@ -156,7 +156,7 @@ class TjzController extends Controller {
            $data=$id;
     	return view('taojianzhi/person_announce',compact('data'));
     }
-    public function  person_announce_check($id,JobRequest $request)
+    public function person_announce_check($id,JobRequest $request)
     {
         $data=$id;
        $data1=$request->all();
@@ -392,7 +392,7 @@ class TjzController extends Controller {
         $name=$request->i_key;
         if($name==null)
         {
-            return redirect('index');
+            return redirect('index3');
         }
         $gets=$test->search($name);
         if(!$gets)
@@ -403,7 +403,7 @@ class TjzController extends Controller {
         {
          $m=$gets;   
         }
-        return view('taojianzhi/index',compact('m'));
+        return view('taojianzhi/index3',compact('m'));
         
     }
      
