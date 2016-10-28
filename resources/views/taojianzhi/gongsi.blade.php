@@ -243,7 +243,7 @@
 
     </div>
     <div class="you1">
-     <a href="#"> <img style="height: 100px;width: 320px;margin-left: 0px;margin-top:0px;position: absolute;"src="/img/{{$company->file_routrs}}"></a>
+     <a href="#"> <img style="height: 100px;width: 320px;margin-left: 0px;margin-top:0px;position: absolute;"src="/public/uploadfiles/{{$company->file_routrs}}"></a>
        <div style="margin-left: 20px;border-top:2px solid #eaeaea ;height: 200px;width: 290px;margin-top: 100px; ">
            <h3>{{$company->company_name}}</h3>
            <span>公司宣言：{{$company->description}}</span>
