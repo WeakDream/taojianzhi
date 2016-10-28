@@ -243,7 +243,7 @@
 
     </div>
     <div class="you1">
-     <a href="#"> <img style="height: 100px;width: 320px;margin-left: 0px;margin-top:0px;position: absolute;"src="http://localhost/cao_taojianzhi/public/{{$company->file_routrs}}"></a>
+     <a href="#"> <img style="height: 100px;width: 320px;margin-left: 0px;margin-top:0px;position: absolute;"src="/img/{{$company->file_routrs}}"></a>
        <div style="margin-left: 20px;border-top:2px solid #eaeaea ;height: 200px;width: 290px;margin-top: 100px; ">
            <h3>{{$company->company_name}}</h3>
            <span>公司宣言：{{$company->description}}</span>
@@ -324,7 +324,7 @@
         <div style="border: 1px solid #f1ffe7;background-color: #f1ffe7;height: 50px;width: 310px;">
             <h2 style="margin-left: 80px;margin-top: 8px;position: absolute">兼职担保职位</h2>
             <div style="height: 300px;width: 310px;border: 0px solid red;margin-top: 60px;">
-            <a href="#"> <img style="height:300px;width: 300px;"src="http://localhost:8000/img/gongsi2.png"></a>
+            <a href="#"> <img style="height:300px;width: 300px;"src="/img/gongsi2.png"></a>
             </div>
         </div>
     </div>
@@ -356,14 +356,14 @@
     <div class="dibu" style="width:100%;height:140px;border:1px solid white;position:absolute;top:1950px;">
         <div style="width:100%;height:12px;background:#FF5500"></div>
         <div style="width:100%;height:1px;border-top:1px dashed #FF5500;margin-top:3px;"></div>
-        <img src="img/taologo.jpg" style="width:110px;border:1px solid #FF5500;margin-top:40px;margin-left:130px;">
+        <img src="/img/taologo.jpg" style="width:110px;border:1px solid #FF5500;margin-top:40px;margin-left:130px;">
         <a href="#" style="margin-top:-53px;margin-left:350px;">联系我们</a>
         <a href="#" style="margin-top:-22px;margin-left:470px;">加入我们</a>
         <a href="#" style="margin-top:-22px;margin-left:590px;">关注我们</a>
         <a href="#" style="margin-top:8px;margin-left:350px;">关于我们</a>
         <a href="#" style="margin-top:-22px;margin-left:470px;">友情链接</a>
         <a href="#" style="margin-top:-22px;margin-left:590px;">意见反馈</a>
-        <img src="img/erweima.jpg" style="width:70px;margin-left:800px;margin-top:-56px;">
+        <img src="/img/erweima.jpg" style="width:70px;margin-left:800px;margin-top:-56px;">
         <p style="margin-left:440px;">www.taojianzhi.com</br>网络版权归淘兼职所有</p>
     </div>
 </div>
