@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>公司详情</title>
-    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
     <script type="text/javascript">
             $(document).ready(function(){
                 $(".daohang4tan").hide();
@@ -28,18 +28,7 @@
 
             });
 
-            window.onload = function () {
-                var Lis = document.getElementsByTagName("li");
-                for (i = 0; i < Lis.length; i++) {
-                    Lis[i].onmouseover = function () {
-                        this.className = "lihover";
-                    }
 
-                    Lis[i].onmouseout = function () {
-                        this.className = "";
-                    }
-                }
-            }
     </script>
     <style type="text/css">
         body{
@@ -250,8 +239,8 @@
         <div class="daohang4"><a href="#">我的淘兼职</a></div>
         <div class="daohang5"><a href="#">关于我们</a></div>
 
-        {{--<div class="daohang4tan"><a href="{{url('personal_center')}}">个人中心</a><a href="#">添加修改简历</a><a href="#">查看招聘信息</a></div>--}}
-        {{--<div class="daohang5tan"><a href="#">网站简介</a><a href="#">组织结构</a><a href="#">发展历程</a></div>--}}
+        <div class="daohang4tan"><a href="{{url('personal_center')}}">个人中心</a><a href="#">添加修改简历</a><a href="#">查看招聘信息</a></div>
+        <div class="daohang5tan"><a href="#">网站简介</a><a href="#">组织结构</a><a href="#">发展历程</a></div>
     </div>
 </div>
 
