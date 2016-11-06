@@ -332,6 +332,7 @@ class TjzController extends Controller {
     public function job_check(){
     	return view('taojianzhi/job_check');
     }
+
     public function gongsi_save($name)
     {
 

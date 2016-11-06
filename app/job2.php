@@ -7,5 +7,4 @@ protected  $table='jobs';
     protected $fillable = ['company_name','url','address','description','contact_person','contact',
     'file_name','file_routrs','work_type','time','salary','name','number'];
     protected $hidden = ['remember_token'];
-
 }

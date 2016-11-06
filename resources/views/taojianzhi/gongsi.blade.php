@@ -3,7 +3,7 @@
 <head lang="en">
     <meta charset="utf-8">
     <title>公司详情</title>
-    <script type="text/javascript" src="js/jquery-1.11.3.min.js" /></script>
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
     <script type="text/javascript">
             $(document).ready(function(){
                 $(".daohang4tan").hide();
@@ -25,8 +25,22 @@
                     $(".daohang5tan").hide();
                 });
 
+
             });
-            </script>
+
+            window.onload = function () {
+                var Lis = document.getElementsByTagName("li");
+                for (i = 0; i < Lis.length; i++) {
+                    Lis[i].onmouseover = function () {
+                        this.className = "lihover";
+                    }
+
+                    Lis[i].onmouseout = function () {
+                        this.className = "";
+                    }
+                }
+            }
+    </script>
     <style type="text/css">
         body{
             font-family:微软雅黑;
@@ -211,16 +225,35 @@
 </head>
 <body>
 <!--灰色导航栏-->
+{{--<div class="hui">--}}
+    {{--<div class="daohang">--}}
+        {{--<div class="daohang1"><a href="{{url('index')}}">首页</a></div>--}}
+        {{--<div class="daohang2"><a href="{{url('login')}}">登录</a></div>--}}
+        {{--<div class="daohang3"><a href="{{url('register')}}">注册</a></div>--}}
+        {{--<div class="daohang4"><a href="#">我的淘兼职</a></div>--}}
+        {{--<div class="daohang5"><a href="#">关于我们</a></div>--}}
+    {{--</div>--}}
+{{--</div>--}}
+
 <div class="hui">
     <div class="daohang">
-        <div class="daohang1"><a href="{{url('index')}}">首页</a></div>
-        <div class="daohang2"><a href="{{url('login')}}">登录</a></div>
-        <div class="daohang3"><a href="{{url('register')}}">注册</a></div>
+        <div class="daohang1"><a href={{url('index')}}>首页</a></div>
+        @if(Session::get('username'))
+            <div style="position:absolute;margin-left:50px;"><a href="{{url('personal_center')}}">你好{{Session::get('username')}}</a></div>
+            <div style="position:absolute;margin-left:135px;"><a href="{{url('logout')}}">退出登录</a></div>
+        @endif
+        @if(!Session::get('username'))
+            <div class="daohang2"><a href="{{url('login')}}">登录</a></div>
+            <div class="daohang3"><a href="{{url('register')}}">注册</a></div>
+        @endif
+
         <div class="daohang4"><a href="#">我的淘兼职</a></div>
         <div class="daohang5"><a href="#">关于我们</a></div>
+
+        {{--<div class="daohang4tan"><a href="{{url('personal_center')}}">个人中心</a><a href="#">添加修改简历</a><a href="#">查看招聘信息</a></div>--}}
+        {{--<div class="daohang5tan"><a href="#">网站简介</a><a href="#">组织结构</a><a href="#">发展历程</a></div>--}}
     </div>
 </div>
-
 
 <div class="rongqi" style="border:0px solid red;background:#f1f3f8;width:1024px;height:1920px;position:relative;margin:0 auto;cursor:default;">
     <div class="zuo1">
@@ -283,7 +316,9 @@
         </div>
         <div style="border-bottom:1px solid #eef8ed;background:#eef8ed;height: 100px;width: 570px;margin-left: 40px;margin-top:880px;position: absolute;">
             <div style="border: 1px solid #fd6000;height: 50px;width: 150px;margin-left:20px;margin-top: 30px;background: #fd6000;float:left"><a href="#"style="text-decoration: none;font-size: 18px;color: #ffffff;margin-left: 15px;">购买岗位</a></div>
+
             <div style="border: 1px solid #fd6000;height: 50px;width: 150px;float:right;margin-right:20px;margin-top: 30px;background: #fd6000"><a href="{{url('personal_center',$company->company_name)}}"style="text-decoration: none;font-size: 18px;color: #ffffff;margin-left: 15px;margin-top: 5px;position: absolute">职位收藏</a></div>
+
            <!-- <p style="margin-top: -40px;margin-left: 180px;position: absolute">报名成功后可以查看联系电话</p>!-->
         </div>
     </div>

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>淘兼职</title>
-<script type="text/javascript" src="js/jquery-1.11.3.min.js" /></script>
+<script type="text/javascript" src="js/jquery-1.11.3.min.js" ></script>
 <script type="text/javascript">
         $(document).ready(function(){
             $(".daohang4tan").hide();
@@ -130,7 +130,6 @@ window.onload = function () {
             this.className = "";
         }
     }
-
 }
 
 </script>
@@ -712,7 +711,7 @@ body{
 <!--灰色导航栏-->
 <div class="hui">
     <div class="daohang">
-        <div class="daohang1"><a href="index2.html">首页</a></div>
+        <div class="daohang1"><a href={{url('index')}}>首页</a></div>
         @if(Session::get('username'))
             <div style="position:absolute;margin-left:50px;"><a href="{{url('personal_center')}}">你好{{Session::get('username')}}</a></div>
             <div style="position:absolute;margin-left:135px;"><a href="{{url('logout')}}">退出登录</a></div>
@@ -729,8 +728,6 @@ body{
         <div class="daohang5tan"><a href="#">网站简介</a><a href="#">组织结构</a><a href="#">发展历程</a></div>
     </div>
 </div>
-
-
 
 <div class="rongqi" style="border:0px solid red;width:1024px;top:20px;height:1800px;position:relative;margin:0 auto;cursor:default;">
 <!--头部-->

@@ -23,7 +23,9 @@ Route::get('register','TjzController@register');
 Route::post('register_check','TjzController@register_check');
 Route::get('personal_center','TjzController@personal_center');
 Route::get('announce','TjzController@announce');
+
 Route::get('personal_center/{name}','TjzController@gongsi_save');
+
 Route::get('company_announce','TjzController@company_announce');
 Route::get('person_announce','TjzController@person_announce');
 Route::post('company_announce_check','TjzController@company_announce_check');
@@ -40,7 +42,9 @@ Route::post('filtration','TjzController@follow_search');
 Route::post('index/filtration','TjzController@follow_search');
 Route::get('search','TjzController@search');
 Route::post('search_handle','TjzController@search_handle');
+
 Route::get('gongsi/{name}','TjzController@company');
+
 Route::get('company_job_buy/{name}','TjzController@company_job_buy');
 Route::get('gongsi',function()
 {
