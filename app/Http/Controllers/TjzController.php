@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\company_save;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\job2;
@@ -8,6 +9,7 @@ use App\company;
 use App\job;
 use App\filtration;
 use App\search;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 //use Request;
 use App\Http\Requests\UserRequest;
@@ -130,12 +132,22 @@ class TjzController extends Controller {
     	$data=Session::get('uid');
     	//return view('taojianzhi/personal_center',compact('data'));
     	//dd(Session::get('cid'));
+
+//        $company_save = new company_save();
+//        $get_item=$company_save->where("user_id","=",$data)->first();
+
+        $saved_company=DB::select('select * from company_save where user_id=?',[$data]);
+        //dd($company_id);
+        //$company_name = DB::select('select company_name from jobs where id =?',[$company_id]);
+       // $jobs=new job2();
+      //  $company_name=$jobs::where('company_id','=',$company_id);
+       // dd($saved_company);
     	if(Session::get('cid')==1){
-    		return view('taojianzhi/Seller_Center');
-    	}
-    	else if(Session::get('cid')==2){
-    	return view('taojianzhi/personal_center',compact('data'));
-    	}
+            return view('taojianzhi/Seller_Center');
+        }
+        else if(Session::get('cid')==2){
+            return view('taojianzhi/personal_center',compact('saved_company'));
+        }
     }
 
 	/**
@@ -338,8 +350,26 @@ class TjzController extends Controller {
 
         $job2=new \App\job2();
         $company=$job2->where("company_name","=",$name)->first();
-        return view('taojianzhi/personal_center',compact('company'));
+       // dd($name);
+        if($user_id=session::get('uid'))
+        {
+            $company_save = new company_save();
+            $company_save->user_id=$user_id;
+            $company_save->company_id=($company->id);
+            $company_save->company_name=$name;
+            if($company_save->save())
+            {
+                return view('taojianzhi/personal_center');
+            }else{
+                //已经收藏
+                return '已收藏';
+            }
+
+        }else{
+            //去登录
+        }
     }
+
 
 	public function seller_center(){
     	return view('taojianzhi/Seller_Center');
@@ -381,7 +411,7 @@ class TjzController extends Controller {
     public function company($name)
     {
         $job2=new \App\job2();
-      $company=$job2->where("company_name","=",$name)->first();
+        $company=$job2->where("company_name","=",$name)->first();
         //dd($company->file_routrs);
         return view('taojianzhi/gongsi',compact('company'));
        // return view('taojianzhi/company');

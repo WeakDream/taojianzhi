@@ -1177,17 +1177,20 @@
                     <input type="checkbox">全选
                     <input type="submit" value="删除">
                 </form>
-                @if(isset($company))
-                <table style="width: 800px;broder: 0px;">
-                    <tr style="height: 40px">
-                        <td>{{$company->company_name}}</td>
-                        <td>{{$company->updated_at}}</td>
-                        <td>删除</td>
-                    </tr>
-
-
-                </table>
+                @if(isset($saved_company))
+                    @if(!empty($saved_company))
+                        @foreach($saved_company as $company)
+                            <table style="width: 800px;broder: 0px;">
+                                <tr style="height: 40px">
+                                    <td>{{$company->company_name}}</td>
+                                    <td>{{$company->created_at}}</td>
+                                    <td>删除</td>
+                                </tr>
+                            </table>
+                        @endforeach
                     @endif
+                @endif
+
             </div>
             <div class="m32tan">
                 <table style="font-size: 14px;height: 80px;">

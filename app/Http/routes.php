@@ -21,7 +21,9 @@ Route::post('login_check','TjzController@login_check');
 Route::post('resume_complete/{id}','TjzController@resume_complete');
 Route::get('register','TjzController@register');
 Route::post('register_check','TjzController@register_check');
+
 Route::get('personal_center','TjzController@personal_center');
+
 Route::get('announce','TjzController@announce');
 
 Route::get('personal_center/{name}','TjzController@gongsi_save');

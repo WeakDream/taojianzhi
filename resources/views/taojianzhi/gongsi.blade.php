@@ -13,7 +13,7 @@
                     $(".daohang4").css({"background":"white","border":"1px solid #EEEEEE"});
                     $(".daohang4tan").show();
                 },function(){
-                    $(".daohang4").css({"background":"#F5F5F5","border":"0px"});
+                    $(".daohang4").css({"background":"white","border":"0px"});
                     $(".daohang4tan").hide();
                 });
 
@@ -21,7 +21,7 @@
                     $(".daohang5").css({"background":"white","border":"1px solid #EEEEEE"});
                     $(".daohang5tan").show();
                 },function(){
-                    $(".daohang5").css({"background":"#F5F5F5","border":"0px"});
+                    $(".daohang5").css({"background":"white","border":"0px"});
                     $(".daohang5tan").hide();
                 });
 
@@ -306,7 +306,7 @@
         <div style="border-bottom:1px solid #eef8ed;background:#eef8ed;height: 100px;width: 570px;margin-left: 40px;margin-top:880px;position: absolute;">
             <div style="border: 1px solid #fd6000;height: 50px;width: 150px;margin-left:20px;margin-top: 30px;background: #fd6000;float:left"><a href="#"style="text-decoration: none;font-size: 18px;color: #ffffff;margin-left: 15px;">购买岗位</a></div>
 
-            <div style="border: 1px solid #fd6000;height: 50px;width: 150px;float:right;margin-right:20px;margin-top: 30px;background: #fd6000"><a href="{{url('personal_center',$company->company_name)}}"style="text-decoration: none;font-size: 18px;color: #ffffff;margin-left: 15px;margin-top: 5px;position: absolute">职位收藏</a></div>
+            <div style="border: 1px solid #fd6000;height: 50px;width: 150px;float:right;margin-right:20px;margin-top: 30px;background: #fd6000"><a href="{{url('personal_center',$company->company_name)}}" style="text-decoration: none;font-size: 18px;color: #ffffff;margin-left: 15px;margin-top: 5px;position: absolute">职位收藏</a></div>
 
            <!-- <p style="margin-top: -40px;margin-left: 180px;position: absolute">报名成功后可以查看联系电话</p>!-->
         </div>
