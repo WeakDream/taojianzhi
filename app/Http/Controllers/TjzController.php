@@ -76,8 +76,9 @@ class TjzController extends Controller {
     	Session::put('uid',$data);
     	Session::put('username',$nickname);
     	Session::put('cid',$id);
+        $saved_company=DB::select('select * from company_save where user_id=?',[$data]);
     	if($id==2){
-    	     return view('taojianzhi/personal_center',compact('data'));
+    	     return view('taojianzhi/personal_center',compact('saved_company'));
     	}
     	else if($id==1){
     		return view('taojianzhi/Seller_Center');
@@ -359,7 +360,7 @@ class TjzController extends Controller {
             $company_save->company_name=$name;
             if($company_save->save())
             {
-                return view('taojianzhi/personal_center');
+                return view('taojianzhi/personal_center');//此处应返回收藏成功的视图，暂时这么处理
             }else{
                 //已经收藏
                 return '已收藏';
