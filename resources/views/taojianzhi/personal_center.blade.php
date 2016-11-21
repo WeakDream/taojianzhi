@@ -978,7 +978,7 @@
     @endif
         <div class="daohang4"><a href="#">我的淘兼职</a></div>
         <div class="daohang5"><a href="#">关于我们</a></div>
-        <div class="daohang4tan"><a href="/gerenzhongxin">个人中心</a><a href="#">添加修改简历</a><a href="#">查看招聘信息</a></div>
+        <div class="daohang4tan"><a href="#">个人中心</a><a href="#">添加修改简历</a><a href="#">查看招聘信息</a></div>
         <div class="daohang5tan"><a href="#">网站简介</a><a href="#">组织结构</a><a href="#">发展历程</a></div>
 
     </div>

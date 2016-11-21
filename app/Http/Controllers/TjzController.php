@@ -134,8 +134,7 @@ class TjzController extends Controller {
     	//return view('taojianzhi/personal_center',compact('data'));
     	//dd(Session::get('cid'));
 
-//        $company_save = new company_save();
-//        $get_item=$company_save->where("user_id","=",$data)->first();
+//        $company_save = new company_save();//$get_item=$company_save->where("user_id","=",$data)->gets();
 
         $saved_company=DB::select('select * from company_save where user_id=?',[$data]);
         //dd($company_id);
@@ -350,7 +349,7 @@ class TjzController extends Controller {
     {
 
         $job2=new \App\job2();
-        $company=$job2->where("company_name","=",$name)->first();
+        $company=$job2->where("company_name","=",$name)->first();//先这样写着，若果有重名的公司
        // dd($name);
         if($user_id=session::get('uid'))
         {
@@ -358,16 +357,21 @@ class TjzController extends Controller {
             $company_save->user_id=$user_id;
             $company_save->company_id=($company->id);
             $company_save->company_name=$name;
+            $saved_company = $company_save->where("user_id","=",$user_id)->get();
+            foreach ($saved_company as $temp)
+            {
+                if($temp->company_name == $name) //已经收藏
+                {
+                    return redirect()->route('index');
+                }
+            }
             if($company_save->save())
             {
-                return view('taojianzhi/personal_center');//此处应返回收藏成功的视图，暂时这么处理
-            }else{
-                //已经收藏
-                return '已收藏';
+                return redirect()->route('personal_center');
             }
 
         }else{
-            //去登录
+            return redirect()->route('login');
         }
     }
 
