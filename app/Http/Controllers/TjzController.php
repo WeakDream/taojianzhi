@@ -34,10 +34,6 @@ class TjzController extends Controller {
         //dd($inputs->logo);
 	}
 
-    public function indexController(){
-
-    }
-
     public function login(){
     	$m=null;
     	return view('taojianzhi/login',compact('m'));
@@ -374,6 +370,24 @@ class TjzController extends Controller {
             return redirect()->route('login');
         }
     }
+    public function delete_save_job(Request $request)
+    {
+        $company_save=new company_save();
+        if($user_id=session::get('uid'))
+        {
+            //dd($user_id);
+            $user_saved_company=$company_save->where("user_id","=",$user_id)->get();
+            //dd($request->all());
+            foreach ($user_saved_company as $saved_company){
+                if($request->get($saved_company->company_id)=="删除"){
+                    //dd($saved_company->company_id);
+                    //$user_saved_company[$saved_company->company_id-1]->drop();
+                    //$company_save->where("user_id","=",$user_id)[$saved_company->company_id-1]->delete();
+                }
+            }
+
+        }
+    }
 
 
 	public function seller_center(){
@@ -424,7 +438,7 @@ class TjzController extends Controller {
     public function follow_search(Request $request)
     {
         $m=null;
-        $test=new\App\filtration();
+        $test=new \App\filtration();
         $name=$request->i_key;
         if($name==null)
         {

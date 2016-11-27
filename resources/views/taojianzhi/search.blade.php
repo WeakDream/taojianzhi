@@ -480,11 +480,11 @@
             <tr height="40" style="background:#FAFAFA;">
                 <td width="30"></td>
                 <td width="440">岗位名称</td>
-                <td width="110">工作内容</td>
+                <td width="110">公司名称</td>
                 <td width="110">报酬</td>
-                <td width="110">工作地点</td>
-                <td width="110">开始时间</td>
-                <td width="110">要求工作的时间</td>
+                <td width="110">工作时间</td>
+                <td width="110">工作地址</td>
+                <td width="110">联系人</td>
 
             </tr>
         </table>
@@ -494,11 +494,11 @@
             <tr height="40" style="border-bottom:1px solid #EDEEF0;">
                 <td width="30"></td>
                 <td width="435"><a>{{$input->name}}</a></td>
-                <td width="120">{{$input->duty}}</td>
-                <td width="120">{{$input->wage}}</td>
-                <td width="90">{{$input->place}}</td>
-                <td width="125">{{$input->start_time}}</td>
-                <td width="100">{{$input->during_time}}</td>
+                <td width="120">{{$input->company_name}}</td>
+                <td width="120">{{$input->salary}}</td>
+                <td width="90">{{$input->time}}</td>
+                <td width="125">{{$input->address}}</td>
+                <td width="100">{{$input->contact_person}}</td>
 
             </tr>
         </table>

@@ -736,11 +736,11 @@ body{
     <img src="img/taologo.jpg" style="width:160px;">
     <!--搜索-->
     <div class="sousuo">
-        <form action="search_handle" method="post">
+        <form action="{{ url('search_handle') }}" method="post">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <div class="zhiwei" align="center">职位</div>
             <div class="rencai" align="center">人才</div>
-            <input type="search" placeholder="" size="60" style="border:3px solid #FF5500;height:40px;top:20px;position:absolute;">
+            <input name = "key" type="search" placeholder="" size="50" style="border:3px solid #FF5500;height:40px;top:20px;position:absolute;">
             <input type="submit" value="搜索" style="color:white;font-size:18px;font-weight:600;width:80px;height:40px;background:#FF5500;border:0px;left:455px;top:20px;position:absolute;cursor:pointer;">
         </form>
         <p style="color:black;position:absolute;font-size:13px;margin-top:62px;margin-left:10px;">打字员、销售员、客服…</p>

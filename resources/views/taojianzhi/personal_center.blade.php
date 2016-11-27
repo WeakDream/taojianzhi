@@ -1173,24 +1173,25 @@
                        <!-- <th colspan="3"style="text-align: center;">您没有收藏过任何信息</th>!-->
                     </tr>
                 </table>
-                <form>
-                    <input type="checkbox">全选
+                <form action="{{url('delete_save_job')}}" method="post">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <input type="checkbox" name="check" onclick="checkAll(this,'check')"/>全选
                     <input type="submit" value="删除">
-                </form>
-                @if(isset($saved_company))
-                    @if(!empty($saved_company))
-                        @foreach($saved_company as $company)
-                            <table style="width: 800px;broder: 0px;">
-                                <tr style="height: 40px">
-                                    <td>{{$company->company_name}}</td>
-                                    <td>{{$company->created_at}}</td>
-                                    <td>删除</td>
-                                </tr>
-                            </table>
-                        @endforeach
+                    @if(isset($saved_company))
+                        @if(!empty($saved_company))
+                            @foreach($saved_company as $company)
+                                <table style="width: 800px;broder: 0px;">
+                                    <tr style="height: 40px">
+                                        <td><input name="check{{$company->company_id}}" type="checkbox"></td>
+                                        <td>{{$company->company_name}}</td>
+                                        <td>{{$company->created_at}}</td>
+                                        <td><input name="{{$company->company_id}}" type="submit" value="删除"></td>
+                                    </tr>
+                                </table>
+                            @endforeach
+                        @endif
                     @endif
-                @endif
-
+                </form>
             </div>
             <div class="m32tan">
                 <table style="font-size: 14px;height: 80px;">
