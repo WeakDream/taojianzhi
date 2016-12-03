@@ -67,6 +67,15 @@ Route::get('gongsi',function()
 });
 
 
+Route::get('test1',function (){
+    return view('taojianzhi.jianlitianxie');
+});
+Route::get('test2',function (){
+    return view('taojianzhi.jianli');
+});
+Route::get('test3',function (){
+    return view('taojianzhi.zhanshi');
+});
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',

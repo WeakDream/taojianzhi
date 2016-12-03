@@ -1175,14 +1175,11 @@
                 </table>
                 <form action="{{url('delete_save_job')}}" method="post">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    <input type="checkbox" name="check" onclick="checkAll(this,'check')"/>全选
-                    <input type="submit" value="删除">
                     @if(isset($saved_company))
                         @if(!empty($saved_company))
                             @foreach($saved_company as $company)
                                 <table style="width: 800px;broder: 0px;">
                                     <tr style="height: 40px">
-                                        <td><input name="check{{$company->company_id}}" type="checkbox"></td>
                                         <td>{{$company->company_name}}</td>
                                         <td>{{$company->created_at}}</td>
                                         <td><input name="{{$company->company_id}}" type="submit" value="删除"></td>

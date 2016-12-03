@@ -332,7 +332,7 @@
         <div class="fabu">
             <a href="#">发布招聘</a>
             <div style="width:1px;height:33px;border-left:1px dashed #FFB38C;margin-top:-27px;margin-left:100px;"></div>
-            <a href="jianlitianxie.html" style="margin-left:118px;margin-top:-28px;display:block;">登记简历</a>
+            <a href="jianlitianxie.blade.php" style="margin-left:118px;margin-top:-28px;display:block;">登记简历</a>
         </div>
     </div>
 

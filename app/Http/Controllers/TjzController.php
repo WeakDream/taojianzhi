@@ -382,10 +382,10 @@ class TjzController extends Controller {
                 if($request->get($saved_company->company_id)=="删除"){
                     //dd($saved_company->company_id);
                     //$user_saved_company[$saved_company->company_id-1]->drop();
-                    //$company_save->where("user_id","=",$user_id)[$saved_company->company_id-1]->delete();
+                    $company_save->where("user_id","=",$user_id)->where("company_id","=",$saved_company->company_id)->delete();
+                    return redirect('personal_center');
                 }
             }
-
         }
     }
 

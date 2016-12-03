@@ -23,7 +23,7 @@ class UserRequest extends Request {
 	{
 		return [
 		   'nickName'=>'required|unique:users|between:3,8',
-		   'email'=>'required|email',
+		   'email'=>'required|email|unique:users',
 		   'password'=>'required',
 		   'checkpassword'=>'required|same:password'
 			//
