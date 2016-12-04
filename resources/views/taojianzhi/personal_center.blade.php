@@ -102,6 +102,10 @@
             var top=$(".shenghuo").offset().top+400;
             $(".bj").css("height",top);
         });
+        $("#zhanghushezhi").click(function()
+        {
+            location.href="test1";
+        });
 
 
         $(".maijia").click(function(){
@@ -653,6 +657,11 @@
             $(".m11tan").hide();
             $(".m12tan").show();
         });
+        $('.buy').hide();
+        $('#buy').click(function(){
+            $(".m11tan").hide();
+            $(".buy").show();
+        })
 
 
         $(".m21tan").show();
@@ -989,7 +998,7 @@
     <div class="chen1" style="width:1024px;height:100%;margin:0 auto;">
         <img src="../img/taologo2.jpg" style="width:140px;margin-left: 20px;margin-top:10px;">
         <div style="font-size:20px;color:#ffffff;margin-top:-55px;margin-left: 230px;position: absolute;font-weight:600;">个人中心</div>
-        <div style="font-size:18px;color:#ffffff;margin-top:-53px;margin-left: 350px;position: absolute">账户设置</div>
+        <div style="font-size:18px;color:#ffffff;margin-top:-53px;margin-left: 350px;position: absolute" id="zhanghushezhi">账户设置</div>
         <div style="font-size:18px;color:#ffffff;margin-top:-53px;margin-left: 470px;position: absolute">我的资金</div>
         <form>
             <input type="text" placeholder="搜索" style="padding-left:5px;border:1px solid #FF5500;height:28px;width:170px;top:27px;margin-left:630px;position:absolute;border-radius:2px;">
@@ -1048,7 +1057,7 @@
                 </a>
             </li>
             <div class="jiaoyi2">
-                <li class="maijia">买家交易&nbsp;<span class="shang1">∧</span></li>
+                <li class="maijia" id="buy">买家交易&nbsp;<span class="shang1">∧</span></li>
             </div>
             <div class="maijia2">
                 <li style="margin-top: 0px;" id="161">订单管理</li>
@@ -1089,14 +1098,23 @@
     <div class="zhongxintan">
         <div style="border: 0px solid red;height: 150px;width: 100%;margin-left:40px;">
             <img src="../img/person.jpg" style="width:130px;height:130px;border-radius:65px;">
-            <p style="font-size: 20px;margin-top: -80px;margin-left:180px;position: absolute;"><b>账户名字</b></p>
-            <p style="margin-left: 280px;margin-top: -75px;position: absolute">消息|余额</p>
+            <p style="font-size: 20px;margin-top: -80px;margin-left:180px;position: absolute;"><b>账户名字&nbsp{{session::get("username")}}</b></p>
+            <p style="margin-left: 400px;margin-top: -75px;position: absolute">消息|余额</p>
         </div>
         <div style="margin-left: 40px;font-size: 15px;margin-top: 10px;" >
             <span id="m11">最近发布信息</span>
             <span style="margin-left: 20px;"id="m12">我浏览过的信息</span>
             <div class="m11tan">
                 <p style="margin-top: 50px;margin-left: 250px;"> <img src="../img/sm.png">您还没有发布消息。<a href="#"style="text-decoration: none">去发一条吧</a></p>
+            </div>
+            <div class="buy">
+                @if(isset($results))
+                    <p></p>
+                    @foreach($results as $result)
+                <p style="font-size: 20px">您在{{$result->created_at}}购买了{{$result->company}}的{{$result->job}}岗位</p>
+                    @endforeach
+                    @endif
+
             </div>
             <div class="m12tan">
                 <table style="font-size: 14px;height: 80px">

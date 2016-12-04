@@ -76,7 +76,6 @@ Route::get('test2',function (){
 Route::get('test3',function (){
     return view('taojianzhi.zhanshi');
 });
-Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
-]);
+
+Route::get('pay/{name}','TjzController@pay');
+Route::post("pay/goumai",'TjzController@goumai');

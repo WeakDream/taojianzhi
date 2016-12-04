@@ -3,7 +3,7 @@
 <head lang="en">
 <meta charset="utf-8">
 <title>简历填写</title>
-<script type="text/javascript" src="js/jquery-1.11.3.min.js" /></script>
+<script type="text/javascript" src="js/jquery-1.11.3.min.js" /></script><script type="text/javascript" src="js/PCASClass.js"></script>
 <script language="javascript" type="text/javascript" src="js/My97DatePicker/WdatePicker.js"></script>
 <script type="text/javascript">
         $(document).ready(function(){
@@ -226,7 +226,7 @@ function isDate(dateStr)
 <body>
 <div class="hui">
     <div class="daohang">
-        <div class="daohang1"><a href="#">首页</a></div>
+        <div class="daohang1"><a href="{{url('index')}}">首页</a></div>
         <div class="daohang2"><a href="#">登录</a></div>
         <div class="daohang3"><a href="#">注册</a></div>
         <div class="daohang4"><a href="#">我的淘兼职</a></div>
@@ -251,16 +251,13 @@ function isDate(dateStr)
 
                 <br>
                 &nbsp籍 &nbsp  &nbsp贯：
-                <select style="height: 40px;" id="bgclassname" name="bgclassname" onchange="addsmallclass(this.options[this.selectedIndex].value)">
-                    <option>请选择省</option>
-                    <option value="浙江省">浙江省</option>
-                    <option value="江苏省">江苏省</option>
-                    <option value="河北省">河北省</option>
-                    <option value="河南省">河南省</option>
-                </select>
-                <select id="smclassname" name="smclassname">
-                    <option>请选择城市</option>
-                </select>
+                <select id="Province" name="Province"></select>
+       		   <select id="City" name="City"></select>
+               <select id="Area" name="Area"></select>
+               <script type="text/javascript">
+
+              new PCAS("Province","City","Area","浙江省","杭州市","江干区")
+               </script>
                 <br>
                 &nbsp学 &nbsp  &nbsp历：<select name=xueli>
                 <option>高中以下</option>

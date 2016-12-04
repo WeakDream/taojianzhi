@@ -4,6 +4,7 @@ use App\company_save;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\job2;
+use App\job_buy;
 use App\User;
 use App\company;
 use App\job;
@@ -29,7 +30,7 @@ class TjzController extends Controller {
 	public function index(){
         //$test=new\App\company();
 		$inputs=DB::table('jobs')->paginate(8);
-    	return view('taojianzhi/index3',compact('inputs'));
+    	return view('taojianzhi/index3',["inputs"=>$inputs]);
        // $inputs=$test->where('id','=',1)->first();
         //dd($inputs->logo);
 	}
@@ -74,7 +75,10 @@ class TjzController extends Controller {
     	Session::put('cid',$id);
         $saved_company=DB::select('select * from company_save where user_id=?',[$data]);
     	if($id==2){
-    	     return view('taojianzhi/personal_center',compact('saved_company'));
+            $results=DB::table('job_buy')->where('user',$userName)->get();
+            //dd($results);
+    	     //return view('taojianzhi/personal_center',compact('saved_company'));
+            return view('taojianzhi/personal_center',["saved_company"=>$saved_company,"results"=>$results]);
     	}
     	else if($id==1){
     		return view('taojianzhi/Seller_Center');
@@ -127,6 +131,7 @@ class TjzController extends Controller {
 
     public function personal_center(){
     	$data=Session::get('uid');
+        $userName=Session::get('username');
     	//return view('taojianzhi/personal_center',compact('data'));
     	//dd(Session::get('cid'));
 
@@ -142,7 +147,12 @@ class TjzController extends Controller {
             return view('taojianzhi/Seller_Center');
         }
         else if(Session::get('cid')==2){
-            return view('taojianzhi/personal_center',compact('saved_company'));
+
+            //return view('taojianzhi/personal_center',compact('saved_company'));
+            $results=DB::table('job_buy')->where('user',$userName)->get();
+            //dd($results);
+            //return view('taojianzhi/personal_center',compact('saved_company'));
+            return view('taojianzhi/personal_center',["saved_company"=>$saved_company,"results"=>$results]);
         }
     }
 
@@ -309,11 +319,29 @@ class TjzController extends Controller {
         $outputs['work_time']=$time1;
     	return view('taojianzhi/job_buy',compact('outputs'));
     }
-    public function company_job_buy($name)
+    public function pay($name)
     {
         $job=new\App\job2();
         $outputs=$job->where('company_name','=',$name)->first();
-        return view('taojianzhi/job_buy',compact('outputs'));
+        return view("taojianzhi/pay",["outputs"=>$outputs]);
+    }
+    public  function goumai(Request $request)
+    {
+        $inputs['user']=Session::get('username');
+        //$inputs['user']="77777";
+        $inputs['job']=$request->get('job');
+        $inputs['company']=$request->get('company');
+        $password=$request->get("password");
+        $userPasswordCheck=DB::select('select password from users where nickname =?',[$inputs['user']]);
+        $bool=Hash::check($password,$userPasswordCheck[0]->password);
+        if(!$bool)
+        {
+            return response()->json(["state"=>"false"]);
+        }
+        else {
+            job_buy::create($inputs);
+           return response()->json(["state"=>"success"]);
+        }
     }
 
     public function shopping_car(){

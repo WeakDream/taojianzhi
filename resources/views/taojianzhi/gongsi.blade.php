@@ -304,7 +304,7 @@
             <p>2016-06-01</p>
         </div>
         <div style="border-bottom:1px solid #eef8ed;background:#eef8ed;height: 100px;width: 570px;margin-left: 40px;margin-top:880px;position: absolute;">
-            <div style="border: 1px solid #fd6000;height: 50px;width: 150px;margin-left:20px;margin-top: 30px;background: #fd6000;float:left"><a href="#"style="text-decoration: none;font-size: 18px;color: #ffffff;margin-left: 15px;">购买岗位</a></div>
+            <div style="border: 1px solid #fd6000;height: 50px;width: 150px;margin-left:20px;margin-top: 30px;background: #fd6000;float:left"><a href="{{url('pay',$company->company_name)}}"style="text-decoration: none;font-size: 18px;color: #ffffff;margin-left: 15px;">购买岗位</a></div>
 
             <div style="border: 1px solid #fd6000;height: 50px;width: 150px;float:right;margin-right:20px;margin-top: 30px;background: #fd6000"><a href="{{url('personal_center',$company->company_name)}}" style="text-decoration: none;font-size: 18px;color: #ffffff;margin-left: 15px;margin-top: 5px;position: absolute">职位收藏</a></div>
 
