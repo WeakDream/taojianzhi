@@ -1198,7 +1198,7 @@
                             @foreach($saved_company as $company)
                                 <table style="width: 800px;broder: 0px;">
                                     <tr style="height: 40px">
-                                        <td>{{$company->company_name}}</td>
+                                        <td><a href="{{url('gongsi',$company->company_name)}}">{{$company->company_name}}</a></td>
                                         <td>{{$company->created_at}}</td>
                                         <td><input name="{{$company->company_id}}" type="submit" value="删除"></td>
                                     </tr>
