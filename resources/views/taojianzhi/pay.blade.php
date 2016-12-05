@@ -3,7 +3,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>付款</title>
-    <script type="text/javascript" src="http://localhost:8000/js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
             $(".daohang4tan").hide();
@@ -254,7 +254,7 @@
 <div class="container">
     <div class="header">
         <div>
-            <img src="http://localhost:8000/img/taologo.jpg" >
+            <img src="../img/taologo.jpg" >
             <div style="background:#DEDEDE;width:1px;height:58px;margin-left:170px;margin-top:-75px;"></div>
             <p >付款</p>
         </div>
