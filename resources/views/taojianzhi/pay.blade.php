@@ -13,7 +13,7 @@
                 $(".daohang4").css({"background":"white","border":"1px solid #EEEEEE"});
                 $(".daohang4tan").show();
             },function(){
-                $(".daohang4").css({"background":"#F5F5F5","border":"0px"});
+                $(".daohang4").css({"background":"#C1CDC1","border":"0px"});
                 $(".daohang4tan").hide();
             });
 
@@ -21,7 +21,7 @@
                 $(".daohang5").css({"background":"white","border":"1px solid #EEEEEE"});
                 $(".daohang5tan").show();
             },function(){
-                $(".daohang5").css({"background":"#F5F5F5","border":"0px"});
+                $(".daohang5").css({"background":"#c1cdc1","border":"0px"});
                 $(".daohang5tan").hide();
             });
             $('#querenzhifu').click(function () {
@@ -32,7 +32,7 @@
                 //alert(content2);
                 $.ajax(
                         {
-                            url : 'goumai',
+                            url : 'pay',
                             data:
                             {
                                 job:content2,
@@ -43,7 +43,7 @@
                             success:function (json) {
                                 //alert("hello");
                                 if(json.state=="success") {
-                                    location.href = 'http://localhost:8000/personal_center';
+                                   window.location.href = '../pay_success';
                                 }
                                 if(json.state=="false")
                                 {
@@ -148,7 +148,7 @@
         .container{
             border: 0px solid red;
             width: 1024px;
-            top:20;
+            top:20px;
             height: 900px;
             position: relative;
             margin: 0 auto;
@@ -241,12 +241,18 @@
 <div class="hui">
     <div class="daohang">
         <div class="daohang1"><a href="{{url('index')}}">首页</a></div>
-        <div class="daohang2"><a href="php/login.php">登录</a></div>
-        <div class="daohang3"><a href="php/register.php">注册</a></div>
+        @if(Session::get('username'))
+            <div style="position:absolute;margin-left:50px;"><a href="{{url('personal_center')}}">你好{{Session::get('username')}}</a></div>
+            <div style="position:absolute;margin-left:135px;"><a href="{{url('logout')}}">退出登录</a></div>
+        @endif
+        @if(!Session::get('username'))
+            <div class="daohang2"><a href="{{url('login')}}">登录</a></div>
+            <div class="daohang3"><a href="{{url('register')}}">注册</a></div>
+        @endif
         <div class="daohang4"><a href="#">我的淘兼职</a></div>
         <div class="daohang5"><a href="#">关于我们</a></div>
 
-        <div class="daohang4tan"><a href="php/gerenzhongxin.php">个人中心</a><a href="#">添加修改简历</a><a href="#">查看招聘信息</a></div>
+        <div class="daohang4tan"><a href="{{url('personal_center')}}">个人中心</a><a href="#">添加修改简历</a><a href="#">查看招聘信息</a></div>
         <div class="daohang5tan"><a href="#">网站简介</a><a href="#">组织结构</a><a href="#">发展历程</a></div>
     </div>
 </div>
@@ -289,7 +295,7 @@
 
     <div class="content">
         <div class="zhiwei">
-            <img src="/public/uploadfiles/{{$outputs->file_routrs}}" >
+            <img src="../{{$outputs->file_routrs}}" >
             <p>{{$outputs->company_name}}</p>
             <p>{{$outputs->name}}</p>
             <span style="float: right;margin-right: 40px;margin-top: -40px;"><b style="color: #FF5500;font-size: 27px;">10.0</b>元</span>
@@ -308,7 +314,7 @@
                 <span>您在安全的环境中，请放心使用！</span>
                 <br/><br/>
                 <p style="font-size: 18px" id="22">支付宝支付密码：</p>
-                <input type="text"style="width: 180px;height: 30px" id="mima">
+                <input type="password"style="width: 180px;height: 30px" id="mima">
                 <a href="#" style="border: none;color: blue;display: inline">忘记密码？</a>
                 <br/>
                 <script>

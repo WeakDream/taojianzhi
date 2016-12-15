@@ -160,17 +160,17 @@
     @endif
         <div class="daohang4"><a href="#">我的淘兼职</a></div>
         <div class="daohang5"><a href="#">关于我们</a></div>
-        <div class="daohang4tan"><a href="/gerenzhongxin">个人中心</a><a href="#">添加修改简历</a><a href="#">查看招聘信息</a></div>
+        <div class="daohang4tan"><a href="{{url("personal_center")}}">个人中心</a><a href="#">添加修改简历</a><a href="#">查看招聘信息</a></div>
         <div class="daohang5tan"><a href="#">网站简介</a><a href="#">组织结构</a><a href="#">发展历程</a></div>
 
     </div>
 </div>
 <!--容器-->
 <div class="rongqi" style="border:1px solid white;width:1024px;top:20px;height:950px;position:relative;margin:0 auto;cursor:default;">
-    <img src="../img/taologo.jpg" style="width:160px;">
+    <img src="img/taologo.jpg" style="width:160px;">
     <!--图片-->
     <div style="width:430px;height:320px;border:0px solid red;position:absolute;top:130px;left:80px;">
-        <img style="width:430px;height:320px;" src="../img/denglu2.jpg">
+        <img style="width:430px;height:320px;" src="img/denglu2.jpg">
     </div>
     <!--登录框-->
     <div class="denglu">
@@ -181,12 +181,18 @@
                <input type='hidden' name='_token' value='{{csrf_token()}}'>
                 <div class="input-group">
                     <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
-                    <input type="text" name="username" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+                    <input type="text" name="username" class="form-control" placeholder="用户名/邮箱" aria-describedby="basic-addon1">
                 </div>
-
+                @if($errors->any())
+                    <div class=' alert-danger' style="margin-top: 8px;padding-left: 40px" >
+                        @foreach($errors->all() as $error)
+                           <p>{{$error}}</p>
+                        @endforeach
+                    </div>
+                @endif
                 <div class="input-group" style="margin-top:20px;">
                     <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
-                    <input type="password" name="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
+                    <input type="password" name="password" class="form-control" placeholder="密码" aria-describedby="basic-addon1">
                 </div>
 
                 <a href="#" class="wang1" style="text-decoration:none;color:#333333;margin-top:30px;display:inline-block;">忘记登录密码？</a>
@@ -200,23 +206,17 @@
     <div class="dibu" style="width:100%;height:140px;border:1px solid white;position:absolute;top:650px;">
         <div style="width:100%;height:12px;background:#FF5500"></div>
         <div style="width:100%;height:1px;border-top:1px dashed #FF5500;margin-top:3px;"></div>
-        <img src="../img/taologo.jpg" style="width:110px;border:1px solid #FF5500;margin-top:40px;margin-left:130px;">
+        <img src="img/taologo.jpg" style="width:110px;border:1px solid #FF5500;margin-top:40px;margin-left:130px;">
         <a href="#" style="margin-top:-53px;margin-left:350px;">联系我们</a>
         <a href="#" style="margin-top:-22px;margin-left:470px;">加入我们</a>
         <a href="#" style="margin-top:-22px;margin-left:590px;">关注我们</a>
         <a href="#" style="margin-top:8px;margin-left:350px;">关于我们</a>
         <a href="#" style="margin-top:-22px;margin-left:470px;">友情链接</a>
         <a href="#" style="margin-top:-22px;margin-left:590px;">意见反馈</a>
-        <img src="../img/erweima.jpg" style="width:70px;margin-left:800px;margin-top:-56px;">
+        <img src="img/erweima.jpg" style="width:70px;margin-left:800px;margin-top:-56px;">
         <p style="margin-left:440px;">www.taojianzhi.com</br>网络版权归淘兼职所有</p>
     </div>
 
-    @if($m)
-    <ul class="alert alert-danger">
-    <li>{{$m}}</li>
-    </ul>
-    {{$m=null}}
-    @endif
 
 </div>
 

@@ -189,7 +189,7 @@
              <input type=hidden name='_token' value='{{csrf_token()}}'>
                 <br>
                 <div id="topinfomsg" style="margin-left:-190px;">1、同一类别请勿发布重复信息，严禁向应聘者收费，否则删除信息，并锁定账户。<br>2、职位描述中不能包含电话、QQ、邮箱等联系方式，否则删除信息！</div>
-            <form action='/person_announce_check/{{$data}}' method="post">
+            <form action='/person_announce_check' method="post">
                 <table class="box_table">
                     <tbody>
                     <tr>

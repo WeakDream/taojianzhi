@@ -11,6 +11,37 @@
 	$(document).ready(function(){
 		$(".daohang4tan").hide();
         $(".daohang5tan").hide();
+        $("#jujue").click(function () {
+            $('#content1').hide();
+            //alert("hello");
+        })
+        $("#big").click(function () {
+            $("#content1").animate({
+                height:"240px",
+                width:"400px",
+                marginLeft:"100px",
+                marginBottom:"50px",
+                paddingTop:"0px"})
+            $("#content1>p").animate({
+                fontSize:"18px"
+            })
+            $("#content1>button").animate({
+                height:"20px",
+                width:"40px"
+            })
+            $('#big').hide()
+        });
+        $("#jieshou").click(function () {
+            $.ajax(
+                    {
+                        url:"send",
+                        type:'POST',
+                        success:function () {
+                            alert("ok")
+                        }
+                    }
+            )
+        })
 
 		$(".daohang4,.daohang4tan").hover(function(){
         	$(".daohang4").css({"background":"white","border":"1px solid #EEEEEE"});
@@ -377,17 +408,19 @@ body{
 <br>
 <a href="gangweigoumai.html" style="font-size:16px;">BARONET COFFEE咖啡制作师</a>
 <br>
-<div id="content" class="content">
+<div id="content1" class="content">
 <p class="style1">姓名：张三</p>
 <p class="style2">学校：杭州电子科技大学</p>
 <p class="style2">专业：计算机科学与技术</p>
 <p class="style2">学历：本科</p>
-<p class="style2">关于我：</p>
-<p class="style2">个人专长：</p>
+<p class="style2">关于我：来自杭州电子科技大学</p>
+<p class="style2">个人专长：有工作经验</p>
 <p class="style2">工作经验：在星巴克打工3个月</p>
-<a href="jianli.html">查看详细简历</a><br>
-<input type="submit" name="" value="&radic;接受" style="background:#FD4301;border:0px;color:white;border-radius:5px;">&nbsp;
-<input type="submit" name="" value="&times;拒绝" style="background:#FD4301;border:0px;color:white;border-radius:5px;">
+<a href="#" id="big">查看详细简历</a><br>
+<!--<input type="submit" name="" value="&radic;接受" style="background:#FD4301;border:0px;color:white;border-radius:5px;">&nbsp;
+<input type="submit" name="" value="&times;拒绝" style="background:#FD4301;border:0px;color:white;border-radius:5px;">!-->
+<button style="background:#FD4301;border:0px;color:white;border-radius:5px;" id="jieshou">接受</button>
+    <button style="background:#FD4301;border:0px;color:white;border-radius:5px;" id="jujue">拒绝</button>
 </div>
 
 <div id="content" class="content">

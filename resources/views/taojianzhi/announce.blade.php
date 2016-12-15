@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>发布信息</title>
     <script src="../js/laydate/laydate.js"></script>
-    <script type="text/javascript" src="../js/jquery-1.11.3.min.js" /></script>
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js" /></script>
     <script type="text/javascript">
     $(document).ready(function(){
         $(".daohang4tan").hide();
@@ -132,7 +132,7 @@
         .del-menu h2{ background-color:#f8f8f8; padding:0 10px; text-align:left; font-size:12px; font-weight:normal;}ul.del-menu-con{ height:228px; padding:30px 0px 10px 20px;}
         ul.del-menu-con li{ float:left; position:relative; display:block; padding:5px 50px 38px 80px; line-height:2; font-size:12px; color:#707070; white-space:nowrap; border-bottom: 1px dashed #e0e0e0}
         ul.del-menu-con li i{ position:absolute; display:block; width:57px; height:57px; left:10px; bottom:38px; }
-        ul.del-menu-con li i.icon1{ background:url(../img/people2.png)}ul.del-menu-con li i.icon2{ background:url(../img/company.png)}ul.del-menu-con li i.icon3{ background-position:-134px -280px;}ul.del-menu-con li i.icon4{ background-position:-201px -280px;}
+        ul.del-menu-con li i.icon1{ background:url(img/people2.png)}ul.del-menu-con li i.icon2{ background:url(img/company.png)}ul.del-menu-con li i.icon3{ background-position:-134px -280px;}ul.del-menu-con li i.icon4{ background-position:-201px -280px;}
         ul.del-menu-con li a,ul.del-menu-con li span{ font-weight:bold; font-size:18px; font-family:'微软雅黑', '黑体'; }
         ul.del-menu-con li a{color:#0000cc; }ul.del-menu-con li span{ color:#000000;}
     </style>
@@ -151,13 +151,13 @@
     @endif
         <div class="daohang4"><a href="#">我的淘兼职</a></div>
         <div class="daohang5"><a href="#">关于我们</a></div>
-        <div class="daohang4tan"><a href="/gerenzhongxin">个人中心</a><a href="#">添加修改简历</a><a href="#">查看招聘信息</a></div>
+        <div class="daohang4tan"><a href="{{url('personal_center')}}">个人中心</a><a href="#">添加修改简历</a><a href="#">查看招聘信息</a></div>
         <div class="daohang5tan"><a href="#">网站简介</a><a href="#">组织结构</a><a href="#">发展历程</a></div>
 
     </div>
 </div>
 <div class="rongqi" style="border:0px solid red;width:1024px;top:20px;height:1300px;position:relative;margin:0 auto;cursor:default;">
-    <img src="../img/taologo.jpg" style="width:160px;margin-left: 150px;margin-top: 10px;">
+    <img src="img/taologo.jpg" style="width:160px;margin-left: 150px;margin-top: 10px;">
     <div style="margin-left: 350px;margin-top: -50px;font-size: 20px;">免费发布信息</div>
     <p style="margin-left: 160px;margin-top: 30px;font-weight: 700;">&nbsp</p>
     <div style="margin-left: 160px;border-top: 2px solid #eaeaea;width: 824;top:-10px;height:750px;position:relative;">

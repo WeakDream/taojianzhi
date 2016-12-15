@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
-    <meta charset="GBK">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>公司详情</title>
-    <script type="text/javascript" src="js/jquery-1.11.3.min.js" /></script>
+    <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
     <script type="text/javascript">
             $(document).ready(function(){
                 $(".daohang4tan").hide();
@@ -13,7 +13,7 @@
                     $(".daohang4").css({"background":"white","border":"1px solid #EEEEEE"});
                     $(".daohang4tan").show();
                 },function(){
-                    $(".daohang4").css({"background":"#F5F5F5","border":"0px"});
+                    $(".daohang4").css({"background":"white","border":"0px"});
                     $(".daohang4tan").hide();
                 });
 
@@ -21,63 +21,31 @@
                     $(".daohang5").css({"background":"white","border":"1px solid #EEEEEE"});
                     $(".daohang5tan").show();
                 },function(){
-                    $(".daohang5").css({"background":"#F5F5F5","border":"0px"});
+                    $(".daohang5").css({"background":"white","border":"0px"});
                     $(".daohang5tan").hide();
                 });
 
-                $(".n1tan").show();
-                $(".n2tan").hide();
-                $(".n3tan").hide();
 
-                $("#n1").click(function(){
-                    $(".n2tan").hide();
-                    $(".n3tan").hide();
-                    $(".n1tan").show();
-                    $("#n1").css({"background":"white","color":"#FF5500","border-top":"2px solid #FF5500"});
-                    $("#n2").css({"background":"#E5E5E5","color":"black","border-top":"1px solid #E5E5E5"});
-                    $("#n3").css({"background":"#E5E5E5","color":"black","border-top":"1px solid #E5E5E5"});
-
-                });
-                $("#n2").click(function(){
-                    $(".n1tan").hide();
-                    $(".n3tan").hide();
-                    $(".n2tan").show();
-                    $("#n2").css({"background":"white","color":"#FF5500","border-top":"2px solid #FF5500"});
-                    $("#n1").css({"background":"#E5E5E5","color":"black","border-top":"1px solid #E5E5E5"});
-                    $("#n3").css({"background":"#E5E5E5","color":"black","border-top":"1px solid #E5E5E5"});
-                });
-                $("#n3").click(function(){
-                    $(".n2tan").hide();
-                    $(".n1tan").hide();
-                    $(".n3tan").show();
-                    $("#n3").css({"background":"white","color":"#FF5500","border-top":"2px solid #FF5500"});
-                    $("#n1").css({"background":"#E5E5E5","color":"black","border-top":"1px solid #E5E5E5"});
-                    $("#n2").css({"background":"#E5E5E5","color":"black","border-top":"1px solid #E5E5E5"});
-                });
             });
+
+
     </script>
     <style type="text/css">
-        a{
-            text-decoration: none;
-        }
-        a:hover{
-            text-decoration: underline;
-        }
         body{
             font-family:微软雅黑;
             margin:0px;
             padding:0px;
         }
         .hui{
-            background: #f5f5f5;
+            background:#ffffff;
             width:100%;
             height:40px;
             position:relative;
             margin:0px;
             border:1px solid #EEEEEE;
-
         }
         .daohang{
+
             width:420px;
             height:40px;
             position:absolute;
@@ -149,54 +117,80 @@
             background:white;
             z-index:9;
         }
-
-
-        ul{
-            margin-top:-40px;
-            padding: 0;
+        .zuo1{
+            border: 0px solid red;
+            height:350px;
+            width: 670px;
+            background: #ffffff;
+           position: absolute;
+           margin-top: 50px;
+            margin-left:10px;
         }
-        li{
-            list-style: none;
+         span{
+            color: gray;
         }
-        .nav{
-            height: 50px;
-            background:#f6f6f6;
-            border: 1px solid #E5E5E5;
+        .you1{
+            border: 0px solid red;
+            height:300px;
+            width: 310px;
+            background: #ffffff;
+            margin-right: 10px;;
+            margin-top: 50px;
+            margin-left:10px;
+            float: right;
         }
-        .nav li{
+        .zuo2{
+            border: 0px solid red;
+            height:1080px;
+            width: 670px;
+            background: #ffffff;
+            position: absolute;
+            margin-top:430px;
+            margin-left:10px;
+        }
+        .zuo3{
+            border: 0px solid red;
+            height:370px;
+            width: 670px;
+            background: #ffffff;
+            position: absolute;
+            margin-top:1530px;
+            margin-left:10px;
             float: left;
         }
-
-        #n1{
-            width:120px;
-            border-right: 1px solid #E5E5E5;
-            text-align: center;
-            line-height: 50px;
-            font-size: 18px;
+        .you2{
+            border: 0px solid red;
+            height:350px;
+            width: 310px;
             background: #ffffff;
-            color: #FF5500;
-            border-top: 2px solid #FF5500;
+            margin-right: 10px;;
+            margin-top: 380px;
+            margin-left:705px;
+           position: absolute;
+
 
         }
-        #n2{
-            width:120px;
-            border-right: 1px solid #E5E5E5;
-            text-align: center;
-            line-height: 50px;
-            font-size: 18px;
+        .you3{
+            border: 0px solid red;
+            height:500px;
+            width: 310px;
+            background: #ffffff;
+            margin-right: 10px;;
+            margin-top:760px;
+            margin-left:705px;
+            position: absolute;
 
         }
-        #n3{
-            width:120px;
-            border-right: 1px solid #E5E5E5;
-            text-align: center;
-            line-height: 50px;
-            font-size: 18px;
-
+        .dibu a{
+            color:#3C3C3C;
+            text-decoration:none;
+            font-size:17px;
+            font-weight:700;
+            display:block;
         }
         .xiabu3 ul{
-            margin-left:200px;
-            margin-top:40px;
+            margin-left:100px;
+            margin-top:10px;
         }
         .xiabu3 ul li{
             list-style-type:none;
@@ -216,382 +210,187 @@
             font-size:18px;
             color:black;
         }
-        .smalltu{
-            margin-top: 20px;
-            margin-left: 20px;
-        }
-        .smalltu li{
-            float:left;
-            padding-right: 10px;;
-        }
-        .smalltu li:hover{
-            border:3px #000000 solid;
-            width:70px;
-            height: 80px;
-            margin-right: 10px;
-        }
-        .fx{
-            width: 15px;
-            height: 15px;
-            margin-left: 20px;
-            margin-top: 20px;
-
-        }
-        .shoucang{
-            width: 15px;
-            height: 15px;
-            margin-left: 40px;
-            margin-top: 20px;
-
-        }
-        .jubao{
-            float: right;
-            margin-top: 20px;
-            color: gray;
-        }
-        .jiage{
-            width: 500px;
-            height: 60px;
-            background:  #FFF2E8;
-        }
-        .jiage span{
-            padding-top: 20px;
-            padding-left: 10px;
-            position: absolute;
-        }
     </style>
 </head>
 <body>
 <!--灰色导航栏-->
+{{--<div class="hui">--}}
+    {{--<div class="daohang">--}}
+        {{--<div class="daohang1"><a href="{{url('index')}}">首页</a></div>--}}
+        {{--<div class="daohang2"><a href="{{url('login')}}">登录</a></div>--}}
+        {{--<div class="daohang3"><a href="{{url('register')}}">注册</a></div>--}}
+        {{--<div class="daohang4"><a href="#">我的淘兼职</a></div>--}}
+        {{--<div class="daohang5"><a href="#">关于我们</a></div>--}}
+    {{--</div>--}}
+{{--</div>--}}
+
 <div class="hui">
     <div class="daohang">
-        <div class="daohang1"><a href="{{url('index')}}">首页</a></div>
-        <div class="daohang2"><a href="{{url('login')}}">登录</a></div>
-        <div class="daohang3"><a href="{{url('register')}}">注册</a></div>
+        <div class="daohang1"><a href={{url('index')}}>首页</a></div>
+        @if(Session::get('username'))
+            <div style="position:absolute;margin-left:50px;"><a href="{{url('personal_center')}}">你好{{Session::get('username')}}</a></div>
+            <div style="position:absolute;margin-left:135px;"><a href="{{url('logout')}}">退出登录</a></div>
+        @endif
+        @if(!Session::get('username'))
+            <div class="daohang2"><a href="{{url('login')}}">登录</a></div>
+            <div class="daohang3"><a href="{{url('register')}}">注册</a></div>
+        @endif
+
         <div class="daohang4"><a href="#">我的淘兼职</a></div>
         <div class="daohang5"><a href="#">关于我们</a></div>
 
+        <div class="daohang4tan"><a href="{{url('personal_center')}}">个人中心</a><a href="#">添加修改简历</a><a href="#">查看招聘信息</a></div>
         <div class="daohang5tan"><a href="#">网站简介</a><a href="#">组织结构</a><a href="#">发展历程</a></div>
     </div>
 </div>
-<div class="rongqi" style="border:0px solid red;width:1024px;top:60px;height:1100px;position:relative;margin:0 auto;cursor:default;">
-    <!--头部-->
-    <div style="width:300px;height:100px;border:0px solid green;position:absolute;">
-        <img src="http://localhost:8000/img/taologo.jpg" style="width:160px;">
-        <div style="background:#DEDEDE;width:1px;height:58px;margin-left:170px;margin-top:-65px;"></div>
-        <p style="color:#666666;font-size:27px;margin-left:190px;margin-top:-48px;">公司概况</p>
-    </div><!--头部-->
 
-
-    <div class="middle"style="border: 0px solid blue;width:1024px;height:1080px;top:80px;position:absolute;">
-        <div style="margin-left: 10px;top:10px;position: absolute;">
-            <img src="http://localhost:8000/img/work.jpg" width="390px;"height="390px">
-            <ul class="smalltu">
-                <li><img src="http://localhost:8000/img/work.jpg" width="80px;"height="80px"></li>
-                <li><img src="http://localhost:8000/img/work.jpg" width="80px;"height="80px"></li>
-                <li><img src="http://localhost:8000/img/work.jpg" width="80px;"height="80px"></li>
-                <li><img src="http://localhost:8000/img/work.jpg" width="80px;"height="80px"></li>
-            </ul>
-            <img src="img/fx.png"class="fx">
-            <span style="color: gray">分享</span>
-            <img src="img/shoucang.png"class="shoucang">
-            <span ><a href="#"style="color: gray">公司收藏</a>（200人气）</span>
-            <span class="jubao">举报</span>
+<div class="rongqi" style="border:0px solid red;background:#f1f3f8;width:1024px;height:1920px;position:relative;margin:0 auto;cursor:default;">
+    <div class="zuo1">
+        <h2 style="margin-left: 30px;font-size: 30px;">{{$company->company_name}}发布的工作岗位：{{$company->name}}</h2>
+        <div style="margin-left: 30px;">
+            <span>公司地址：{{$company->address}}</span>
+            <span style="margin-left: 30px;">性别不限</span>
+            <span style="margin-left: 30px;">预计招聘人数：{{$company->number}}人</span>
         </div>
-        <div style="float:right;right:80px;position: absolute;top:-10px;border:0px solid red;">
-            <!--<p style="font-size: 22px;color:black" ><b>BARONET COFFEE咖啡制作师</b></p>-->
-            <p style="font-size: 22px;color:black" >{{$company->company_name}}</p>
-
-            <div class="jiage">
-               <!-- <span style="padding-left:100px;padding-top: 10px">52</span>-->
-                <span style="padding-left:50px;padding-top: 20px">公司口碑</span>
-
-                <span style="padding-left:330px;padding-top: 20px">预计录取人数</span>
-                <span style="padding-left:180px;padding-top: 20px">有问题，找客服</span>
-            </div>
-            <div style="margin-top: 30px;">
-                <p >公司简介：{{$company->description}}</p>
-                <p >工司地址：{{$company->address}}</p>
-                <p>公关部负责人：{{$company->contact_person}}</p>
-                <p>联系方式：{{$company->contact}}</p>
-
-                <!--<p>我申请的时间：</p>
-                <div style="width:350px;height:50px;margin-left:120px;margin-top:-40px;border:0px solid red;">
-                <select>
-                <option value="n1">2016</option>
-                <option value="n2">2017</option>
-                </select>
-                <span>年</span>
-
-                <select>
-                <option value="a1">1</option>
-                <option value="a2">2</option>
-                <option value="a3">3</option>
-                <option value="a4">4</option>
-                <option value="a5">5</option>
-                <option value="a6">6</option>
-                <option value="a7">7</option>
-                <option value="a8">8</option>
-                <option value="a9">9</option>
-                <option value="a10">10</option>
-                <option value="a11">11</option>
-                <option value="a12">12</option>
-                </select>
-                <span>月</span>
-                 <select>
-                <option value="b1">1</option>
-                <option value="b2">2</option>
-                <option value="b3">3</option>
-                <option value="b4">4</option>
-                <option value="b5">5</option>
-                <option value="b6">6</option>
-                <option value="b7">7</option>
-                <option value="b8">8</option>
-                <option value="b9">9</option>
-                <option value="b10">10</option>
-                <option value="b11">11</option>
-                <option value="b12">12</option>
-                <option value="b13">13</option>
-                <option value="b14">14</option>
-                <option value="b15">15</option>
-                <option value="b16">16</option>
-                <option value="b17">17</option>
-                <option value="b18">18</option>
-                <option value="b19">19</option>
-                <option value="b20">20</option>
-                <option value="b21">21</option>
-                <option value="b22">22</option>
-                <option value="b23">23</option>
-                <option value="b24">24</option>
-                <option value="b25">25</option>
-                <option value="b26">26</option>
-                <option value="b27">27</option>
-                <option value="b28">28</option>
-                <option value="b29">29</option>
-                <option value="b30">30</option>
-                <option value="b31">31</option>
-                </select>
-                <span>日</span>
-                <span>~</span>
-                <br>
-                 <select>
-                <option value="m1">2016</option>
-                <option value="m2">2017</option>
-                </select>
-                <span>年</span>
-
-                <select>
-                <option value="c1">1</option>
-                <option value="c2">2</option>
-                <option value="c3">3</option>
-                <option value="c4">4</option>
-                <option value="c5">5</option>
-                <option value="c6">6</option>
-                <option value="c7">7</option>
-                <option value="c8">8</option>
-                <option value="c9">9</option>
-                <option value="c10">10</option>
-                <option value="c11">11</option>
-                <option value="c12">12</option>
-                </select>
-                <span>月</span>
-                 <select>
-                <option value="m1">1</option>
-                <option value="m2">2</option>
-                <option value="m3">3</option>
-                <option value="m4">4</option>
-                <option value="m5">5</option>
-                <option value="m6">6</option>
-                <option value="m7">7</option>
-                <option value="m8">8</option>
-                <option value="m9">9</option>
-                <option value="m10">10</option>
-                <option value="m11">11</option>
-                <option value="m12">12</option>
-                <option value="m13">13</option>
-                <option value="m14">14</option>
-                <option value="m15">15</option>
-                <option value="m16">16</option>
-                <option value="m17">17</option>
-                <option value="m18">18</option>
-                <option value="m19">19</option>
-                <option value="m20">20</option>
-                <option value="m21">21</option>
-                <option value="m22">22</option>
-                <option value="m23">23</option>
-                <option value="m24">24</option>
-                <option value="m25">25</option>
-                <option value="m26">26</option>
-                <option value="m27">27</option>
-                <option value="m28">28</option>
-                <option value="m29">29</option>
-                <option value="m30">30</option>
-                <option value="m31">31</option>
-                </select>
-                <span>日</span>
-                <br>
-                <span>每周</span>
-                <input name="week" type="checkbox" value="" />一
-                <input name="week" type="checkbox" value="" />二
-                <input name="week" type="checkbox" value="" />三
-                <input name="week" type="checkbox" value="" />四
-                <input name="week" type="checkbox" value="" />五
-                <input name="week" type="checkbox" value="" />六
-                <input name="week" type="checkbox" value="" />日
-                <br>
-                <span>每天</span>
-
-                <select>
-                <option value="s7">7:00</option>
-                <option value="s8">8:00</option>
-                <option value="s9">9:00</option>
-                <option value="s10">10:00</option>
-                <option value="s11">11:00</option>
-                <option value="s12">12:00</option>
-                <option value="s13">13:00</option>
-                <option value="s14">14:00</option>
-                <option value="s15">15:00</option>
-                <option value="s16">16:00</option>
-                <option value="s17">17:00</option>
-                <option value="s18">18:00</option>
-                <option value="s19">19:00</option>
-                <option value="s20">20:00</option>
-                <option value="s21">21:00</option>
-                <option value="s22">22:00</option>
-                <option value="s23">23:00</option>
-                <option value="s24">24:00</option>
-                </select>
-                <span>~</span>
-                <select>
-                <option value="t7">7:00</option>
-                <option value="t8">8:00</option>
-                <option value="t9">9:00</option>
-                <option value="t10">10:00</option>
-                <option value="t11">11:00</option>
-                <option value="t12">12:00</option>
-                <option value="t13">13:00</option>
-                <option value="t14">14:00</option>
-                <option value="t15">15:00</option>
-                <option value="t16">16:00</option>
-                <option value="t17">17:00</option>
-                <option value="t18">18:00</option>
-                <option value="t19">19:00</option>
-                <option value="t20">20:00</option>
-                <option value="t21">21:00</option>
-                <option value="t22">22:00</option>
-                <option value="t23">23:00</option>
-                <option value="t24">24:00</option>
-                </select>
-                 </div>-->
-           </div>
-            <button style="position: absolute;top:440px;width: 150px;height: 40px;font-size: 18px;background:#FFE4D0;border:1px solid #E5511D;"><a href="orderconfirm.html" style="color:#E5511D;"><b>公司官网</b></a></button>
-            <button style="position: absolute;top:440px;width: 200px;height: 40px;font-size: 18px;right: 80px;background:#F22D00;border:0px;"><a href="{{url('company_job_buy',$company->company_name)}}" style="color:white;background:url(img/gouwuche.png)left center no-repeat "><span style="padding-left: 30px;">公司发布的岗位</span></a></button>
-            <!--<p style="margin-top: 20px;">选择支付方式：</p>
-            <div style="margin-top:-10px;margin-left:0px;">
-                <img src="img/zhifu1.png">
-                <span>快捷支付</span>
-                <img src="img/zhifu2.png">
-                <span>信用卡支付</span>
-                <img src="img/zhifu3.png">
-                <span>余额宝支付</span>
-                <img src="img/zhifu4.png">
-                <span>蚂蚁花呗</span>
-            </div>-->
+        <div style="margin-top: 40px;margin-left: -10px">
+            <ul style="list-style-type:none;">
+                <li><span>工作类型：</span>{{$company->work_type}}</li>
+                <li style="margin-left: 220px;margin-top: -20px"><span>结算方式：</span>每月结算</li>
+                <li style="margin-top: 10px;"><span>工作天数：</span>{{$company->time}}</li>
+                <li style="margin-top: 10px;"><b style="color: orange">薪水:{{$company->salary}}</li>
+                <li style="margin-top: 10px;"><b style="color: orange">联系人：{{$company->contact_person}}</li>
+                <li style="margin-top: 10px;"><b style="color: orange">电话：{{$company->contact}}</li>
+            </ul>
         </div>
 
-        <div style="border-top:3px solid black;top:620px;position: absolute;width: 800px;left: 50px; ">
-            <ul class="nav">
-                <li id="n1">公司详情</li>
-                <li id="n2">累计评价<span style="color: #FF5500">&nbsp;52</span></li>
-                <li id="n3">联系客服</li>
-            </ul>
-            <div class="n1tan" style="border: 0px solid blue;width: 800px;left: 50px;height:450px;">
-                <p style="font-size: 18px;"><b>公司要求：</b></p>
-                <p>1.重视调动学生学习积极性、主动性，重点突出，讲究实效、注重启发、培养兴趣；</p>
-                <p>2.辅导时从易到难，把握梯度，学生的作业认真批改、讲评；</p>
-                <p>3.具有良好的师德和强烈的工作责任心;</p>
-                <p style="font-size: 18px;"><b>公司待遇：</b></p>
-                <p>每周上班5天，提供晚餐</p>
+    </div>
+    <div class="you1">
+     <a href="#"> <img style="height: 100px;width: 320px;margin-left: 0px;margin-top:0px;position: absolute;"src="../{{$company->file_routrs}}"></a>
+       <div style="margin-left: 20px;border-top:2px solid #eaeaea ;height: 200px;width: 290px;margin-top: 100px; ">
+           <h3>{{$company->company_name}}</h3>
+           <span>公司宣言：{{$company->description}}</span>
+           <p>&nbsp;&nbsp;&nbsp;</p>
+       </div>
+    </div>
+    <div class="zuo2">
+        <h3 style="margin-left: 40px;">职位详情</h3>
+        <div style="border-bottom:2px dotted #eaeaea;height: 100px;width: 570px;margin-left: 40px;margin-top:- 10px;position: absolute;">
+          <p >工作时间</p>
+           <p>8:00~11:00,13:00~14:00,16:00~20:00</p>
+        </div>
+        <div style="border-bottom:2px dotted #eaeaea;height: 100px;width: 570px;margin-left: 40px;margin-top:100px;position: absolute;">
+            <p>薪资待遇</p>
+            <p>每月结算：&nbsp;薪资：{{$company->salary}}&nbsp;薪资待遇-薪资半月结，15天结算一次，每月15号30结算一次</p>
+        </div>
+        <div style="border-bottom:2px dotted #eaeaea;height: 100px;width: 570px;margin-left: 40px;margin-top:210px;position: absolute;">
+            <p>工作地点</p>
+            <p>{{$company->address}}</p>
+        </div>
+        <div style="border-bottom:2px dotted #eaeaea;height: 150px;width: 570px;margin-left: 40px;margin-top:320px;position: absolute;">
+            <p>岗位要求</p>
+            <p>好工作来啦！通过率高！工作要求：男女不限，普通话标准，无责任，无销售。上岗人数：50人。上班时间：早9：00-12:00 下午13:30-18:00 中午休息一个半小时！周一至周日，每周最少做满三天。薪资发放：每月15日，30日各发放一次。</p>
+        </div>
+        <div style="border-bottom:2px dotted #eaeaea;height: 100px;width: 570px;margin-left: 40px;margin-top:480px;position: absolute;">
+            <p>工作内容</p>
+            <p>针对已办理贷款的客户，进行电话回访，并记录即可。工作简单，非常轻松！</p>
+        </div>
+        <div style="border-bottom:2px dotted #eaeaea;height: 170px;width: 570px;margin-left: 40px;margin-top:580px;position: absolute;">
+            <p>面试信息</p>
+            <p>面试时间:2015-11-28 上午9点10分    面试地点: {{$company->address}}C座1楼大厅 到了给负责人打电话</p>
+            <p style="margin-top: -10px;"> 面试时间:2015-11-28    面试地点: {{$company->address}} 地铁4号线魏公村D口出向南400再向西150米即到</p>
+        </div>
+        <div style="border-bottom:2px dotted #eaeaea;height: 100px;width: 570px;margin-left: 40px;margin-top:750px;position: absolute;">
+            <p>截止时间</p>
+            <p>2016-06-01</p>
+        </div>
+        <div style="border-bottom:1px solid #eef8ed;background:#eef8ed;height: 100px;width: 570px;margin-left: 40px;margin-top:880px;position: absolute;">
+            <div style="border: 1px solid #fd6000;height: 50px;width: 150px;margin-left:20px;margin-top: 30px;background: #fd6000;float:left"><a href="{{url('job_buy',$company->company_name)}}"style="text-decoration: none;font-size: 18px;color: #ffffff;margin-left: 15px;">购买岗位</a></div>
 
-            </div>
-            <div class="n2tan" style="border: 0px solid red;width: 800px;left: 50px;height:450px;">
-                <table width="800" height="300" border="2" frame="hsides"rules="rows">
-                    <tr>
-                        <td>评价</td>
-                        <td>评价人</td>
-                        <td>商品信息</td>
-                        <td>操作</td>
-                    </tr>
-                    <tr>
-                        <td><img src="img/xing3.jpg"></td>
-                        <td>王敏</td>
-                        <td>英语家教</td>
-                        <td><button>回复</button></td>
-                    </tr>
-                    <tr>
-                        <td><img src="img/xing5.jpg"></td>
-                        <td>赵杰</td>
-                        <td>英语家教</td>
-                        <td><button>回复</button></td>
-                    </tr>
-                    <tr>
-                        <td><img src="img/xing4.jpg"></td>
-                        <td>匿名</td>
-                        <td>英语家教</td>
-                        <td><button>回复</button></td>
-                    </tr>
-                </table>
-                <div class="xiabu3" style="border:0px solid blue;width:100%;height:70px;position:absolute;top:300px;cursor:default;">
-                    <ul>
-                        <li><div align="center" style="width:80px;height:28px;border:1px solid grey;font-size:18px;">上一页</div></li>
-                        <li><div align="center">1</div></li>
-                        <li><div align="center">2</div></li>
-                        <li><div align="center">3</div></li>
-                        <li><div align="center">4</div></li>
-                        <li><div align="center">5</div></li>
-                        <li><div align="center">6</div></li>
-                        <li><div align="center">7</div></li>
-                        <li><div align="center">8</div></li>
-                        <li><div align="center">....</div></li>
-                        <li><div align="center" style="width:80px;height:28px;border:1px solid grey;font-size:18px;">下一页</div></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="n3tan" style="border: 0px solid yellow;width: 800px;left: 50px;height:450px;">
-                <table width="800" height="300" border="2" frame="hsides"rules="rows">
-                    <tr>
-                        <td>客服代表</td>
-                        <td>员工编号</td>
-                        <td>手机号码</td>
-                        <td> QQ </td>
-                    </tr>
-                    <tr>
-                        <td>王海</td>
-                        <td>001</td>
-                        <td>13545332222</td>
-                        <td>456677</td>
-                    </tr>
-                    <tr>
-                        <td>李梅</td>
-                        <td>002</td>
-                        <td>1543345676</td>
-                        <td>6766544</td>
-                    </tr>
-                    <tr>
-                        <td>张杰</td>
-                        <td>112</td>
-                        <td>15899875566</td>
-                        <td>145755677</td>
-                    </tr>
-                </table>
+            <div style="border: 1px solid #fd6000;height: 50px;width: 150px;float:right;margin-right:20px;margin-top: 30px;background: #fd6000"><a href="{{url('job_save',$company->company_name)}}" style="text-decoration: none;font-size: 18px;color: #ffffff;margin-left: 15px;margin-top: 5px;position: absolute">职位收藏</a></div>
+
+           <!-- <p style="margin-top: -40px;margin-left: 180px;position: absolute">报名成功后可以查看联系电话</p>!-->
+        </div>
+    </div>
+    <div class="zuo3">
+        <h3 style="margin-left: 40px;">其他职位</h3>
+        <div style="border-top: 2px dotted #eaeaea;height: 80px;width: 620px;margin-left: 20px">
+         <p style="color: #369bce;font-size: 18px;">G1-国际U盟产品运营经理</p>
+            <div style="border: 1px solid #fd6000;height: 40px;width: 130px;margin-left:450px;margin-top:-40px;background: #fd6000"><a href="#"style="text-decoration: none;font-size: 20px;color: #ffffff;margin-left: 15px;margin-top: 5px;position: absolute">查看详情</a></div>
+            <p style="margin-top: -10px;"><span style="color: #000000">120元/天</span><span style="margin-left: 20px;color: #000000">杭州</span><span  style="margin-left: 20px;color: #000000">本科</span></p>
+        </div>
+        <div style="border-top: 2px dotted #eaeaea;height: 80px;width: 620px;margin-left: 20px">
+            <p style="color: #369bce;font-size: 18px;">G1-国际U盟产品运营经理</p>
+            <div style="border: 1px solid #fd6000;height: 40px;width: 130px;margin-left:450px;margin-top:-40px;background: #fd6000"><a href="#"style="text-decoration: none;font-size: 20px;color: #ffffff;margin-left: 15px;margin-top: 5px;position: absolute">查看详情</a></div>
+            <p style="margin-top: -10px;"><span style="color: #000000">120元/天</span><span style="margin-left: 20px;color: #000000">杭州</span><span  style="margin-left: 20px;color: #000000">本科</span></p>
+        </div>
+        <div style="border-top: 2px dotted #eaeaea;border-bottom: 2px dotted #eaeaea;height: 80px;width: 620px;margin-left: 20px">
+            <p style="color: #369bce;font-size: 18px;">G1-国际U盟产品运营经理</p>
+            <div style="border: 1px solid #fd6000;height: 40px;width: 130px;margin-left:450px;margin-top:-40px;background: #fd6000"><a href="#"style="text-decoration: none;font-size: 20px;color: #ffffff;margin-left: 15px;margin-top: 5px;position: absolute">查看详情</a></div>
+            <p style="margin-top: -10px;"><span style="color: #000000">120元/天</span><span style="margin-left: 20px;color: #000000">杭州</span><span  style="margin-left: 20px;color: #000000">本科</span></p>
+        </div>
+        <div class="xiabu3" style="border:0px solid blue;width:100%;height:70px;position:absolute;cursor:default;">
+            <ul>
+                <li><div align="center" style="width:80px;height:28px;border:1px solid grey;font-size:18px;">上一页</div></li>
+                <li><div align="center">1</div></li>
+                <li><div align="center">2</div></li>
+                <li><div align="center">3</div></li>
+                <li><div align="center">4</div></li>
+                <li><div align="center">5</div></li>
+                <li><div align="center">6</div></li>
+                <li><div align="center">7</div></li>
+                <li><div align="center">8</div></li>
+                <li><div align="center">....</div></li>
+                <li><div align="center" style="width:80px;height:28px;border:1px solid grey;font-size:18px;">下一页</div></li>
+            </ul>
+        </div>
+    </div>
+    <div class="you2">
+        <div style="border: 1px solid #f1ffe7;background-color: #f1ffe7;height: 50px;width: 310px;">
+            <h2 style="margin-left: 80px;margin-top: 8px;position: absolute">兼职担保职位</h2>
+            <div style="height: 300px;width: 310px;border: 0px solid red;margin-top: 60px;">
+            <a href="#"> <img style="height:300px;width: 300px;"src="../img/gongsi2.png"></a>
             </div>
         </div>
     </div>
-</div>
+    <div class="you3">
+        <h3 style="margin-left: 40px;">你可能感兴趣的职位</h3>
+        <div style="border-bottom: 2px dotted #eaeaea;height: 100px;margin-left: 40px;width: 250px;">
+            <p style="margin-top: 0px;">兼职招生顾问</p>
+            <p style="margin-top: -5px;"><b style="color: orange;">130</b>元/天</p>
+            <p style="margin-top: -5px;">工作时间11.1-11.3</p>
+        </div>
+        <div style="border-bottom: 2px dotted #eaeaea;height: 100px;margin-left: 40px;width: 250px;">
+            <p style="margin-top: 10px;">市场调研员</p>
+            <p style="margin-top: -5px;"><b style="color: orange;">80</b>元/天</p>
+            <p style="margin-top: -5px;">工作时间11.19-11.23p>
+        </div>
+        <div style="border-bottom: 2px dotted #eaeaea;height: 100px;margin-left: 40px;width: 250px;">
+            <p style="margin-top:10px;">餐饮小时工</p>
+            <p style="margin-top: -5px;"><b style="color: orange;">10</b>元/小时</p>
+            <p style="margin-top: -5px;">工作时间11.12-11.26</p>
+        </div>
+        <div style="border-bottom: 2px dotted #eaeaea;height: 100px;margin-left: 40px;width: 250px;">
+            <p style="margin-top: 10px;">北大青鸟信息采集员兼职</p>
+            <p style="margin-top: -5px;"><b style="color: orange;">20</b>元/小时</p>
+            <p style="margin-top: -5px;">工作时间11.24-12.11</p>
+        </div>
 
-<!--底部-->
-<div style="position:absolute;top:1250px;height:50px;width:100%;border-top:1px solid #D2D0D0;margin-top: 40px;">
-    <div align="center"style="margin-top: 15px;">@Taojianzhi.com</div>
-</div><!--底部-->
+    </div>
+    <!--底部导航栏-->
+    <div class="dibu" style="width:100%;height:140px;border:1px solid white;position:absolute;top:1950px;">
+        <div style="width:100%;height:12px;background:#FF5500"></div>
+        <div style="width:100%;height:1px;border-top:1px dashed #FF5500;margin-top:3px;"></div>
+        <img src="../img/taologo.jpg" style="width:110px;border:1px solid #FF5500;margin-top:40px;margin-left:130px;">
+        <a href="{{"company/hello"}}" style="margin-top:-53px;margin-left:350px;">联系我们</a>
+        <a href="#" style="margin-top:-22px;margin-left:470px;">加入我们</a>
+        <a href="#" style="margin-top:-22px;margin-left:590px;">关注我们</a>
+        <a href="#" style="margin-top:8px;margin-left:350px;">关于我们</a>
+        <a href="#" style="margin-top:-22px;margin-left:470px;">友情链接</a>
+        <a href="#" style="margin-top:-22px;margin-left:590px;">意见反馈</a
+        <img src="../img/erweima.jpg" style="width:70px;margin-left:800px;margin-top:-56px;">
+        <p style="margin-left:440px;">www.taojianzhi.com</br>网络版权归淘兼职所有</p>
+
+    </div>
+</div>
 </body>
 </html>

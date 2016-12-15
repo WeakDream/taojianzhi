@@ -3,10 +3,10 @@
 <head lang="en">
     <meta charset="utf-8">
     <title>个人中心</title>
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/geren.css">
-    <script src="../js/laydate/laydate.js"></script>
-    <script type="text/javascript" src="../js/jquery-1.11.3.min.js" /></script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/geren.css">
+    <script src="js/laydate/laydate.js"></script>
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js" /></script>
     <script type="text/javascript">
     $(document).ready(function(){
         $(".daohang4tan").hide();
@@ -897,6 +897,10 @@
     </script>
 
     <style type="text/css">
+        .m31tan tr{
+            border-bottom: 1px solid blue;
+        }
+
 
         .jianlitan{
             margin-left: 240px;
@@ -996,15 +1000,17 @@
 
 <div class="chen">
     <div class="chen1" style="width:1024px;height:100%;margin:0 auto;">
-        <img src="../img/taologo2.jpg" style="width:140px;margin-left: 20px;margin-top:10px;">
+        <img src="img/taologo2.jpg" style="width:140px;margin-left: 20px;margin-top:10px;">
         <div style="font-size:20px;color:#ffffff;margin-top:-55px;margin-left: 230px;position: absolute;font-weight:600;">个人中心</div>
         <div style="font-size:18px;color:#ffffff;margin-top:-53px;margin-left: 350px;position: absolute" id="zhanghushezhi">账户设置</div>
         <div style="font-size:18px;color:#ffffff;margin-top:-53px;margin-left: 470px;position: absolute">我的资金</div>
-        <form>
-            <input type="text" placeholder="搜索" style="padding-left:5px;border:1px solid #FF5500;height:28px;width:170px;top:27px;margin-left:630px;position:absolute;border-radius:2px;">
-            <button style="color:white;font-size:18px;font-weight:600;width:50px;height:26px;background:#FF8c00;border:0px;left:960px;top:28px;position:absolute;cursor:pointer;border-radius:2px;"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+
+            <form>
+                <input type="text" placeholder="搜索" style="padding-left:5px;border:1px solid #FF5500;height:28px;width:180px;top:27px;margin-left:630px;position:absolute;border-radius:2px;">
+                <button style="color:white;font-size:18px;font-weight:600;width:50px;height:26px;background:#FF8c00;border:0px;left:930px;top:28px;position:absolute;cursor:pointer;border-radius:2px;margin-right: 0px;"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
             <a href="#" style="text-decoration:none;border:1px solid #ffffff;height:30px;width:100px;top:25px;margin-left:900px;position:absolute;font-size:17px;color: #ffffff">&nbsp&nbsp&nbsp发布消息</a>
         </form>
+
     </div>
 </div>
 
@@ -1092,12 +1098,12 @@
         <div class="shenghuo" style="position:relative;width:110px;height:33px;line-height: 33px;margin-left:50px;margin-top:10px;font-size: 18px;font-weight: 700;clear:both;padding-bottom: 12px;">
             <span style="color:#595757;">生活工具</span>
         </div>
-        <img src="../img/tubiao.jpg" style="margin-left:40px;margin-top:10px;">
+        <img src="img/tubiao.jpg" style="margin-left:40px;margin-top:10px;">
     </div>
     <!--右部-->
     <div class="zhongxintan">
         <div style="border: 0px solid red;height: 150px;width: 100%;margin-left:40px;">
-            <img src="../img/person.jpg" style="width:130px;height:130px;border-radius:65px;">
+            <img src="img/person.jpg" style="width:130px;height:130px;border-radius:65px;">
             <p style="font-size: 20px;margin-top: -80px;margin-left:180px;position: absolute;"><b>账户名字&nbsp{{session::get("username")}}</b></p>
             <p style="margin-left: 400px;margin-top: -75px;position: absolute">消息|余额</p>
         </div>
@@ -1105,7 +1111,7 @@
             <span id="m11">最近发布信息</span>
             <span style="margin-left: 20px;"id="m12">我浏览过的信息</span>
             <div class="m11tan">
-                <p style="margin-top: 50px;margin-left: 250px;"> <img src="../img/sm.png">您还没有发布消息。<a href="#"style="text-decoration: none">去发一条吧</a></p>
+                <p style="margin-top: 50px;margin-left: 250px;"> <img src="img/sm.png">您还没有发布消息。<a href="#"style="text-decoration: none">去发一条吧</a></p>
             </div>
             <div class="buy">
                 @if(isset($results))
@@ -1143,7 +1149,7 @@
         </div>
         <div style="margin-left: 20px;margin-top:45px;border-top: 1px solid #eaeaea">
             <div class="m21tan">
-                <p style="margin-top: 50px;margin-left: 250px;"> <img src="../img/sm.png"><span style="margin-left:10px;">您还没有发布消息。</span><a href="#"style="text-decoration: none；">去发一条吧</a></p>
+                <p style="margin-top: 50px;margin-left: 250px;"> <img src="img/sm.png"><span style="margin-left:10px;">您还没有发布消息。</span><a href="#"style="text-decoration: none；">去发一条吧</a></p>
             </div>
             <div class="m22tan">
                 <table style="font-size: 14px;">
@@ -1153,7 +1159,7 @@
                         <th >操作</th>
                     </tr>
                 </table>
-                <img src="../img/sm.png"style="margin-top: 50px;">
+                <img src="img/sm.png"style="margin-top: 50px;">
                 <p style="margin-left: 35px;margin-top: -30px;">说明:</p>
                 <p style="font-size: 12px;"> 1.待审核:待审核中的信息除了您自己外，其他人无法看到，工作人员会在24小时内为您审核。</p>
             </div>
@@ -1181,31 +1187,29 @@
         </div>
         <div style="margin-left: 20px;margin-top:45px;border-top: 1px solid #eaeaea">
             <div class="m31tan">
-                <table style="font-size: 14px;height: 80px;">
+                <table style="font-size: 14px;height: 80px;width: 800px">
                     <tr>
                         <th width="357.6">信息标题</th>
                         <th width="350">更新时间</th>
                         <th >操作</th>
                     </tr>
-                    <tr>
-                       <!-- <th colspan="3"style="text-align: center;">您没有收藏过任何信息</th>!-->
-                    </tr>
+
                 </table>
                 <form action="{{url('delete_save_job')}}" method="post">
-                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    @if(isset($saved_company))
-                        @if(!empty($saved_company))
-                            @foreach($saved_company as $company)
+
+                        @if(!empty($company_gets))
+                            @foreach($company_gets as $company)
                                 <table style="width: 800px;broder: 0px;">
                                     <tr style="height: 40px">
-                                        <td><a href="{{url('gongsi',$company->company_name)}}">{{$company->company_name}}</a></td>
-                                        <td>{{$company->created_at}}</td>
-                                        <td><input name="{{$company->company_id}}" type="submit" value="删除"></td>
+                                        <td width="350"><a href="{{url('company',$company->company_name)}}">{{$company->company_name}}</a></td>
+                                        <td width="340">{{$company->created_at}}</td>
+                                        <!--<td><input name="{{$company->company_id}}" type="submit" value="删除"></td>!-->
+                                        <td><button style="background: #ff5500;border: 0px solid black">删除</button></td>
+                                        <td><button style="background: #ff5500;border: 0px solid black">购买</button></td>
                                     </tr>
                                 </table>
                             @endforeach
                         @endif
-                    @endif
                 </form>
             </div>
             <div class="m32tan">
@@ -1251,8 +1255,18 @@
         <p style="margin-left: 55px;font-size: 16px;margin-top:30px;">简历是求职的利器，填写简历才能尽快找到好工作！</p>
         <p style="margin-left: 55px;font-size: 16px;">去填写一份优质的简历吧，认真的人，才能让认真的企业找上你！</p>
         <p style="margin-left: 55px;font-size:18px;font-weight: 700;">请在这设计你的简历吧：</p>
-        <p><span id="jianli" style="margin-left: 55px;border: 1px solid #99ffcc;height: 56px;width:186px;display: inline-block;border-radius: 8px;background: #66ccff;"><a href="{{url('test1')}}" style="text-decoration: none;margin-top:10px;margin-left:40px;font-size: 25px;position: absolute">点击去填写</a></span>
-        </p>
+
+        {{--<p><span id="jianli" style="margin-left: 55px;border: 1px solid #99ffcc;height: 56px;width:186px;display: inline-block;border-radius: 8px;background: #66ccff;"><a href="{{url('uploading_resume')}}" style="text-decoration: none;margin-top:10px;margin-left:40px;font-size: 25px;position: absolute">上传你的简历</a></span></p>--}}
+
+        <form method="post" action="{{url('upload_resume')}}" enctype="muitipart/form-data">
+
+
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <input type="file" name="myfile" />
+
+            <input type="submit" name="submit" value="Submit" style="margin-left: 55px;border: 1px solid #99ffcc;height: 56px;width:186px;display: inline-block;border-radius: 8px;background: #66ccff;" />
+
+        </form>
 
         <div class="zhaopintan1">
             <h3 style="color: #FF5500;margin-left: 40px;">职位管理</h3>

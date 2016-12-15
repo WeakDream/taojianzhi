@@ -3,8 +3,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>用户注册</title>
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-    <script type="text/javascript" src="../js/jquery-1.11.3.min.js" /></script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js" /></script>
     <script type="text/javascript">
     $(document).ready(function(){
         $(".daohang4tan").hide();
@@ -49,11 +49,13 @@
         oName.onclick=function(){
            // name_msg.style.display="block";
             //name_msg.innerHTML='<i class="ati"></i>5-20个字符，一个汉字为两个字符';
+            $('.tishiyi').show();
            $('.tishiyi').html(hello);
         }
         oName.onkeyup=function(){
             count.style.display="block";
-            name_length=getLength(this.value);
+            //name_length=getLength(this.value);
+            name_length=this.value.length;
             count.innerHTML=name_length+"个字符";
             if(name_length==0){
                 count.style.display="none";
@@ -63,19 +65,19 @@
             //含有非法字符
             var re=/[^\w\u4e00-\u9fa5]/g;
             if(re.test(this.value)){
-                $('.tishiyi').html("含有非法字符!!!");
+                $('.tishiyi').html("含有非法字符");
             }
             //不能为空
             else if((this.value)==""){
-                $('.tishiyi').html("不能为空！！");
+                $('.tishiyi').html("不能为空");
             }
             //长度超过25个字符
             else if(getLength(this.value)>20){
-                $('.tishiyi').html("长度不能超过20！");
+                $('.tishiyi').html("长度不能超过20");
             }
             //长度少于6个字符
             else if(getLength(this.value)<5){
-               $('.tishiyi').html("长度不能小于5！");
+               $('.tishiyi').html("长度不能小于5");
             }
             //OK!
             else{
@@ -84,13 +86,14 @@
         }
         //邮箱
         pwd.onclick=function(){
+            $('.tishiy2').show();
             $('.tishiy2').html("邮箱格式为：xxx@xxx.xxx");
         }
         pwd.onblur=function(){
             var myreg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/g;
             if((this.value)=="")
             {
-                $('.tishiy2').html("不能为空！！");
+                $('.tishiy2').html("不能为空");
             }
             else if(!myreg.test(this.value)){
                 $('.tishiy2').html("请输入正确的邮箱");
@@ -102,6 +105,7 @@
         }
         //密码
         pwd2.onclick=function(){
+                $('.tishiy3').show();
                 $('.tishiy3').html("长度为5到16个字符");
         }
       /*  pwd2.onkeyup=function(){
@@ -131,7 +135,7 @@
             //不能为空
             if(this.value==""){
                // pwd2_msg.innerHTML='<i style="display:inline-block;width:25px;height:20px;vertical-align:middle;background:url(img/busy.png)no-repeat;"></i>不能为空！';
-                $('.tishiy3').html("不能为空!!");
+                $('.tishiy3').html("不能为空");
             }
             //不能用相同字符
             //else if(m==this.value.length){
@@ -153,6 +157,7 @@
         //    $('.tishiy4').html("请确认密码");
         //}
         $('#foo').click(function () {
+            $('.tishiy4').show();
             $('.tishiy4').html("请确认密码");
         });
         pwd3.onblur=function(){
@@ -317,38 +322,40 @@
 <div class="rongqi" style="border:0px solid red;width:1024px;top:20px;height:800px;position:relative;margin:0 auto;cursor:default;">
     <!--二维码-->
     <div style="width:300px;height:100px;border:0px solid green;">
-        <img src="../img/taologo.jpg" style="width:160px;">
+        <img src="img/taologo.jpg" style="width:160px;">
         <div style="background:#DEDEDE;width:1px;height:58px;margin-left:170px;margin-top:-65px;"></div>
         <p style="color:#666666;font-size:27px;margin-left:185px;margin-top:-40px;">用户注册</p>
     </div>
     <!--注册-->
-    <div style="width:700px;height:400px;border:1px solid blue;margin-left:200px;margin-top:20px;">
+    <div style="width:600px;height:420px;border:1px solid blue;margin-left:200px;margin-top:20px;">
         <p style="color:#8888A5;font-size:17px;font-weight:700;margin-left:30px;">邮箱注册</p>
         <div style="width:100%;height:1px;background:#CDCFD1;"></div>
         <div class="zhuce" style="border:0px solid green;width:700px;height:250px;margin-left:30px;margin-top:40px;">
             <form action="register_check" method="post">
-                <div style="float: right;height: auto;width: 300px;">
-                    <p class="tishiyi" style="font-size: 18px;color: red;word-break: keep-all;"></p>
+                <div class="alert-danger tishiyi" style="float: right;height: 25px;width: 216px;margin-right: 150px;display: none">
+                    <p class="tishiyi" style="font-size: 16px;color: red;word-break: keep-all;"></p>
                 </div>
                 <div ><label><span style="font-size:16px;">用户名</span>
                         <input type="text" name="nickName" class="text" ></label>
+
                 </div>
 
+
                 <div><label><span></span><b id="count">0个字符</b></label></div>
-                <div style="float: right;height: auto;width: 300px;">
+                <div class="alert-danger tishiy2" style="float: right;height: 25px;width: 216px;margin-right: 150px;display: none">
                     <p class="tishiy2" style="font-size: 18px;color: red;word-break: keep-all;"></p>
                 </div>
                 <div style="margin-bottom:5px;"><label><span style="font-size:16px;">电子邮箱</span>
                         <input type="text" name="email" class="text"></label>
                 </div>
-                <div style="float: right;height: auto;width: 300px;">
+                <div class="alert-danger tishiy3" style="float: right;height: 25px;width: 216px;margin-right: 150px;display: none">
                     <p class="tishiy3" style="font-size: 18px;color: red;word-break: keep-all;"></p>
                 </div>
                 <div style="margin-bottom:5px;"><label><span style="font-size:16px;">密码</span>
                         <input type="password"  name="password" class="text"></label>
                 </div>
                 <div style="margin:3px 0 10px 0"><label><span></span><em class="active" style="margin-left:15px;">弱</em><em>中</em><em>强</em></label></div>
-                <div style="float: right;height: auto;width: 300px;">
+                <div class="alert-danger tishiy4" style="float: right;height: 25px;width: 216px;margin-right: 150px;display: none">
                     <p class="tishiy4" style="font-size: 18px;color: red;word-break: keep-all;"></p>
                 </div>
                 <div style="margin-bottom:5px;"><label><span style="font-size:16px;">确认密码</span>
@@ -367,17 +374,18 @@
                 </br></br>
                 <input type="submit" name="submit" value="立即注册" class="btn btn-warning" style="background:#FF4400;margin-left:93px;">
                 <span>已有帐号？</span>
-                <a href="/login">去登录</a>
+                <a href="{{url("login")}}">去登录</a>
             </form>
         </div>
-
+<div style="margin-top: 35px">
   @if($errors->any())
 <ul class='alert alert-danger'>
 @foreach($errors->all() as $error)
-<li>{{$error}}</li>
+<li style="margin-left: 40px">{{$error}}</li>
 @endforeach
 </ul>
 @endif
+</div>
     </div>
 
 
@@ -386,14 +394,14 @@
     <div class="dibu" style="width:100%;height:140px;border:1px solid white;position:absolute;top:550px;">
         <div style="width:100%;height:12px;background:#FF5500"></div>
         <div style="width:100%;height:1px;border-top:1px dashed #FF5500;margin-top:3px;"></div>
-        <img src="../img/taologo.jpg" style="width:110px;border:1px solid #FF5500;margin-top:40px;margin-left:130px;">
+        <img src="img/taologo.jpg" style="width:110px;border:1px solid #FF5500;margin-top:40px;margin-left:130px;">
         <a href="#" style="margin-top:-53px;margin-left:350px;">联系我们</a>
         <a href="#" style="margin-top:-22px;margin-left:470px;">加入我们</a>
         <a href="#" style="margin-top:-22px;margin-left:590px;">关注我们</a>
         <a href="#" style="margin-top:8px;margin-left:350px;">关于我们</a>
         <a href="#" style="margin-top:-22px;margin-left:470px;">友情链接</a>
         <a href="#" style="margin-top:-22px;margin-left:590px;">意见反馈</a>
-        <img src="../img/erweima.jpg" style="width:70px;margin-left:800px;margin-top:-56px;">
+        <img src="img/erweima.jpg" style="width:70px;margin-left:800px;margin-top:-56px;">
         <p style="margin-left:440px;">www.taojianzhi.com</br>网络版权归淘兼职所有</p>
     </div>
 

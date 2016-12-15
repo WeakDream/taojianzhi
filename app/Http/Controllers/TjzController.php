@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
+use\Mail;
 class TjzController extends Controller {
 
 	/**
@@ -30,7 +31,7 @@ class TjzController extends Controller {
 	public function index(){
         //$test=new\App\company();
 		$inputs=DB::table('jobs')->paginate(8);
-    	return view('taojianzhi/index3',["inputs"=>$inputs]);
+    	return view('taojianzhi/index',["inputs"=>$inputs]);
        // $inputs=$test->where('id','=',1)->first();
         //dd($inputs->logo);
 	}
@@ -483,6 +484,14 @@ class TjzController extends Controller {
         }
         return view('taojianzhi/index3',compact('m'));
         
+    }
+    public  function  send(Request $request)
+    {
+        $data=['email'=>'1485846902@qq.com','name'=>'zhao'];
+        Mail::send('activemail',$data,function($message)use($data)
+        {
+            $message->to($data['email'],$data['name'])->subject("淘兼职");
+        });
     }
      
 
