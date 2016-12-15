@@ -43,7 +43,7 @@
                             success:function (json) {
                                 //alert("hello");
                                 if(json.state=="success") {
-                                    location.href = 'http://localhost:8000/personal_center';
+                                    location.href = 'personal_center';
                                 }
                                 if(json.state=="false")
                                 {

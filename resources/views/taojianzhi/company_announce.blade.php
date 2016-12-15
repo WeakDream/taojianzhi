@@ -332,13 +332,10 @@
                             <span>公司图片</span>
                         </th>
                         <td>
-
-
                             <div>
                                 <a href="javascript:;" class="file" >&nbsp;图片上传<input type="file" name="myfile" id=""></a>
                                 <span id="upload_Tip"></span>
                             </div>
-
                         </td>
                     </tr>
                     <tr>

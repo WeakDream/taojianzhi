@@ -26,6 +26,9 @@ Route::post('resume_complete/{id}','TjzController@resume_complete');
 Route::get('register','TjzController@register');
 Route::post('register_check','TjzController@register_check');
 
+Route::get('pay/personal_center',[
+    'as' => 'personal_center' , 'uses' => 'TjzController@personal_center'
+]);
 Route::get('personal_center',[
     'as' => 'personal_center' , 'uses' => 'TjzController@personal_center'
 ]);
@@ -77,5 +80,10 @@ Route::get('test3',function (){
     return view('taojianzhi.zhanshi');
 });
 
+Route::get("pay",function ()
+{
+    return view("taojianzhi/pay");
+});
 Route::get('pay/{name}','TjzController@pay');
 Route::post("pay/goumai",'TjzController@goumai');
+Route::post('send','TjzController@send');

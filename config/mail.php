@@ -28,33 +28,35 @@ return [
 	|
 	*/
 
-	'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
+    'host'=>'smtp.163.com',
 
-	/*
-	|--------------------------------------------------------------------------
-	| SMTP Host Port
-	|--------------------------------------------------------------------------
-	|
-	| This is the SMTP port used by your application to deliver e-mails to
-	| users of the application. Like the host we have set this value to
-	| stay compatible with the Mailgun e-mail application by default.
-	|
-	*/
 
-	'port' => env('MAIL_PORT', 587),
+    /*
+    |--------------------------------------------------------------------------
+    | SMTP Host Port
+    |--------------------------------------------------------------------------
+    |
+    | This is the SMTP port used by your application to deliver e-mails to
+    | users of the application. Like the host we have set this value to
+    | stay compatible with the Mailgun e-mail application by default.
+    |
+    */
 
-	/*
-	|--------------------------------------------------------------------------
-	| Global "From" Address
-	|--------------------------------------------------------------------------
-	|
-	| You may wish for all e-mails sent by your application to be sent from
-	| the same address. Here, you may specify a name and address that is
-	| used globally for all e-mails that are sent by your application.
-	|
-	*/
+    'port'=>'25',
 
-	'from' => ['address' => null, 'name' => null],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Global "From" Address
+    |--------------------------------------------------------------------------
+    |
+    | You may wish for all e-mails sent by your application to be sent from
+    | the same address. Here, you may specify a name and address that is
+    | used globally for all e-mails that are sent by your application.
+    |
+    */
+
+    'from' => ['address' =>'15957132524@163.com', 'name' =>'test'],
 
 	/*
 	|--------------------------------------------------------------------------
@@ -80,7 +82,7 @@ return [
 	|
 	*/
 
-	'username' => env('MAIL_USERNAME'),
+    'username'=>'15957132524@163.com',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -93,18 +95,19 @@ return [
 	|
 	*/
 
-	'password' => env('MAIL_PASSWORD'),
+    'password'=>'zhao111827',
 
-	/*
-	|--------------------------------------------------------------------------
-	| Sendmail System Path
-	|--------------------------------------------------------------------------
-	|
-	| When using the "sendmail" driver to send e-mails, we will need to know
-	| the path to where Sendmail lives on this server. A default path has
-	| been provided here, which will work well on most of your systems.
-	|
-	*/
+
+    /*
+    |--------------------------------------------------------------------------
+    | Sendmail System Path
+    |--------------------------------------------------------------------------
+    |
+    | When using the "sendmail" driver to send e-mails, we will need to know
+    | the path to where Sendmail lives on this server. A default path has
+    | been provided here, which will work well on most of your systems.
+    |
+    */
 
 	'sendmail' => '/usr/sbin/sendmail -bs',
 

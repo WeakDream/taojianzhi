@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
+use\Mail;
 class TjzController extends Controller {
 
 	/**
@@ -483,6 +484,14 @@ class TjzController extends Controller {
         }
         return view('taojianzhi/index3',compact('m'));
         
+    }
+    public  function  send(Request $request)
+    {
+        $data=['email'=>'1485846902@qq.com','name'=>'zhao'];
+        Mail::send('activemail',$data,function($message)use($data)
+        {
+            $message->to($data['email'],$data['name'])->subject("淘兼职");
+        });
     }
      
 
