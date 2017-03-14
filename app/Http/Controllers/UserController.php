@@ -20,7 +20,8 @@ class UserController extends Controller {
         $input['password']=$request->get('password');
         $input['email_verified']=1;
         $input['sex']=1;
-        $input['company_id']=$request->get('maijia');
+        $input['role_id']=$request->get('maijia');
+        $input['phone']=$request->input('phone');
         $length=strlen($input['nickname']);
         if($length>20||$length<5)
         {
@@ -59,11 +60,13 @@ class UserController extends Controller {
             $get_password=$get1->password;
             if($password==$get_password)
             {
+                $role_id=$get1->role_id;
+                //dd($role_id);
                 Session::put("username",$get1->nickname);
                 //$id=$get1->id;
 
-                $inputs=DB::table("jobs")->paginate(8);
-                return view("taojianzhi/index",["inputs"=>$inputs]);
+                $inputs=DB::table("companys")->paginate(8);
+                return view("taojianzhi/index",["inputs"=>$inputs,"role_id"=>$role_id]);
 
             }
             else

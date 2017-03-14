@@ -5,6 +5,7 @@
     <title>发布信息</title>
     <script src="../js/laydate/laydate.js"></script>
     <script type="text/javascript" src="../js/jquery-1.11.3.min.js" ></script>
+    <script type="text/javascript" src="js/PCASClass.js"></script>
     <script type="text/javascript">
     $(document).ready(function(){
         $(".daohang4tan").hide();
@@ -199,7 +200,7 @@
                             </div>
                         </td>
                     </tr>
-                    <tr>
+                   <!-- <tr>
                         <th>
                             <span><i>*</i>公司别称</span>
                         </th>
@@ -210,7 +211,7 @@
                             </div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr>1-->
                         <th>
                             <span><i>*</i>公司简介</span>
                         </th>
@@ -232,7 +233,7 @@
                             </div>
                         </td>
                     </tr>
-                    <tr>
+                   <!-- <tr>
                         <th>
                             <span><i>*</i>工作天数</span>
                         </th>
@@ -242,7 +243,7 @@
                                 <span id="txtAliasName_Tip"></span>
                             </div>
                         </td>
-                    </tr>
+                    </tr>!-->
                     <tr>
                         <th>
                             <span><i>*</i>工作类型</span>
@@ -254,7 +255,7 @@
                             </div>
                         </td>
                     </tr>
-                    <tr>
+                   <!-- <tr>
                         <th>
                             <span><i>*</i>招聘人数</span>
                         </th>
@@ -264,7 +265,7 @@
                                 <span id="txtAliasName_Tip"></span>
                             </div>
                         </td>
-                    </tr>
+                    </tr>!-->
                     <tr>
                         <th>
                             <span><i>*</i>薪水</span>
@@ -298,7 +299,7 @@
                             </div>
                         </td>
                     </tr>
-                    <tr>
+                   <!-- <tr>
                         <th>
                             <span><i>*</i>所在地区</span>
                         </th>
@@ -315,8 +316,20 @@
                          </span>
                             <span id="addresscityid_Tip"></span>
                         </td>
-                    </tr>
+                    </tr>!-->
                     <tr>
+
+                        <th><span><i>*</i>所在地区</span></th>
+                        <td>
+                        <select class="selestyle" id="Province" name="Province"></select>
+                        <select class="selestyle" id="City" name="City"></select>
+                        <select class="selestyle" id="Area" name="Area"></select>
+                        </td>
+                        <script type="text/javascript">
+
+                            new PCAS("Province","City","Area","浙江省","杭州市","江干区")
+                                </script>
+                    </tr>
                         <th>
                             <span><i>*</i>详细地址</span>
                         </th>
@@ -327,7 +340,7 @@
                             <span id="txtCompAddr_Tip"></span>
                         </td>
                     </tr>
-                    <tr id="lasttr">
+                   <!-- <tr id="lasttr">
                         <th>
                             <span>公司图片</span>
                         </th>
@@ -338,7 +351,7 @@
                             </div>
                         </td>
                     </tr>
-                    <tr>
+                    <tr>!-->
                         <th>&nbsp;</th>
                         <td>
                             <div >

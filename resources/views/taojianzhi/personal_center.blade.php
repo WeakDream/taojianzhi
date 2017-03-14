@@ -1201,9 +1201,9 @@
                             @foreach($company_gets as $company)
                                 <table style="width: 800px;broder: 0px;">
                                     <tr style="height: 40px">
-                                        <td width="350"><a href="{{url('company',$company->company_name)}}">{{$company->company_name}}</a></td>
+                                        <td width="350"><a href="{{url('company',$company->recruiter_name)}}">{{$company->recruiter_name}}</a></td>
                                         <td width="340">{{$company->created_at}}</td>
-                                        <!--<td><input name="{{$company->company_id}}" type="submit" value="删除"></td>!-->
+                                        <!--<td><input name="" type="submit" value="删除"></td>!-->
                                         <td><button style="background: #ff5500;border: 0px solid black">删除</button></td>
                                         <td><button style="background: #ff5500;border: 0px solid black">购买</button></td>
                                     </tr>

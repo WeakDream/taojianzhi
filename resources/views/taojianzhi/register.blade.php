@@ -348,6 +348,9 @@
                 <div style="margin-bottom:5px;"><label><span style="font-size:16px;">电子邮箱</span>
                         <input type="text" name="email" class="text"></label>
                 </div>
+                <div style="margin-bottom:5px;"><label><span style="font-size:16px;">手机号</span>
+                        <input type="text" name="phone" class="text"></label>
+                </div>
                 <div class="alert-danger tishiy3" style="float: right;height: 25px;width: 216px;margin-right: 150px;display: none">
                     <p class="tishiy3" style="font-size: 18px;color: red;word-break: keep-all;"></p>
                 </div>

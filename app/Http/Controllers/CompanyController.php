@@ -14,7 +14,7 @@ class CompanyController extends Controller {
 
 	public function company($name)
     {
-        $company=DB::table("jobs")->where("company_name",$name)->first();
+        $company=DB::table("tjz_jobs")->where("company_name",$name)->first();
         //dd($company);
         return view("taojianzhi/company",["company"=>$company]);
     }
@@ -25,18 +25,18 @@ class CompanyController extends Controller {
         {
             return redirect()->to("login");
         }
-        $gets=DB::table("jobs")->where("company_name",$name)->first();
+        $gets=DB::table("tjz_jobs")->where("company_name",$name)->first();
         return view ("taojianzhi/pay",["outputs"=>$gets]);
     }
     public function pay(Request $request)
     {
         {
-            $inputs['user']=Session::get('username');
+            $inputs['user_name']=Session::get('username');
             //$inputs['user']="77777";
-            $inputs['job']=$request->get('job');
-            $inputs['company']=$request->get('company');
+            //$inputs['job']=$request->get('job');
+            $inputs['company_name']=$request->get('company');
             $password=$request->get("password");
-            $userPasswordCheck=DB::select('select password from users where nickname =?',[$inputs['user']]);
+            $userPasswordCheck=DB::select('select password from users where nickname =?',[$inputs['user_name']]);
             //$bool=Hash::check($password,$userPasswordCheck[0]->password);
             if($password==$userPasswordCheck[0]->password)
             {
@@ -65,10 +65,10 @@ class CompanyController extends Controller {
         if($username=session::get('username'))
         {
             $company_save = new company_save();
-            $company_save->username=$username;
-            $company_save->company_id=$company->id;
-            $company_save->company_name=$name;
-            $saved_company = $company_save->where("username","=",$username)->get();
+            $company_save->applicant_name=$username;
+            //$company_save->company_id=$company->id;
+            $company_save->recruiter_name=$name;
+            $saved_company = $company_save->where("applicant_name","=",$username)->get();
             foreach ($saved_company as $temp)
             {
                 if($temp->company_name == $name) //已经收藏

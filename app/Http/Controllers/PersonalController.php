@@ -30,10 +30,10 @@ class PersonalController extends Controller {
         }
         //dd($name);
         $get=DB::table("users")->where("nickname",$name)->first();
-        $gets_job=DB::table("company_save")->where("username",$name)->get();
-        $id=$get->company_id;
+        $gets_job=DB::table("orders")->where("applicant_name",$name)->get();
+        $id=$get->role_id;
         //dd($id);
-        if($id==0)
+        if($id==1)
         {
             return view("taojianzhi/Seller_Center");
         }

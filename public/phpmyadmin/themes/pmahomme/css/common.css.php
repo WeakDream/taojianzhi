@@ -863,7 +863,7 @@ div.tools a:hover,
 }
 
 tr.disabled td,
-td.disabled {
+td.disabled li {
     background-color: #f3f3f3;
     color: #aaa;
 }

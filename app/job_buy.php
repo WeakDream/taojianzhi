@@ -4,7 +4,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class job_buy extends Model {
 
-	protected  $table='job_buy';
-    protected  $fillable=['user','company','routes','job'];
+	protected  $table='user_company';
+    protected  $fillable=['user_name','company_name','routes','job'];
 
 }

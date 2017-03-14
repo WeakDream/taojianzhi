@@ -35,7 +35,7 @@
                             url : 'pay',
                             data:
                             {
-                                job:content2,
+                                //job:content2,
                                 company:content1,
                                 password:password
                             },
@@ -295,7 +295,7 @@
 
     <div class="content">
         <div class="zhiwei">
-            <img src="../{{$outputs->file_routrs}}" >
+            <img src="/img/taologo.jpg" >
             <p>{{$outputs->company_name}}</p>
             <p>{{$outputs->name}}</p>
             <span style="float: right;margin-right: 40px;margin-top: -40px;"><b style="color: #FF5500;font-size: 27px;">10.0</b>元</span>
@@ -321,7 +321,7 @@
                     function zhifu() {
                         var content1=document.getElementsByTagName("p")[1].innerHTML
                         var content2=document.getElementsByTagName("p")[2].innerHTML
-                        alert(content1);
+                        //alert(content1);
 
                     }
                 </script>

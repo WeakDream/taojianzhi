@@ -7,14 +7,22 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
 use App\job2;
+use App\company;
 
 class IndexController extends Controller {
 
     public function  index()
     {
-        $inputs=DB::table("jobs")->paginate(8);
+        $role_id=null;
+        $inputs=DB::table("companys")->paginate(10);
         $time=array();
         $length=count($inputs);
+        $username=Session::get('username');
+        if($username)
+        {
+            $role_id=DB::table('users')->where("nickname",$username)->first()->role_id;
+            //dd($role_id);
+        }
        for($i=0;$i<$length;$i++)
        {
            $get=explode(" ",$inputs[$i]->created_at);
@@ -23,7 +31,7 @@ class IndexController extends Controller {
        }
        //dd($inputs);
        //dd($time);
-        return view("taojianzhi/index",["inputs"=>$inputs]);
+        return view("taojianzhi/index",["inputs"=>$inputs,"role_id"=>$role_id]);
 	}
     public function search(Request $request)
     {
@@ -35,7 +43,7 @@ class IndexController extends Controller {
             return redirect('index');
         }
         //$gets=$test->search($name);
-        $gets=DB::table("jobs")->where("company_name","like","%".$name."%")->get();
+        $gets=DB::table("companys")->where("name","like","%".$name."%")->get();
         if(!$gets)
         {
             $m=null;
@@ -46,13 +54,20 @@ class IndexController extends Controller {
         }
         return view('taojianzhi/index',compact('m'));
     }
-    public function announce()
+    public function announce($role_id)
     {
         if (!(Session::get("username")))
         {
             return redirect()->to("login");
         }
-        return view ("taojianzhi/announce");
+        if($role_id==1)
+        {
+            return view("taojianzhi/announce");
+        }
+        if($role_id==2)
+        {
+            return redirect()->to('register');
+        }
     }
     public function company_announce()
     {
@@ -60,22 +75,29 @@ class IndexController extends Controller {
     }
     public function company_announce_check(Request $request)
     {
-        $file=$request->file("myfile");
+        //$file=$request->file("myfile");
         //$tmpName = $file ->getFileName();
-        $clientName = $file -> getClientOriginalName();
-        $path = $file -> move('public/uploadfiles',$clientName);
-        $input['file_routrs']=$path;
+        //$clientName = $file -> getClientOriginalName();
+        //$path = $file -> move('public/uploadfiles',$clientName);
+       // $input['file_routrs']=$path;
         $input['name']=$request->get('name');
-        $input['time']=$request->get('time');
-        $input['work_type']=$request->get('type');
-        $input['number']=$request->get('number');
+        //$input['time']=$request->get('time');
+        $input['type']=$request->get('type');
+        //$input['number']=$request->get('number');
         $input['salary']=$request->get('salary');
-        $input['company_name']=$request->companyName;
+        $input['company_name']=$request->get('companyName');
         $input['address']=$request->get('CompanyAddr');
         $input['description']=$request->get('intro');
         $input['contact_person']=$request->get('Contacts');
         $input['contact']=$request->get('phone');
+        $input['city']=$request->get('Province');
+        //dd($input2['city']);
+        $input2['name']=$input['company_name'];
+        $input2['contact_person']=$input['contact_person'];
+        $input2['contact']=$input['contact'];
+        company::create($input2);
         job2::create($input);
+
         return redirect('index');
     }
     public function person_announce()

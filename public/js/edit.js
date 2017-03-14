@@ -10,7 +10,8 @@ $(function() {
                });
 	$(".caname").click(function() { 
 	var td = $(this); 
-	var txt = td.text(); 
+	var txt = td.text();
+	//alert(txt);
 	var input = $("<input type='text'value='" + txt + "'/>"); 
 	td.html(input); 
 	input.click(function() { return false; }); 

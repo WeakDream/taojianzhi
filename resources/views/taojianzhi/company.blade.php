@@ -250,13 +250,12 @@
         <div style="margin-left: 30px;">
             <span>公司地址：{{$company->address}}</span>
             <span style="margin-left: 30px;">性别不限</span>
-            <span style="margin-left: 30px;">预计招聘人数：{{$company->number}}人</span>
+            <span style="margin-left: 30px;">预计招聘人数：10人</span>
         </div>
         <div style="margin-top: 40px;margin-left: -10px">
             <ul style="list-style-type:none;">
-                <li><span>工作类型：</span>{{$company->work_type}}</li>
+                <li><span>工作类型：</span>{{$company->type}}</li>
                 <li style="margin-left: 220px;margin-top: -20px"><span>结算方式：</span>每月结算</li>
-                <li style="margin-top: 10px;"><span>工作天数：</span>{{$company->time}}</li>
                 <li style="margin-top: 10px;"><b style="color: orange">薪水:{{$company->salary}}</li>
                 <li style="margin-top: 10px;"><b style="color: orange">联系人：{{$company->contact_person}}</li>
                 <li style="margin-top: 10px;"><b style="color: orange">电话：{{$company->contact}}</li>
@@ -265,7 +264,7 @@
 
     </div>
     <div class="you1">
-     <a href="#"> <img style="height: 100px;width: 320px;margin-left: 0px;margin-top:0px;position: absolute;"src="../{{$company->file_routrs}}"></a>
+     <a href="#"> <img style="height: 100px;width: 320px;margin-left: 0px;margin-top:0px;position: absolute;"src="/img/taologo.jpg"></a>
        <div style="margin-left: 20px;border-top:2px solid #eaeaea ;height: 200px;width: 290px;margin-top: 100px; ">
            <h3>{{$company->company_name}}</h3>
            <span>公司宣言：{{$company->description}}</span>

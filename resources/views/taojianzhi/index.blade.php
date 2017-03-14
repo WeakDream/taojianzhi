@@ -259,6 +259,21 @@ body{
     top:26px;
     cursor:pointer;
 }
+.mianfei2{
+    border:1px solid #FF5500;
+    width:150px;
+    height:30px;
+    position:absolute;
+    left:830px;
+    top:26px;
+    cursor:pointer;
+    background-color: #FF5500;
+    color:white;
+    font-size:16px;
+    font-weight:600;
+    padding-left: 9px;
+    padding-top: 7px;
+}
 .tu{
     position:absolute;
     width:520px;
@@ -751,7 +766,19 @@ body{
     </div>
     <!--免费发布信息-->
 
-    <a href="{{url('announce')}}"><div class="mianfei"></div></a>
+    <a href="{{url('announce',$role_id)}}">
+        @if(isset($role_id))
+         @if($role_id==1)
+            <div class="mianfei"></div></a>
+        @endif
+         @if($role_id==2)
+             <div class="mianfei2">申请账号，免费招聘</div></a>
+
+            @endif
+        @endif
+    @if(!isset($role_id))
+        <div class="mianfei2">申请账号，免费招聘</div></a>
+        @endif
 </div>
 
 <!--中部-->
@@ -1850,7 +1877,7 @@ body{
                     <table>
                         <tr height="40">
                             <td width="30"></td>
-                            <td width="340"><a href="{{url('company',$input->company_name)}}">{{$input->company_name}}</a></td>
+                            <td width="340"><a href="{{url('company',$input->name)}}">{{$input->name}}</a></td>
                             <td width="150">{{$input->contact_person}}</td>
                             <td width="200">{{$input->contact}}</td>
                             <td width="200">{{$input->created_at}}</td>
@@ -1864,7 +1891,7 @@ body{
             <table>
                 <tr height="40">
                     <td width="30"></td>
-                    <td width="340"><a href="{{url('company',$n->company_name)}}">{{$n->company_name}}</a></td>
+                    <td width="340"><a href="{{url('company',$n->name)}}">{{$n->name}}</a></td>
                     <td width="150">{{$n->contact_person}}</td>
                     <td width="200">{{$n->contact}}</td>
                     <td width="200">{{$n->updated_at}}</td>
@@ -1873,7 +1900,9 @@ body{
         @endforeach
     @endif
     @if(isset($inputs))
-        {!! $inputs->render() !!}
+        <div style="position: absolute;width: 800px;height: 30px;top: 600px;left: 240px">
+            {!! $inputs->render() !!}
+        </div>
     @endif
     </div>
 </div>
