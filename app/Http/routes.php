@@ -34,7 +34,7 @@ Route::post("person_announce_check","IndexController@person_announce_check");
 Route::get("personal_center","PersonalController@personal_center");
 Route::get("personal_resume","PersonalController@personal_resume");
 Route::get("complate_personal_resume","PersonalController@complate_personal_resume");
-
+Route::post("get_resume","PersonalController@get_resume");
 
 //收藏与交易的部分
 Route::get("company/{name}","CompanyController@company");

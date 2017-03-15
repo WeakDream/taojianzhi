@@ -245,7 +245,7 @@ function isDate(dateStr)
 <div class="rongqi" style="border:0px solid red;width:1024px;top:20px;height:1300px;position:relative;margin:0 auto;cursor:default;">
     <img src="img/taologo2.jpg" style="width:160px;margin-left: 150px;margin-top: 10px;">
     <div style="margin-left: 350px;margin-top: -50px;font-size: 20px;">你正在创建简历...</div>
-    <form  name="form1" method="post" action="">
+    <form  method="post" action="get_resume">
         <p style="margin-left: 160px;margin-top: 30px;font-weight: 700;font-size: 20px;">基本信息</p>
         <div style="margin-left: 160px;border-top: 2px solid #eaeaea;width: 824px;top:-10px;height:750px;position:relative;">
             <div class="jianlixq">
@@ -321,24 +321,24 @@ function isDate(dateStr)
                 自我介绍：<br>
                 <textarea cols=60 rows=5 style="margin-left:90px;margin-top:-10px;sition: absolute" placeholder="说出你的亮点吧"></textarea>
             </div>
-    </div>
+        </div>
         <p style="margin-left: 160px;margin-top: 30px;font-weight: 700;font-size: 20px;">求职意向</p>
         <div style="margin-left: 160px;border-top: 2px solid #eaeaea;width: 824px;top:-10px;height:550px;position:relative;margin-top: 25px;">
-    <div class="jianlixq">
-        简历标题：
-        <input type="text"style="height: 30px;"placeholder="例：求职淘宝客服">
-        <br>
-        职位类别：
-        <input type="text"style="height: 30px;"placeholder="请输入"><br>
-        期望薪资：<input type="text"style="height: 30px;width: 100px;">元/小时
-        <br>
-        求职地区：<input type="text"style="height: 30px;width: 100px;"placeholder="请输入城市">
-        <input type="text"style="height: 30px;width: 100px;"placeholder="请输入区域">
-        <input type="text"style="height: 30px;width: 100px;"placeholder="请输入商圈">
-        <br>
-        <p style="margin-left: 100px;"><input type="submit"value="保存并提交" style="background-color: #FF5500;height: 40px;width: 150px;font-size: 20px;color: #ffffff"></p>
-    </div>
-</div>
+            <div class="jianlixq">
+            简历标题：
+            <input type="text"style="height: 30px;"placeholder="例：求职淘宝客服">
+            <br>
+            职位类别：
+            <input type="text"style="height: 30px;"placeholder="请输入"><br>
+            期望薪资：<input type="text"style="height: 30px;width: 100px;">元/小时
+            <br>
+            求职地区：<input type="text"style="height: 30px;width: 100px;"placeholder="请输入城市">
+            <input type="text"style="height: 30px;width: 100px;"placeholder="请输入区域">
+            <input type="text"style="height: 30px;width: 100px;"placeholder="请输入商圈">
+            <br>
+            <p style="margin-left: 100px;"><input type="submit" value="保存并提交" style="background-color: #FF5500;height: 40px;width: 150px;font-size: 20px;color: #ffffff"></p>
+            </div>
+        </div>
     </form>
     </br>
     </br>

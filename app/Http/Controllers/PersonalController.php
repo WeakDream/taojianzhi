@@ -60,4 +60,9 @@ class PersonalController extends Controller {
         return view ("taojianzhi/complate_resume");
     }
 
+    public function get_resume()
+    {
+
+    }
+
 }
