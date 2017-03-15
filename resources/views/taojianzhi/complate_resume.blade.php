@@ -245,22 +245,20 @@ function isDate(dateStr)
 <div class="rongqi" style="border:0px solid red;width:1024px;top:20px;height:1300px;position:relative;margin:0 auto;cursor:default;">
     <img src="img/taologo2.jpg" style="width:160px;margin-left: 150px;margin-top: 10px;">
     <div style="margin-left: 350px;margin-top: -50px;font-size: 20px;">你正在创建简历...</div>
-    <p style="margin-left: 160px;margin-top: 30px;font-weight: 700;font-size: 20px;">基本信息</p>
-    <div style="margin-left: 160px;border-top: 2px solid #eaeaea;width: 824;top:-10px;height:750px;position:relative;">
-        <div class="jianlixq">
-            <form  name="form1" method="post" action="">
+    <form  name="form1" method="post" action="">
+        <p style="margin-left: 160px;margin-top: 30px;font-weight: 700;font-size: 20px;">基本信息</p>
+        <div style="margin-left: 160px;border-top: 2px solid #eaeaea;width: 824px;top:-10px;height:750px;position:relative;">
+            <div class="jianlixq">
                 &nbsp姓&nbsp&nbsp&nbsp&nbsp名：<input  type="text" style="width: 100px;height: 30px;">
                 <input type="radio"name=sex checked>男
                 <input type="radio"name=sex>女
-            <div style="width:970px; margin:10px auto;">出生日期：<!-- <input id="d11" class="Wdate" type="text" onClick="WdatePicker()"/> --><input id="d421" class="Wdate" type="text" onfocus="WdatePicker({skin:'whyGreen',maxDate:'%y-%M-%d'})"/>
-            </div>
-
+                <div style="width:970px; margin:10px auto;">出生日期：<input id="d421" class="Wdate" type="text" onfocus="WdatePicker({skin:'whyGreen',maxDate:'%y-%M-%d'})"/></div>
                 <br>
                 &nbsp籍 &nbsp  &nbsp贯：
                 <select id="Province" name="Province"></select>
-       		   <select id="City" name="City"></select>
-               <select id="Area" name="Area"></select>
-               <script type="text/javascript">
+       		    <select id="City" name="City"></select>
+                <select id="Area" name="Area"></select>
+                <script type="text/javascript">
 
               new PCAS("Province","City","Area","浙江省","杭州市","江干区")
                </script>
@@ -322,31 +320,28 @@ function isDate(dateStr)
                 <br>
                 自我介绍：<br>
                 <textarea cols=60 rows=5 style="margin-left:90px;margin-top:-10px;sition: absolute" placeholder="说出你的亮点吧"></textarea>
-            </form>
-        </div>
+            </div>
     </div>
+        <p style="margin-left: 160px;margin-top: 30px;font-weight: 700;font-size: 20px;">求职意向</p>
+        <div style="margin-left: 160px;border-top: 2px solid #eaeaea;width: 824px;top:-10px;height:550px;position:relative;margin-top: 25px;">
+    <div class="jianlixq">
+        简历标题：
+        <input type="text"style="height: 30px;"placeholder="例：求职淘宝客服">
+        <br>
+        职位类别：
+        <input type="text"style="height: 30px;"placeholder="请输入"><br>
+        期望薪资：<input type="text"style="height: 30px;width: 100px;">元/小时
+        <br>
+        求职地区：<input type="text"style="height: 30px;width: 100px;"placeholder="请输入城市">
+        <input type="text"style="height: 30px;width: 100px;"placeholder="请输入区域">
+        <input type="text"style="height: 30px;width: 100px;"placeholder="请输入商圈">
+        <br>
+        <p style="margin-left: 100px;"><input type="submit"value="保存并提交" style="background-color: #FF5500;height: 40px;width: 150px;font-size: 20px;color: #ffffff"></p>
+    </div>
+</div>
+    </form>
     </br>
-    </br>     
-    <p style="margin-left: 160px;margin-top: 30px;font-weight: 700;font-size: 20px;">求职意向</p>
-    <div style="margin-left: 160px;border-top: 2px solid #eaeaea;width: 824;top:-10px;height:550px;position:relative;margin-top: 25px;">
-        <div class="jianlixq">
-            <form>
-                简历标题：
-                <input type="text"style="height: 30px;"placeholder="例：求职淘宝客服">
-                <br>
-                职位类别：
-                <input type="text"style="height: 30px;"placeholder="请输入"><br>
-                期望薪资：<input type="text"style="height: 30px;width: 100px;">元/小时
-                <br>
-                求职地区：<input type="text"style="height: 30px;width: 100px;"placeholder="请输入城市">
-                <input type="text"style="height: 30px;width: 100px;"placeholder="请输入区域">
-                <input type="text"style="height: 30px;width: 100px;"placeholder="请输入商圈">
-                <br>
-                <p style="margin-left: 100px;"><input type="submit"value="保存并提交"style="background-color: #FF5500;height: 40px;width: 150px;font-size: 20px;color: #ffffff"></p>
-            </form>
-        </div>
-    </div>
-
+    </br>
 </div>
 <!--底部-->
 <div class="dibu" style="width:100%;height:160px;border:1px solid white;position:absolute;top:1550px;">

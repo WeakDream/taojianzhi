@@ -1258,15 +1258,17 @@
 
         {{--<p><span id="jianli" style="margin-left: 55px;border: 1px solid #99ffcc;height: 56px;width:186px;display: inline-block;border-radius: 8px;background: #66ccff;"><a href="{{url('uploading_resume')}}" style="text-decoration: none;margin-top:10px;margin-left:40px;font-size: 25px;position: absolute">上传你的简历</a></span></p>--}}
 
-        <form method="post" action="{{url('upload_resume')}}" enctype="muitipart/form-data">
+        {{--<form method="post" action="{{url('upload_resume')}}" enctype="muitipart/form-data">--}}
 
 
-            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <input type="file" name="myfile" />
+            {{--<input type="hidden" name="_token" value="{{ csrf_token() }}">--}}
+            {{--<input type="file" name="myfile" />--}}
 
-            <input type="submit" name="submit" value="Submit" style="margin-left: 55px;border: 1px solid #99ffcc;height: 56px;width:186px;display: inline-block;border-radius: 8px;background: #66ccff;" />
+            <input type="submit" name="submit" value="Submit" onclick="location.href='complate_personal_resume'" style="margin-left: 55px;border: 1px solid #99ffcc;height: 56px;width:186px;display: inline-block;border-radius: 8px;background: #66ccff;" />
 
-        </form>
+        {{--</form>--}}
+
+
 
         <div class="zhaopintan1">
             <h3 style="color: #FF5500;margin-left: 40px;">职位管理</h3>
