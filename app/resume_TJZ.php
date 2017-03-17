@@ -15,21 +15,21 @@ class resume_TJZ extends Model implements AuthenticatableContract, CanResetPassw
      *
      * @var string
      */
-    protected $table = 'resume_TJZ';
+    protected $table = 'resumes';
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = ['uid', 'guanyu', 'zhuanchang','jingyan'];
+    protected $fillable = ['user_id', 'title','name','photo','school','birthday','contact','sex','city','expect_location','introduction'];
 
     /**
      * The attributes excluded from the model's JSON form.
      *
      * @var array
      */
-    protected $hidden = ['password', 'remember_token'];
+    protected $hidden = ['remember_token'];
 
     public function complete($data){
         $this->fill($data);

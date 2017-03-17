@@ -1195,8 +1195,7 @@
                     </tr>
 
                 </table>
-                <form action="{{url('delete_save_job')}}" method="post">
-
+                {{--<form action="{{url('delete_save_job')}}" method="post">--}}
                         @if(!empty($company_gets))
                             @foreach($company_gets as $company)
                                 <table style="width: 800px;broder: 0px;">
@@ -1210,7 +1209,7 @@
                                 </table>
                             @endforeach
                         @endif
-                </form>
+                {{--</form>--}}
             </div>
             <div class="m32tan">
                 <table style="font-size: 14px;height: 80px;">
@@ -1264,7 +1263,7 @@
             {{--<input type="hidden" name="_token" value="{{ csrf_token() }}">--}}
             {{--<input type="file" name="myfile" />--}}
 
-            <input type="submit" name="submit" value="Submit" onclick="location.href='complate_personal_resume'" style="margin-left: 55px;border: 1px solid #99ffcc;height: 56px;width:186px;display: inline-block;border-radius: 8px;background: #66ccff;" />
+        <input type="submit" name="submit" value="Submit" onclick="location.href='complate_personal_resume'" style="margin-left: 55px;border: 1px solid #99ffcc;height: 56px;width:186px;display: inline-block;border-radius: 8px;background: #66ccff;" />
 
         {{--</form>--}}
 

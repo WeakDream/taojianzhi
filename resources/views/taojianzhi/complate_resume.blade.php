@@ -245,7 +245,7 @@ function isDate(dateStr)
 <div class="rongqi" style="border:0px solid red;width:1024px;top:20px;height:1300px;position:relative;margin:0 auto;cursor:default;">
     <img src="img/taologo2.jpg" style="width:160px;margin-left: 150px;margin-top: 10px;">
     <div style="margin-left: 350px;margin-top: -50px;font-size: 20px;">你正在创建简历...</div>
-    <form  method="post" action="get_resume">
+    <form  method="post" action="complate_resume">
         <p style="margin-left: 160px;margin-top: 30px;font-weight: 700;font-size: 20px;">基本信息</p>
         <div style="margin-left: 160px;border-top: 2px solid #eaeaea;width: 824px;top:-10px;height:750px;position:relative;">
             <div class="jianlixq">
@@ -274,15 +274,15 @@ function isDate(dateStr)
                 <option>博士</option>
             </select>
                 <br>
-                我的身份：<input type="radio"name=reg checked>在校学生
-                <input type="radio"name=reg>社会人才
+                {{--我的身份：<input type="radio"name=reg checked>在校学生--}}
+                {{--<input type="radio"name=reg>社会人才--}}
                 <br>
-                电子邮箱：<input type="text"style="height: 30px;">
-                <br>
-                手机号码：<input type="text"style="height: 30px;">
-                <br>
-                验证手机：<input type="text"style="height: 30px;width: 80px;">
-                <a href="#"style="text-decoration:none;margin-left: 20px;">免费获取</a>
+                {{--电子邮箱：<input type="text"style="height: 30px;">--}}
+                {{--<br>--}}
+                {{--手机号码：<input type="text"style="height: 30px;">--}}
+                {{--<br>--}}
+                {{--验证手机：<input type="text"style="height: 30px;width: 80px;">--}}
+                {{--<a href="#"style="text-decoration:none;margin-left: 20px;">免费获取</a>--}}
                 <br>
                 空余时间：
                 <table border="1"style="margin-left: 90px;border-color: #eaeaea;" cellpadding="0" cellspacing="0" style="border-collapse:collapse;"width="450" height="140">
@@ -332,9 +332,17 @@ function isDate(dateStr)
             <input type="text"style="height: 30px;"placeholder="请输入"><br>
             期望薪资：<input type="text"style="height: 30px;width: 100px;">元/小时
             <br>
-            求职地区：<input type="text"style="height: 30px;width: 100px;"placeholder="请输入城市">
-            <input type="text"style="height: 30px;width: 100px;"placeholder="请输入区域">
-            <input type="text"style="height: 30px;width: 100px;"placeholder="请输入商圈">
+            求职地区：
+                {{--<input type="text"style="height: 30px;width: 100px;"placeholder="请输入城市">--}}
+                <select id="EProvince" name="EProvince"></select>
+                <select id="ECity" name="ECity"></select>
+                <select id="EArea" name="EArea"></select>
+                <script type="text/javascript">
+
+                    new PCAS("EProvince","ECity","EArea","浙江省","杭州市","江干区")
+                </script>
+            {{--<input type="text"style="height: 30px;width: 100px;"placeholder="请输入区域">--}}
+            {{--<input type="text"style="height: 30px;width: 100px;"placeholder="请输入商圈">--}}
             <br>
             <p style="margin-left: 100px;"><input type="submit" value="保存并提交" style="background-color: #FF5500;height: 40px;width: 150px;font-size: 20px;color: #ffffff"></p>
             </div>

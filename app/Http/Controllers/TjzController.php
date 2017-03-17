@@ -229,7 +229,7 @@ class TjzController extends Controller {
         $data['month']=$month;
         $data['day']=$day;
         $fill=new \App\time_2016( );
-       $data1= $fill->display($id);
+        $data1= $fill->display($id);
         $plan=unserialize($data1[0]['time']);
         $data['time']=$plan;
         $hour=array();

@@ -29,7 +29,7 @@ class PersonalController extends Controller {
             return redirect()->to("login");
         }
         //dd($name);
-        $get=DB::table("users")->where("nickname",$name)->first();
+        $get=DB::table("users")->where("nickname",$name)->first();//重名
         $gets_job=DB::table("orders")->where("applicant_name",$name)->get();
         $id=$get->role_id;
         //dd($id);
@@ -50,19 +50,15 @@ class PersonalController extends Controller {
         }
         return view ("taojianzhi/resume");
     }
-    public  function complate_personal_resume()
+    public function complate_personal_resume()
     {
-        //$name=Session::get("username");
-        if(!$this->is_login())
-        {
-            return redirect()->to("login");
-        }
         return view ("taojianzhi/complate_resume");
     }
 
-    public function get_resume()
-    {
+    public function complate_resume(){
+        $UserName=Session::get("username");
+        $get_user=DB::table("users")->where("nickname",$UserName)->first();
+        $UserId = $get_user->id;
 
     }
-
 }
