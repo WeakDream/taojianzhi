@@ -83,6 +83,7 @@ class PersonalController extends Controller {
         $user_data['user_id']=$UserId;
         //dd($user_data);
         $resume->complete($user_data);
-
+        Session::put('resume_state',1);
+        return redirect('resume');
     }
 }
