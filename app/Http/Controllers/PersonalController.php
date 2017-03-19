@@ -69,36 +69,17 @@ class PersonalController extends Controller {
         $entension = $file->getClientOriginalExtension();
         //dd($entension);
         $newName = $UserId."face".".".$entension;
-        $path = $file -> move('public/facebook',$newName);
+        //$path = $file -> move('public/facebook',$newName);
         //dd($path);
         $save_path='/public/facebook/'.$newName;
         //dd($save_path);
         //dd($file);
-        $user_data['name']=$request->get('user_name');
-        //dd($user_data);
-        $user_data['user_id']=$UserId;
-        $user_data['title']=$request->get('resume_title');
+        $user_data=$request->all();
         $user_data['photo']=$save_path;
         $user_data['school']=null;//搞啥？
-        $user_data['birthday']=$request->get('user_brith');
         $user_data['contact']=$user_phone;//联系电话
-        //dd($request->get('sex'));
-//        if($request->input('sex').value()=='1'){
-//            $user_data['sex']=1;
-//        }
-//        if($request->input('sex').value()=='0'){
-//            $user_data['sex']=0;
-//        }
-//        $user_data['sex']=$request->input('sex');
-        $user_data['sex']=$request->get('sex');//on？
         $user_data['city']=$request->get('Province').$request->get('City').$request->get('Area');
         $user_data['expect_location']=$request->get('EProvince').$request->get('ECity').$request->get('EArea');
-        //$user_data['introduction']=$request->;
-
-        //dd($user_data['sex']);
-        //dd($user_data['introduction']);
-        $resume->name = $request->get('user_name');
-        //dd($UserId);
-
+        dd($user_data);
     }
 }
