@@ -19,7 +19,7 @@ class CompanyController extends Controller {
         //dd($company);
         $company_name=$company->company_name;
         $username=Session::get('username');
-        $logs=DB::table('user_logs')->where('company_name',$name)->first();
+        $logs=DB::table('user_logs')->where('company_name',$name)->where('user',$username)->first();
         if($logs)
         {
             //date_default_timezone_set("Asia/Shanghai");
