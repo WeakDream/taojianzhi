@@ -63,11 +63,15 @@ class UserController extends Controller {
                 $role_id=$get1->role_id;
                 //dd($role_id);
                 Session::put("username",$get1->nickname);
-                //$id=$get1->id;
-
                 $inputs=DB::table("companys")->paginate(8);
+                $resume_state=DB::table('resumes')->where('user_id','=',$get1->id)->first();
+                if(!$resume_state){
+                    Session::put("resume_state",0);
+                }else{
+                    Session::put("resume_state",1);
+                }
+                //$id=$get1->id;
                 return view("taojianzhi/index",["inputs"=>$inputs,"role_id"=>$role_id]);
-
             }
             else
             {

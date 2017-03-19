@@ -1274,6 +1274,10 @@
 
     <div class="qiuzhitan1">
         <h3 style="color: #FF5500;margin-left: 40px;">我的简历</h3>
+        @if(Session::get('resume_state')==1)
+            <input type="submit" name="submit" value="点击查看简历" onclick="location.href='resume'" style="margin-left: 55px;border: 1px solid #99ffcc;height: 56px;width:186px;display: inline-block;border-radius: 8px;background: #66ccff;">
+        @endif
+        @if(Session::get('resume_state')==0)
         <p style="margin-left: 55px;font-size: 16px;margin-top:30px;">简历是求职的利器，填写简历才能尽快找到好工作！</p>
         <p style="margin-left: 55px;font-size: 16px;">去填写一份优质的简历吧，认真的人，才能让认真的企业找上你！</p>
         <p style="margin-left: 55px;font-size:18px;font-weight: 700;">请在这设计你的简历吧：</p>
@@ -1287,7 +1291,7 @@
             {{--<input type="file" name="myfile" />--}}
 
         <input type="submit" name="submit" value="Submit" onclick="location.href='complate_personal_resume'" style="margin-left: 55px;border: 1px solid #99ffcc;height: 56px;width:186px;display: inline-block;border-radius: 8px;background: #66ccff;" />
-
+        @endif
         {{--</form>--}}
 
 

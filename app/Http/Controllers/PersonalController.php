@@ -95,6 +95,10 @@ class PersonalController extends Controller {
         $user_data['contact']=$user_phone;//联系电话
         $user_data['city']=$request->get('Province').$request->get('City').$request->get('Area');
         $user_data['expect_location']=$request->get('EProvince').$request->get('ECity').$request->get('EArea');
-        dd($user_data);
+        $user_data['user_id']=$UserId;
+        //dd($user_data);
+        $resume->complete($user_data);
+        Session::put('resume_state',1);
+        return redirect('resume');
     }
 }

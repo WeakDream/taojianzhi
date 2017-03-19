@@ -5,7 +5,11 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/my_laravel.iml" afterPath="$PROJECT_DIR$/.idea/my_laravel.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/CompanyController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CompanyController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/PersonalController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/PersonalController.php" />
+<<<<<<< HEAD
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/company_save.php" afterPath="$PROJECT_DIR$/app/company_save.php" />
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
+>>>>>>> 50fbe50b33e64462385f9fcfd5c5ed98ae5c435d
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/taojianzhi/personal_center.blade.php" afterPath="$PROJECT_DIR$/resources/views/taojianzhi/personal_center.blade.php" />
     </list>
     <ignored path="my_laravel.iws" />
@@ -38,11 +42,17 @@
       <file leaf-file-name="complate_resume.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/taojianzhi/complate_resume.blade.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="126">
               <caret line="357" column="0" lean-forward="false" selection-start-line="357" selection-start-column="0" selection-end-line="357" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+=======
+            <state relative-caret-position="210">
+              <caret line="330" column="17" selection-start-line="330" selection-start-column="17" selection-end-line="330" selection-end-column="17" />
+              <folding />
+>>>>>>> 50fbe50b33e64462385f9fcfd5c5ed98ae5c435d
             </state>
           </provider>
         </entry>
@@ -50,6 +60,7 @@
       <file leaf-file-name="PersonalController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PersonalController.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="575">
               <caret line="30" column="9" lean-forward="true" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
               <folding />
@@ -133,16 +144,68 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="275">
               <caret line="15" column="18" lean-forward="false" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+=======
+            <state relative-caret-position="388">
+              <caret line="68" column="57" selection-start-line="68" selection-start-column="57" selection-end-line="68" selection-end-column="57" />
+>>>>>>> 50fbe50b33e64462385f9fcfd5c5ed98ae5c435d
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="job2.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/job2.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="250">
               <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+=======
+      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="31" column="24" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="158">
+              <caret line="35" column="82" selection-start-line="35" selection-start-column="58" selection-end-line="35" selection-end-column="82" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="personal_center.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/taojianzhi/personal_center.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="1255" column="14" selection-start-line="1255" selection-start-column="14" selection-end-line="1255" selection-end-column="14" />
+              <folding>
+                <element signature="e#402#30597#0#HTML" expanded="false" />
+                <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#3;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#input#0;n#div#4;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#1;n#div#4;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="resume.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/taojianzhi/resume.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="525">
+              <caret line="250" column="3" selection-start-line="250" selection-start-column="3" selection-end-line="250" selection-end-column="3" />
+>>>>>>> 50fbe50b33e64462385f9fcfd5c5ed98ae5c435d
               <folding />
             </state>
           </provider>
@@ -151,8 +214,13 @@
       <file leaf-file-name="company_save.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/company_save.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="150">
               <caret line="6" column="32" lean-forward="false" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+=======
+            <state relative-caret-position="300">
+              <caret line="24" column="35" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="35" />
+>>>>>>> 50fbe50b33e64462385f9fcfd5c5ed98ae5c435d
               <folding />
             </state>
           </provider>
@@ -214,7 +282,6 @@
         <option value="$PROJECT_DIR$/resources/views/taojianzhi/ceshi.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/SellerController.php" />
         <option value="$PROJECT_DIR$/resources/views/taojianzhi/register.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
         <option value="$PROJECT_DIR$/resources/views/taojianzhi/pay_success.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/taojianzhi/announce.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/taojianzhi/company.blade.php" />
@@ -224,13 +291,22 @@
         <option value="$PROJECT_DIR$/resources/views/taojianzhi/pay.blade.php" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TjzController.php" />
+<<<<<<< HEAD
+=======
+        <option value="$PROJECT_DIR$/app/Http/Controllers/CompanyController.php" />
+>>>>>>> 50fbe50b33e64462385f9fcfd5c5ed98ae5c435d
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/resume_TJZ.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/ResumeRequest.php" />
         <option value="$PROJECT_DIR$/resources/views/taojianzhi/complate_resume.blade.php" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/app/company_save.php" />
         <option value="$PROJECT_DIR$/app/user_logs.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/CompanyController.php" />
+=======
+        <option value="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
+        <option value="$PROJECT_DIR$/resources/views/taojianzhi/personal_center.blade.php" />
+>>>>>>> 50fbe50b33e64462385f9fcfd5c5ed98ae5c435d
         <option value="$PROJECT_DIR$/app/Http/Controllers/PersonalController.php" />
         <option value="$PROJECT_DIR$/resources/views/taojianzhi/personal_center.blade.php" />
       </list>
@@ -776,8 +852,12 @@
       <workItem from="1489729987253" duration="5415000" />
       <workItem from="1489749850835" duration="608000" />
       <workItem from="1489831604074" duration="13529000" />
+<<<<<<< HEAD
       <workItem from="1489895633518" duration="580000" />
       <workItem from="1489898004493" duration="10517000" />
+=======
+      <workItem from="1489895633518" duration="4352000" />
+>>>>>>> 50fbe50b33e64462385f9fcfd5c5ed98ae5c435d
     </task>
     <task id="LOCAL-00001" summary="taojianzhi">
       <created>1489130849200</created>
@@ -821,11 +901,36 @@
       <option name="project" value="LOCAL" />
       <updated>1489850988747</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="taojianzhi">
+      <created>1489896513207</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1489896513208</updated>
+    </task>
+    <task id="LOCAL-00008" summary="taojianzhi">
+      <created>1489899966429</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1489899966429</updated>
+    </task>
+    <task id="LOCAL-00009" summary="taojianzhi">
+      <created>1489902993429</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1489902993429</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="334668000" />
+=======
+    <option name="totallyTimeSpent" value="327923000" />
+>>>>>>> 50fbe50b33e64462385f9fcfd5c5ed98ae5c435d
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1127,6 +1232,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/resources/views/taojianzhi/resume.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
@@ -1134,6 +1240,8 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> 50fbe50b33e64462385f9fcfd5c5ed98ae5c435d
     <entry file="file://$PROJECT_DIR$/public/public/uploadfiles/26-110R219405634.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1196,6 +1304,7 @@
         <state />
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/resume_TJZ.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="725">
@@ -1205,6 +1314,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/public/facebook/1032face.jpeg" />
+=======
+    <entry file="file://$PROJECT_DIR$/public/public/facebook/1032face.jpeg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+>>>>>>> 50fbe50b33e64462385f9fcfd5c5ed98ae5c435d
     <entry file="file://$PROJECT_DIR$/resources/views/taojianzhi/register.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
@@ -1212,10 +1328,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
+    <entry file="file://$PROJECT_DIR$/app/resume_TJZ.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="285">
           <caret line="25" column="33" lean-forward="false" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+=======
+        <state relative-caret-position="300">
+          <caret line="24" column="35" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="35" />
+>>>>>>> 50fbe50b33e64462385f9fcfd5c5ed98ae5c435d
           <folding />
         </state>
       </provider>
@@ -1223,20 +1344,39 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Requests/ResumeRequest.php" />
     <entry file="file://$PROJECT_DIR$/app/job2.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="250">
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+=======
+        <state relative-caret-position="405">
+          <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/taojianzhi/resume.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="250" column="3" selection-start-line="250" selection-start-column="3" selection-end-line="250" selection-end-column="3" />
+>>>>>>> 50fbe50b33e64462385f9fcfd5c5ed98ae5c435d
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/company_save.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="150">
           <caret line="6" column="32" lean-forward="false" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+=======
+        <state relative-caret-position="210">
+          <caret line="330" column="17" selection-start-line="330" selection-start-column="17" selection-end-line="330" selection-end-column="17" />
+>>>>>>> 50fbe50b33e64462385f9fcfd5c5ed98ae5c435d
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1053">
@@ -1257,18 +1397,32 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="7" column="48" lean-forward="false" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="31" column="24" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
+>>>>>>> 50fbe50b33e64462385f9fcfd5c5ed98ae5c435d
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/resources/views/taojianzhi/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="1871" column="86" lean-forward="true" selection-start-line="1871" selection-start-column="86" selection-end-line="1871" selection-end-column="86" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="35" column="82" selection-start-line="35" selection-start-column="58" selection-end-line="35" selection-end-column="82" />
+>>>>>>> 50fbe50b33e64462385f9fcfd5c5ed98ae5c435d
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/resources/views/taojianzhi/complate_resume.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -1286,14 +1440,35 @@
           <folding>
             <element signature="e#39#61#0#PHP" expanded="true" />
             <marker date="1489908900502" expanded="true" signature="1766:1810" ph="select passw... users" />
+=======
+    <entry file="file://$PROJECT_DIR$/resources/views/taojianzhi/personal_center.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="1255" column="14" selection-start-line="1255" selection-start-column="14" selection-end-line="1255" selection-end-column="14" />
+          <folding>
+            <element signature="e#402#30597#0#HTML" expanded="false" />
+            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#input#0;n#div#4;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#1;n#div#4;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+>>>>>>> 50fbe50b33e64462385f9fcfd5c5ed98ae5c435d
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PersonalController.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="575">
           <caret line="30" column="9" lean-forward="true" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+=======
+        <state relative-caret-position="388">
+          <caret line="68" column="57" selection-start-line="68" selection-start-column="57" selection-end-line="68" selection-end-column="57" />
+>>>>>>> 50fbe50b33e64462385f9fcfd5c5ed98ae5c435d
           <folding />
         </state>
       </provider>
