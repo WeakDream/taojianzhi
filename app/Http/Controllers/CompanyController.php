@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use App\job_buy;
 use App\company_save;
+use App\user_logs;
 
 class CompanyController extends Controller {
 
@@ -16,6 +17,22 @@ class CompanyController extends Controller {
     {
         $company=DB::table("tjz_jobs")->where("company_name",$name)->first();
         //dd($company);
+        $company_name=$company->company_name;
+        $username=Session::get('username');
+        $logs=DB::table('user_logs')->where('company_name',$name)->first();
+        if($logs)
+        {
+            //date_default_timezone_set("Asia/Shanghai");
+            $time=date('y-m-d H:m:s',time());
+            //dd($time);
+            //dd($time);
+            $id=$logs->id;
+            DB::table('user_logs')->where('id',$id)->update(["created_at"=>$time]);
+        }
+        else
+        {
+            user_logs::create(['company_name' => $company_name, 'user' => $username]);
+        }
         return view("taojianzhi/company",["company"=>$company]);
     }
     public function buy($name)
@@ -65,13 +82,13 @@ class CompanyController extends Controller {
         if($username=session::get('username'))
         {
             $company_save = new company_save();
-            $company_save->applicant_name=$username;
+            $company_save->username=$username;
             //$company_save->company_id=$company->id;
-            $company_save->recruiter_name=$name;
-            $saved_company = $company_save->where("applicant_name","=",$username)->get();
+            $company_save->companyname=$name;
+            $saved_company = $company_save->where("username","=",$username)->get();
             foreach ($saved_company as $temp)
             {
-                if($temp->company_name == $name) //已经收藏
+                if($temp->companyname == $name) //已经收藏
                 {
                     return redirect()->to('index');
                 }

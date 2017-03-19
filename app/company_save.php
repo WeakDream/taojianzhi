@@ -4,7 +4,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class company_save extends Model {
 
-    protected $table='orders';
-    protected $fillable=['user_id','job_name','applicant_name','recruiter_name'];
+    protected $table='job_save';
+    protected $fillable=['username','jobname','companyname'];
 
 }

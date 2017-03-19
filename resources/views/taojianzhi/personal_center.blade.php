@@ -646,8 +646,8 @@
 
 
 
-        $(".m11tan").show();
-        $(".m12tan").hide();
+        //$(".m11tan").show();
+        $(".m12tan").show();
 
         $("#m11").click(function(){
             $(".m12tan").hide();
@@ -902,6 +902,11 @@
         }
 
 
+        .m12tan tr
+        {
+            border-bottom: 2px solid #FF5500;
+            height: 60px;
+        }
         .jianlitan{
             margin-left: 240px;
             margin-top: -220px;;
@@ -1025,11 +1030,11 @@
             </a>
         </div>
         <ul class="zuo" style="margin-top:10px;cursor:default;list-style-type:none;">
-            <li style="font-size: 16px;margin-left: 20px;">
+           <!-- <li style="font-size: 16px;margin-left: 20px;">
                 <a href="#"target="_self"style="text-decoration: none;color: #000000">
                     <span id="l2">我的发布</span>
                 </a>
-            </li>
+            </li>!-->
             <li style="font-size: 16px;margin-left: 20px;margin-top: 20px;">
                 <a href="#"target="_self"style="text-decoration: none;color: #000000">
                     <span id="l3">我的收藏</span>
@@ -1046,11 +1051,11 @@
                 <li style="margin-top: 10px;"id="l43">谁下载了我的简历</li>
                 <li style="margin-top: 10px;"id="l44">工作邀请</li>
             </div>
-            <li class="zhaopin">
+            <!--<li class="zhaopin">
                 <span style="color:#666464;">我的招聘&nbsp;</span>
                 <span id="xia1" class="glyphicon glyphicon-menu-up" aria-hidden="true" style="opacity:0.8;"></span>
                 </a>
-            </li>
+            </li>!-->
             <div class="zhaopin2">
                 <li style="margin-top: 10px;"id="l51">职位管理</li>
                 <li style="margin-top: 10px;"id="l52">简历管理</li>
@@ -1108,11 +1113,12 @@
             <p style="margin-left: 400px;margin-top: -75px;position: absolute">消息|余额</p>
         </div>
         <div style="margin-left: 40px;font-size: 15px;margin-top: 10px;" >
-            <span id="m11">最近发布信息</span>
-            <span style="margin-left: 20px;"id="m12">我浏览过的信息</span>
-            <div class="m11tan">
+            <!--<span id="m11">最近发布信息</span>!-->
+            <span style="margin-left: 20px;"id="m12">我浏览过的信息(普通用户只能查看五条信息)</span>
+            <span style="margin-left: 300px;"id="m12">开通会员查看的更多</span>
+            <!--<div class="m11tan">
                 <p style="margin-top: 50px;margin-left: 250px;"> <img src="img/sm.png">您还没有发布消息。<a href="#"style="text-decoration: none">去发一条吧</a></p>
-            </div>
+            </div>!-->
             <div class="buy">
                 @if(isset($results))
                     <p></p>
@@ -1124,14 +1130,31 @@
             </div>
             <div class="m12tan">
                 <table style="font-size: 14px;height: 80px">
-                    <tr >
-                        <th >信息标题</th>
-                        <th width="600">更新时间</th>
-                        <th >操作</th>
+                    <tr style="background-color: #FF5500;">
+                        <th width="200px"></th>
+                        <th width="500px" style="font-size: 18px;color: white">信息标题</th>
+                        <th width="600" style="font-size: 18px;color: white">更新时间</th>
+                        <th width="600px" style="font-size: 18px;color: white">操作</th>
                     </tr>
+
+                    @if(isset($logs))
+                        @if(!empty($logs))
+                        @foreach($logs as $log)
+                        <tr >
+                            <th width="200px"></th>
+                            <th width="500px"><a href="{{url('company',$log->company_name)}}">{{$log->company_name}}</a></th>
+                            <th width="600px">{{$log->updated_at}}</th>
+                            <th><button style="background-color: #FF5500;color: white">购买岗位</button> &nbsp&nbsp
+                                <button style="background-color: #FF5500;color: white">删除记录</button></th>
+                        </tr>
+                        @endforeach
+                            @endif
+                    @endif
+                    @if(empty($logs))
                     <tr>
                         <th colspan="3"style="text-align: center;">您没有浏览过任何信息</th>
                     </tr>
+                    @endif
                 </table>
             </div>
         </div>
@@ -1200,7 +1223,7 @@
                             @foreach($company_gets as $company)
                                 <table style="width: 800px;broder: 0px;">
                                     <tr style="height: 40px">
-                                        <td width="350"><a href="{{url('company',$company->recruiter_name)}}">{{$company->recruiter_name}}</a></td>
+                                        <td width="350"><a href="{{url('company',$company->companyname)}}">{{$company->companyname}}</a></td>
                                         <td width="340">{{$company->created_at}}</td>
                                         <!--<td><input name="" type="submit" value="删除"></td>!-->
                                         <td><button style="background: #ff5500;border: 0px solid black">删除</button></td>

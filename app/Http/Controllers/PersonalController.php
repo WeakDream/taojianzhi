@@ -25,14 +25,29 @@ class PersonalController extends Controller {
 
 	public function personal_center()
     {
+        $puts=array();
         $name=Session::get("username");
         if(!$this->is_login())
         {
             return redirect()->to("login");
         }
         //dd($name);
-        $get=DB::table("users")->where("nickname",$name)->first();//重名
-        $gets_job=DB::table("orders")->where("applicant_name",$name)->get();
+        $get=DB::table("users")->where("nickname",$name)->first();
+        $logs=DB::table("user_logs")->where("user",$name)->orderBy('updated_at','desc')->get();
+        $length=count($logs);
+        if($length>5)
+        {
+            for($i=0;$i<5;$i++)
+            {
+                $puts[$i]=$logs[$i];
+            }
+        }
+        else
+        {
+            $puts=$logs;
+        }
+        //dd($logs);
+        $gets_job=DB::table("job_save")->where("username",$name)->get();
         $id=$get->role_id;
         //dd($id);
         if($id==1)
@@ -41,7 +56,7 @@ class PersonalController extends Controller {
         }
         else
         {
-            return view("taojianzhi/personal_center",["company_gets"=>$gets_job]);
+            return view("taojianzhi/personal_center",["company_gets"=>$gets_job,"logs"=>$puts]);
         }
     }
     public function personal_resume()
