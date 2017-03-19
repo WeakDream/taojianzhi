@@ -249,7 +249,7 @@ function isDate(dateStr)
         <p style="margin-left: 160px;margin-top: 30px;font-weight: 700;font-size: 20px;">基本信息</p>
         <div style="margin-left: 160px;border-top: 2px solid #eaeaea;width: 824px;top:-10px;height:750px;position:relative;">
             <div class="jianlixq">
-                &nbsp姓&nbsp&nbsp&nbsp&nbsp名：<input  type="text" style="width: 100px;height: 30px;" name="user_name">
+                &nbsp姓&nbsp&nbsp&nbsp&nbsp名：<input  type="text" style="width: 100px;height: 30px;" name="name">
                 <input type="radio"name="sex" value="0">男
                 <input type="radio"name="sex" value="1">女
                 <div style="width:970px; margin:10px auto;">出生日期：<input id="d421" class="Wdate" type="text" onfocus="WdatePicker({skin:'whyGreen',maxDate:'%y-%M-%d'})" name="birthday"/></div>
@@ -326,7 +326,7 @@ function isDate(dateStr)
         <div style="margin-left: 160px;border-top: 2px solid #eaeaea;width: 824px;top:-10px;height:550px;position:relative;margin-top: 25px;">
             <div class="jianlixq">
             简历标题：
-            <input type="text"style="height: 30px;"placeholder="例：求职淘宝客服" name="resume_title">
+            <input type="text"style="height: 30px;"placeholder="例：求职淘宝客服" name="title">
             <br>
             职位类别：
             <input type="text"style="height: 30px;"placeholder="请输入"><br>
