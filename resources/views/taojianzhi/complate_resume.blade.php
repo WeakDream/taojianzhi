@@ -275,10 +275,10 @@ function isDate(dateStr)
 
                 <br>
                 我的身份：
-                <input type="radio"name=reg class="student" checked>在校学生
-                <input type="radio"name=reg class="graduation">社会人才
-                <input type="input" value="所在学校" class="school"/>
-                <select name=xueli class="degree">
+                <input type="radio" name="reg" value="student" class="student" checked>在校学生
+                <input type="radio" name="reg" value="rencai" class="graduation" >社会人才
+                <input type="input" value="所在学校" class="school" name="school"/>
+                <select name="xueli" class="degree">
                     <option>高中以下</option>
                     <option>高中</option>
                     <option>中专/技校</option>

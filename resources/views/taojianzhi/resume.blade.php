@@ -3,8 +3,8 @@
 <head lang="en">
     <meta charset="utf-8">
 <title>简历</title>
-<script type="text/javascript" src="js/jquery-1.11.3.min.js" /></script>
-<script type="text/javascript" src="js/edit.js" ></script> 
+<script type="text/javascript" src="../js/jquery-1.11.3.min.js" /></script>
+<script type="text/javascript" src="../js/edit.js" ></script>
 <script type="text/javascript">
         $(document).ready(function(){
             $(".daohang4tan").hide();
@@ -231,7 +231,7 @@ body{
 <div class="rongqi" style="border:0px solid red;width:1024px;top:20px;height:1920px;position:relative;margin:0 auto;cursor:default;">
 <!--头部-->
 <div style="width:300px;height:100px;border:0px solid green;position:absolute;">
-<img src="img/taologo2.jpg" style="width:160px;">
+<img src="../img/taologo2.jpg" style="width:160px;">
 <div style="background:#DEDEDE;width:1px;height:58px;margin-left:170px;margin-top:-65px;"></div>
 <p style="color:#666666;font-size:27px;margin-left:190px;margin-top:-48px;">我的简历</p>
 </div>
@@ -239,7 +239,7 @@ body{
 <div style="width:650px;height:270px;border:0px solid black;position:absolute;top:100px;background:#F5F5F5;-webkit-box-shadow:3px 3px 3px 0 #737171;box-shadow:3px 3px 3px 0 #737171;">
 <!--头像-->
 <div style="width:200px;height:200px;border:0px solid red;background:white;position:absolute;top:20px;left:20px">
-<img src="img/touxiang.jpg" style="width:200px;height:200px;">
+<img src="{{$user_resume->photo}}" style="width:200px;height:200px;">
 <!--修改头像-->
 <div id="xiugai" style="width:136px;height:30px;background:white;opacity:0.9;margin-top:-30px;padding-top:5px;padding-left:65px;">
 <span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
@@ -248,18 +248,24 @@ body{
 </div><!--头像-->
 <!--姓名-->
 <div style="width:300px;height:50px;border:0px solid red;position:absolute;top:20px;left:260px;font-size:30px;">
-胡佳敏
+{{$user_resume->name}}
 </div><!--姓名-->
 <!--学校学院-->
 <div style="width:350px;height:55px;border:0px solid red;position:absolute;top:70px;left:260px;font-size:17px;">
-<span>杭州电子科技大学</span>
-<span>计算机学院</span>
-<p>计算机科学与技术</p>
+<span>{{$user_resume->school}}</span>
+
+
+{{--<span>计算机学院</span>--}}
+{{--<p>计算机科学与技术</p>--}}
+
+
 </div><!--学校学院-->
 <!--学历 城市-->
 <div style="width:350px;height:25px;border:0px solid red;position:absolute;top:130px;left:260px;font-size:15px;">
-<span>本科</span>
-<span>杭州</span>
+
+{{--<span>本科</span>--}}
+{{--<span>杭州</span>--}}
+
 </div><!--学历 城市-->
 <!--编辑-->
 <div style="width:110px;height:26px;position:absolute;top:230px;left:510px;border:0px solid red;">
@@ -273,7 +279,7 @@ body{
 <div style="background:#767474;width:130px;height:30px;color:white;font-size:18px;padding-top:5px;padding-left:25px;">其他联系方式</div>
 <ul class="lianxi" style="list-style-type:none;margin-top:30px;">
 <form>
-<p>电话：<b class="caname">10086</b></p>
+<p>电话：<b class="caname">{{$user_resume->contact}}</b></p>
 <p>微信：<b class="caname">Hanyu Yuzuru</b></p>
 <p> QQ&nbsp：<b class="caname">10001</b></p>
 </form>
@@ -286,7 +292,7 @@ body{
 <div style="background:#767474;width:130px;height:30px;color:white;font-size:18px;padding-top:5px;padding-left:25px;">我的评价</div>
 <!--第一条-->
 <div style="width:550px;height:120px;border:0px solid black;margin-top:50px;margin-left:40px;">
-<img src="img/ren1.jpg" style="width:90px;height:90px">
+<img src="../img/ren1.jpg" style="width:90px;height:90px">
 <p style="margin-top:-90px;margin-left:110px;color:blue;font-size:16px;">宋果</p>
 <p style="margin-left:160px;margin-top:-32px;">去哪儿网</p>
 <p style="margin-left:110px;font-size:17px;margin-top:15px;">在一个月的工作中，适应能力强，工作积极，认真负责。</p>
@@ -294,7 +300,7 @@ body{
 </div><!--第一条-->
 <!--第二条-->
 <div style="width:550px;height:120px;border:0px solid black;margin-top:50px;margin-left:40px;">
-<img src="img/ren2.jpg" style="width:90px;height:90px">
+<img src="../img/ren2.jpg" style="width:90px;height:90px">
 <p style="margin-top:-90px;margin-left:110px;color:blue;font-size:16px;">李历</p>
 <p style="margin-left:160px;margin-top:-32px;">中华教育</p>
 <p style="margin-left:110px;font-size:17px;margin-top:15px;">短短一星期的工作，完成的很好。</p>
@@ -310,7 +316,7 @@ body{
 <div style="background:#767474;width:130px;height:30px;color:white;font-size:18px;padding-top:5px;padding-left:25px;">更多信息</div>
 <!--个人专长-->
 <div style="width:200px;height:40px;border:0px solid red;margin-top:50px;margin-left:30px;">
-<img src="img/tub2.jpg" style="width:30px;height:35px;">
+<img src="../img/tub2.jpg" style="width:30px;height:35px;">
 &nbsp;<span style="font-size:18px;margin-top:20px;">个人专长</span>
 </div><!--个人专长-->
 <!--框-->
@@ -320,7 +326,7 @@ body{
 </div><!--框-->
 <!--工作经验-->
 <div style="width:200px;height:40px;border:0px solid red;margin-top:50px;margin-left:30px;">
-<img src="img/tub3.jpg" style="width:30px;height:37px;">
+<img src="../img/tub3.jpg" style="width:30px;height:37px;">
 &nbsp;<span style="font-size:18px;margin-top:20px;">工作经验</span>
 </div><!--工作经验-->
 <!--框-->
@@ -358,13 +364,13 @@ body{
 <!--收藏-->
 <div style="margin-top:70px;margin-left:30px;width:255px;height:180px;border:0px solid red;">
 <p style="font-size:17px;">他们收藏了你</p>
-<img src="img/ren1.jpg" style="margin-top:10px;width:70px;height:70px;">
+<img src="../img/ren1.jpg" style="margin-top:10px;width:70px;height:70px;">
 <p style="margin-left:80px;margin-top:-70px;color:blue;">宋果</p>
 <p style="margin-left:80px;margin-top:-5px;">旅游体验师  去哪儿网</p>
 <p style="font-size:15px;margin-left:150px;margin-top:-57px;">2015-12-01</p>
 <p style="color:red;margin-left:200px;margin-top:30px;cursor:pointer;">收藏</p>
 
-<img src="img/ren3.jpg" style="margin-top:10px;width:70px;height:70px;">
+<img src="../img/ren3.jpg" style="margin-top:10px;width:70px;height:70px;">
 <p style="margin-left:80px;margin-top:-70px;color:blue;">叶新</p>
 <p style="margin-left:80px;margin-top:-5px;">HR  花瓣网</p>
 <p style="font-size:15px;margin-left:150px;margin-top:-57px;">2016-2-15</p>
@@ -373,7 +379,7 @@ body{
 
 <p style="margin-top:20px;margin-left:30px;font-size:17px;margin-top:80px;">简历人气</p>
 <p style="margin-left:60px;">近7天有0人浏览了你的简历</p>
-<img src="img/tub4.png" style="margin-left:20px;">
+<img src="../img/tub4.png" style="margin-left:20px;">
 </div><!--右边第一块-->
 </div><!--容器-->
 
@@ -384,11 +390,11 @@ body{
         <div style="width:100%;height:1px;border-top:1px dashed #FF5500;margin-top:3px;"></div> 
         <table style="width:80%;height:80%;text-align:center;margin-left:73px">
         <tr>
-            <td rowspan=2><img src="img/taologo.jpg" style="width:170px;"></td>
+            <td rowspan=2><img src="../img/taologo.jpg" style="width:170px;"></td>
             <td><a href="#">联系我们</a></td>
             <td><a href="#">加入我们</a></td>
             <td><a href="#">关注我们</a></td>
-            <td rowspan=2><img src="img/erweima.jpg" style="width:110px;"></td>
+            <td rowspan=2><img src="../img/erweima.jpg" style="width:110px;"></td>
         </tr>
         <tr>
             <td><a href="#">关于我们</a></td>

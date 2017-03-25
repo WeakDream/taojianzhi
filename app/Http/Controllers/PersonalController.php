@@ -59,9 +59,9 @@ class PersonalController extends Controller {
             return view("taojianzhi/personal_center",["company_gets"=>$gets_job,"logs"=>$puts]);
         }
     }
-    public function personal_resume($username)
+    public function personal_resume($user_name)
     {
-        $user_data=DB::table("users")->where("nickname",$username)->first();
+        $user_data=DB::table("users")->where("nickname",$user_name)->first();
         $user_resume=DB::table("resumes")->where("user_id",$user_data->id)->first();
         if(!$this->is_login())
         {
@@ -75,25 +75,28 @@ class PersonalController extends Controller {
     }
 
     public function complate_resume(Requests\ResumeRequest $request){
+        if(Session::get('resume_state')==1){
+            return redirect()->to('personal_center');
+        }
         $UserName=Session::get("username");
         $get_user=DB::table("users")->where("nickname",$UserName)->first();
         $UserId = $get_user->id;
         $user_phone=$get_user->phone;
-        //dd($user_phone);
-        //dd($UserId);
         $resume = new resume_TJZ();
         $file = $request->file('user_head');
         $entension = $file->getClientOriginalExtension();
-        //dd($entension);
         $newName = $UserId."face".".".$entension;
-        //$path = $file -> move('public/facebook',$newName);
-        //dd($path);
+        $path = $file -> move('public/facebook',$newName);
         $save_path='/public/facebook/'.$newName;
-        //dd($save_path);
-        //dd($file);
         $user_data=$request->all();
+        //dd($user_data);
         $user_data['photo']=$save_path;
-        $user_data['school']=null;//搞啥？
+        if($user_data['reg'] == "student"){
+            $user_data['school']=$request->get('school');
+        }elseif ($user_data['reg'] == "rencai"){
+            $user_data['school']=$request->get('xueli');
+        }
+        //$user_data['school']=null;//搞啥？
         $user_data['contact']=$user_phone;//联系电话
         $user_data['city']=$request->get('Province').$request->get('City').$request->get('Area');
         $user_data['expect_location']=$request->get('EProvince').$request->get('ECity').$request->get('EArea');
@@ -101,6 +104,6 @@ class PersonalController extends Controller {
         //dd($user_data);
         $resume->complete($user_data);
         Session::put('resume_state',1);
-        return redirect()->to('resume',['username' => $UserName]);
+        return redirect()->route("resume",['user_name'=>$UserName]);
     }
 }

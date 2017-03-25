@@ -32,9 +32,12 @@ Route::post("person_announce_check","IndexController@person_announce_check");
 
 //用户的个人中心部分
 Route::get("personal_center","PersonalController@personal_center");
-Route::get("resume/{username}","PersonalController@personal_resume");
+Route::get("resume/{user_name}",['as'=>'resume','uses'=>'PersonalController@personal_resume']);
+
+
 Route::get("complate_personal_resume","PersonalController@complate_personal_resume");//跳转页面
 Route::post("complate_resume","PersonalController@complate_resume");
+
 
 //收藏与交易的部分
 Route::get("company/{name}","CompanyController@company");
