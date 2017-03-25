@@ -27,6 +27,16 @@
                 $(".daohang5tan").hide();
             });
 
+            $(".degree").hide();
+            $(".student").click(function(){
+                $(".school").show();
+                $(".degree").hide();
+            });
+            $(".graduation").click(function(){
+                $(".degree").show();
+                $(".school").hide();
+            });
+
         });
 
 
@@ -262,17 +272,22 @@ function isDate(dateStr)
 
               new PCAS("Province","City","Area","浙江省","杭州市","江干区")
                </script>
+
                 <br>
-                &nbsp学 &nbsp  &nbsp历：<select name=xueli>
-                <option>高中以下</option>
-                <option>高中</option>
-                <option>中专/技校</option>
-                <option>大专</option>
-                <option>本科</option>
-                <option>研究生</option>
-                <option>硕士</option>
-                <option>博士</option>
-            </select>
+                我的身份：
+                <input type="radio"name=reg class="student" checked>在校学生
+                <input type="radio"name=reg class="graduation">社会人才
+                <input type="input" value="所在学校" class="school"/>
+                <select name=xueli class="degree">
+                    <option>高中以下</option>
+                    <option>高中</option>
+                    <option>中专/技校</option>
+                    <option>大专</option>
+                    <option>本科</option>
+                    <option>研究生</option>
+                    <option>硕士</option>
+                    <option>博士</option>
+                </select>
                 <br>
                 {{--我的身份：<input type="radio"name=reg checked>在校学生--}}
                 {{--<input type="radio"name=reg>社会人才--}}
@@ -330,7 +345,12 @@ function isDate(dateStr)
             <br>
             职位类别：
             <input type="text"style="height: 30px;"placeholder="请输入"><br>
-            期望薪资：<input type="text"style="height: 30px;width: 100px;">元/小时
+            期望薪资：<input type="text"style="height: 30px;width: 100px;">
+                <span id="probSala_Tip"></span>
+                <select name="select" id="select_k1" class="xla_k">
+                    <option >天</option>
+                    <option value="选择2">时</option>
+                </select>
             <br>
             求职地区：
                 {{--<input type="text"style="height: 30px;width: 100px;"placeholder="请输入城市">--}}

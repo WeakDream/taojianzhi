@@ -32,7 +32,7 @@ Route::post("person_announce_check","IndexController@person_announce_check");
 
 //用户的个人中心部分
 Route::get("personal_center","PersonalController@personal_center");
-Route::get("personal_resume","PersonalController@personal_resume");
+Route::get("resume/{username}","PersonalController@personal_resume");
 Route::get("complate_personal_resume","PersonalController@complate_personal_resume");//跳转页面
 Route::post("complate_resume","PersonalController@complate_resume");
 

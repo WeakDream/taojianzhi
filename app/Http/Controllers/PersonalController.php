@@ -59,13 +59,15 @@ class PersonalController extends Controller {
             return view("taojianzhi/personal_center",["company_gets"=>$gets_job,"logs"=>$puts]);
         }
     }
-    public function personal_resume()
+    public function personal_resume($username)
     {
+        $user_data=DB::table("users")->where("nickname",$username)->first();
+        $user_resume=DB::table("resumes")->where("user_id",$user_data->id)->first();
         if(!$this->is_login())
         {
             return redirect()->to("login");
         }
-        return view ("taojianzhi/resume");
+        return view ("taojianzhi/resume",compact('user_data','user_resume'));
     }
     public function complate_personal_resume()
     {
@@ -99,6 +101,6 @@ class PersonalController extends Controller {
         //dd($user_data);
         $resume->complete($user_data);
         Session::put('resume_state',1);
-        return redirect('resume');
+        return redirect()->to('resume',['username' => $UserName]);
     }
 }
