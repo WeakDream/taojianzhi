@@ -270,7 +270,7 @@ body{
 <!--编辑-->
 <div style="width:110px;height:26px;position:absolute;top:230px;left:510px;border:0px solid red;">
 <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-<a href="jianlitianxie.blade.php" style="color:#333333;">编辑个人简历</a>
+<a href="/" style="color:#333333;">编辑个人简历</a>
 </div><!--编辑-->
 </div><!--第一块-->
 
