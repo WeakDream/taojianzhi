@@ -84,7 +84,8 @@ class UserController extends Controller {
     public function login_out()
     {
         Session::flush("username");
-        return redirect()->to("index");
+        //return redirect()->to("index");
+        return redirect('index');
     }
 
 
