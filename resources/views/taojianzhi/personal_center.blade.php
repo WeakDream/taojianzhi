@@ -9,6 +9,10 @@
     <script type="text/javascript" src="js/jquery-1.11.3.min.js" /></script>
     <script type="text/javascript">
     $(document).ready(function(){
+      //  function hello(){
+            //alert("hello");
+        //}
+        //hello();
         $(".daohang4tan").hide();
         $(".daohang5tan").hide();
 
@@ -33,7 +37,6 @@
             $(".daohang5").css({"background":"#F5F5F5","border":"0px"});
             $(".daohang5tan").hide();
         });
-
 
 
         $(".qiuzhi").click(function(){
@@ -226,6 +229,7 @@
             $(".kefutan2").hide();
             $(".kefutan3").hide();
         });
+        //$('#l3').click();
         $("#l41").click(function(){
             $(".zhongxintan").hide();
             $(".fabutan").hide();
