@@ -366,6 +366,15 @@ function isDate(dateStr)
             <br>
             <p style="margin-left: 100px;"><input type="submit" value="保存并提交" style="background-color: #FF5500;height: 40px;width: 150px;font-size: 20px;color: #ffffff"></p>
             </div>
+            @if($errors->any())
+                <div class=' alert-danger' style="margin-top: 8px;padding-left: 40px" >
+                    <ul>
+                        @foreach($errors->all() as $error)
+                        <li>{{$error}}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
         </div>
     </form>
 
