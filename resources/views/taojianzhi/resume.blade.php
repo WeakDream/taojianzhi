@@ -5,6 +5,9 @@
 <title>简历</title>
 <script type="text/javascript" src="../js/jquery-1.11.3.min.js" /></script>
 <script type="text/javascript" src="../js/edit.js" ></script>
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript">
         $(document).ready(function(){
             $(".daohang4tan").hide();
@@ -78,9 +81,10 @@
 			$("html,body").animate({scrollTop:"0px"},200);
 	});
 });
-		
+
 		
 	});
+
 </script>
 <style>
 body{
@@ -241,18 +245,65 @@ body{
 <div style="width:200px;height:200px;border:0px solid red;background:white;position:absolute;top:20px;left:20px">
 <img src="{{$user_resume->photo}}" style="width:200px;height:200px;">
 <!--修改头像-->
-<div id="xiugai" style="width:136px;height:30px;background:white;opacity:0.9;margin-top:-30px;padding-top:5px;padding-left:65px;">
-<span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
-<a id="xg2" herf="" style="color:#777777;">修改头像</a>
+    <div style="width:5px"></div>
+<div id="xiugai" style="width:136px;height:30px;opacity:0.9;margin-top:-30px;padding-top:5px;padding-left:65px;">
+<span></span>
+<!--<a id="xg2" herf="" style="color:#777777;">修改头像</a>!-->
+    <label for="xFile" style="width: 100px;color: white;font-size: 15px">修改头像</label>
+
+    <form action="/update_user_head" method="post" enctype="multipart/form-data">
+        <input type="file" id="xFile" name="user_head" style="position:absolute;clip:rect(0 0 0 0);">
+        <input type="submit" value="保存" style="width: 60px;background-color: #FF5500;color: white;font-size: 15px">
+    </form>
 </div><!--修改头像-->
 </div><!--头像-->
 <!--姓名-->
 <div style="width:300px;height:50px;border:0px solid red;position:absolute;top:20px;left:260px;font-size:30px;">
-{{$user_resume->name}}
+        {{$user_resume->name}}
+        &nbsp&nbsp&nbsp&nbsp<button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+            简历的公开程度
+        </button>
+
+    <!-- 模态框（Modal） -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        请选择简历的公开程度
+                    </h4>
+                </div>
+                <div class="modal-body">
+                   <label style="font-size: 23px"><input name="type" type="radio" >&nbsp &nbsp完全公开</label>
+                    <br>
+                    &nbsp &nbsp  <span style="font-size: 16px">选择以后您的简历将被所有通过验证的用户看到</span>
+                    <br>
+                    <label style="font-size: 23px"><input name="type" type="radio" >&nbsp &nbsp完全公开</label>
+                    <br>
+                    &nbsp &nbsp  <span style="font-size: 16px">选择以后您的简历将只被你所投递的用人单位看到</span>
+                    <br>
+                    <label style="font-size: 23px"><input name="type" type="radio" >&nbsp &nbsp完全公开</label>
+                    <br>
+                    &nbsp &nbsp  <span style="font-size: 16px">选择以后您的简历将仅仅自己可以看到</span>
+                    <br>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                    </button>
+                    <button type="button" class="btn btn-primary">
+                        提交更改
+                    </button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
 </div><!--姓名-->
 <!--学校学院-->
 <div style="width:350px;height:55px;border:0px solid red;position:absolute;top:70px;left:260px;font-size:17px;">
-<span>{{$user_resume->school}}</span>
+<span>学校：{{$user_resume->school}}</span>
 
 
 {{--<span>计算机学院</span>--}}

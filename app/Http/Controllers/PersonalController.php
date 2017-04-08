@@ -59,6 +59,12 @@ class PersonalController extends Controller {
             return view("taojianzhi/personal_center",["company_gets"=>$gets_job,"logs"=>$puts]);
         }
     }
+    //浏览记录的删除
+    public function logs_delete($company_name)
+    {
+        $return=DB::table('user_logs')->where('company_name',$company_name)->delete();
+        return redirect()->to('personal_center');
+    }
     public function personal_resume($user_name)
     {
         $user_data=DB::table("users")->where("nickname",$user_name)->first();
@@ -76,7 +82,7 @@ class PersonalController extends Controller {
 
     public function complate_resume(Requests\ResumeRequest $request){
         if(Session::get('resume_state')==1){
-            return redirect()->to('personal_center');
+            return redirect()->route('personal_center');
         }
         $UserName=Session::get("username");
         $get_user=DB::table("users")->where("nickname",$UserName)->first();
@@ -104,6 +110,23 @@ class PersonalController extends Controller {
         //dd($user_data);
         $resume->complete($user_data);
         Session::put('resume_state',1);
+        return redirect()->route("resume",['user_name'=>$UserName]);
+    }
+    public function update_user_head(Request $request)
+    {
+        $UserName=Session::get("username");
+        $user_data=DB::table("users")->where("nickname",$UserName)->first();
+       // dd($UserName);
+        $get_user=DB::table("users")->where("nickname",$UserName)->first();
+        $UserId = $get_user->id;
+        $file = $request->file('user_head');
+        //dd($file);
+        $entension = $file->getClientOriginalExtension();
+        $newName = $UserId."face".".".$entension;
+        $path = $file -> move('public/facebook',$newName);
+        $save_path='/public/facebook/'.$newName;
+        DB::table('resumes')->where('user_id',$user_data->id)->update(array('photo'=>$save_path));
+        //dd($g);
         return redirect()->route("resume",['user_name'=>$UserName]);
     }
 }

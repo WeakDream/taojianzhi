@@ -1148,8 +1148,9 @@
                             <th width="200px"></th>
                             <th width="500px"><a href="{{url('company',$log->company_name)}}">{{$log->company_name}}</a></th>
                             <th width="600px">{{$log->updated_at}}</th>
-                            <th><button style="background-color: #FF5500;color: white">购买岗位</button> &nbsp&nbsp
-                                <button style="background-color: #FF5500;color: white">删除记录</button></th>
+                            <th><a href="{{url("logs_delete",$log->company_name)}}"><span style="display: inline-block;background-color: #FF5500;color: white;width: 70px;height: 25px">&nbsp购买岗位</span></a> &nbsp&nbsp
+                                <!--<button style="background-color: #FF5500;color: white">删除记录</button></th>!-->
+                                <a href="{{url("logs_delete",$log->company_name)}}"><span style="display: inline-block;background-color: #FF5500;color: white;width: 70px;height: 25px">&nbsp删除记录</span></a>
                         </tr>
                         @endforeach
                             @endif
