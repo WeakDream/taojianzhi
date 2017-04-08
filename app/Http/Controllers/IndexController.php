@@ -14,7 +14,7 @@ class IndexController extends Controller {
     public function  index()
     {
         $role_id=null;
-        $inputs=DB::table("companys")->paginate(10);
+        $inputs=DB::table("companys")->paginate(4);
         $time=array();
         $length=count($inputs);
         $username=Session::get('username');
