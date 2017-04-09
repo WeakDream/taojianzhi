@@ -15,10 +15,14 @@ class CompanyController extends Controller {
 
 	public function company($name)
     {
+
         $company=DB::table("tjz_jobs")->where("company_name",$name)->first();
         //dd($company);
         $company_name=$company->company_name;
         $username=Session::get('username');
+        if(!Session::get('username')) {
+            return view("taojianzhi/company", ["company" => $company]);
+        }
         $logs=DB::table('user_logs')->where('company_name',$name)->where('user',$username)->first();
         if($logs)
         {
@@ -31,6 +35,7 @@ class CompanyController extends Controller {
         }
         else
         {
+
             user_logs::create(['company_name' => $company_name, 'user' => $username]);
         }
         return view("taojianzhi/company",["company"=>$company]);
