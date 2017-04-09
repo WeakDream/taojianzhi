@@ -264,8 +264,8 @@ body{
 }
 .mianfei2{
     border:1px solid #FF5500;
-    width:150px;
-    height:30px;
+    width:160px;
+    height:40px;
     position:absolute;
     left:830px;
     top:26px;
@@ -769,17 +769,20 @@ body{
     </div>
     <!--免费发布信息-->
 
-    <a href="{{url('announce',$role_id)}}">
+
         @if(isset($role_id))
          @if($role_id==1)
+            <a href="{{url('announce',$role_id)}}">
             <div class="mianfei"></div></a>
         @endif
          @if($role_id==2)
+                 <a href="{{url('announce',$role_id)}}">
              <div class="mianfei2">申请账号，免费招聘</div></a>
 
             @endif
         @endif
     @if(!isset($role_id))
+        <a href="{{url('announce')}}">
         <div class="mianfei2">申请账号，免费招聘</div></a>
         @endif
 </div>
@@ -1880,7 +1883,7 @@ body{
                     <table>
                         <tr height="40">
                             <td width="30"></td>
-                            <td width="340"><a href="{{url('company',$input->name)}}">{{$input->name}}</a></td>
+                            <td width="340"><a href="{{url('company',$input->company_name)}}">{{$input->company_name}}</a></td>
                             <td width="150">{{$input->contact_person}}</td>
                             <td width="200">{{$input->contact}}</td>
                             <td width="200">{{$input->created_at}}</td>
@@ -1894,7 +1897,7 @@ body{
             <table>
                 <tr height="40">
                     <td width="30"></td>
-                    <td width="340"><a href="{{url('company',$n->name)}}">{{$n->name}}</a></td>
+                    <td width="340"><a href="{{url('company',$n->company_name)}}">{{$n->company_name}}</a></td>
                     <td width="150">{{$n->contact_person}}</td>
                     <td width="200">{{$n->contact}}</td>
                     <td width="200">{{$n->updated_at}}</td>

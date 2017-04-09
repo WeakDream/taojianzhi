@@ -14,7 +14,7 @@ class IndexController extends Controller {
     public function  index()
     {
         $role_id=null;
-        $inputs=DB::table("companys")->paginate(4);
+        $inputs=DB::table("tjz_jobs")->paginate(8);
         $time=array();
         $length=count($inputs);
         $username=Session::get('username');
@@ -36,6 +36,12 @@ class IndexController extends Controller {
     public function search(Request $request)
     {
         $m=null;
+        $username=Session::get('username');
+        if($username)
+        {
+            $role_id=DB::table('users')->where("nickname",$username)->first()->role_id;
+            //dd($role_id);
+        }
         //$test=new \App\filtration();
         $name=$request->i_key;
         if($name==null)
@@ -43,7 +49,7 @@ class IndexController extends Controller {
             return redirect('index');
         }
         //$gets=$test->search($name);
-        $gets=DB::table("companys")->where("name","like","%".$name."%")->get();
+        $gets=DB::table("tjz_jobs")->where("company_name","like","%".$name."%")->get();
         if(!$gets)
         {
             $m=null;
@@ -52,7 +58,7 @@ class IndexController extends Controller {
         {
             $m=$gets;
         }
-        return view('taojianzhi/index',compact('m'));
+        return view('taojianzhi/index',compact(['m','role_id']));
     }
     public function announce($role_id)
     {
@@ -82,20 +88,27 @@ class IndexController extends Controller {
        // $input['file_routrs']=$path;
         $input['name']=$request->get('name');
         //$input['time']=$request->get('time');
-        $input['type']=$request->get('type');
+        $input['job_type']=$request->get('type');
         //$input['number']=$request->get('number');
         $input['salary']=$request->get('salary');
         $input['company_name']=$request->get('companyName');
-        $input['address']=$request->get('CompanyAddr');
+        $input['position']=$request->get('CompanyAddr');
         $input['description']=$request->get('intro');
         $input['contact_person']=$request->get('Contacts');
         $input['contact']=$request->get('phone');
         $input['city']=$request->get('Province');
+        $user=Session::get('username');
+        $id=DB::table('users')->where('nickname',$user)->first()->id;
+        //dd($id);
+        $input['creator_id']=$id;
+        $input['creator_name']=$user;
+        //$input['type']="劳动型";
+       // dd($input);
         //dd($input2['city']);
-        $input2['name']=$input['company_name'];
-        $input2['contact_person']=$input['contact_person'];
-        $input2['contact']=$input['contact'];
-        company::create($input2);
+        //$input2['name']=$input['company_name'];
+        //$input2['contact_person']=$input['contact_person'];
+        //$input2['contact']=$input['contact'];
+        //company::create($input2);
         job2::create($input);
 
         return redirect('index');

@@ -63,7 +63,7 @@ class UserController extends Controller {
                 $role_id=$get1->role_id;
                 //dd($role_id);
                 Session::put("username",$get1->nickname);
-                $inputs=DB::table("companys")->paginate(8);
+                $inputs=DB::table("tjz_jobs")->paginate(8);
                 $resume_state=DB::table('resumes')->where('user_id','=',$get1->id)->first();
                 if(!$resume_state){
                     Session::put("resume_state",0);
