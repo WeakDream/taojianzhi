@@ -755,7 +755,7 @@ body{
 <!--头部-->
 <div class="header" style="width:100%;height:100px;border:1px solid white;position:absolute;cursor:default;">
     <!--LOGO-->
-    <img src="img/taologo.jpg" style="width:160px;">
+    <img src="../img/taologo.jpg" style="width:160px;">
     <!--搜索-->
     <div class="sousuo">
         <form action="{{ url('search_handle') }}" method="post">
@@ -1642,10 +1642,10 @@ body{
     <div class="zhong" style="border-top:3px solid #FF4706;;width:520px;height:400px;position:absolute;margin-left:250px;">
         <div class="tu">
             <ul>
-                <li style="left:0px;"><img src="img/tu1.jpg"></li>
-                <li><img src="img/tu2.jpg"></li>
-                <li><img src="img/tu3.jpg"></li>
-                <li><img src="img/tu4.jpg"></li>
+                <li style="left:0px;"><img src="../img/tu1.jpg"></li>
+                <li><img src="../img/tu2.jpg"></li>
+                <li><img src="../img/tu3.jpg"></li>
+                <li><img src="../img/tu4.jpg"></li>
             </ul>
         </div>
         <div class="yuan">
