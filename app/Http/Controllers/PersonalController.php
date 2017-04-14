@@ -68,13 +68,15 @@ class PersonalController extends Controller {
     public function personal_resume($user_name)
     {
         $user_data=DB::table("users")->where("nickname",$user_name)->first();
-        $user_resume=DB::table("resumes")->where("user_id",$user_data->id)->first();
+        $resume=DB::table("resumes")->where("user_id",$user_data->id)->first();
         if(!$this->is_login())
         {
             return redirect()->to("login");
         }
-        return view ("taojianzhi/resume",compact('user_data','user_resume'));
+        return view ("taojianzhi/resume",compact('user_data','resume'));
     }
+
+
     public function complate_personal_resume()
     {
         return view ("taojianzhi/complate_resume");

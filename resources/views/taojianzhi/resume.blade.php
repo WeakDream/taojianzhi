@@ -243,7 +243,7 @@ body{
 <div style="width:650px;height:270px;border:0px solid black;position:absolute;top:100px;background:#F5F5F5;-webkit-box-shadow:3px 3px 3px 0 #737171;box-shadow:3px 3px 3px 0 #737171;">
 <!--头像-->
 <div style="width:200px;height:200px;border:0px solid red;background:white;position:absolute;top:20px;left:20px">
-<img src="{{$user_resume->photo}}" style="width:200px;height:200px;">
+<img src="{{$resume->photo}}" style="width:200px;height:200px;">
 <!--修改头像-->
     <div style="width:5px"></div>
 <div id="xiugai" style="width:136px;height:30px;opacity:0.9;margin-top:-30px;padding-top:5px;padding-left:65px;">
@@ -252,14 +252,14 @@ body{
     <label for="xFile" style="width: 100px;color: white;font-size: 15px">修改头像</label>
 
     <form action="/update_user_head" method="post" enctype="multipart/form-data">
-        <input type="file" id="xFile" name="user_head" style="position:absolute;clip:rect(0 0 0 0);">
+        <input type="file" id="xFile" name="user_head" style="position:absolute;clip:rect(0 0 0 0)">
         <input type="submit" value="保存" style="width: 60px;background-color: #FF5500;color: white;font-size: 15px">
     </form>
 </div><!--修改头像-->
 </div><!--头像-->
 <!--姓名-->
 <div style="width:300px;height:50px;border:0px solid red;position:absolute;top:20px;left:260px;font-size:30px;">
-        {{$user_resume->name}}
+        {{$resume->name}}
         &nbsp&nbsp&nbsp&nbsp<button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
             简历的公开程度
         </button>
@@ -303,7 +303,7 @@ body{
 </div><!--姓名-->
 <!--学校学院-->
 <div style="width:350px;height:55px;border:0px solid red;position:absolute;top:70px;left:260px;font-size:17px;">
-<span>学校：{{$user_resume->school}}</span>
+<span>学校：{{$resume->school}}</span>
 
 
 {{--<span>计算机学院</span>--}}
@@ -327,10 +327,10 @@ body{
 
 <!--第四块-->
 <div style="width:650px;height:230px;border:0px solid black;position:absolute;top:410px;margin-top:50px;background:#F5F5F5;-webkit-box-shadow:3px 3px 3px 0 #737171;box-shadow:3px 3px 3px 0 #737171;">
-<div style="background:#767474;width:130px;height:30px;color:white;font-size:18px;padding-top:5px;padding-left:25px;">其他联系方式</div>
+<div style="background:#767474;width:200px;height:30px;color:white;font-size:18px;padding-top:5px;padding-left:25px;">其他联系方式</div>
 <ul class="lianxi" style="list-style-type:none;margin-top:30px;">
 <form>
-<p>电话：<b class="caname">{{$user_resume->contact}}</b></p>
+<p>电话：<b class="caname">{{$resume->contact}}</b></p>
 <p>微信：<b class="caname">Hanyu Yuzuru</b></p>
 <p> QQ&nbsp：<b class="caname">10001</b></p>
 </form>
@@ -358,7 +358,7 @@ body{
 <p style="margin-left:110px;font-size:14px;margin-top:15px;">2016年3月6日</p>
 </div><!--第二条-->
 <!--更多-->
-<div class="gengduo" style="width:350px;height:30px;position:absolute;top:230px;opacity:0.5;background:#AFB5C6;color:black;padding-left:300px;padding-top:5px;cursor:pointer;">更多</div><!--更多-->
+<div class="gengduo" style="width:650px;height:30px;position:absolute;top:230px;opacity:0.5;background:#AFB5C6;color:black;padding-left:300px;padding-top:5px;cursor:pointer;">更多</div><!--更多-->
 </div><!--第三块-->
 
 
