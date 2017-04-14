@@ -281,11 +281,11 @@ body{
                     <br>
                     &nbsp &nbsp  <span style="font-size: 16px">选择以后您的简历将被所有通过验证的用户看到</span>
                     <br>
-                    <label style="font-size: 23px"><input name="type" type="radio" >&nbsp &nbsp完全公开</label>
+                    <label style="font-size: 23px"><input name="type" type="radio" >&nbsp &nbsp不完全公开</label>
                     <br>
                     &nbsp &nbsp  <span style="font-size: 16px">选择以后您的简历将只被你所投递的用人单位看到</span>
                     <br>
-                    <label style="font-size: 23px"><input name="type" type="radio" >&nbsp &nbsp完全公开</label>
+                    <label style="font-size: 23px"><input name="type" type="radio" >&nbsp &nbsp不公开</label>
                     <br>
                     &nbsp &nbsp  <span style="font-size: 16px">选择以后您的简历将仅仅自己可以看到</span>
                     <br>

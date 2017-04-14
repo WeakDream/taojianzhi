@@ -127,6 +127,7 @@ class PersonalController extends Controller {
         $newName = $UserId."face".".".$entension;
         $path = $file -> move('public/facebook',$newName);
         $save_path='/public/facebook/'.$newName;
+        //dd($save_path);
         DB::table('resumes')->where('user_id',$user_data->id)->update(array('photo'=>$save_path));
         //dd($g);
         return redirect()->route("resume",['user_name'=>$UserName]);
