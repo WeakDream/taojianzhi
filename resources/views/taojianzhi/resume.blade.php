@@ -342,13 +342,17 @@ body{
 <div class="san" style="overflow:hidden;width:650px;height:260px;background:#F5F5F5;-webkit-box-shadow:3px 3px 3px 0 #737171;box-shadow:3px 3px 3px 0 #737171;">
 <div style="background:#767474;width:130px;height:30px;color:white;font-size:18px;padding-top:5px;padding-left:25px;">我的评价</div>
 <!--第一条-->
-<div style="width:550px;height:120px;border:0px solid black;margin-top:50px;margin-left:40px;">
-<img src="../img/ren1.jpg" style="width:90px;height:90px">
-<p style="margin-top:-90px;margin-left:110px;color:blue;font-size:16px;">宋果</p>
-<p style="margin-left:160px;margin-top:-32px;">去哪儿网</p>
-<p style="margin-left:110px;font-size:17px;margin-top:15px;">在一个月的工作中，适应能力强，工作积极，认真负责。</p>
-<p style="margin-left:110px;font-size:14px;margin-top:15px;">2016年1月3日</p>
-</div><!--第一条-->
+    @if(isset($evaluates))
+        @if(!empty($evaluates))
+            <div style="width:550px;height:120px;border:0px solid black;margin-top:50px;margin-left:40px;">
+            <img src="{{$evaluates->pictures}}" style="width:90px;height:90px">
+            <p style="margin-top:-90px;margin-left:110px;color:blue;font-size:16px;">{{$evaluates->user_name}}</p>
+            {{--<p style="margin-left:160px;margin-top:-32px;">去哪儿网</p>--}}
+            <p style="margin-left:110px;font-size:17px;margin-top:15px;">{{$evaluates->comment}}</p>
+            <p style="margin-left:110px;font-size:14px;margin-top:15px;">2016年1月3日</p>
+            </div><!--第一条-->
+        @endif
+    @endif
 <!--第二条-->
 <div style="width:550px;height:120px;border:0px solid black;margin-top:50px;margin-left:40px;">
 <img src="../img/ren2.jpg" style="width:90px;height:90px">

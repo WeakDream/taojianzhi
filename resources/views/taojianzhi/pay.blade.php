@@ -25,8 +25,7 @@
                 $(".daohang5tan").hide();
             });
             $('#querenzhifu').click(function () {
-                var content1=document.getElementsByTagName("p")[1].innerHTML
-                var content2=document.getElementsByTagName("p")[2].innerHTML
+                var content1=document.getElementById("company_name").innerHTML;
                 var password=$("#mima").val();
 
                 //alert(content2);
@@ -296,7 +295,7 @@
     <div class="content">
         <div class="zhiwei">
             <img src="/img/taologo.jpg" >
-            <p>{{$outputs->company_name}}</p>
+            <p id="company_name">{{$outputs->company_name}}</p>
             <p>{{$outputs->name}}</p>
             <span style="float: right;margin-right: 40px;margin-top: -40px;"><b style="color: #FF5500;font-size: 27px;">10.0</b>元</span>
         </div>
@@ -317,14 +316,6 @@
                 <input type="password"style="width: 180px;height: 30px" id="mima">
                 <a href="#" style="border: none;color: blue;display: inline">忘记密码？</a>
                 <br/>
-                <script>
-                    function zhifu() {
-                        var content1=document.getElementsByTagName("p")[1].innerHTML
-                        var content2=document.getElementsByTagName("p")[2].innerHTML
-                        //alert(content1);
-
-                    }
-                </script>
                 <button id="querenzhifu">确认付款</button>
             </div>
         </div>
