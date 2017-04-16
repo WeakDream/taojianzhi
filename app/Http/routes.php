@@ -50,6 +50,10 @@ Route::get("job_buy/{name}","CompanyController@buy");
 Route::post("job_buy/pay","CompanyController@pay");
 Route::get("pay_success","CompanyController@pay_success");
 Route::get("job_save/{name}","CompanyController@job_save");
+Route::get("hello",function ()
+{
+    return "hello";
+});
 
 
 //卖家的简历处理，目前邮箱的通知部分是写死的
