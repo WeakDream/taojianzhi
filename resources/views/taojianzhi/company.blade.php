@@ -380,7 +380,7 @@
         <div style="width:100%;height:12px;background:#FF5500"></div>
         <div style="width:100%;height:1px;border-top:1px dashed #FF5500;margin-top:3px;"></div>
         <img src="/img/taologo.jpg" style="width:110px;border:1px solid #FF5500;margin-top:40px;margin-left:130px;">
-        <a href="{{"/$company->company_name/hello"}}" style="margin-top:-53px;margin-left:350px;">联系我们</a>
+        <a href="{{"$company->company_name/hello"}}" style="margin-top:-53px;margin-left:350px;">联系我们</a>
         <a href="#" style="margin-top:-22px;margin-left:470px;">加入我们</a>
         <a href="#" style="margin-top:-22px;margin-left:590px;">关注我们</a>
         <a href="#" style="margin-top:8px;margin-left:350px;">关于我们</a>
