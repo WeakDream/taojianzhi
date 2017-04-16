@@ -45,10 +45,10 @@ Route::post("update_user_head","PersonalController@update_user_head");
 
 //收藏与交易的部分
 Route::get("company/{name}","CompanyController@company");
-//Route::get("company/{name}/hello",function ()
-//{
-  //  return "hello";
-//});对路由的一个测试
+Route::get("company/{name}/hello",function ()
+{
+    return "hello";
+});//对路由的一个测试
 Route::get("job_buy/{name}","CompanyController@buy");
 Route::post("job_buy/pay","CompanyController@pay");
 Route::get("pay_success","CompanyController@pay_success");
