@@ -354,13 +354,13 @@ body{
         @endif
     @endif
 <!--第二条-->
-<div style="width:550px;height:120px;border:0px solid black;margin-top:50px;margin-left:40px;">
-<img src="../img/ren2.jpg" style="width:90px;height:90px">
-<p style="margin-top:-90px;margin-left:110px;color:blue;font-size:16px;">李历</p>
-<p style="margin-left:160px;margin-top:-32px;">中华教育</p>
-<p style="margin-left:110px;font-size:17px;margin-top:15px;">短短一星期的工作，完成的很好。</p>
-<p style="margin-left:110px;font-size:14px;margin-top:15px;">2016年3月6日</p>
-</div><!--第二条-->
+{{--<div style="width:550px;height:120px;border:0px solid black;margin-top:50px;margin-left:40px;">--}}
+{{--<img src="../img/ren2.jpg" style="width:90px;height:90px">--}}
+{{--<p style="margin-top:-90px;margin-left:110px;color:blue;font-size:16px;">李历</p>--}}
+{{--<p style="margin-left:160px;margin-top:-32px;">中华教育</p>--}}
+{{--<p style="margin-left:110px;font-size:17px;margin-top:15px;">短短一星期的工作，完成的很好。</p>--}}
+{{--<p style="margin-left:110px;font-size:14px;margin-top:15px;">2016年3月6日</p>--}}
+{{--</div><!--第二条-->--}}
 <!--更多-->
 <div class="gengduo" style="width:650px;height:30px;position:absolute;top:230px;opacity:0.5;background:#AFB5C6;color:black;padding-left:300px;padding-top:5px;cursor:pointer;">更多</div><!--更多-->
 </div><!--第三块-->

@@ -30,16 +30,16 @@ class ResumeController extends Controller {
     }
     public function personal_resume($user_name)
     {
-        $UserName = Session::get("username");
         $UserId = Session::get("UserId");
         $user_data=DB::table("users")->where("nickname",$user_name)->first();
         $resume=DB::table("resumes")->where("user_id",$user_data->id)->first();
-        $evaluates=DB::table("user_evaluates")->where("target_id",$UserId);
+        $evaluates=DB::table("user_evaluates")->where("target_id",$UserId)->first();
+        //dd($evaluates);
         if(!$this->is_login())
         {
             return redirect()->to("login");
         }
-        return view ("taojianzhi/resume",compact('user_data','resume'));
+        return view ("taojianzhi/resume",compact('user_data','resume','evaluates'));
     }
     public function complate_personal_resume()
     {
