@@ -14,9 +14,9 @@ class IndexController extends Controller {
     public function  index()
     {
         $role_id=null;
-        $inputs=DB::table("tjz_jobs")->paginate(8);
+        $companys=DB::table("tjz_jobs")->paginate(8);
         $time=array();
-        $length=count($inputs);
+        $length=count($companys);
         $username=Session::get('username');
         if($username)
         {
@@ -25,13 +25,22 @@ class IndexController extends Controller {
         }
        for($i=0;$i<$length;$i++)
        {
-           $get=explode(" ",$inputs[$i]->created_at);
+           $get=explode(" ",$companys[$i]->created_at);
            $time[$i]=$get[0];
-           $inputs[$i]->created_at=$time[$i];
+           $companys[$i]->created_at=$time[$i];
        }
+        $resumes = DB::table("resumes")->paginate(8);
+        $resumes_length = count($resumes);
+        for($i=0;$i<$resumes_length;$i++){
+            if($resumes[$i]->sex == 1){
+                $resumes[$i]->sex = '女';
+            }elseif ($resumes[$i]->sex == 0){
+                $resumes[$i]->sex = '男';
+            }
+        }
        //dd($inputs);
        //dd($time);
-        return view("taojianzhi/index",["inputs"=>$inputs,"role_id"=>$role_id]);
+        return view("taojianzhi/index",["companys"=>$companys,"role_id"=>$role_id,"resumes"=>$resumes]);
 	}
     public function search(Request $request)
     {
@@ -105,7 +114,7 @@ class IndexController extends Controller {
        // $input['file_routrs']=$path;
         $input['name']=$request->get('name');
         //$input['time']=$request->get('time');
-        $input['type']=$request->get('type');
+        $input['job_type']=$request->get('type');
         //$input['number']=$request->get('number');
         $input['salary']=$request->get('salary');
         $input['company_name']=$request->get('companyName');

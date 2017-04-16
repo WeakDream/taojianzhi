@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use App\User;
+use Symfony\Component\Process\Tests\SigchildEnabledProcessTest;
 
 class UserController extends Controller {
     public function register()
@@ -49,7 +50,7 @@ class UserController extends Controller {
     {
         $name=$request->get("username");
         $password=$request->get("password");
-        $get1=DB::table("users")->where("email","=",$name)->orwhere("nickname","=",$name)->first();
+        $get1=DB::table("users")->where("email","=",$name)->orwhere("nickname","=",$name)->orwhere("phone","=",$name)->first();
         if(!$get1)
         {
             //return view("taojianzhi/login",["m"=>"该用户不存在"]);
@@ -63,6 +64,7 @@ class UserController extends Controller {
                 $role_id=$get1->role_id;
                 //dd($role_id);
                 Session::put("username",$get1->nickname);
+                Session::put("UserId",$get1->id);
                 $inputs=DB::table("tjz_jobs")->paginate(8);
                 $resume_state=DB::table('resumes')->where('user_id','=',$get1->id)->first();
                 if(!$resume_state){
@@ -84,6 +86,7 @@ class UserController extends Controller {
     public function login_out()
     {
         Session::flush("username");
+        Session::flush("UserId");
         //return redirect()->to("index");
         return redirect('index');
     }
