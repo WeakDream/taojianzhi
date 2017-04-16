@@ -66,14 +66,14 @@
 
 
             $(".jianzhizhiwei").click(function(){
-                $(".jianzhizhiwei").css({"background":"url(img/pic1.jpg)","color":"white"});
+                $(".jianzhizhiwei").css({"background":"url(../img/pic1.jpg)","color":"white"});
                 $(".jianzhijianli").css({"background":"white","color":"#3C3C3C"});
                 $("#l1").show();
                 $("#l2").hide();
             });
 
             $(".jianzhijianli").click(function(){
-                $(".jianzhijianli").css({"background":"url(img/pic1.jpg)","color":"white"});
+                $(".jianzhijianli").css({"background":"url(../img/pic1.jpg)","color":"white"});
                 $(".jianzhizhiwei").css({"background":"white","color":"#3C3C3C"});
                 $("#l1").hide();
                 $("#l2").show();
@@ -329,7 +329,7 @@ body{
     top:0px;
 }
 .jianzhizhiwei{
-    background:url(img/pic1.jpg);
+    background:url(../img/pic1.jpg);
     width:150px;
     height:28px;
     color:white;
@@ -447,6 +447,9 @@ body{
     border:1px solid grey;
     font-size:18px;
 }
+.xiabu2 dl dd{
+    display:inline;
+}
 .xiabu3 ul li div:hover{
     width:28px;
     height:28px;
@@ -527,7 +530,7 @@ body{
 
     position: relative;
     border: 2px solid #FF5500;
-    height: 180px;
+    height: auto;
     width: 500px;
     margin-left: 220px;
     margin-top: -80px;
@@ -1868,9 +1871,9 @@ body{
             <div style="width: 155px;display: inline-block;font-size: 20px">联系电话</div>
             <div style="width: 100px;display: inline-block;font-size: 20px">发布时间</div>
         </div>
-        @if(isset($inputs))
-            @if(!empty($inputs))
-                @foreach($inputs as $input)
+        @if(isset($companys))
+            @if(!empty($companys))
+                @foreach($companys as $input)
                     <table>
                         <tr height="40">
                             <td width="30"></td>
@@ -1888,22 +1891,10 @@ body{
                 @endforeach
             @endif
         @endif
-    @if(isset($m))
-        @foreach($m as $n)
-            <table>
-                <tr height="40">
-                    <td width="30"></td>
-                    <td width="340"><a href="{{url('company',$n->company_name)}}">{{$n->company_name}}</a></td>
-                    <td width="150">{{$n->contact_person}}</td>
-                    <td width="200">{{$n->contact}}</td>
-                    <td width="200">{{$n->updated_at}}</td>
-                </tr>
-            </table>
-        @endforeach
-    @endif
-    @if(isset($inputs))
+
+    @if(isset($companys))
         <div style="position: absolute;width: 800px;height: 30px;top: 600px;left: 240px">
-            {!! $inputs->render() !!}
+            {!! $companys->render() !!}
         </div>
     @endif
     </div>
@@ -2062,187 +2053,76 @@ body{
             <li style="margin-left: 80px;">更新时间</li>
         </ul>
       </div>
+
     <div class="xiabu2" style="border:1px solid #f5f5f5;width:100%;height:550px;position:absolute;top:80px;">
-        <dl  style="border:1px solid #f5f5f5;width:100%;height:50px;position:absolute;top:-10px;">
-            <dd style="margin-top: 10px;color:#ff5500;font-size: 18px; "><input  type="checkbox"name="reg"style="margin-left:-20px;position:absolute;top:10px"><b>淘宝美工</b></dd>
-            <dd style="margin-left: 360px;position: absolute;top:10px;color: #000000">刘艳柯</dd>
-            <dd style="margin-left: 450px;position: absolute;top:10px;color: #000000">男</dd>
-            <dd style="margin-left: 530px;position: absolute;top:10px;color: #000000">23岁</dd>
-            <dd style="margin-left: 620px;position: absolute;top:10px;color: #000000">杭州江干区</dd>
-            <dd style="margin-left: 750px;position: absolute;top:10px;color: #000000">在校学生</dd>
-            <dd style="margin-left: 880px;position: absolute;top:10px;color: #000000">1分钟</dd>
-            <div class="kuang">
-                <h2 style="margin-left: 30px;">刘艳柯(男，24岁)</h2>
-                <p style="margin-left: 30px;">期望职位：<b style="color: #000000">淘宝美工</b></p>
-                <p style="margin-left: 30px;">求职地区：<b style="color: #000000">杭州西湖区</b></p>
-                <p style="margin-left: 30px;">期望月薪：<b style="color: #000000">2000-3000</b></p>
-                <p style="margin-left: 30px;">本人性格温善，待人友好，普通话标准，具有良好的沟通能力。工作认真，有耐心，能吃苦耐劳。</p>
-            </div>
-        </dl>
+        {{--@if(isset($resumes))--}}
+        {{--@if(!empty($resumes))--}}
+        {{--@foreach($resumes as $input)--}}
+        {{--<dl style="border:1px solid #f5f5f5;width:100%;height:50px;position:absolute;top:440px;">--}}
+        {{--<dd style="margin-top: 10px;color:#ff5500;font-size: 18px; "><input  type="checkbox"name="reg"style="margin-left:-20px;position:absolute;top:10px"><b>淘宝客服</b></dd>--}}
+        {{--<dd style="margin-left: 360px;position: absolute;top:10px;color: #000000">傅朝江</dd>--}}
+        {{--<dd style="margin-left: 450px;position: absolute;top:10px;color: #000000">男</dd>--}}
+        {{--<dd style="margin-left: 530px;position: absolute;top:10px;color: #000000">19岁</dd>--}}
+        {{--<dd style="margin-left: 620px;position: absolute;top:10px;color: #000000">杭州江干区</dd>--}}
+        {{--<dd style="margin-left: 750px;position: absolute;top:10px;color: #000000">在校学生</dd>--}}
+        {{--<dd style="margin-left: 880px;position: absolute;top:10px;color: #000000">44分钟</dd>--}}
+        {{--<div class="kuang">--}}
+        {{--<h2 style="margin-left: 30px;">傅朝江(男，19岁)</h2>--}}
+        {{--<p style="margin-left: 30px;">期望职位：<b style="color: #000000">淘宝客服</b></p>--}}
+        {{--<p style="margin-left: 30px;">求职地区：<b style="color: #000000">杭州西湖区</b></p>--}}
+        {{--<p style="margin-left: 30px;">期望月薪：<b style="color: #000000">2000-3000</b></p>--}}
+        {{--<p style="margin-left: 30px;">本人性格温善，待人友好，普通话标准，具有良好的沟通能力。工作认真，有耐心，能吃苦耐劳。</p>--}}
+        {{--</div>--}}
+        {{--</dl>--}}
+        {{--@endforeach--}}
+        {{--@endif--}}
+        {{--@endif--}}
+        @if(isset($resumes))
+            @if(!empty($resumes))
+                @foreach($resumes as $input)
+                    <dl style="border:1px solid #f5f5f5;width:100%;height:50px;top:auto;">
+                        <dd style="margin-left: 20px; margin-top: 10px;color:#ff5500;font-size: 18px;"><b>淘宝客服</b></dd>
+                        <dd style="margin-left: 270px; width:40px; color: #000000">{{$input->name}}</dd>
+                        <dd style="margin-left: 60px;width:20px;color: #000000">{{$input->sex}}</dd>
+                        <dd style="margin-left: 60px;width:30px;color: #000000">岁</dd>
+                        <dd style="margin-left: 60px;width:30px;color: #000000">{{$input->city}}</dd>
+                        <dd style="margin-left: 80px;width:30px;color: #000000">{{$input->school}}</dd>
+                        <dd style="margin-left: 80px;width:30px;color: #000000">44分钟</dd>
 
-        <dl style="border:1px solid #f5f5f5;width:100%;height:50px;position:absolute;top:40px;">
-            <dd style="margin-top: 10px;color:#ff5500;font-size: 18px; "><input  type="checkbox"name="reg"style="margin-left:-20px;position:absolute;top:10px"><b>行政文员</b></dd>
-            <dd style="margin-left: 360px;position: absolute;top:10px;color: #000000">汪娴雅</dd>
-            <dd style="margin-left: 450px;position: absolute;top:10px;color: #000000">女</dd>
-            <dd style="margin-left: 530px;position: absolute;top:10px;color: #000000">21岁</dd>
-            <dd style="margin-left: 620px;position: absolute;top:10px;color: #000000">杭州西湖区文一路</dd>
-            <dd style="margin-left: 750px;position: absolute;top:10px;color: #000000">在校学生</dd>
-            <dd style="margin-left: 880px;position: absolute;top:10px;color: #000000">15分钟</dd>
-            <div class="kuang">
-                <h2 style="margin-left: 30px;">汪娴雅(女，21岁)</h2>
-                <p style="margin-left: 30px;">期望职位：<b style="color: #000000">行政文员</b></p>
-                <p style="margin-left: 30px;">求职地区：<b style="color: #000000">杭州西湖区</b></p>
-                <p style="margin-left: 30px;">期望月薪：<b style="color: #000000">2000-3000</b></p>
-                <p style="margin-left: 30px;">本人性格温善，待人友好，普通话标准，具有良好的沟通能力。工作认真，有耐心，能吃苦耐劳。</p>
-            </div>
-        </dl>
-        <dl style="border:1px solid #f5f5f5;width:100%;height:50px;position:absolute;top:90px;">
-            <dd style="margin-top: 10px;color:#ff5500;font-size: 18px; "><input  type="checkbox"name="reg"style="margin-left:-20px;position:absolute;top:10px"><b>接电话</b></dd>
-            <dd style="margin-left: 360px;position: absolute;top:10px;color: #000000">叶法松</dd>
-            <dd style="margin-left: 450px;position: absolute;top:10px;color: #000000">男</dd>
-            <dd style="margin-left: 530px;position: absolute;top:10px;color: #000000">24岁</dd>
-            <dd style="margin-left: 620px;position: absolute;top:10px;color: #000000">杭州江干区九堡</dd>
-            <dd style="margin-left: 750px;position: absolute;top:10px;color: #000000">在校学生</dd>
-            <dd style="margin-left: 880px;position: absolute;top:10px;color: #000000">30分钟</dd>
-            <div class="kuang">
-                <h2 style="margin-left: 30px;">叶法松(男，24岁)</h2>
-                <p style="margin-left: 30px;">期望职位：<b style="color: #000000">接电话</b></p>
-                <p style="margin-left: 30px;">求职地区：<b style="color: #000000">杭州西湖区</b></p>
-                <p style="margin-left: 30px;">期望月薪：<b style="color: #000000">2000-3000</b></p>
-                <p style="margin-left: 30px;">本人性格温善，待人友好，普通话标准，具有良好的沟通能力。工作认真，有耐心，能吃苦耐劳。</p>
-            </div>
-        </dl>
-        <dl style="border:1px solid #f5f5f5;width:100%;height:50px;position:absolute;top:140px;">
-            <dd style="margin-top: 10px;color:#ff5500;font-size: 18px; "><input  type="checkbox"name="reg"style="margin-left:-20px;position:absolute;top:10px"><b>英语家教</b></dd>
-            <dd style="margin-left: 360px;position: absolute;top:10px;color: #000000">李晓波</dd>
-            <dd style="margin-left: 450px;position: absolute;top:10px;color: #000000">男</dd>
-            <dd style="margin-left: 530px;position: absolute;top:10px;color: #000000">20岁</dd>
-            <dd style="margin-left: 620px;position: absolute;top:10px;color: #000000">丽水莲都区</dd>
-            <dd style="margin-left: 750px;position: absolute;top:10px;color: #000000">在校学生</dd>
-            <dd style="margin-left: 880px;position: absolute;top:10px;color: #000000">50分钟</dd>
-            <div class="kuang">
-                <h2 style="margin-left: 30px;">李晓波(男，20岁)</h2>
-                <p style="margin-left: 30px;">期望职位：<b style="color: #000000">英语家教</b></p>
-                <p style="margin-left: 30px;">求职地区：<b style="color: #000000">杭州西湖区</b></p>
-                <p style="margin-left: 30px;">期望月薪：<b style="color: #000000">2000-3000</b></p>
-                <p style="margin-left: 30px;">本人性格温善，待人友好，普通话标准，具有良好的沟通能力。工作认真，有耐心，能吃苦耐劳。</p>
-            </div>
-        </dl>
-        <dl style="border:1px solid #f5f5f5;width:100%;height:50px;position:absolute;top:190px;">
-            <dd style="margin-top: 10px;color:#ff5500;font-size: 18px; "><input  type="checkbox"name="reg"style="margin-left:-20px;position:absolute;top:10px"><b>学生兼职</b></dd>
-            <dd style="margin-left: 360px;position: absolute;top:10px;color: #000000">肖玉婷</dd>
-            <dd style="margin-left: 450px;position: absolute;top:10px;color: #000000">女</dd>
-            <dd style="margin-left: 530px;position: absolute;top:10px;color: #000000">23岁</dd>
-            <dd style="margin-left: 620px;position: absolute;top:10px;color: #000000">杭州拱墅区大关</dd>
-            <dd style="margin-left: 750px;position: absolute;top:10px;color: #000000">在校学生</dd>
-            <dd style="margin-left: 880px;position: absolute;top:10px;color: #000000">60分钟</dd>
-            <div class="kuang">
-                <h2 style="margin-left: 30px;">肖玉婷(女，23岁)</h2>
-                <p style="margin-left: 30px;">期望职位：<b style="color: #000000">学生兼职</b></p>
-                <p style="margin-left: 30px;">求职地区：<b style="color: #000000">杭州西湖区</b></p>
-                <p style="margin-left: 30px;">期望月薪：<b style="color: #000000">2000-3000</b></p>
-                <p style="margin-left: 30px;">本人性格温善，待人友好，普通话标准，具有良好的沟通能力。工作认真，有耐心，能吃苦耐劳。</p>
-            </div>
-        </dl>
-        <dl style="border:1px solid #f5f5f5;width:100%;height:50px;position:absolute;top:240px;">
-            <dd style="margin-top: 10px;color:#ff5500;font-size: 18px; "><input  type="checkbox"name="reg"style="margin-left:-20px;position:absolute;top:10px"><b>淘宝美工</b></dd>
-            <dd style="margin-left: 360px;position: absolute;top:10px;color: #000000">马玉</dd>
-            <dd style="margin-left: 450px;position: absolute;top:10px;color: #000000">女</dd>
-            <dd style="margin-left: 530px;position: absolute;top:10px;color: #000000">22岁</dd>
-            <dd style="margin-left: 620px;position: absolute;top:10px;color: #000000">杭州萧山区城厢</dd>
-            <dd style="margin-left: 750px;position: absolute;top:10px;color: #000000">在校学生</dd>
-            <dd style="margin-left: 880px;position: absolute;top:10px;color: #000000">12分钟</dd>
-            <div class="kuang">
-                <h2 style="margin-left: 30px;">马玉(女，22岁)</h2>
-                <p style="margin-left: 30px;">期望职位：<b style="color: #000000">淘宝美工</b></p>
-                <p style="margin-left: 30px;">求职地区：<b style="color: #000000">杭州西湖区</b></p>
-                <p style="margin-left: 30px;">期望月薪：<b style="color: #000000">2000-3000</b></p>
-                <p style="margin-left: 30px;">本人性格温善，待人友好，普通话标准，具有良好的沟通能力。工作认真，有耐心，能吃苦耐劳。</p>
-            </div>
-        </dl>
-        <dl style="border:1px solid #f5f5f5;width:100%;height:50px;position:absolute;top:290px;">
-            <dd style="margin-top: 10px;color:#ff5500;font-size: 18px; "><input  type="checkbox"name="reg"style="margin-left:-20px;position:absolute;top:10px"><b>寒假兼职</b></dd>
-            <dd style="margin-left: 360px;position: absolute;top:10px;color: #000000">俞虹</dd>
-            <dd style="margin-left: 450px;position: absolute;top:10px;color: #000000">女</dd>
-            <dd style="margin-left: 530px;position: absolute;top:10px;color: #000000">21岁</dd>
-            <dd style="margin-left: 620px;position: absolute;top:10px;color: #000000">绍兴越城区东浦</dd>
-            <dd style="margin-left: 750px;position: absolute;top:10px;color: #000000">在校学生</dd>
-            <dd style="margin-left: 880px;position: absolute;top:10px;color: #000000">18分钟</dd>
-            <div class="kuang">
-                <h2 style="margin-left: 30px;">俞虹(女，21岁)</h2>
-                <p style="margin-left: 30px;">期望职位：<b style="color: #000000">寒假兼职</b></p>
-                <p style="margin-left: 30px;">求职地区：<b style="color: #000000">杭州西湖区</b></p>
-                <p style="margin-left: 30px;">期望月薪：<b style="color: #000000">2000-3000</b></p>
-                <p style="margin-left: 30px;">本人性格温善，待人友好，普通话标准，具有良好的沟通能力。工作认真，有耐心，能吃苦耐劳。</p>
-            </div>
-        </dl>
-        <dl style="border:1px solid #f5f5f5;width:100%;height:50px;position:absolute;top:340px;">
-            <dd style="margin-top: 10px;color:#ff5500;font-size: 18px; "><input  type="checkbox"name="reg"style="margin-left:-20px;position:absolute;top:10px"><b>服务员</b></dd>
-            <dd style="margin-left: 360px;position: absolute;top:10px;color: #000000">梁世快</dd>
-            <dd style="margin-left: 450px;position: absolute;top:10px;color: #000000">男</dd>
-            <dd style="margin-left: 530px;position: absolute;top:10px;color: #000000">23岁</dd>
-            <dd style="margin-left: 620px;position: absolute;top:10px;color: #000000">杭州西湖区文三路</dd>
-            <dd style="margin-left: 750px;position: absolute;top:10px;color: #000000">在校学生</dd>
-            <dd style="margin-left: 880px;position: absolute;top:10px;color: #000000">1小时</dd>
-            <div class="kuang">
-                <h2 style="margin-left: 30px;">梁世快(男，23岁)</h2>
-                <p style="margin-left: 30px;">期望职位：<b style="color: #000000">服务员</b></p>
-                <p style="margin-left: 30px;">求职地区：<b style="color: #000000">杭州西湖区</b></p>
-                <p style="margin-left: 30px;">期望月薪：<b style="color: #000000">2000-3000</b></p>
-                <p style="margin-left: 30px;">本人性格温善，待人友好，普通话标准，具有良好的沟通能力。工作认真，有耐心，能吃苦耐劳。</p>
-            </div>
-        </dl>
-        <dl style="border:1px solid #f5f5f5;width:100%;height:50px;position:absolute;top:390px;">
-            <dd style="margin-top: 10px;color:#ff5500;font-size: 18px; "><input  type="checkbox"name="reg"style="margin-left:-20px;position:absolute;top:10px"><b>打印员</b></dd>
-            <dd style="margin-left: 360px;position: absolute;top:10px;color: #000000">毛烨烨</dd>
-            <dd style="margin-left: 450px;position: absolute;top:10px;color: #000000">女</dd>
-            <dd style="margin-left: 530px;position: absolute;top:10px;color: #000000">25岁</dd>
-            <dd style="margin-left: 620px;position: absolute;top:10px;color: #000000">杭州余杭区勾庄</dd>
-            <dd style="margin-left: 750px;position: absolute;top:10px;color: #000000">在校学生</dd>
-            <dd style="margin-left: 880px;position: absolute;top:10px;color: #000000">2小时</dd>
-            <div class="kuang">
-                <h2 style="margin-left: 30px;">毛烨烨(女，25岁)</h2>
-                <p style="margin-left: 30px;">期望职位：<b style="color: #000000">打印员</b></p>
-                <p style="margin-left: 30px;">求职地区：<b style="color: #000000">杭州西湖区</b></p>
-                <p style="margin-left: 30px;">期望月薪：<b style="color: #000000">2000-3000</b></p>
-                <p style="margin-left: 30px;">本人性格温善，待人友好，普通话标准，具有良好的沟通能力。工作认真，有耐心，能吃苦耐劳。</p>
-            </div>
-        </dl>
-        <dl style="border:1px solid #f5f5f5;width:100%;height:50px;position:absolute;top:440px;">
-            <dd style="margin-top: 10px;color:#ff5500;font-size: 18px; "><input  type="checkbox"name="reg"style="margin-left:-20px;position:absolute;top:10px"><b>淘宝客服</b></dd>
-            <dd style="margin-left: 360px;position: absolute;top:10px;color: #000000">傅朝江</dd>
-            <dd style="margin-left: 450px;position: absolute;top:10px;color: #000000">男</dd>
-            <dd style="margin-left: 530px;position: absolute;top:10px;color: #000000">19岁</dd>
-            <dd style="margin-left: 620px;position: absolute;top:10px;color: #000000">杭州江干区</dd>
-            <dd style="margin-left: 750px;position: absolute;top:10px;color: #000000">在校学生</dd>
-            <dd style="margin-left: 880px;position: absolute;top:10px;color: #000000">44分钟</dd>
-            <div class="kuang">
-                <h2 style="margin-left: 30px;">傅朝江(男，19岁)</h2>
-                <p style="margin-left: 30px;">期望职位：<b style="color: #000000">淘宝客服</b></p>
-                <p style="margin-left: 30px;">求职地区：<b style="color: #000000">杭州西湖区</b></p>
-                <p style="margin-left: 30px;">期望月薪：<b style="color: #000000">2000-3000</b></p>
-                <p style="margin-left: 30px;">本人性格温善，待人友好，普通话标准，具有良好的沟通能力。工作认真，有耐心，能吃苦耐劳。</p>
-            </div>
-        </dl>
+                        <div class="kuang">
+                            <h2 style="margin-left: 30px;"><a href="#">{{$input->name}}({{$input->sex}}，19岁)</a></h2>
+                            <p style="margin-left: 30px;">期望职位：<b style="color: #000000">淘宝客服</b></p>
+                            <p style="margin-left: 30px;">求职地区：<b style="color: #000000">{{$input->expect_location}}</b></p>
+                            <p style="margin-left: 30px;">期望月薪：<b style="color: #000000">2000-3000</b></p>
+                            <p style="margin-left: 30px;">{{$input->introduction}}</p>
+                        </div>
+                    </dl>
+                @endforeach
+            @endif
+        @endif
     </div>
-    <div class="xiabu3" style="border:0px solid blue;width:100%;height:70px;position:absolute;top:550px;cursor:default;">
-        <ul>
-            <li><div align="center" style="width:80px;height:28px;border:1px solid grey;font-size:18px;">上一页</div></li>
-            <li><div align="center">1</div></li>
-            <li><div align="center">2</div></li>
-            <li><div align="center">3</div></li>
-            <li><div align="center">4</div></li>
-            <li><div align="center">5</div></li>
-            <li><div align="center">6</div></li>
-            <li><div align="center">7</div></li>
-            <li><div align="center">8</div></li>
-            <li><div align="center">....</div></li>
-            <li><div align="center" style="width:80px;height:28px;border:1px solid grey;font-size:18px;">下一页</div></li>
-        </ul>
-    </div>
+    @if(isset($resumes))
+        <div style="position: absolute;width: 800px;height: 30px;top: 600px;left: 240px">
+            {!! $resumes->render() !!}
+        </div>
+    @endif
+{{--<div class="xiabu3" style="border:0px solid blue;width:100%;height:70px;position:absolute;top:550px;cursor:default;">--}}
+{{--<ul>--}}
+{{--<li><div align="center" style="width:80px;height:28px;border:1px solid grey;font-size:18px;">上一页</div></li>--}}
+{{--<li><div align="center">1</div></li>--}}
+{{--<li><div align="center">2</div></li>--}}
+{{--<li><div align="center">3</div></li>--}}
+{{--<li><div align="center">4</div></li>--}}
+{{--<li><div align="center">5</div></li>--}}
+{{--<li><div align="center">6</div></li>--}}
+{{--<li><div align="center">7</div></li>--}}
+{{--<li><div align="center">8</div></li>--}}
+{{--<li><div align="center">....</div></li>--}}
+{{--<li><div align="center" style="width:80px;height:28px;border:1px solid grey;font-size:18px;">下一页</div></li>--}}
+{{--</ul>--}}
+{{--</div>--}}
 </div>
 </div>
-
 <!--留言栏-->
 <div style="background:#ECE9E9;width:1024px;height:250px;position:absolute;top:1450px;margin-left:0px;cursor:default;">
     <p style="color:black;font-size:17px;margin-left:30px;">发表评论</p>

@@ -243,7 +243,7 @@ body{
 <div style="width:650px;height:270px;border:0px solid black;position:absolute;top:100px;background:#F5F5F5;-webkit-box-shadow:3px 3px 3px 0 #737171;box-shadow:3px 3px 3px 0 #737171;">
 <!--头像-->
 <div style="width:200px;height:200px;border:0px solid red;background:white;position:absolute;top:20px;left:20px">
-<img src="{{$user_resume->photo}}" style="width:200px;height:200px;">
+<img src="{{$resume->photo}}" style="width:200px;height:200px;">
 <!--修改头像-->
     <div style="width:5px"></div>
 <div id="xiugai" style="width:136px;height:30px;opacity:0.9;margin-top:-30px;padding-top:5px;padding-left:65px;">
@@ -259,7 +259,7 @@ body{
 </div><!--头像-->
 <!--姓名-->
 <div style="width:300px;height:50px;border:0px solid red;position:absolute;top:20px;left:260px;font-size:30px;">
-        {{$user_resume->name}}
+        {{$resume->name}}
         &nbsp&nbsp&nbsp&nbsp<button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
             简历的公开程度
         </button>
@@ -303,7 +303,7 @@ body{
 </div><!--姓名-->
 <!--学校学院-->
 <div style="width:350px;height:55px;border:0px solid red;position:absolute;top:70px;left:260px;font-size:17px;">
-<span>学校：{{$user_resume->school}}</span>
+<span>学校：{{$resume->school}}</span>
 
 
 {{--<span>计算机学院</span>--}}
@@ -330,7 +330,7 @@ body{
 <div style="background:#767474;width:130px;height:30px;color:white;font-size:18px;padding-top:5px;padding-left:25px;">其他联系方式</div>
 <ul class="lianxi" style="list-style-type:none;margin-top:30px;">
 <form>
-<p>电话：<b class="caname">{{$user_resume->contact}}</b></p>
+<p>电话：<b class="caname">{{$resume->contact}}</b></p>
 <p>微信：<b class="caname">Hanyu Yuzuru</b></p>
 <p> QQ&nbsp：<b class="caname">10001</b></p>
 </form>
@@ -342,23 +342,28 @@ body{
 <div class="san" style="overflow:hidden;width:650px;height:260px;background:#F5F5F5;-webkit-box-shadow:3px 3px 3px 0 #737171;box-shadow:3px 3px 3px 0 #737171;">
 <div style="background:#767474;width:130px;height:30px;color:white;font-size:18px;padding-top:5px;padding-left:25px;">我的评价</div>
 <!--第一条-->
-<div style="width:550px;height:120px;border:0px solid black;margin-top:50px;margin-left:40px;">
-<img src="../img/ren1.jpg" style="width:90px;height:90px">
-<p style="margin-top:-90px;margin-left:110px;color:blue;font-size:16px;">宋果</p>
-<p style="margin-left:160px;margin-top:-32px;">去哪儿网</p>
-<p style="margin-left:110px;font-size:17px;margin-top:15px;">在一个月的工作中，适应能力强，工作积极，认真负责。</p>
-<p style="margin-left:110px;font-size:14px;margin-top:15px;">2016年1月3日</p>
-</div><!--第一条-->
+    @if(isset($evaluates))
+        @if(!empty($evaluates))
+            <div style="width:550px;height:120px;border:0px solid black;margin-top:50px;margin-left:40px;">
+                <img src="{{$evaluates->pictures}}" style="width:90px;height:90px">
+                <p style="margin-top:-90px;margin-left:110px;color:blue;font-size:16px;">{{$evaluates->user_name}}</p>
+                {{--<p style="margin-left:160px;margin-top:-32px;">去哪儿网</p>--}}
+                <p style="margin-left:110px;font-size:17px;margin-top:15px;">{{$evaluates->comment}}</p>
+                <p style="margin-left:110px;font-size:14px;margin-top:15px;">2016年1月3日</p>
+            </div><!--第一条-->
+    @endif
+@endif
+
 <!--第二条-->
-<div style="width:550px;height:120px;border:0px solid black;margin-top:50px;margin-left:40px;">
-<img src="../img/ren2.jpg" style="width:90px;height:90px">
-<p style="margin-top:-90px;margin-left:110px;color:blue;font-size:16px;">李历</p>
-<p style="margin-left:160px;margin-top:-32px;">中华教育</p>
-<p style="margin-left:110px;font-size:17px;margin-top:15px;">短短一星期的工作，完成的很好。</p>
-<p style="margin-left:110px;font-size:14px;margin-top:15px;">2016年3月6日</p>
-</div><!--第二条-->
+{{--<div style="width:550px;height:120px;border:0px solid black;margin-top:50px;margin-left:40px;">--}}
+{{--<img src="../img/ren2.jpg" style="width:90px;height:90px">--}}
+{{--<p style="margin-top:-90px;margin-left:110px;color:blue;font-size:16px;">李历</p>--}}
+{{--<p style="margin-left:160px;margin-top:-32px;">中华教育</p>--}}
+{{--<p style="margin-left:110px;font-size:17px;margin-top:15px;">短短一星期的工作，完成的很好。</p>--}}
+{{--<p style="margin-left:110px;font-size:14px;margin-top:15px;">2016年3月6日</p>--}}
+{{--</div><!--第二条-->--}}
 <!--更多-->
-<div class="gengduo" style="width:350px;height:30px;position:absolute;top:230px;opacity:0.5;background:#AFB5C6;color:black;padding-left:300px;padding-top:5px;cursor:pointer;">更多</div><!--更多-->
+<div class="gengduo" style="width:650px;height:30px;position:absolute;top:230px;opacity:0.5;background:#AFB5C6;color:black;padding-left:300px;padding-top:5px;cursor:pointer;">更多</div><!--更多-->
 </div><!--第三块-->
 
 
