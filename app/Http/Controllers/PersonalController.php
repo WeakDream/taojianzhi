@@ -115,7 +115,6 @@ class PersonalController extends Controller {
     public function update_user_head(Request $request)
     {
         $UserName=Session::get("username");
-        dd('hekk');
         $user_data=DB::table("users")->where("nickname",$UserName)->first();
        // dd($UserName);
         $get_user=DB::table("users")->where("nickname",$UserName)->first();

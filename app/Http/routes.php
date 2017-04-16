@@ -23,10 +23,7 @@ Route::get("logout","UserController@login_out");
 //网站的首页部分以及一些功能
 Route::get("index","IndexController@index");
 Route::post("index_company_search","IndexController@search");
-Route::get("announce/{role_id}","IndexController@announce");
-Route::get('announce',function(){
-    return view("taojianzhi/register");
-});
+Route::get("announce","IndexController@announce");
 Route::get("company_announce","IndexController@company_announce");
 Route::post("company_announce_check","IndexController@company_announce_check");
 Route::get("person_announce","IndexController@person_announce");
