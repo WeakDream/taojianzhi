@@ -52,7 +52,7 @@ Route::get("pay_success","CompanyController@pay_success");
 Route::get("job_save/{name}","CompanyController@job_save");
 Route::get("hello",function ()
 {
-    return "hello";
+    return "hello   ";
 });
 
 
