@@ -44,9 +44,32 @@ class IndexController extends Controller {
         }
         //$test=new \App\filtration();
         $name=$request->i_key;
-        if($name==null)
+        $change=$request->get('change');
+        if($name==null && $change==1)
         {
             return redirect('index');
+        }
+        if($name==null && $change==2 || $change==0)
+        {
+            $role_id=null;
+            $inputs=DB::table("tjz_jobs")->orderBy('created_at','desc')->paginate(8);
+            $time=array();
+            $length=count($inputs);
+            $username=Session::get('username');
+            if($username)
+            {
+                $role_id=DB::table('users')->where("nickname",$username)->first()->role_id;
+                //dd($role_id);
+            }
+            for($i=0;$i<$length;$i++)
+            {
+                $get=explode(" ",$inputs[$i]->created_at);
+                $time[$i]=$get[0];
+                $inputs[$i]->created_at=$time[$i];
+            }
+            //dd($inputs);
+            //dd($time);
+            return view("taojianzhi/index",["inputs"=>$inputs,"role_id"=>$role_id]);
         }
         //$gets=$test->search($name);
         $gets=DB::table("tjz_jobs")->where("company_name","like","%".$name."%")->get();

@@ -1852,9 +1852,10 @@ body{
         </div>
             <input name="i_key" type="text" style="margin-left: 300px;margin-top: 10px;width:90px;height:20px;">
             <input name="i_select" type="submit" value="确定" style="height:25px;">
-        <select style="margin-left: 270px;margin-top: 10px;position: absolute;">
-            <option selected>默认排序</option>
-            <option>最新消息</option>
+        <select style="margin-left: 270px;margin-top: 10px;position: absolute;" name="change"  onchange="submit();">
+            <option value="0">排序方式</option>
+            <option value="1">默认排序</option>
+            <option value="2">最新消息</option>
         </select>
         </form>
     </div>
