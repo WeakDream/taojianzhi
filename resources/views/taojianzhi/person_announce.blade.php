@@ -168,13 +168,20 @@
 <body  style=" padding-right: 16px;">
 <div class="hui">
     <div class="daohang">
-        <div class="daohang1"><a href="{{url('index')}}">首页</a></div>
-        <div class="daohang2"><a href="{{url('login')}}">登录</a></div>
-        <div class="daohang3"><a href="{{url('register')}}">注册</a></div>
+        <div class="daohang1"><a href={{url('index')}}>首页</a></div>
+        @if(Session::get('username'))
+            <div style="position:absolute;margin-left:50px;"><a href="{{url('personal_center')}}">你好{{Session::get('username')}}</a></div>
+            <div style="position:absolute;margin-left:135px;"><a href="{{url('logout')}}">退出登录</a></div>
+        @endif
+        @if(!Session::get('username'))
+            <div class="daohang2"><a href="{{url('login')}}">登录</a></div>
+            <div class="daohang3"><a href="{{url('register')}}">注册</a></div>
+        @endif
+
         <div class="daohang4"><a href="#">我的淘兼职</a></div>
         <div class="daohang5"><a href="#">关于我们</a></div>
 
-        <div class="daohang4tan"><a href="{{url('personal_center')}}">个人中心</a><a href="#">添加修改简历</a><a href="#">查看招聘信息</a></div>
+        <div class="daohang4tan"><a href="{{url('personal_center')}}">个人中心</a><a href="{{url('complate_personal_resume')}}">添加修改简历</a><a href="#">查看招聘信息</a></div>
         <div class="daohang5tan"><a href="#">网站简介</a><a href="#">组织结构</a><a href="#">发展历程</a></div>
     </div>
 </div>
@@ -293,8 +300,19 @@
                             <span id="goblianxiren_Tip"></span>
                         </td>
                     </tr>
-                    
                     <tr>
+                        <th>
+                            <span><i>*</i>联系人</span>
+                        </th>
+                        <td>
+                            <div style="position:relative;float:left;display:inline;vertical-align:middle;z-index:81;">
+                                <input type="text" name="Contacts" class="textstyle" value="" except="" maxlength="10">
+                            </div>
+                            <span id="goblianxiren_Tip"></span>
+                        </td>
+                    </tr>
+                    
+                    <!--<tr>
                         <th>
                             <span><i>*</i>岗位职责</span>
                         </th>
@@ -304,10 +322,10 @@
 <textarea name="duty" style="width:400px;height:78px;border:0px;font-size:19px; " >
 </textarea>
                             </div><!--框-->
-                        </td>
-                    </tr>
+                       <!-- </td>
+                    </tr>!-->
                     
-                    <tr>
+                    <!--<tr>
                         <th>
                             <span><i>*</i>招聘要求</span>
                         </th>
@@ -317,6 +335,17 @@
 <textarea name="requirement" style="width:400px;height:78px;border:0px;font-size:19px; " >
 </textarea>
                             </div><!--框-->
+                       <!-- </td>
+                    </tr>!-->
+                    <tr>
+                        <th>
+                            <span><i>*</i>联系方式</span>
+                        </th>
+                        <td>
+                            <div style="position:relative;float:left;display:inline;vertical-align:middle;z-index:81;">
+                                <input type="text" name="phone" class="textstyle" value="" except="" maxlength="10">
+                            </div>
+                            <span id="goblianxiren_Tip"></span>
                         </td>
                     </tr>
                    

@@ -14,9 +14,9 @@ class IndexController extends Controller {
     public function  index()
     {
         $role_id=null;
-        $companys=DB::table("tjz_jobs")->paginate(8);
+        $inputs=DB::table("tjz_jobs")->paginate(8);
         $time=array();
-        $length=count($companys);
+        $length=count($inputs);
         $username=Session::get('username');
         if($username)
         {
@@ -25,24 +25,13 @@ class IndexController extends Controller {
         }
        for($i=0;$i<$length;$i++)
        {
-           $get=explode(" ",$companys[$i]->created_at);
+           $get=explode(" ",$inputs[$i]->created_at);
            $time[$i]=$get[0];
-           $companys[$i]->created_at=$time[$i];
+           $inputs[$i]->created_at=$time[$i];
        }
-
-
-       $resumes = DB::table("resumes")->paginate(8);
-        $resumes_length = count($resumes);
-        for($i=0;$i<$resumes_length;$i++){
-            if($resumes[$i]->sex == 1){
-                $resumes[$i]->sex = '女';
-            }elseif ($resumes[$i]->sex == 0){
-                $resumes[$i]->sex = '男';
-            }
-        }
        //dd($inputs);
        //dd($time);
-        return view("taojianzhi/index",["companys"=>$companys,"role_id"=>$role_id,"resumes"=>$resumes]);
+        return view("taojianzhi/index",["inputs"=>$inputs,"role_id"=>$role_id]);
 	}
     public function search(Request $request)
     {
@@ -55,9 +44,32 @@ class IndexController extends Controller {
         }
         //$test=new \App\filtration();
         $name=$request->i_key;
-        if($name==null)
+        $change=$request->get('change');
+        if($name==null && $change==1)
         {
             return redirect('index');
+        }
+        if($name==null && $change==2 || $change==0)
+        {
+            $role_id=null;
+            $inputs=DB::table("tjz_jobs")->orderBy('created_at','desc')->paginate(8);
+            $time=array();
+            $length=count($inputs);
+            $username=Session::get('username');
+            if($username)
+            {
+                $role_id=DB::table('users')->where("nickname",$username)->first()->role_id;
+                //dd($role_id);
+            }
+            for($i=0;$i<$length;$i++)
+            {
+                $get=explode(" ",$inputs[$i]->created_at);
+                $time[$i]=$get[0];
+                $inputs[$i]->created_at=$time[$i];
+            }
+            //dd($inputs);
+            //dd($time);
+            return view("taojianzhi/index",["inputs"=>$inputs,"role_id"=>$role_id]);
         }
         //$gets=$test->search($name);
         $gets=DB::table("tjz_jobs")->where("company_name","like","%".$name."%")->get();
@@ -71,20 +83,14 @@ class IndexController extends Controller {
         }
         return view('taojianzhi/index',compact(['m','role_id']));
     }
-    public function announce($role_id)
+    public function announce()
     {
         if (!(Session::get("username")))
         {
             return redirect()->to("login");
         }
-        if($role_id==1)
-        {
+
             return view("taojianzhi/announce");
-        }
-        if($role_id==2)
-        {
-            return redirect()->to('register');
-        }
     }
     public function company_announce()
     {
@@ -99,7 +105,7 @@ class IndexController extends Controller {
        // $input['file_routrs']=$path;
         $input['name']=$request->get('name');
         //$input['time']=$request->get('time');
-        $input['job_type']=$request->get('type');
+        $input['type']=$request->get('type');
         //$input['number']=$request->get('number');
         $input['salary']=$request->get('salary');
         $input['company_name']=$request->get('companyName');
@@ -108,6 +114,7 @@ class IndexController extends Controller {
         $input['contact_person']=$request->get('Contacts');
         $input['contact']=$request->get('phone');
         $input['city']=$request->get('Province');
+        $input['job_type']=1;
         $user=Session::get('username');
         $id=DB::table('users')->where('nickname',$user)->first()->id;
         //dd($id);
@@ -128,8 +135,29 @@ class IndexController extends Controller {
     {
         return view ("taojianzhi/person_announce");
     }
-    public function person_announce_check()
+    public function person_announce_check(Request $request)
     {
-        echo "<p style='font-size: 20px;text-align: center'>该功能还没有完成,程序员哥哥正在加班当中，请等待。。。。。。。</p>";
+       // echo "<p style='font-size: 20px;text-align: center'>该功能还没有完成,程序员哥哥正在加班当中，请等待。。。。。。。</p>";
+        $input['work_time']=$request->get('work_time');
+        $input['name']=$request->get('name');
+        $input['job_type']=2;
+        $input['salary']=$request->get('wage');
+        $input['company_name']=$input['name'];
+        $input['position']=$request->get('place');
+        $input['description']="个人招聘";
+        $input['contact_person']=$request->get('Contacts');
+        $input['contact']=$request->get('phone');
+        $input['city']="浙江";
+        $input['start_time']=$request->get('start_time');
+        //dd($input['start_time']);
+        $input['during_time']=$request->get('during_time');
+        $user=Session::get('username');
+        $id=DB::table('users')->where('nickname',$user)->first()->id;
+        //dd($id);
+        $input['creator_id']=$id;
+        $input['creator_name']=$user;
+        job2::create($input);
+
+        return redirect('index');
     }
 }
