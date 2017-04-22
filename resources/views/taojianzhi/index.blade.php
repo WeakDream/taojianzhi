@@ -2090,7 +2090,7 @@ body{
                         <dd style="margin-left: 80px;width:30px;color: #000000">44分钟</dd>
 
                         <div class="kuang">
-                            <h2 style="margin-left: 30px;"><a href="#">{{$input->name}}({{$input->sex}}，19岁)</a></h2>
+                            <h2 style="margin-left: 30px;"><a href="{{url('resume',$input->name)}}">{{$input->name}}({{$input->sex}}，19岁)</a></h2>
                             <p style="margin-left: 30px;">期望职位：<b style="color: #000000">淘宝客服</b></p>
                             <p style="margin-left: 30px;">求职地区：<b style="color: #000000">{{$input->expect_location}}</b></p>
                             <p style="margin-left: 30px;">期望月薪：<b style="color: #000000">2000-3000</b></p>
