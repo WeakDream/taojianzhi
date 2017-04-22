@@ -327,7 +327,7 @@ body{
 
 <!--第四块-->
 <div style="width:650px;height:230px;border:0px solid black;position:absolute;top:410px;margin-top:50px;background:#F5F5F5;-webkit-box-shadow:3px 3px 3px 0 #737171;box-shadow:3px 3px 3px 0 #737171;">
-<div style="background:#767474;width:130px;height:30px;color:white;font-size:18px;padding-top:5px;padding-left:25px;">其他联系方式</div>
+<div style="background:#767474;width:150px;height:30px;color:white;font-size:18px;padding-top:5px;padding-left:25px;">其他联系方式</div>
 <ul class="lianxi" style="list-style-type:none;margin-top:30px;">
 <form>
 <p>电话：<b class="caname">{{$resume->contact}}</b></p>
@@ -344,13 +344,15 @@ body{
 <!--第一条-->
     @if(isset($evaluates))
         @if(!empty($evaluates))
-            <div style="width:550px;height:120px;border:0px solid black;margin-top:50px;margin-left:40px;">
-                <img src="{{$evaluates->pictures}}" style="width:90px;height:90px">
-                <p style="margin-top:-90px;margin-left:110px;color:blue;font-size:16px;">{{$evaluates->user_name}}</p>
-                {{--<p style="margin-left:160px;margin-top:-32px;">去哪儿网</p>--}}
-                <p style="margin-left:110px;font-size:17px;margin-top:15px;">{{$evaluates->comment}}</p>
-                <p style="margin-left:110px;font-size:14px;margin-top:15px;">2016年1月3日</p>
-            </div><!--第一条-->
+            @foreach($evaluates as $input)
+                <div style="width:550px;height:120px;border:0px solid black;margin-top:50px;margin-left:40px;">
+                    <img src="{{$input->pictures}}" style="width:90px;height:90px">
+                    <p style="margin-top:-90px;margin-left:110px;color:blue;font-size:16px;">{{$input->user_name}}</p>
+                    {{--<p style="margin-left:160px;margin-top:-32px;">去哪儿网</p>--}}
+                    <p style="margin-left:110px;font-size:17px;margin-top:15px;">{{$input->comment}}</p>
+                    <p style="margin-left:110px;font-size:14px;margin-top:15px;">2016年1月3日</p>
+                </div><!--第一条-->
+            @endforeach
     @endif
 @endif
 

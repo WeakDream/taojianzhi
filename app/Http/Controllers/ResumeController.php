@@ -30,16 +30,16 @@ class ResumeController extends Controller {
     }
     public function personal_resume($user_name)
     {
-        $UserId = Session::get("UserId");
-        $user_data=DB::table("users")->where("nickname",$user_name)->first();
-        $resume=DB::table("resumes")->where("user_id",$user_data->id)->first();
-        $evaluates=DB::table("user_evaluates")->where("target_id",$UserId)->first();
+        $user_data=DB::table("users")->where("nickname",$user_name)->first();//用户信息
+        $UserId = $user_data->id;
+        $resume=DB::table("resumes")->where("user_id",$UserId)->first();//简历信息
+        $evaluates=DB::table("user_evaluates")->where("target_id",$UserId)->get();//评价
         //dd($evaluates);
         if(!$this->is_login())
         {
             return redirect()->to("login");
         }
-        return view ("taojianzhi/resume",compact('user_data','resume','evaluates'));
+        return view ("taojianzhi/resume",compact('resume','evaluates'));
     }
     public function complate_personal_resume()
     {
@@ -75,7 +75,7 @@ class ResumeController extends Controller {
         //dd($user_data);
         $resume->complete($user_data);
         Session::put('resume_state',1);
-        return redirect()->route("resume",['user_name'=>$UserName]);
+        return redirect()->route("resume",['bigName'=>$user_data['name']]);
     }
     public function update_user_head(Request $request)
     {

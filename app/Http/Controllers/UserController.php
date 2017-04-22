@@ -64,7 +64,6 @@ class UserController extends Controller {
                 $role_id=$get1->role_id;
                 //dd($role_id);
                 Session::put("username",$get1->nickname);
-                Session::put("UserId",$get1->id);
                 $inputs=DB::table("tjz_jobs")->paginate(8);
                 $resume_state=DB::table('resumes')->where('user_id','=',$get1->id)->first();
                 if(!$resume_state){
@@ -86,7 +85,6 @@ class UserController extends Controller {
     public function login_out()
     {
         Session::flush("username");
-        Session::flush("UserId");
         //return redirect()->to("index");
         return redirect('index');
     }
