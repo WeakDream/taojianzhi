@@ -138,16 +138,40 @@ window.onload = function () {
 </script>
 
 <style type="text/css">
+
 body{
     font-family:微软雅黑;
     margin:0px;
     padding:0px;
 }
+#nav1{
+    width:100%;
+    margin:0px auto;
+    position:fixed;/*固定作用*/
+    top:0px;
+    left:0px;
+    /*ie6下样式，加下划线表示只针对ie6 的hack */
+    z-index:1; /* 让导航栏浮在网页的最外层 */
+    _position:absolute;
+    _background-attachment:fixed;
+    _bottom:auto;
+}
+#nav2{
+    width:100%;
+    margin:0px auto;
+    position:fixed;/*固定作用*/
+    top:30px;
+    left:0px;
+    /*ie6下样式，加下划线表示只针对ie6 的hack */
+    z-index:1; /* 让导航栏浮在网页的最外层 */
+    _position:absolute;
+    _background-attachment:fixed;
+    _bottom:auto;
+}
 .hui{
     background: #f5f5f5;
     width:100%;
     height:40px;
-    position:relative;
     margin:0px;
     border:1px solid #EEEEEE;
 }
@@ -734,6 +758,9 @@ body{
 
 <body>
 <!--灰色导航栏-->
+
+@section('nav_bar')
+<div id="nav1">
 <div class="hui">
     <div class="daohang">
         <div class="daohang1"><a href={{url('index')}}>首页</a></div>
@@ -753,32 +780,36 @@ body{
         <div class="daohang5tan"><a href="#">网站简介</a><a href="#">组织结构</a><a href="#">发展历程</a></div>
     </div>
 </div>
+</div>
+@stop
 
-<div class="rongqi" style="border:0px solid red;width:1024px;top:20px;height:1800px;position:relative;margin:0 auto;cursor:default;">
+
+<div class="rongqi" style="border:0px solid red;width:1024px;top:20px;height:1800px;position:relative;margin:0 auto;cursor:default;padding-top:40px;">
 <!--头部-->
-<div class="header" style="width:100%;height:100px;border:1px solid white;position:absolute;cursor:default;">
-    <!--LOGO-->
-    <img src="../img/taologo.jpg" style="width:160px;">
-    <!--搜索-->
-    <div class="sousuo">
-        <form action="{{ url('search_handle') }}" method="post">
-            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <div class="zhiwei" align="center">职位</div>
-            <div class="rencai" align="center">人才</div>
-            <input name = "key" type="search" placeholder="" size="50" style="border:3px solid #FF5500;height:40px;top:20px;position:absolute;">
-            <input type="submit" value="搜索" style="color:white;font-size:18px;font-weight:600;width:80px;height:40px;background:#FF5500;border:0px;left:455px;top:20px;position:absolute;cursor:pointer;">
-        </form>
-        <p style="color:black;position:absolute;font-size:13px;margin-top:62px;margin-left:10px;">打字员、销售员、客服…</p>
-    </div>
-    <!--免费发布信息-->
+    <div id="nav2">
+        <div class="header" style="width:100%;height:100px;border:1px solid white;position:absolute;cursor:default;background: #f5f5f5;">
+        <!--LOGO-->
+        <img src="../img/taologo.jpg" style="width:160px;">
+        <!--搜索-->
+        <div class="sousuo">
+            <form action="{{ url('search_handle') }}" method="post">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <div class="zhiwei" align="center">职位</div>
+                <div class="rencai" align="center">人才</div>
+                <input name = "key" type="search" placeholder="" size="50" style="border:3px solid #FF5500;height:40px;top:20px;position:absolute;">
+                <input type="submit" value="搜索" style="color:white;font-size:18px;font-weight:600;width:80px;height:40px;background:#FF5500;border:0px;left:455px;top:20px;position:absolute;cursor:pointer;">
+            </form>
+            <p style="color:black;position:absolute;font-size:13px;margin-top:62px;margin-left:10px;">打字员、销售员、客服…</p>
+        </div>
+        <!--免费发布信息-->
 
 
 
-            <a href="{{url('announce')}}">
+        <a href="{{url('announce')}}">
             <div class="mianfei"></div></a>
 
-</div>
-
+    </div>
+    </div>
 <!--中部-->
 <div class="zhongbu" style="border:1px solid white;width:100%;height:400px;position:absolute;top:100px;cursor:default;">
     <!--左-->
@@ -2090,7 +2121,7 @@ body{
                         <dd style="margin-left: 80px;width:30px;color: #000000">44分钟</dd>
 
                         <div class="kuang">
-                            <h2 style="margin-left: 30px;"><a href="{{url('resume',$input->name)}}">{{$input->name}}({{$input->sex}}，19岁)</a></h2>
+                            <h2 style="margin-left: 30px;"><a href="{{url('information',$input->name)}}">{{$input->name}}({{$input->sex}}，19岁)</a></h2>
                             <p style="margin-left: 30px;">期望职位：<b style="color: #000000">淘宝客服</b></p>
                             <p style="margin-left: 30px;">求职地区：<b style="color: #000000">{{$input->expect_location}}</b></p>
                             <p style="margin-left: 30px;">期望月薪：<b style="color: #000000">2000-3000</b></p>
