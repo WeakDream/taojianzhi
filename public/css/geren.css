@@ -5,9 +5,11 @@ body{
     font-family:"微软雅黑";
     margin:0px;
     padding:0px;
+    background-color:#FFF8DC;
 }
+
 .hui{
-    background: #f5f5f5;
+    background: #C1CDC1;
     width:100%;
     height:40px;
     position:relative;
@@ -38,7 +40,7 @@ body{
     color:#F22E00;
 }
 .daohang1{
-    width:700px;
+    width:70px;
     height:40px;
     position:absolute;
 }
@@ -66,12 +68,6 @@ body{
     height:40px;
     position:absolute;
     margin-left:320px;
-}
-.daohang6{
-	width:100px;
-    height:40px;
-    position:absolute;
-    margin-left:400px;
 }
 .daohang4tan{
     width:110px;
@@ -219,7 +215,7 @@ body{
     margin-left:40px;
     color:#666464;
 }
-.zhongxintan,.fabutan, .shouchangtan,.qiuzhitan1,.qiuzhitan2,.qiuzhitan3,.qiuzhitan4,.zhaopintan1,.zhaopintan2,.zhaopintan3,.zhaopintan4{
+.zhongxintan,.fabutan, .shouchangtan,.qiuzhitan1,.qiuzhitan2,.qiuzhitan3,.qiuzhitan4,.qiuzhitan5,.zhaopintan1,.zhaopintan2,.zhaopintan3,.zhaopintan4,.zijin{
     height: 750px;
     width: 824px;
     border: 0px solid blue;
@@ -233,7 +229,7 @@ body{
     margin-top: 10px;
     border-top: 2px solid #eaeaea;
 }
-.m21tan,.m22tan,.m23tan,.m31tan,.m32tan,.m33tan,.m34tan,.m41tan,.m42tan,.m511tan,.m512tan,.m513tan,.m514tan{
+.m21tan,.m22tan,.m23tan,.m31tan,.m32tan,.m33tan,.m34tan,.m41tan,.m42tan,.m43tan,.m511tan,.m512tan,.m513tan,.m514tan,.m71tan,.m72tan,.m73tan,.m81tan,.m82tan,.m83tan{
     height:400px;
     width: 780px;
     border:0px solid blue;
@@ -260,6 +256,7 @@ body{
     width:150px;
     height: 25px;
     border: 1px solid #eaeaea;
+    border-top: 2px solid #FF5500;
     font-size: 15px;;
     color:#FF5500;
     border-radius:5px;
@@ -282,10 +279,66 @@ body{
     margin-left: 10px;;
     border-radius:5px;
 }
+
 .qiuzhitan4xq ul li div:hover{
     width:150px;
     height: 25px;
     border: 1px solid #eaeaea;
+    border-top: 2px solid #FF5500;
+    font-size: 15px;;
+    color:#FF5500;
+    border-radius:5px;
+
+}
+.qiuzhitan5xq ul{
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.qiuzhitan5xq ul li{
+    list-style-type: none;
+    float:left;
+    cursor: pointer;
+}
+.qiuzhitan5xq ul li div{
+    width:150px;
+    height: 25px;
+    border: 1px solid #eaeaea;
+    font-size: 15px;
+    margin-left: 10px;;
+    border-radius:5px;
+}
+.qiuzhitan5xq ul li div:hover{
+    width:150px;
+    height: 25px;
+    border: 1px solid #eaeaea;
+    border-top: 2px solid #FF5500;
+    font-size: 15px;;
+    color:#FF5500;
+    border-radius:5px;
+
+}
+.zijinxq ul{
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.zijinxq ul li{
+    list-style-type: none;
+    float:left;
+    cursor: pointer;
+}
+.zijinxq ul li div{
+    width:150px;
+    height: 25px;
+    border: 1px solid #eaeaea;
+    font-size: 15px;
+    margin-left: 10px;;
+    border-radius:5px;
+}
+.zijinxq ul li div:hover{
+    width:150px;
+    height: 25px;
+    border: 1px solid #eaeaea;
+    border-top: 2px solid #FF5500;
     font-size: 15px;;
     color:#FF5500;
     border-radius:5px;
@@ -315,6 +368,7 @@ body{
     font-size: 15px;;
     color:#FF5500;
     border-radius:5px;
+    border-top: 2px solid #FF5500;
 }
 .zhaopintan1xq ul{
     margin-left: 20px;
@@ -337,6 +391,7 @@ body{
     width:150px;
     height: 25px;
     border: 1px solid #eaeaea;
+    border-top: 2px solid #FF5500;
     font-size: 15px;;
     color:#FF5500;
     border-radius:5px;
@@ -362,12 +417,15 @@ body{
     width:150px;
     height: 25px;
     border: 1px solid #eaeaea;
+    border-top: 2px solid #FF5500;
     font-size: 15px;;
     color:#FF5500;
     border-radius:5px;
 }
 .zhongxintan span:hover{
     color: #FF5500;
+    border-bottom: 2px solid #FF5500;
+
     cursor: pointer;
 }
 #l1:hover{

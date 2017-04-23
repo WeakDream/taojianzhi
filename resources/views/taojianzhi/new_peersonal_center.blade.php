@@ -874,6 +874,8 @@
             height: 60px;
         }
 
+        <style type="text/css">
+
         .jianlitan{
             margin-left: 240px;
             margin-top: -220px;;
@@ -1397,17 +1399,18 @@
         </div>
     </div>
 
+
     <!--收到的消息。-->
     <div class="qiuzhitan5">
         <h3 style="color: #FF5500;margin-left: 40px;"><b>收到的消息</b></h3>
-        <div class="qiuzhitan5xq" >
+        <div class="qiuzhitan4xq" >
             <ul>
                 <li id="m81"><div align="center">未查看</div></li>
                 <li id="m82"><div align="center">已查看</div></li>
                 <li id="m83"><div align="center">已通过</div></li>
             </ul>
         </div>
-        <div style="margin-left: 20px;margin-top:45px;border-top: 1px solid #eaeaea">
+        <div style="margin-left: 200px;margin-top:45px;border-top: 1px solid #eaeaea">
             <div class="m81tan">
                 <div style="border: 1px solid #eaeaea;width: 780px;height:210px;border-radius: 5px;">
                     <p style="margin-left: 25px;font-size: 13px;position: absolute;"><b>兼职职位</b><b style="margin-left: 250px;position: absolute;">公司名称 </b><b style="margin-left: 540px;">收到的时间</b></p>
