@@ -1408,14 +1408,14 @@
     <!--收到的消息。-->
     <div class="qiuzhitan5">
         <h3 style="color: #FF5500;margin-left: 40px;"><b>收到的消息</b></h3>
-        <div class="qiuzhitan4xq" >
+        <div class="qiuzhitan5xq" >
             <ul>
                 <li id="m81"><div align="center">未查看</div></li>
                 <li id="m82"><div align="center">已查看</div></li>
                 <li id="m83"><div align="center">已通过</div></li>
             </ul>
         </div>
-        <div style="margin-left: 200px;margin-top:45px;border-top: 1px solid #eaeaea">
+        <div style="margin-left: 20px;margin-top:45px;border-top: 1px solid #eaeaea">
             <div class="m81tan">
                 <div style="border: 1px solid #eaeaea;width: 780px;height:210px;border-radius: 5px;">
                     <p style="margin-left: 25px;font-size: 13px;position: absolute;"><b>兼职职位</b><b style="margin-left: 250px;position: absolute;">公司名称 </b><b style="margin-left: 540px;">收到的时间</b></p>
@@ -1500,19 +1500,18 @@
             </div>
         </div>
     </div>
-
     <!--我的资金。-->
     <div class="zijin">
         <h3 style="color: #FF5500;margin-left: 40px;"><b>我的资金</b></h3>
-        <p style="margin-left: 20px;margin-top:-40px;"><input type="submit"value="申请退款"style="background-color: #FF5500;height: 30px;width: 100px;font-size: 15px;color: #ffffff"></p>
-        <div class="qiuzhitan4xq" >
+        <p style="margin-left: 200px;margin-top:-40px;"><input type="submit"value="申请退款"style="background-color: #FF5500;height: 30px;width: 100px;font-size: 15px;color: #ffffff"></p>
+        <div class="zijinxq" >
             <ul>
                 <li id="m71"><div align="center">充值记录</div></li>
                 <li id="m72"><div align="center">消费记录</div></li>
                 <li id="m73"><div align="center">账户余额</div></li>
             </ul>
         </div>
-        <div style="margin-left: 210px;margin-top:45px;border-top: 1px solid #eaeaea">
+        <div style="margin-left: 20px;margin-top:45px;border-top: 1px solid #eaeaea">
             <div class="m71tan">
                 <div style="border: 1px solid #eaeaea;width: 780px;height:210px;border-radius: 5px;">
                     <p style="margin-left: 25px;font-size: 13px;position: absolute;"><b>充值金额</b><b style="margin-left: 250px;position: absolute;">充值时间 </b><b style="margin-left: 540px;">&nbsp;</b></p>
