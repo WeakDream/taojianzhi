@@ -26,9 +26,7 @@ Route::post("index_company_search","IndexController@search");
 Route::get("announce","IndexController@announce");
 Route::get("self_more","IndexController@self_more");
 Route::get("company_more","IndexController@company_more");
-Route::get('announce',function(){
-    return view("taojianzhi/register");
-});
+Route::get('announce',"IndexController@announce");
 Route::get("company_announce","IndexController@company_announce");
 Route::post("company_announce_check","IndexController@company_announce_check");
 Route::get("person_announce","IndexController@person_announce");
