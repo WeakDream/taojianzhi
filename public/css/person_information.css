@@ -1,7 +1,108 @@
 #user_head{
+    margin-top:50px;
     width:200px;
     height:200px;
 }
-dt {
+#information_body{
+    margin-top:40px;
+}
+#personal_message{
+    padding-top: 50px;
+    padding-left: 50px;
+}
+#personal_message dd{
+    margin-left: 100px;
+    text-align: left;
+}
+#nav1{
+    width:100%;
+    margin:0px auto;
+    position:fixed;/*固定作用*/
+    top:0px;
+    left:0px;
+    /*ie6下样式，加下划线表示只针对ie6 的hack */
+    z-index:1; /* 让导航栏浮在网页的最外层 */
+    _position:absolute;
+    _background-attachment:fixed;
+    _bottom:auto;
+}
+.hui{
+    background: #f5f5f5;
+    width:100%;
+    height:40px;
+    margin:0px;
+    border:1px solid #EEEEEE;
+}
+.daohang{
 
+    width:420px;
+    height:40px;
+    position:absolute;
+    right:162px;
+}
+.daohang div a{
+    font-size:14px;
+    margin-left:20px;
+    margin-top:10px;
+    text-decoration:none;
+    display:block;
+    color:black;
+}
+.daohang div a:hover{
+    font-size:14px;
+    margin-left:20px;
+    margin-top:10px;
+    text-decoration:none;
+    display:block;
+    color:#F22E00;
+}
+.daohang1{
+    width:70px;
+    height:40px;
+    position:absolute;
+}
+.daohang2{
+    width:70px;
+    height:40px;
+    position:absolute;
+    margin-left:70px;
+}
+.daohang3{
+    width:70px;
+    height:40px;
+    position:absolute;
+    margin-left:140px;
+}
+.daohang4{
+    width:110px;
+    height:40px;
+    position:absolute;
+    margin-left:210px;
+    border:0px;
+}
+.daohang5{
+    width:100px;
+    height:40px;
+    position:absolute;
+    margin-left:320px;
+}
+.daohang4tan{
+    width:110px;
+    height:100px;
+    border:1px solid #EEEEEE;
+    margin-left:210px;
+    margin-top:40px;
+    position:absolute;
+    background:white;
+    z-index:9;
+}
+.daohang5tan{
+    width:100px;
+    height:100px;
+    border:1px solid #EEEEEE;
+    margin-left:320px;
+    margin-top:40px;
+    position:absolute;
+    background:white;
+    z-index:9;
 }

@@ -761,8 +761,6 @@ body{
 
 <body>
 <!--灰色导航栏-->
-
-@section('nav_bar')
 <div id="nav1">
 <div class="hui">
     <div class="daohang">
@@ -784,7 +782,6 @@ body{
     </div>
 </div>
 </div>
-@stop
 
 
 <div class="rongqi" style="border:0px solid red;width:1024px;top:20px;height:1800px;position:relative;margin:0 auto;cursor:default;padding-top:40px;">
