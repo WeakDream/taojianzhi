@@ -151,16 +151,16 @@ body{
     top:0px;
     left:0px;
     /*ie6下样式，加下划线表示只针对ie6 的hack */
-    z-index:1; /* 让导航栏浮在网页的最外层 */
+    z-index:9; /* 让导航栏浮在网页的最外层 */
     _position:absolute;
     _background-attachment:fixed;
     _bottom:auto;
 }
 #nav2{
     width:100%;
-    margin:0px auto;
+    margin:auto;
     position:fixed;/*固定作用*/
-    top:30px;
+    top:40px;
     left:0px;
     /*ie6下样式，加下划线表示只针对ie6 的hack */
     z-index:1; /* 让导航栏浮在网页的最外层 */
@@ -784,10 +784,10 @@ body{
 </div>
 
 
-<div class="rongqi" style="border:0px solid red;width:1024px;top:20px;height:1800px;position:relative;margin:0 auto;cursor:default;padding-top:40px;">
+<div class="rongqi" style="border:0px solid red;width:1024px;top:30px;height:1800px;position:relative;margin:0 auto;cursor:default;padding-top:40px;">
 <!--头部-->
     <div id="nav2">
-        <div class="header" style="width:100%;height:100px;border:1px solid white;position:absolute;cursor:default;background: #f5f5f5;">
+        <div class="header" style="width:100%;height:100px;border:1px solid white;position:absolute;cursor:default;background: white;margin-left:200px">
         <!--LOGO-->
         <img src="../img/taologo.jpg" style="width:160px;">
         <!--搜索-->
@@ -807,7 +807,6 @@ body{
 
         <a href="{{url('announce')}}">
             <div class="mianfei"></div></a>
-
     </div>
     </div>
 <!--中部-->
