@@ -24,6 +24,8 @@ Route::get("logout","UserController@login_out");
 Route::get("index","IndexController@index");
 Route::post("index_company_search","IndexController@search");
 Route::get("announce","IndexController@announce");
+Route::get("self_more","IndexController@self_more");
+Route::get("company_more","IndexController@company_more");
 Route::get('announce',function(){
     return view("taojianzhi/register");
 });
@@ -36,6 +38,7 @@ Route::post("person_announce_check","IndexController@person_announce_check");
 //用户的个人中心部分
 Route::get("personal_center","PersonalController@personal_center");
 Route::get("logs_delete/{company_name}","PersonalController@logs_delete");
+Route::get("save",'PersonalController@save');
 
 //用户的简历部分
 Route::get("complate_personal_resume","ResumeController@complate_personal_resume");//跳转页面
@@ -52,8 +55,8 @@ Route::get("company/{name}","CompanyController@company");
 Route::get("job_buy/{name}","CompanyController@buy");
 Route::post("job_buy/pay","CompanyController@pay");
 Route::get("pay_success","CompanyController@pay_success");
-Route::get("job_save/{name}","CompanyController@job_save");
-
+Route::get("job_save/{name}/{jobname}","CompanyController@job_save");
+Route::get("job_delete/{name}/{jobname}","CompanyController@job_delete");
 
 //卖家的简历处理，目前邮箱的通知部分是写死的
 Route::post("send","SellerController@send_email");

@@ -14,21 +14,30 @@ class IndexController extends Controller {
     public function  index()
     {
         $role_id=null;
-        $companys=DB::table("tjz_jobs")->paginate(8);
-        $time=array();
-        $length=count($companys);
+        $companys1=DB::table("tjz_jobs")->where('job_type',1)->paginate(4);
+        $companys2=DB::table("tjz_jobs")->where('job_type','<>',1)->paginate(8);
+        $time1=array();
+        $time2=array();
+        $length2=count($companys2);
+        $length1=count($companys1);
         $username=Session::get('username');
         if($username)
         {
             $role_id=DB::table('users')->where("nickname",$username)->first()->role_id;
             //dd($role_id);
         }
-       for($i=0;$i<$length;$i++)
+       for($i=0;$i<$length1;$i++)
        {
-           $get=explode(" ",$companys[$i]->created_at);
-           $time[$i]=$get[0];
-           $companys[$i]->created_at=$time[$i];
+           $get=explode(" ",$companys1[$i]->created_at);
+           $time1[$i]=$get[0];
+           $companys1[$i]->created_at=$time1[$i];
        }
+        for($i=0;$i<$length2;$i++)
+        {
+            $get=explode(" ",$companys2[$i]->created_at);
+            $time2[$i]=$get[0];
+            $companys2[$i]->created_at=$time2[$i];
+        }
         $resumes = DB::table("resumes")->paginate(8);
         $resumes_length = count($resumes);
         for($i=0;$i<$resumes_length;$i++){
@@ -40,7 +49,7 @@ class IndexController extends Controller {
         }
        //dd($inputs);
        //dd($time);
-        return view("taojianzhi/index",["companys"=>$companys,"role_id"=>$role_id,"resumes"=>$resumes]);
+        return view("taojianzhi/index",["companys1"=>$companys1,"role_id"=>$role_id,"resumes"=>$resumes,'companys2'=>$companys2]);
 	}
     public function search(Request $request)
     {
@@ -169,4 +178,46 @@ class IndexController extends Controller {
 
         return redirect('index');
     }
+    public function self_more()
+
+    {
+        $companys1=DB::table("tjz_jobs")->where('job_type',1)->paginate(1);
+        $time1=array();
+        $username=Session::get('username');
+        $length1=count($companys1);
+        if($username)
+        {
+            $role_id=DB::table('users')->where("nickname",$username)->first()->role_id;
+            //dd($role_id);
+        }
+        for($i=0;$i<$length1;$i++)
+        {
+            $get=explode(" ",$companys1[$i]->created_at);
+            $time1[$i]=$get[0];
+            $companys1[$i]->created_at=$time1[$i];
+        }
+        return view("taojianzhi/index_more1",["companys1"=>$companys1]);
+    }
+    public function company_more()
+    {
+
+        $companys2=DB::table("tjz_jobs")->where('job_type',"<>",1)->paginate(12);
+        $time2=array();
+        $username=Session::get('username');
+        $length2=count($companys2);
+        if($username)
+        {
+            $role_id=DB::table('users')->where("nickname",$username)->first()->role_id;
+            //dd($role_id);
+        }
+        for($i=0;$i<$length2;$i++)
+        {
+            $get=explode(" ",$companys2[$i]->created_at);
+            $time1[$i]=$get[0];
+            $companys2[$i]->created_at=$time1[$i];
+        }
+        return view("taojianzhi/index_more2",["companys2"=>$companys2]);
+    }
+
+
 }

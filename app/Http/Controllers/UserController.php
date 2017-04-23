@@ -72,7 +72,8 @@ class UserController extends Controller {
                     Session::put("resume_state",1);
                 }
                 //$id=$get1->id;
-                return view("taojianzhi/index",["inputs"=>$inputs,"role_id"=>$role_id]);
+                //return view("taojianzhi/index",["inputs"=>$inputs,"role_id"=>$role_id]);
+                return redirect()->to('index');
             }
             else
             {

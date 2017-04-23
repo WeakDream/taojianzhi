@@ -729,6 +729,9 @@ body{
     {
       border-bottom: solid 1px blue;
     }
+    hr
+    {border: 1px;
+    }
 </style>
 </head>
 
@@ -1863,32 +1866,69 @@ body{
         </form>
     </div>
     <div class="xiabu2" style="border:1px solid #f5f5f5;width:100%;height:auto;position:absolute;top:40px;">
-        <div style="border-bottom: 1px solid blue;height: 40px;width: 100%;">
+        <!--<div style="border-bottom: 1px solid blue;height: 40px;width: 100%;">
             <div style="width: 20px; display: inline-block;font-size: 20px"></div>
-            <div style="width: 230px;display: inline-block;font-size: 20px">公司名称</div>
-            <div style="width: 100px;display: inline-block;font-size: 20px">类型</div>
-            <div style="width: 120px;display: inline-block;font-size: 20px">联系人</div>
-            <div style="width: 155px;display: inline-block;font-size: 20px">联系电话</div>
+            <div style="width: 230px;display: inline-block;font-size: 20px">工作名称</div>
+            <!--<div style="width: 100px;display: inline-block;font-size: 20px">类型</div>!-->
+           <!-- <div style="width: 200px;display: inline-block;font-size: 20px">联系人</div>
+            <div style="width: 230px;display: inline-block;font-size: 20px">联系电话</div>
             <div style="width: 100px;display: inline-block;font-size: 20px">发布时间</div>
-        </div>
-        @if(isset($companys))
-            @if(!empty($companys))
-                @foreach($companys as $input)
-                    <table>
+        </div>!-->
+        @if(isset($companys1))
+            @if(!empty($companys1))
+                <div>
+                <h3 style="margin-left: 20px;color: blue">个人类兼职 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="{{url('self_more')}}" style="font-size: 16px">>>>>>>更多岗位</a></h3>
+                    <div style="border-bottom: 1px solid blue;height: 40px;width: 100%;">
+                        <div style="width: 20px; display: inline-block;font-size: 20px"></div>
+                        <div style="width: 230px;display: inline-block;font-size: 20px">工作名称</div>
+                        <!--<div style="width: 100px;display: inline-block;font-size: 20px">类型</div>!-->
+                        <div style="width: 200px;display: inline-block;font-size: 20px">联系人</div>
+                        <div style="width: 230px;display: inline-block;font-size: 20px">联系电话</div>
+                        <div style="width: 100px;display: inline-block;font-size: 20px">发布时间</div>
+                    </div>
+                <hr/>
+                @foreach($companys1 as $input)
+                    <table style="background-color: #fcf9fd;">
                         <tr height="40">
                             <td width="30"></td>
-                            <td width="340px"><a href="{{url('company',$input->company_name)}}">{{$input->company_name}}</a></td>
-                            @if($input->job_type == 2)
-                            <td width="150">个人</td>
-                            @else
-                                <td width="150">企业</td>
-                            @endif
-                            <td width="150">{{$input->contact_person}}</td>
-                            <td width="200">{{$input->contact}}</td>
-                            <td width="200">{{$input->created_at}}</td>
+                            <td width="230px"><a href="{{url('company',$input->company_name)}}">{{$input->company_name}}</a></td>
+
+                            <td width="200">{{$input->contact_person}}</td>
+                            <td width="238">{{$input->contact}}</td>
+                            <td width="100">{{$input->created_at}}</td>
                         </tr>
                     </table>
                 @endforeach
+                </div>
+            @endif
+        @endif
+        @if(isset($companys2))
+            @if(!empty($companys2))
+                <div>
+                <div style="height: 20px"></div>
+                <h3 style="margin-left: 20px;color: blue">企业类兼职 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="{{url('company_more')}}" style="font-size: 16px">>>>>>>更多岗位</a></h3>
+                    <div style="border-bottom: 1px solid blue;height: 40px;width: 100%;">
+                        <div style="width: 20px; display: inline-block;font-size: 20px"></div>
+                        <div style="width: 230px;display: inline-block;font-size: 20px">公司名称</div>
+                        <!--<div style="width: 100px;display: inline-block;font-size: 20px">类型</div>!-->
+                        <div style="width: 200px;display: inline-block;font-size: 20px">联系人</div>
+                        <div style="width: 230px;display: inline-block;font-size: 20px">联系电话</div>
+                        <div style="width: 100px;display: inline-block;font-size: 20px">发布时间</div>
+                    </div>
+                <hr/>
+                @foreach($companys2 as $input)
+                    <table style="background-color: #fcf9fd">
+                        <tr height="40">
+                            <td width="30"></td>
+                            <td width="230px"><a href="{{url('company',$input->company_name)}}">{{$input->company_name}}</a></td>
+
+                            <td width="200">{{$input->contact_person}}</td>
+                            <td width="238">{{$input->contact}}</td>
+                            <td width="100">{{$input->created_at}}</td>
+                        </tr>
+                    </table>
+                @endforeach
+                </div>
             @endif
         @endif
 

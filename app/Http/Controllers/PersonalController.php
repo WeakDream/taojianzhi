@@ -47,22 +47,22 @@ class PersonalController extends Controller {
             $puts=$logs;
         }
         //dd($logs);
-        $gets_job=DB::table("job_save")->where("username",$name)->get();
+        //$gets_job=DB::table("job_save")->where("username",$name)->get();
         $id=$get->role_id;
         //dd($id);
-        if($id==1)
-        {
-            return view("taojianzhi/Seller_Center");
-        }
-        else
-        {
-            return view("taojianzhi/personal_center",["company_gets"=>$gets_job,"logs"=>$puts]);
-        }
+
+            return view("taojianzhi/new_peersonal_center",["logs"=>$puts]);
     }
     //浏览记录的删除
     public function logs_delete($company_name)
     {
         $return=DB::table('user_logs')->where('company_name',$company_name)->delete();
         return redirect()->to('personal_center');
+    }
+    public function  save()
+    {
+        $name=Session::get("username");
+        $gets_job=DB::table("job_save")->where("username",$name)->get();
+        return view("taojianzhi/save",['job_gets'=>$gets_job]);
     }
 }
