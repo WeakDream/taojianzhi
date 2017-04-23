@@ -31,6 +31,7 @@ Route::get("company_announce","IndexController@company_announce");
 Route::post("company_announce_check","IndexController@company_announce_check");
 Route::get("person_announce","IndexController@person_announce");
 Route::post("person_announce_check","IndexController@person_announce_check");
+Route::get("information/{bigName}","IndexController@getPersonInformation");
 
 
 //用户的个人中心部分

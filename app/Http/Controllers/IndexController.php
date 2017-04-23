@@ -11,7 +11,7 @@ use App\company;
 
 class IndexController extends Controller {
 
-    public function  index()
+    public function index()
     {
         $role_id=null;
         $companys1=DB::table("tjz_jobs")->where('job_type',1)->paginate(4);
@@ -219,5 +219,8 @@ class IndexController extends Controller {
         return view("taojianzhi/index_more2",["companys2"=>$companys2]);
     }
 
+    public function getPersonInformation($bigName){
+        return view('taojianzhi.person_information');
+    }
 
 }

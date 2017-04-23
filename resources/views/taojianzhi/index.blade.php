@@ -1904,13 +1904,13 @@ body{
         @if(isset($companys1))
             @if(!empty($companys1))
                 <div>
-                <h3 style="margin-left: 20px;color: blue">个人类兼职 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="{{url('self_more')}}" style="font-size: 16px">>>>>>>更多岗位</a></h3>
+                <h3 style="margin-left: 20px;color: blue">个人类兼职 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="{{url('self_more')}}" style="font-size: 16px">>>>>>>更多岗位</a></h3>
                     <div style="border-bottom: 1px solid blue;height: 40px;width: 100%;">
                         <div style="width: 20px; display: inline-block;font-size: 20px"></div>
                         <div style="width: 230px;display: inline-block;font-size: 20px">工作名称</div>
                         <!--<div style="width: 100px;display: inline-block;font-size: 20px">类型</div>!-->
                         <div style="width: 200px;display: inline-block;font-size: 20px">联系人</div>
-                        <div style="width: 230px;display: inline-block;font-size: 20px">联系电话</div>
+                        <div style="width: 200px;display: inline-block;font-size: 20px">联系电话</div>
                         <div style="width: 100px;display: inline-block;font-size: 20px">发布时间</div>
                     </div>
                 <hr/>
@@ -1933,13 +1933,13 @@ body{
             @if(!empty($companys2))
                 <div>
                 <div style="height: 20px"></div>
-                <h3 style="margin-left: 20px;color: blue">企业类兼职 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="{{url('company_more')}}" style="font-size: 16px">>>>>>>更多岗位</a></h3>
+                <h3 style="margin-left: 20px;color: blue">企业类兼职 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="{{url('company_more')}}" style="font-size: 16px">>>>>>>更多岗位</a></h3>
                     <div style="border-bottom: 1px solid blue;height: 40px;width: 100%;">
                         <div style="width: 20px; display: inline-block;font-size: 20px"></div>
                         <div style="width: 230px;display: inline-block;font-size: 20px">公司名称</div>
                         <!--<div style="width: 100px;display: inline-block;font-size: 20px">类型</div>!-->
                         <div style="width: 200px;display: inline-block;font-size: 20px">联系人</div>
-                        <div style="width: 230px;display: inline-block;font-size: 20px">联系电话</div>
+                        <div style="width: 200px;display: inline-block;font-size: 20px">联系电话</div>
                         <div style="width: 100px;display: inline-block;font-size: 20px">发布时间</div>
                     </div>
                 <hr/>
