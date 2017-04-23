@@ -1543,8 +1543,8 @@
                         @if(!empty($buys))
                             @foreach($buys as $buy)
                     <dl style="border:1px solid #eaeaea;width:780px;height:40px;">
-                        <dd style="margin-left: 25px;float: left">{{$buy->name}}</dd>
-                        <dd style="margin-left: 280px;float: left">¥10</dd>
+                        <dd style="margin-left: 25px;float: left;width: 100px;">{{$buy->name}}</dd>
+                        <dd style="margin-left: 230px;float: left;width: 100px">¥10</dd>
                         <dd style="margin-left: 600px;">{{$buy->updated_at}}</dd>
                     </dl>
                             @endforeach
