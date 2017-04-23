@@ -1215,15 +1215,20 @@
             </tr>
             </thead>
             <tbody>
+            @if(isset($buys))
+                @if(!empty($buys))
+                    @foreach($buys as $buy)
             <tr bgcolor="#FCFCFC" height="60" align="center">
 
-                <td >传单派发</td>
-                <td>杭州天进教育培训学校</td>
-                <td>待付款</td>
-                <td>2016年4月2日</td>
-
+                <td >{{$buy->name}}</td>
+                <td>{{$buy->company_name}}</td>
+                <td>已经付款，等待结果</td>
+                <td>{{$buy->updated_at}}</td>
             </tr>
-            <tr bgcolor="#FCFCFC" height="60" align="center">
+                    @endforeach
+                @endif
+            @endif
+            <!--<tr bgcolor="#FCFCFC" height="60" align="center">
 
                 <td>家教</td>
                 <td>浙江益得资产管理有限公司</td>
@@ -1246,7 +1251,7 @@
                 <td>被婉拒</td>
                 <td>2016年4月7日</td>
 
-            </tr>
+            </tr>!-->
             </tbody>
         </table>
         <div style="width:850px;height:50px;background:#DBD6D6;margin-top:20px;padding:10px;margin-left: 30px;">
@@ -1499,15 +1504,15 @@
     <!--我的资金。-->
     <div class="zijin">
         <h3 style="color: #FF5500;margin-left: 40px;"><b>我的资金</b></h3>
-        <p style="margin-left: 200px;margin-top:-40px;"><input type="submit"value="申请退款"style="background-color: #FF5500;height: 30px;width: 100px;font-size: 15px;color: #ffffff"></p>
-        <div class="zijinxq" >
+        <p style="margin-left: 20px;margin-top:-40px;"><input type="submit"value="申请退款"style="background-color: #FF5500;height: 30px;width: 100px;font-size: 15px;color: #ffffff"></p>
+        <div class="qiuzhitan4xq" >
             <ul>
                 <li id="m71"><div align="center">充值记录</div></li>
                 <li id="m72"><div align="center">消费记录</div></li>
                 <li id="m73"><div align="center">账户余额</div></li>
             </ul>
         </div>
-        <div style="margin-left: 20px;margin-top:45px;border-top: 1px solid #eaeaea">
+        <div style="margin-left: 210px;margin-top:45px;border-top: 1px solid #eaeaea">
             <div class="m71tan">
                 <div style="border: 1px solid #eaeaea;width: 780px;height:210px;border-radius: 5px;">
                     <p style="margin-left: 25px;font-size: 13px;position: absolute;"><b>充值金额</b><b style="margin-left: 250px;position: absolute;">充值时间 </b><b style="margin-left: 540px;">&nbsp;</b></p>
@@ -1533,16 +1538,20 @@
             </div>
 
             <div class="m72tan">
-                <div style="border: 1px solid #eaeaea;width: 780px;height:210px;border-radius: 5px;" >
-                    <p style="margin-left: 25px;font-size: 13px;position: absolute;"><b>兼职职位</b><b style="margin-left: 250px;position: absolute;">消费金额 </b><b style="margin-left: 540px;">消费时间</b></p>
-                    <dl style="border:1px solid #eaeaea;width:780px;height:40px;position:absolute;top:130px;">
-
-                        <dd style="margin-left: 25px;position: absolute;top:10px;">超市收营员</dd>
-                        <dd style="margin-left: 340px;position: absolute;top:10px;">¥10</dd>
-                        <dd style="margin-left: 600px;position: absolute;top:10px;">2016年12月13日</dd>
-
+                <div style="border: 1px solid #eaeaea;width: 780px;height:auto;border-radius: 5px;" >
+                    <p style="margin-left: 25px;font-size: 13px;"><b>兼职职位</b><b style="margin-left: 250px;">消费金额 </b><b style="margin-left: 250px;">消费时间</b></p>
+                    @if(isset($buys))
+                        @if(!empty($buys))
+                            @foreach($buys as $buy)
+                    <dl style="border:1px solid #eaeaea;width:780px;height:40px;">
+                        <dd style="margin-left: 25px;float: left">{{$buy->name}}</dd>
+                        <dd style="margin-left: 280px;float: left">¥10</dd>
+                        <dd style="margin-left: 600px;">{{$buy->updated_at}}</dd>
                     </dl>
-                    <dl style="border:1px solid #eaeaea;width:780px;height:40px;position:absolute;top:170px;">
+                            @endforeach
+                        @endif
+                    @endif
+                   <!-- <dl style="border:1px solid #eaeaea;width:780px;height:40px;position:absolute;top:170px;">
 
                         <dd style="margin-left: 25px;position: absolute;top:10px;">服务员</dd>
                         <dd style="margin-left: 340px;position: absolute;top:10px;">¥20</dd>
@@ -1555,7 +1564,7 @@
                         <dd style="margin-left: 340px;position: absolute;top:10px;">¥10</dd>
                         <dd style="margin-left: 600px;position: absolute;top:10px;">2017年3月25日</dd>
 
-                    </dl>
+                    </dl>!-->
 
                 </div>
             </div>

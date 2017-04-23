@@ -55,6 +55,7 @@ Route::post("job_buy/pay","CompanyController@pay");
 Route::get("pay_success","CompanyController@pay_success");
 Route::get("job_save/{name}/{jobname}","CompanyController@job_save");
 Route::get("job_delete/{name}/{jobname}","CompanyController@job_delete");
+Route::get("sendsuccess","SendEmailController@sendsuccess");
 
 //卖家的简历处理，目前邮箱的通知部分是写死的
 Route::post("send","SellerController@send_email");

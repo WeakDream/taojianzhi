@@ -27,6 +27,7 @@
             $('#querenzhifu').click(function () {
                 var content1=document.getElementsByTagName("p")[1].innerHTML;
                 var password=$("#mima").val();
+                var job=document.getElementsByTagName("p")[2].innerHTML;
 
                 //alert(content2);
                 $.ajax(
@@ -36,13 +37,16 @@
                             {
                                 //job:content2,
                                 company:content1,
-                                password:password
+                                password:password,
+                                job:job
                             },
                             type:"POST",
                             success:function (json) {
                                 //alert("hello");
                                 if(json.state=="success") {
-                                   window.location.href = '../pay_success';
+                                   //window.location.href = '../pay_success';
+                                    alert("购买成功");
+                                    window.location.href='../sendsuccess';
                                 }
                                 if(json.state=="false")
                                 {
@@ -312,7 +316,7 @@
                 <img src="../img/ok.png"style="width: 20px;">
                 <span>您在安全的环境中，请放心使用！</span>
                 <br/><br/>
-                <p style="font-size: 18px" id="22">支付宝支付密码：</p>
+                <p style="font-size: 18px" id="22">淘兼职支付密码：</p>
                 <input type="password"style="width: 180px;height: 30px" id="mima">
                 <a href="#" style="border: none;color: blue;display: inline">忘记密码？</a>
                 <br/>

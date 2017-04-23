@@ -53,12 +53,19 @@ class CompanyController extends Controller {
     public function pay(Request $request)
     {
         {
-            $inputs['user_name']=Session::get('username');
-            //$inputs['user']="77777";
-            //$inputs['job']=$request->get('job');
-            $inputs['company_name']=$request->get('company');
+            $user_name=Session::get('username');
+            $company=$request->get('company');
+            $job=$request->get('job');
+            $inputs['user_id']=DB::table('users')->where('nickname',$user_name)->first()->id;
+            $inputs['job_id']=DB::table('tjz_jobs')->where('company_name',$company)
+                                                        ->where('name',$job)
+                                                        ->first()->id;
+            $inputs['creator_id']=DB::table('tjz_jobs')->where('company_name',$company)
+                ->where('name',$job)
+                ->first()->creator_id;
+            $inputs['resume_id']=DB::table('resumes')->where('user_id',$inputs['user_id'])->first()->id;
             $password=$request->get("password");
-            $userPasswordCheck=DB::select('select password from users where nickname =?',[$inputs['user_name']]);
+            $userPasswordCheck=DB::select('select password from users where nickname =?',[$user_name]);
             //$bool=Hash::check($password,$userPasswordCheck[0]->password);
             if($password==$userPasswordCheck[0]->password)
             {

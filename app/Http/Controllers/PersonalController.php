@@ -27,6 +27,7 @@ class PersonalController extends Controller {
     {
         $puts=array();
         $name=Session::get("username");
+        $user_id=DB::table('users')->where('nickname',$name)->first()->id;
         if(!$this->is_login())
         {
             return redirect()->to("login");
@@ -34,6 +35,7 @@ class PersonalController extends Controller {
         //dd($name);
         $get=DB::table("users")->where("nickname",$name)->first();
         $logs=DB::table("user_logs")->where("user",$name)->orderBy('updated_at','desc')->get();
+        $buys=DB::table("tjz_jobs")->join('job_apply','job_apply.job_id','=','tjz_jobs.id')->where('user_id',$user_id)->get();
         $length=count($logs);
         if($length>5)
         {
@@ -50,8 +52,16 @@ class PersonalController extends Controller {
         //$gets_job=DB::table("job_save")->where("username",$name)->get();
         $id=$get->role_id;
         //dd($id);
-
-            return view("taojianzhi/new_peersonal_center",["logs"=>$puts]);
+        //dd($buys);
+        $length=count($buys);
+        for($i=0;$i<$length;$i++)
+        {
+            if($buys[$i]->job_type==1)
+            {
+                $buys[$i]->company_name="个人类兼职";
+            }
+        }
+            return view("taojianzhi/new_peersonal_center",["logs"=>$puts,"buys"=>$buys]);
     }
     //浏览记录的删除
     public function logs_delete($company_name)
