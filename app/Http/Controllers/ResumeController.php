@@ -95,4 +95,14 @@ class ResumeController extends Controller {
         //dd($g);
         return redirect()->route("resume",['user_name'=>$UserName]);
     }
+    public function resumeSave(Request $resumeSaveRequest){
+        if(!Session::get('username')){
+            return redirect()->to("login");
+        }
+        $username=Session::get('username');
+        $collect=$resumeSaveRequest->get('isCollected');
+        if($collect){
+
+        }
+    }
 }

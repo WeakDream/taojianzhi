@@ -25,5 +25,39 @@ $(document).ready(function(){
         $(".daohang5").css({"background":"#F5F5F5","border":"0px"});
         $(".daohang5tan").hide();
     });
+    $(".collect").click(function () {
+        if($(".collect").hasClass("glyphicon glyphicon-star-empty")){
+
+            $.ajax({
+                url:'resumeCollect',
+                type:'POST',
+                data:{
+                    isCollected:true,
+                    bigName:'用户的真名',//发送用户的真实名字，暂时写到session
+                },
+                timeout:5000,
+                dataType:'json',
+                success:function (json) {
+                    if(json.state == 'success'){
+                        $(this).removeClass("glyphicon glyphicon-star-empty");
+                        $(this).addClass("glyphicon glyphicon-star");
+                    }else{
+                        alert('error');
+                    }
+                },
+                error:function (xhr,textStatues) {
+
+                },
+                complete:function () {
+                    console.log('over');
+                }
+
+
+            })
+        }else{
+            $(".collect").removeClass("gglyphicon glyphicon-star");
+            $(".collect").addClass("glyphicon glyphicon-star-empty");
+        }
+    })
 });
 addLoadEvent(dtLeft);

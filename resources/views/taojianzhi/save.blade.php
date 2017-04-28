@@ -351,9 +351,10 @@
 
     <div id="nav">
         <ul>
-            <li class="menu2" onMouseOver="this.className='menu1'" onMouseOut="this.className='menu2'"><a href="shoucangjia2.html">宝贝收藏</a>
+            <li class="menu2" onMouseOver="this.className='menu1'" onMouseOut="this.className='menu2'">
+                <a href="#">简历收藏</a>
                 <div class="list">
-                    <a href="shoucangjia1.html">公司收藏</a><br />
+                    <a href="#">职位收藏</a><br />
                 </div>
             </li>
         </ul>

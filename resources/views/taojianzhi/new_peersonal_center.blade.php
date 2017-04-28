@@ -1119,7 +1119,7 @@
                 </a>
             </li>
             <div class="qiuzhi2">
-                <li style="margin-top: 10px;"id="l41"><a href="zhanshi.html"><font color="#666464">我的时间表</font></a></li>
+                <li style="margin-top: 10px;"id="l42"><a href="zhanshi.html"><font color="#666464">我的时间表</font></a></li>
                 <li style="margin-top: 10px;"id="l44">我发布的消息</li>
                 <li style="margin-top: 10px;"id="l45">我收到的消息</li>
                 <li style="margin-top: 10px;"id="l42">我的购买记录</li>
@@ -1135,6 +1135,9 @@
                 <li style="margin-top: 10px;" id="172">我的投诉</li>
                 <li style="margin-top: 10px;" id="173">违规记录</li>
                 <li style="margin-top: 10px;" id="174">我的资金</li>
+            </div>
+            <div class="resume" style="font-size: 16px;margin-left: 20px;margin-top: 20px;">
+                <a id="l41"><font color="#666464">我的简历</font></a>
             </div>
 
         </ul>
@@ -1582,6 +1585,28 @@
                 </div>
             </div>
         </div>
+    </div>
+    {{--我的简历--}}
+    <div class="qiuzhitan1">
+        <h3 style="color: #FF5500;margin-left: 40px;">我的简历</h3>
+        @if(Session::get('resume_state')==1)
+            <input type="submit" name="submit" value="点击查看简历" onclick="location.href='resume/{{Session::get('username')}}'" style="margin-left: 55px;border: 1px solid #99ffcc;height: 56px;width:186px;display: inline-block;border-radius: 8px;background: #66ccff;">
+        @endif
+        @if(Session::get('resume_state')==0)
+            <p style="margin-left: 55px;font-size: 16px;margin-top:30px;">简历是求职的利器，填写简历才能尽快找到好工作！</p>
+            <p style="margin-left: 55px;font-size: 16px;">去填写一份优质的简历吧，认真的人，才能让认真的企业找上你！</p>
+            <p style="margin-left: 55px;font-size:18px;font-weight: 700;">请在这设计你的简历吧：</p>
+
+            {{--<p><span id="jianli" style="margin-left: 55px;border: 1px solid #99ffcc;height: 56px;width:186px;display: inline-block;border-radius: 8px;background: #66ccff;"><a href="{{url('uploading_resume')}}" style="text-decoration: none;margin-top:10px;margin-left:40px;font-size: 25px;position: absolute">上传你的简历</a></span></p>--}}
+
+            {{--<form method="post" action="{{url('upload_resume')}}" enctype="muitipart/form-data">--}}
+
+
+            {{--<input type="hidden" name="_token" value="{{ csrf_token() }}">--}}
+            {{--<input type="file" name="myfile" />--}}
+
+            <input type="submit" name="submit" value="Submit" onclick="location.href='complate_personal_resume'" style="margin-left: 55px;border: 1px solid #99ffcc;height: 56px;width:186px;display: inline-block;border-radius: 8px;background: #66ccff;" />
+        @endif
     </div>
 
     <!--底部-->

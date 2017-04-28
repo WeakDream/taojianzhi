@@ -9,10 +9,41 @@
 #personal_message{
     padding-top: 50px;
     padding-left: 50px;
+    font-size:16px;
 }
 #personal_message dd{
-    margin-left: 100px;
+    margin-left: 110px;
     text-align: left;
+    height: 40px;
+}
+#personal_message dt{
+    width: 130px;
+    text-align: left;
+    height:40px;
+}
+#right_information{
+    color: #FF5500;
+}
+#left_information{
+    background: #FF5500;
+    color: white;
+}
+.user_evaluate_head{
+    width: 120px;
+    height:120px;
+}
+.open-eye{
+    margin-left: 50px;
+    margin-bottom: 20px;
+}
+.collect{
+    margin-left: 100px;
+}
+.user_evaluate{
+    border:2px solid #FF5500;
+}
+body{
+    font-family: "Comic Sans MS";
 }
 #nav1{
     width:100%;

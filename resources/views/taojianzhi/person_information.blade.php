@@ -35,28 +35,29 @@
 </div>
         <div class="container" id="information_body">
             <div class="row">
-                <div class="col-md-3 bg-primary" id="left_information">
+                <div class="col-md-3" id="left_information">
                     <div id="head">
-                        <img class="img-rounded center-block" id="user_head" src="../public/facebook/1031face.jpeg">
+                        <img class="img-rounded center-block" id="user_head" src="../public/facebook/1031face.png">
                     </div>
                     <div id="personal_message">
                             <dl class="dl-horizontal">
-                                <dt style="text-align: left">姓名</dt>
+                                <dt>姓名</dt>
                                 <dd>aasa</dd>
-                                <dt><p>性别</p></dt>
+                                <dt>性别</dt>
                                 <dd>bbbb</dd>
-                                <dt><p>年龄</p></dt>
+                                <dt>年龄</dt>
                                 <dd></dd>
-                                <dt><p>学历</p></dt>
+                                <dt>学历</dt>
                                 <dd></dd>
-                                <dt><p>籍贯</p></dt>
+                                <dt>籍贯</dt>
                                 <dd></dd>
-                                <dt><p>期望的工作地点</p></dt>
+                                <dt>期望的工作地点</dt>
                                 <dd></dd>
                             </dl>
                     </div>
                     <div id="history">
-
+                        <h2 class="glyphicon glyphicon-eye-open open-eye" aria-hidden="true"></h2>
+                        <h2 class="glyphicon glyphicon-star-empty collect" aria-hidden="true"></h2>
                     </div>
                 </div>
                 <div id="center_information"></div>
@@ -64,7 +65,9 @@
                     {{--<div id="experience"></div>--}}
                     <dl>
                         <dt>
-                            <h2>项目经历</h2>
+
+                            <h2><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> 项目经历</h2>
+                            <HR style="FILTER: alpha(opacity=100,finishopacity=0,style=1)" width="80%" color=#987cb9 SIZE=3>
                         </dt>
                         <dd>
 
@@ -72,39 +75,57 @@
                     </dl>
                     <dl>
                         <dt>
-                            <h2>自我描述</h2>
+                            <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 自我描述</h2>
+                            <HR style="FILTER: alpha(opacity=100,finishopacity=0,style=1)" width="80%" color=#987cb9 SIZE=3>
                         </dt>
                         <dd>
 
                         </dd>
                     </dl>
-                    <div id="evaluate">
-                        用户评价
-                    </div>
+                    <dl>
+                        <dt>
+                            <h2>
+                                <span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span>
+                                用户评价
+                            </h2>
+                            <HR style="FILTER: alpha(opacity=100,finishopacity=0,style=1)" width="80%" color=#987cb9 SIZE=3>
+                            <div id="first_user" class="user_evaluate">
+                                <img class="user_evaluate_head" src="/public/facebook/1031face.jpg">
+                                <p></p>
+                                <p></p>
+                            </div>
+                        </dt>
+                        <dd>
+
+                        </dd>
+                    </dl>
+                    {{--<div id="evaluate">--}}
+                        {{--用户评价--}}
+                    {{--</div>--}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="dibu" style="width:100%;height:160px;border:1px solid white;top:1024px;position: absolute;">
+                    <div style="width:100%;height:12px;background:#FF5500"></div>
+                    <div style="width:100%;height:1px;border-top:1px dashed #FF5500;margin-top:3px;"></div>
+                    <table style="width:80%;height:80%;text-align:center;margin-left:73px">
+                        <tr>
+                            <td rowspan=2><img src="../img/taologo.jpg" style="width:170px;"></td>
+                            <td><a href="#">联系我们</a></td>
+                            <td><a href="#">加入我们</a></td>
+                            <td><a href="#">关注我们</a></td>
+                            <td rowspan=2><img src="../img/erweima.jpg" style="width:110px;"></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">关于我们</a></td>
+                            <td><a href="#">友情链接</a></td>
+                            <td><a href="#">意见反馈</a></td>
+                        </tr>
+                    </table>
+                    <p style="margin-left:550px;">www.taojianzhi.com</br>网络版权归淘兼职所有</p>
                 </div>
             </div>
         </div>
 
-<div class="row">
-    <div class="dibu" style="width:100%;height:160px;border:1px solid white;top:1024px;position: absolute;">
-        <div style="width:100%;height:12px;background:#FF5500"></div>
-        <div style="width:100%;height:1px;border-top:1px dashed #FF5500;margin-top:3px;"></div>
-        <table style="width:80%;height:80%;text-align:center;margin-left:73px">
-            <tr>
-                <td rowspan=2><img src="../img/taologo.jpg" style="width:170px;"></td>
-                <td><a href="#">联系我们</a></td>
-                <td><a href="#">加入我们</a></td>
-                <td><a href="#">关注我们</a></td>
-                <td rowspan=2><img src="../img/erweima.jpg" style="width:110px;"></td>
-            </tr>
-            <tr>
-                <td><a href="#">关于我们</a></td>
-                <td><a href="#">友情链接</a></td>
-                <td><a href="#">意见反馈</a></td>
-            </tr>
-        </table>
-        <p style="margin-left:550px;">www.taojianzhi.com</br>网络版权归淘兼职所有</p>
-    </div>
-</div>
 </body>
 </html>
