@@ -12,16 +12,15 @@ use App\company_save;
 use App\user_logs;
 
 class CompanyController extends Controller {
-
-	public function company($name)
+    public function info($name)
     {
-
         $company=DB::table("tjz_jobs")->where("company_name",$name)->first();
+        $company->work_time=str_replace('@'," ",$company->work_time);
         //dd($company);
         $company_name=$company->company_name;
         $username=Session::get('username');
         if(!Session::get('username')) {
-            return view("taojianzhi/company", ["company" => $company]);
+            return view("taojianzhi/job_info", ["company" => $company]);
         }
         $logs=DB::table('user_logs')->where('company_name',$name)->where('user',$username)->first();
         if($logs)
@@ -38,7 +37,7 @@ class CompanyController extends Controller {
 
             user_logs::create(['company_name' => $company_name, 'user' => $username]);
         }
-        return view("taojianzhi/company",["company"=>$company]);
+        return view("taojianzhi/job_info",["company"=>$company]);
     }
     public function buy($name)
 

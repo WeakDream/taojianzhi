@@ -1877,13 +1877,12 @@
                 @if(isset($companys2))
                     @if(!empty($companys2))
                         <div>
-
                             <div style="border-bottom: 1px solid blue;height: 40px;width: 100%;">
                                 <div style="width: 20px; display: inline-block;font-size: 20px"></div>
                                 <div style="width: 230px;display: inline-block;font-size: 20px">工作名称</div>
                                 <!--<div style="width: 100px;display: inline-block;font-size: 20px">类型</div>!-->
                                 <div style="width: 200px;display: inline-block;font-size: 20px">联系人</div>
-                                <div style="width: 230px;display: inline-block;font-size: 20px">联系电话</div>
+                                <div style="width: 200px;display: inline-block;font-size: 20px">联系电话</div>
                                 <div style="width: 100px;display: inline-block;font-size: 20px">发布时间</div>
                             </div>
                             <hr/>
