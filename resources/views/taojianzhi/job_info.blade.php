@@ -668,8 +668,18 @@
             <div class="kuang2"><a href="{{url('job_buy',$company->company_name)}}"><span style="font-size:24px; "><strong>购买岗位</strong></span></a></div>
             <div class="kuang3"><a href="#"><span style="font-size:24px;"><strong>分享</strong></span></a></div>
 
-            <div class="kuang3tan"><a href="#"><span style="font-size:12px;"><strong>分享给QQ好友</strong></span></a><a href="#"><span style="font-size:12px;"><strong>分享给微信好友</strong></span></a><a href="#"><span style="font-size:12px;"><strong>分享到QQ空间</strong></span></a>
-                <a href="#"><span style="font-size:12px;"><strong>分享到朋友圈</strong></span></a>
+            <div class="kuang3tan"> <div id="ckepop">
+                    <a class="jiathis_button_qzone">QQ空间</a>
+                    <a class="jiathis_button_tsina">新浪微博</a>
+                    <a class="jiathis_button_t163">网易微博</a>
+                    <a class="jiathis_button_tqq">腾讯微博</a>
+                    <a class="jiathis_button_tsohu">搜狐微博</a>
+                    <a class="jiathis_button_douban">豆瓣</a>
+                    <a class="jiathis_button_renren">人人网</a>
+                    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+                    <a class="jiathis_counter_style"></a>
+                </div>
+                <script type="text/javascript" src="http://v2.jiathis.com/code/jia.js" charset="utf-8"></script>
 
         </div>
     </div>
@@ -707,5 +717,6 @@
         <p style="margin-left:440px;">www.taojianzhi.com</br>网络版权归淘兼职所有</p>
     </div>
 </div>
+
 </body>
 </html>
