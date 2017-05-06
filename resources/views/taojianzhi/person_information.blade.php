@@ -10,6 +10,21 @@
     <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="../js/addLoadEvent.js"></script>
     <script type="text/javascript" src="../js/person_information.js"></script>
+    <style>
+        @font-face {
+            font-family: 'msyh';
+            font-style: normal;
+            font-weight: normal;
+            src: url(http://taojianzhi.com/fonts/msyh.ttf) format('truetype');
+        }
+
+        body {  margin: 0;
+            padding: 0;
+            width: 100%;
+            font-weight: 100;
+            font-family:'msyh';
+        }
+    </style>
 </head>
 <body>
 <div id="nav1">
@@ -60,6 +75,8 @@
                         <span>查看人数</span>
                         <h2 class="glyphicon glyphicon-star-empty collect" aria-hidden="true"></h2>
                         <span>收藏人数</span>
+                        <br>
+                        <a href="{{url("import")}}">一键导出</a>
                     </div>
                 </div>
                 <div id="center_information"></div>

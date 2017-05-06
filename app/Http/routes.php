@@ -47,10 +47,10 @@ Route::get("resume/{user_name}",['as'=>'resume','uses'=>'ResumeController@person
 Route::post("information/{bigName}/resumeCollect",['as'=>'resumeCollect','uses'=>'ResumeController@resumeSave']);
 
 //收藏与交易的部分
-Route::get("company/{name}","CompanyController@company");
+Route::get("info/{name}","CompanyController@info");
 //Route::get("company/{name}/hello",function ()
 //{
-//    return "hello";
+  //  return "hello";
 //});//对路由的一个测试
 Route::get("job_buy/{name}","CompanyController@buy");
 Route::post("job_buy/pay","CompanyController@pay");
@@ -61,6 +61,8 @@ Route::get("sendsuccess","SendEmailController@sendsuccess");
 
 //卖家的简历处理，目前邮箱的通知部分是写死的
 Route::post("send","SellerController@send_email");
+
+Route::get('import','SellerController@import');
 
 
 

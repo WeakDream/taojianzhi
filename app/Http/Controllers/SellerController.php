@@ -2,7 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use PDF;
 use Illuminate\Http\Request;
 use \Illuminate\Mail;
 
@@ -15,6 +15,12 @@ class SellerController extends Controller {
         {
             $message->to($data['email'],$data['name'])->subject("淘兼职");
         });
+    }
+    public function import()
+    {
+        $pdf = PDF::loadView('taojianzhi/person_information');
+        return $pdf->download('invoice.pdf');
+
     }
 
 }

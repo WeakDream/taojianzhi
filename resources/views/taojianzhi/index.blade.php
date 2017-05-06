@@ -158,7 +158,7 @@ body{
 }
 #nav2{
     width:100%;
-    margin:auto;
+    margin-left:auto;
     position:fixed;/*固定作用*/
     top:40px;
     left:0px;
@@ -787,7 +787,7 @@ body{
 <div class="rongqi" style="border:0px solid red;width:1024px;top:30px;height:1800px;position:relative;margin:0 auto;cursor:default;padding-top:40px;">
 <!--头部-->
     <div id="nav2">
-        <div class="header" style="width:100%;height:100px;border:1px solid white;position:absolute;cursor:default;background: white;margin-left:200px">
+        <div class="header" style="width:100%;height:90px;border:1px solid white;position:absolute;cursor:default;background: white;margin-left:200px">
         <!--LOGO-->
         <img src="../img/taologo.jpg" style="width:160px;">
         <!--搜索-->
@@ -1918,7 +1918,7 @@ body{
                     <table style="background-color: #fcf9fd;">
                         <tr height="40">
                             <td width="30"></td>
-                            <td width="230px"><a href="{{url('company',$input->company_name)}}">{{$input->company_name}}</a></td>
+                            <td width="230px"><a href="{{url('info',$input->company_name)}}">{{$input->name}}</a></td>
 
                             <td width="200">{{$input->contact_person}}</td>
                             <td width="238">{{$input->contact}}</td>
@@ -1947,7 +1947,7 @@ body{
                     <table style="background-color: #fcf9fd">
                         <tr height="40">
                             <td width="30"></td>
-                            <td width="230px"><a href="{{url('company',$input->company_name)}}">{{$input->company_name}}</a></td>
+                            <td width="230px"><a href="{{url('info',$input->company_name)}}">{{$input->name}}</a></td>
 
                             <td width="200">{{$input->contact_person}}</td>
                             <td width="238">{{$input->contact}}</td>
