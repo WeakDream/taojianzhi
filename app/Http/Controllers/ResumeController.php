@@ -95,14 +95,17 @@ class ResumeController extends Controller {
         //dd($g);
         return redirect()->route("resume",['user_name'=>$UserName]);
     }
-    public function resumeSave(Request $resumeSaveRequest){
+    public function resumeSave($user_name,Request $resumeSaveRequest){
         if(!Session::get('username')){
             return redirect()->to("login");
         }
-        $username=Session::get('username');
         $collect=$resumeSaveRequest->get('isCollected');
         if($collect){
-
+            Session::put($user_name,true);
+            return response()->json(["state"=>"success"]);
+        }else{
+            Session::put($user_name,false);
+            return response()->json(["state"=>"success"]);
         }
     }
 }

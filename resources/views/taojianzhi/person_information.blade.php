@@ -57,7 +57,9 @@
                     </div>
                     <div id="history">
                         <h2 class="glyphicon glyphicon-eye-open open-eye" aria-hidden="true"></h2>
+                        <span>查看人数</span>
                         <h2 class="glyphicon glyphicon-star-empty collect" aria-hidden="true"></h2>
+                        <span>收藏人数</span>
                     </div>
                 </div>
                 <div id="center_information"></div>
@@ -91,8 +93,8 @@
                             <HR style="FILTER: alpha(opacity=100,finishopacity=0,style=1)" width="80%" color=#987cb9 SIZE=3>
                             <div id="first_user" class="user_evaluate">
                                 <img class="user_evaluate_head" src="/public/facebook/1031face.jpg">
-                                <p></p>
-                                <p></p>
+                                <p>宋国</p>
+                                <p>有责任心，干活踏实放心</p>
                             </div>
                         </dt>
                         <dd>

@@ -26,10 +26,13 @@ $(document).ready(function(){
         $(".daohang5tan").hide();
     });
     $(".collect").click(function () {
-        if($(".collect").hasClass("glyphicon glyphicon-star-empty")){
+        var urls=window.location.href;
+        //$(this.data(id))
+        //var url = 'resume'+bigName+'resumeCollect';
+        if($(this).hasClass("glyphicon glyphicon-star-empty")){
 
             $.ajax({
-                url:'resumeCollect',
+                url:urls+"/resumeCollect",
                 type:'POST',
                 data:{
                     isCollected:true,
@@ -37,10 +40,12 @@ $(document).ready(function(){
                 },
                 timeout:5000,
                 dataType:'json',
+
                 success:function (json) {
                     if(json.state == 'success'){
-                        $(this).removeClass("glyphicon glyphicon-star-empty");
-                        $(this).addClass("glyphicon glyphicon-star");
+                        $(".collect").removeClass("glyphicon glyphicon-star-empty");
+                        $(".collect").addClass("glyphicon glyphicon-star");
+                        alert('收藏成功');
                     }else{
                         alert('error');
                     }
@@ -51,12 +56,33 @@ $(document).ready(function(){
                 complete:function () {
                     console.log('over');
                 }
-
-
             })
         }else{
-            $(".collect").removeClass("gglyphicon glyphicon-star");
-            $(".collect").addClass("glyphicon glyphicon-star-empty");
+            // $.ajax({
+            //     url:urls+"/resumeCollect",
+            //     type:'POST',
+            //     data:{
+            //         isCollected:true,
+            //         bigName:'用户的真名',//发送用户的真实名字，暂时写到session
+            //     },
+            //     timeout:5000,
+            //     dataType:'json',
+            //     success:function (json) {
+            //         if(json.state == 'success'){
+            //             $(".collect").removeClass("glyphicon glyphicon-star-empty");
+            //             $(".collect").addClass("glyphicon glyphicon-star");
+            //             alert('收藏成功');
+            //         }else{
+            //             alert('error');
+            //         }
+            //     },
+            //     error:function (xhr,textStatues) {
+            //
+            //     },
+            //     complete:function () {
+            //         console.log('over');
+            //     }
+            // })
         }
     })
 });
