@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use PDF;
 use Illuminate\Http\Request;
 use \Illuminate\Mail;
+use \Illuminate\mpdf;
 
 class SellerController extends Controller {
 
@@ -22,4 +23,5 @@ class SellerController extends Controller {
         return $pdf->download('invoice.pdf');
 
     }
+
 }

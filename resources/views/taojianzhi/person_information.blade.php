@@ -15,7 +15,7 @@
             font-family: 'msyh';
             font-style: normal;
             font-weight: normal;
-           
+            src: url(http://taojianzhi.com/fonts/msyh.ttf) format('truetype');
         }
 
         body {  margin: 0;
