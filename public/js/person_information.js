@@ -27,6 +27,8 @@ $(document).ready(function(){
     });
     $(".collect").click(function () {
         var urls=window.location.href;
+        console.log(urls);
+        var pattern = new RegExp("");
         //$(this.data(id))
         //var url = 'resume'+bigName+'resumeCollect';
         if($(this).hasClass("glyphicon glyphicon-star-empty")){
@@ -49,40 +51,34 @@ $(document).ready(function(){
                     }else{
                         alert('error');
                     }
-                },
-                error:function (xhr,textStatues) {
-
-                },
-                complete:function () {
-                    console.log('over');
                 }
             })
         }else{
-            // $.ajax({
-            //     url:urls+"/resumeCollect",
-            //     type:'POST',
-            //     data:{
-            //         isCollected:true,
-            //         bigName:'用户的真名',//发送用户的真实名字，暂时写到session
-            //     },
-            //     timeout:5000,
-            //     dataType:'json',
-            //     success:function (json) {
-            //         if(json.state == 'success'){
-            //             $(".collect").removeClass("glyphicon glyphicon-star-empty");
-            //             $(".collect").addClass("glyphicon glyphicon-star");
-            //             alert('收藏成功');
-            //         }else{
-            //             alert('error');
-            //         }
-            //     },
-            //     error:function (xhr,textStatues) {
-            //
-            //     },
-            //     complete:function () {
-            //         console.log('over');
-            //     }
-            // })
+            $.ajax({
+                url:urls+"/resumeCollect",
+                type:'POST',
+                data:{
+                    isCollected:false,
+                    bigName:'用户的真名',//发送用户的真实名字，暂时写到session
+                },
+                timeout:5000,
+                dataType:'json',
+                success:function (json) {
+                    if(json.state == 'success'){
+                        $(".collect").removeClass("glyphicon glyphicon-star");
+                        $(".collect").addClass("glyphicon glyphicon-star-empty");
+                        alert('取消收藏');
+                    }else{
+                        alert('error');
+                    }
+                }
+                // error:function (xhr,textStatues) {
+                //
+                // },
+                // complete:function () {
+                //     console.log('over');
+                // }
+            })
         }
     })
 });

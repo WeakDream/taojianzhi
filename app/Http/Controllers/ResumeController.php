@@ -100,11 +100,12 @@ class ResumeController extends Controller {
             return redirect()->to("login");
         }
         $collect=$resumeSaveRequest->get('isCollected');
+        $resume_name=$resumeSaveRequest->get('bigName');
         if($collect){
-            Session::put($user_name,true);
+            Session::put("resume_collect",$resume_name);
             return response()->json(["state"=>"success"]);
         }else{
-            Session::put($user_name,false);
+            Session::unset("resume_collect",$resume_name);
             return response()->json(["state"=>"success"]);
         }
     }
