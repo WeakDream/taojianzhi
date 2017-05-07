@@ -3,6 +3,7 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\resume_save;
 use App\resume_TJZ;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
@@ -95,17 +96,32 @@ class ResumeController extends Controller {
         //dd($g);
         return redirect()->route("resume",['user_name'=>$UserName]);
     }
-    public function resumeSave($user_name,Request $resumeSaveRequest){
+    public function resumeSave($bigName,Request $resumeSaveRequest){
+
         if(!Session::get('username')){
             return redirect()->to("login");
         }
+
+        $resume_save = new resume_save();
+
         $collect=$resumeSaveRequest->get('isCollected');
-        $resume_name=$resumeSaveRequest->get('bigName');
+        $username = Session::get('username');
+
+        $user = DB::table("users")->where("nickname",$username)->first();
+        $user_id=$user->id;
+
+        $resume = DB::table("resumes")->where("name",$bigName)->first();
+        $resume_id=$resume->id;
+        $data['user_id']=$user_id;
+        $data['resume_id']=$resume_id;
         if($collect){
-            Session::put("resume_collect",$resume_name);
+            //dd($collect);
+            $resume_save->saveCollect($data);
+            //Session::put("resume_collect",$resume_name);
             return response()->json(["state"=>"success"]);
         }else{
-            Session::unset("resume_collect",$resume_name);
+            //Session::unset("resume_collect",$resume_name);
+            $resume_save->removeCollect($data);
             return response()->json(["state"=>"success"]);
         }
     }

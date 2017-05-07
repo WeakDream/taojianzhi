@@ -385,17 +385,19 @@
             </tr>
             </thead>
             <tbody>
-
+            @if(!empty($resume_gets))
+                @foreach($resume_gets as $resume)
             <tr bgcolor="#FCFCFC" height="130" align="center">
                 <td><input type="checkbox" class="check-one check" />&nbsp;&nbsp;</td>
                 <td align="left"><img src="./img/taologo.jpg" style="width:80px;height:80px;cursor:pointer;">&nbsp;
-                    <span class="zhiwei"><a href="#">{{Session::get('resume_collect')}}</a></span></td>
-                <td></td>
+                    <span class="zhiwei"><a href="#">{{$resume->name}}</a></span></td>
+                <td>{{$resume->school}}</td>
                 <td>2015年12月1日~2015年12月31日</td>
                 <td class="qian">5.00</td>
                 <td><a href="#"><span class="delete">删除</span></a></td>
             </tr>
-
+                @endforeach
+            @endif
             </tbody>
         </table>
         <table rules=rows id="liebiao" border="0" width="1024" align="center">

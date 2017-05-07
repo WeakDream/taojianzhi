@@ -10,6 +10,7 @@
     <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="../js/addLoadEvent.js"></script>
     <script type="text/javascript" src="../js/person_information.js"></script>
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <style>
         @font-face {
             font-family: 'msyh';
