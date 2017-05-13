@@ -8,6 +8,9 @@
     <script src="js/laydate/laydate.js"></script>
     <script type="text/javascript" src="../js/jquery-1.11.3.min.js" /></script>
     <script type="text/javascript" src="../js/jquery-1.11.1.min.js" /></script>
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript">
         var check = 0;//该变量是记录当前选择的评分
 
@@ -134,6 +137,39 @@
                 $("#n2").css('background',' #FF5500');
                 $("#n1").css('background',' #C1CDC1');
             });
+            $("#tijiao").click(function () {
+                var comments=$("#comment").val();
+                var username="{{Session::get('username')}}";
+                var companyname="{{$company->company_name}}"
+                var name="{{$company->name}}"
+                $.ajax(
+                    {
+                        url:"../comments",
+                        data:{
+                            "comments":comments,
+                            "username":username,
+                            "companyname":companyname,
+                            "name":name
+                        },
+                        type:"get",
+                        success:function (data) {
+                            //alert("hello");
+                           if(data.comment==0)
+                           {
+                              $('#comments_0').click();
+                           }
+                           if(data.comment==1)
+                            {
+                                $('#comments_1').click();
+                            }
+                            if(data.comment==2)
+                            {
+                                window.location.href="/back";
+                            }
+                        }
+                    }
+                )
+            })
         });
     </script>
     <style type="text/css">
@@ -482,7 +518,7 @@
     <div class="hui">
         <div class="daohang">
             <div class="daohang1"><a href={{url('index')}}>首页</a></div>
-            @if(Session::get('username'))
+            @if(\Illuminate\Support\Facades\Session::get('username'))
                 <div style="position:absolute;margin-left:50px;"><a href="{{url('personal_center')}}">你好{{Session::get('username')}}</a></div>
                 <div style="position:absolute;margin-left:135px;"><a href="{{url('logout')}}">退出登录</a></div>
             @endif
@@ -614,38 +650,83 @@
             </p>
             </br>
             <div style="margin-top:-30px;margin-left:50px;">
-                <textarea cols=70 rows=5 style="margin-top:20px;margin-left:30px sition: absolute" placeholder="写出你对岗位的评价"></textarea>
+                <textarea id="comment" cols=70 rows=5 style="margin-top:20px;margin-left:30px sition: absolute" placeholder="写出你对岗位的评价"></textarea>
             </div>
             </br>
             </br>
-            <button style="margin-left: 200px;width: 80px;height: 30px;background: #f0ad4e;border-radius: 5px;"><b>提交</b></button>
-            <button style="margin-left: 20px;;width: 80px;height: 30px;background:#f9f9f9;border-radius: 5px;"><b>取消</b></button>
+            <button id="tijiao" class="btn btn-primary" style="margin-left: 200px">
+                提交
+            </button>
+            <button id="comments_0" class="btn btn-primary" data-toggle="modal" data-target="#myModal0" style="margin-left: 20px;display: none">
+                <button id="comments_1" class="btn btn-primary" data-toggle="modal" data-target="#myModal1" style="margin-left: 20px;display: none">
+            <button class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="margin-left: 20px">
+                取消
+            </button>
+        </div>
+            <div class="modal fade" id="myModal0" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                &times;
+                            </button>
+                            <h4 class="modal-title" id="myModalLabel">
+                                对不起，你还没有购买过此岗位，不能进行评价
+                            </h4>
+                        </div>
+                        <div class="modal-footer">
+                            <!-- <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                             </button>!-->
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">
+                                知道了
+                            </button>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal -->
+            </div>
+        <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">
+                            对不起，你购买的岗位还在工作中，点击完成再来评价哦
+                        </h4>
+                    </div>
+                    <div class="modal-footer">
+                        <!-- <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                         </button>!-->
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">
+                            知道了
+                        </button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
         </div>
         <div class="n2tan" style="border: 0px solid red;width: 500px;left: 50px;height:450px;margin-left:80px;">
             <table width="500" height="300" border="2" frame="hsides"rules="rows">
-                <tr>
-                    <td>评价</td>
-                    <td>评价人</td>
-                    <td>操作</td>
-                </tr>
-                <tr>
-                    <td><img src="/img/xing3.jpg"></td>
-                    <td>王敏</td>
-                    <td><button>查看详情</button></td>
-                </tr>
-                <tr>
-                    <td><img src="/img/xing5.jpg"></td>
-                    <td>赵杰</td>
-                    <td><button>查看详情</button></td>
-                </tr>
-                <tr>
-                    <td><img src="/img/xing4.jpg"></td>
-                    <td>匿名</td>
-                    <td><button>查看详情</button></td>
-                </tr>
+
+                @if(isset($comments))
+                    @if(!empty($comments))
+
+                        @foreach($comments as $comment)
+               <tr style="height: 5px">
+                   <td><span style="font-size: 16px;color: blue">{{$comment->username}}</span>&nbsp &nbsp &nbsp说:
+                   <span>{{$comment->comment}}</span></td>
+               </tr>
+
+
+                        @endforeach
+                    @endif
+                        @if(empty($comments))
+                        <tr style="text-align: center"><td>暂时没有任何的评论</td></tr>
+                        @endif
+                @endif
             </table>
             <div class="xiabu3" style="border:0px solid blue;width:100%;height:70px;position:absolute;top:400px;cursor:default;">
-                <ul>
+               <!-- <ul>
                     <li><div align="center" style="width:80px;height:28px;border:1px solid grey;font-size:18px;">上一页</div></li>
                     <li><div align="center">1</div></li>
                     <li><div align="center">2</div></li>
@@ -657,7 +738,7 @@
                     <li><div align="center">8</div></li>
                     <li><div align="center">....</div></li>
                     <li><div align="center" style="width:80px;height:28px;border:1px solid grey;font-size:18px;">下一页</div></li>
-                </ul>
+                </ul>!-->
             </div>
         </div>
     </div>

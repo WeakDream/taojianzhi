@@ -38,6 +38,7 @@ Route::get("information/{bigName}","IndexController@getPersonInformation");
 Route::get("personal_center","PersonalController@personal_center");
 Route::get("logs_delete/{company_name}","PersonalController@logs_delete");
 Route::get("save",'PersonalController@save');
+Route::get('finish/{company_name}/{name}',"PersonalController@finish");
 
 //用户的简历部分
 Route::get("complate_personal_resume","ResumeController@complate_personal_resume");//跳转页面
@@ -58,6 +59,11 @@ Route::get("pay_success","CompanyController@pay_success");
 Route::get("job_save/{name}/{jobname}","CompanyController@job_save");
 Route::get("job_delete/{name}/{jobname}","CompanyController@job_delete");
 Route::get("sendsuccess","SendEmailController@sendsuccess");
+Route::get("comments","CompanyController@comments");
+Route::get("back",function ()
+{
+    return redirect()->back();
+});
 
 //卖家的简历处理，目前邮箱的通知部分是写死的
 Route::post("send","SellerController@send_email");
