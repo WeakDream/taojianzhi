@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use App\User;
@@ -17,6 +18,8 @@ class UserController extends Controller {
     public function register_check(Request $request)
     {
         $input['email']=$request->get('email');
+        //$header=$request->headers->get('user-agent');
+        //dd($header);
         $input['nickname']=$request->get('nickName');
         $input['password']=$request->get('password');
         $input['email_verified']=1;
