@@ -25,6 +25,16 @@
                 $(".daohang5").css({"background":"#C1CDC1","border":"0px"});
                 $(".daohang5tan").hide();
             });
+            $("#liebiao").show();
+            $("#resume-save").hide();
+            $("#company").click(function(){
+                $("#liebiao").show();
+                $("#resume-save").hide();
+            });
+            $("#resume").click(function () {
+                $("#liebiao").hide();
+                $("#resume-save").show();
+            });
 
             var cartTable = document.getElementById('liebiao');
             var tr = cartTable.children[1].rows;
@@ -352,17 +362,44 @@
     <div id="nav">
         <ul>
             <li class="menu2" onMouseOver="this.className='menu1'" onMouseOut="this.className='menu2'">
-                <a href="#">简历收藏</a>
+                <a href="#" id="resume">简历收藏</a>
                 <div class="list">
-                    <a href="#">职位收藏</a><br />
+                    <a href="#" id="company">职位收藏</a><br />
                 </div>
             </li>
         </ul>
     </div>
 
     <!--第一块-->
-    <div style="border:0px solid black;width:1024px;height:700px;position:absolute;top:100px;">
+    <div style="border:0px solid black;width:1024px;height:700px;position:absolute;top:100px;" >
         <hr/>
+        <table id="resume-save" rules=rows border="0" width="1024" align="center" >
+            <thead>
+            <tr height="30" align="center">
+                <td></td>
+                <td>姓名</td>
+                <td>求职意向</td>
+                <td>薪资要求</td>
+                <td>手续费(元)</td>
+                <td>操作</td>
+            </tr>
+            </thead>
+            <tbody>
+            @if(!empty($resume_gets))
+                @foreach($resume_gets as $resume)
+            <tr bgcolor="#FCFCFC" height="130" align="center">
+                <td><input type="checkbox" class="check-one check" />&nbsp;&nbsp;</td>
+                <td align="left"><img src="./img/taologo.jpg" style="width:80px;height:80px;cursor:pointer;">&nbsp;
+                    <span class="zhiwei"><a href="#">{{$resume->name}}</a></span></td>
+                <td>{{$resume->school}}</td>
+                <td>2015年12月1日~2015年12月31日</td>
+                <td class="qian">5.00</td>
+                <td><a href="#"><span class="delete">删除</span></a></td>
+            </tr>
+                @endforeach
+            @endif
+            </tbody>
+        </table>
         <table rules=rows id="liebiao" border="0" width="1024" align="center">
             <thead>
             <tr height="30" align="center">
@@ -409,10 +446,11 @@
             </tbody>
         </table>
 
+
         <div style="width:1024px;height:50px;background:#DBD6D6;margin-top:20px;padding:10px;">
             <input type="checkbox" class="check-all check" style="z-index:10;position:relative;"/>&nbsp;&nbsp;全选
             <span style="margin-left:30px;cursor:pointer;position:relative;z-index:10;" class="deleteAll">删除</span>
-            <span style="margin-left:800px;front-color:red;font-size:17px;"><a href="orderconfirm.html"><b>投递简历</b></a>
+            <span style="margin-left:800px;front-color:red;font-size:17px;"><a href="orderconfirm.html"><b>投递简历</b></a></span>
 
         </div>
     </div><!--第一块-->

@@ -38,7 +38,7 @@ class resume_TJZ extends Model implements AuthenticatableContract, CanResetPassw
     }
     public function display($id)
     {
-        $data=$this->where('uid','=',$id)->get();
+        $data=$this->where('id','=',$id)->first();
 
         return $data;
     }

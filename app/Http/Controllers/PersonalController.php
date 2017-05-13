@@ -72,7 +72,15 @@ class PersonalController extends Controller {
     public function  save()
     {
         $name=Session::get("username");
+        $user_id = DB::table("users")->where("nickname",$name)->value('id');
         $gets_job=DB::table("job_save")->where("username",$name)->get();
-        return view("taojianzhi/save",['job_gets'=>$gets_job]);
+        $gets_resume=DB::table("resume_save")->where('user_id',$user_id)->value('resume_id');
+        $resume = new resume_TJZ();
+        $i=0;
+        foreach ($gets_resume as $resume_id){
+            $resumes[$i] = $resume->display($resume_id);
+            $i++;
+        }
+        return view("taojianzhi/save",['job_gets'=>$gets_job,'resume_gets'=>$resumes]);
     }
 }

@@ -26,17 +26,22 @@ $(document).ready(function(){
         $(".daohang5tan").hide();
     });
     $(".collect").click(function () {
-        var urls=window.location.href;
-        //$(this.data(id))
+        var url=window.location.href;
+        var urls=url.split('/');
+        var bigName=decodeURIComponent(urls[4],"utf-8");
+        console.log(bigName);
+        //console.log(urls);
+        // $(this.data(urls))
         //var url = 'resume'+bigName+'resumeCollect';
+
         if($(this).hasClass("glyphicon glyphicon-star-empty")){
 
             $.ajax({
-                url:urls+"/resumeCollect",
+                url:urls[0]+"//"+urls[2]+"/"+urls[3]+"/"+bigName+"/resumeCollect",
                 type:'POST',
                 data:{
-                    isCollected:true,
-                    bigName:'用户的真名',//发送用户的真实名字，暂时写到session
+                    isCollected:true
+                    //bigName:'用户的真名',//发送用户的真实名字，暂时写到session
                 },
                 timeout:5000,
                 dataType:'json',
@@ -49,40 +54,34 @@ $(document).ready(function(){
                     }else{
                         alert('error');
                     }
-                },
-                error:function (xhr,textStatues) {
-
-                },
-                complete:function () {
-                    console.log('over');
                 }
             })
         }else{
-            // $.ajax({
-            //     url:urls+"/resumeCollect",
-            //     type:'POST',
-            //     data:{
-            //         isCollected:true,
-            //         bigName:'用户的真名',//发送用户的真实名字，暂时写到session
-            //     },
-            //     timeout:5000,
-            //     dataType:'json',
-            //     success:function (json) {
-            //         if(json.state == 'success'){
-            //             $(".collect").removeClass("glyphicon glyphicon-star-empty");
-            //             $(".collect").addClass("glyphicon glyphicon-star");
-            //             alert('收藏成功');
-            //         }else{
-            //             alert('error');
-            //         }
-            //     },
-            //     error:function (xhr,textStatues) {
-            //
-            //     },
-            //     complete:function () {
-            //         console.log('over');
-            //     }
-            // })
+            $.ajax({
+                url:urls+"/resumeCollect",
+                type:'POST',
+                data:{
+                    isCollected:false,
+                    //bigName:'用户的真名',//发送用户的真实名字，暂时写到session
+                },
+                timeout:5000,
+                dataType:'json',
+                success:function (json) {
+                    if(json.state == 'success'){
+                        $(".collect").removeClass("glyphicon glyphicon-star");
+                        $(".collect").addClass("glyphicon glyphicon-star-empty");
+                        alert('取消收藏');
+                    }else{
+                        alert('error');
+                    }
+                }
+                // error:function (xhr,textStatues) {
+                //
+                // },
+                // complete:function () {
+                //     console.log('over');
+                // }
+            })
         }
     })
 });
