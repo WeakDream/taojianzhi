@@ -73,6 +73,7 @@ $(document).ready(function(){
                     }else{
                         alert('error');
                     }
+                    //alert(json.collect);
                 }
                 // error:function (xhr,textStatues) {
                 //

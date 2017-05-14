@@ -133,11 +133,11 @@ class ResumeController extends Controller {
 
         $resume = DB::table("resumes")->where("name",$bigName)->first();
         $resume_id=$resume->id;
-        if(!$collect){
+        //if(!$collect){
             //Session::unset("resume_collect",$resume_name);
             $message=$resume_save->removeCollect($resume_id,$user_id);
             return response()->json(["state"=>"success","collect"=>$collect,"message"=>$message]);
             //删除简历成功
-        }
+        //}
     }
 }
