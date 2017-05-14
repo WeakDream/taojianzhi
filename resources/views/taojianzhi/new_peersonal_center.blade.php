@@ -1119,7 +1119,7 @@
                 </a>
             </li>
             <div class="qiuzhi2">
-                <li style="margin-top: 10px;"id="l42"><a href="zhanshi.html"><font color="#666464">我的时间表</font></a></li>
+                <!--<li style="margin-top: 10px;"id="l42"><a href="zhanshi.html"><font color="#666464">我的时间表</font></a></li>!-->
                 <li style="margin-top: 10px;"id="l44">我发布的消息</li>
                 <li style="margin-top: 10px;"id="l45">我收到的消息</li>
                 <li style="margin-top: 10px;"id="l42">我的购买记录</li>
@@ -1212,8 +1212,9 @@
 
                 <td>投递职位</td>
                 <td>公司名称</td>
-                <td>投递反馈</td>
+                <!--<td>投递反馈</td>!-->
                 <td>投递时间</td>
+                <td>确认完成</td>
 
             </tr>
             </thead>
@@ -1225,8 +1226,10 @@
 
                 <td >{{$buy->name}}</td>
                 <td>{{$buy->company_name}}</td>
-                <td>已经付款，等待结果</td>
+                <!--<td>已经付款，等待结果</td>!-->
+
                 <td>{{$buy->updated_at}}</td>
+                <td><a href="{{url('finish',[$buy->company_name,$buy->name])}}">完成</a></td>
             </tr>
                     @endforeach
                 @endif

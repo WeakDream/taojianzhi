@@ -175,7 +175,7 @@ class IndexController extends Controller {
         $input['name']=$request->get('name');
         $input['job_type']=2;
         $input['salary']=$request->get('wage');
-        $input['company_name']=$input['name'];
+        $input['company_name']="个人类兼职";
         $input['position']=$request->get('place');
         $input['description']="个人招聘";
         $input['contact_person']=$request->get('Contacts');

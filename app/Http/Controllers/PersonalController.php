@@ -35,7 +35,7 @@ class PersonalController extends Controller {
         //dd($name);
         $get=DB::table("users")->where("nickname",$name)->first();
         $logs=DB::table("user_logs")->where("user",$name)->orderBy('updated_at','desc')->get();
-        $buys=DB::table("tjz_jobs")->join('job_apply','job_apply.job_id','=','tjz_jobs.id')->where('user_id',$user_id)->get();
+        $buys=DB::table("tjz_jobs")->join('job_apply','job_apply.job_id','=','tjz_jobs.id')->where('user_id',$user_id)->where("status",0)->get();
         $length=count($logs);
         if($length>5)
         {
@@ -82,5 +82,15 @@ class PersonalController extends Controller {
             $i++;
         }
         return view("taojianzhi/save",['job_gets'=>$gets_job,'resume_gets'=>$resumes]);
+    }
+    public function finish($company_name,$name)
+    {
+        //dd($company_name);
+        $userId=DB::table('users')->where('nickname',Session::get('username'))->first()->id;
+        $job_id=DB::table('tjz_jobs')->where('company_name',$company_name)
+            ->where('name',$name)
+            ->first()->id;
+        DB::table('job_apply')->where('job_id',$job_id)->where('user_id',$userId)->update(array('status'=>1));
+        return redirect()->to('personal_center');
     }
 }

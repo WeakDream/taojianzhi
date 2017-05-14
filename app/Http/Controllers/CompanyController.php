@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\comments;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -19,10 +20,12 @@ class CompanyController extends Controller {
         //dd($company);
         $company_name=$company->company_name;
         $username=Session::get('username');
+        $comments=DB::table('comments')->where("companyname",$name)->get();
         if(!Session::get('username')) {
-            return view("taojianzhi/job_info", ["company" => $company]);
+            return view("taojianzhi/job_info", ["company" => $company,'comments'=>$comments]);
         }
         $logs=DB::table('user_logs')->where('company_name',$name)->where('user',$username)->first();
+
         if($logs)
         {
             //date_default_timezone_set("Asia/Shanghai");
@@ -37,7 +40,7 @@ class CompanyController extends Controller {
 
             user_logs::create(['company_name' => $company_name, 'user' => $username]);
         }
-        return view("taojianzhi/job_info",["company"=>$company]);
+        return view("taojianzhi/job_info",["company"=>$company,"comments"=>$comments]);
     }
     public function buy($name)
 
@@ -119,6 +122,39 @@ class CompanyController extends Controller {
         $username=session::get('username');
         DB::table("job_save")->where('username',$username)->where('companyname',$name)->where('jobname',$jobname)->delete();
         return redirect()->to('save');
+    }
+    public function comments(Request $request)
+    {
+        $input["companyname"]=$request->get("companyname");
+        //dd($input);
+        $input["username"]=$request->get("username");
+        $input["comment"]=$request->get("comments");
+        $input["name"]=$request->get("name");
+        $userId=DB::table('users')->where('nickname',$input['username'])->first()->id;
+        $input['job_id']=DB::table('tjz_jobs')->where('company_name',$input["companyname"])
+            ->where('name',$input["name"])
+            ->first()->id;
+        $get=DB::table('job_apply')->where('job_id',"=",$input['job_id'])->where('user_id',"=",$userId)->first();
+        if(empty($get))
+        {
+            //return redirect()->back()->with(["comment"=>0]);
+            //return redirect()->to('index');
+            return response()->json(['comment'=>0]);
+        }
+        else
+        {
+            if($get->status==0)
+            {
+                //return redirect()->back()->with(["comment"=>1]);
+                return response()->json(['comment'=>1]);
+            }
+            else
+            {
+                comments::create($input);
+                return response()->json(['comment'=>2]);
+            }
+        }
+
     }
 
 }
