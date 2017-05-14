@@ -195,7 +195,7 @@
                     <input type="password" name="password" class="form-control" placeholder="密码" aria-describedby="basic-addon1">
                 </div>
 
-                <a href="#" class="wang1" style="text-decoration:none;color:#333333;margin-top:30px;display:inline-block;">忘记登录密码？</a>
+                <a href="{{url('forgetPassword')}}" class="wang1" style="text-decoration:none;color:#333333;margin-top:30px;display:inline-block;">忘记登录密码？</a>
                 <a href="{{url('register')}}" class="wang2" style="text-decoration:none;color:#333333;margin-left:90px;">免费注册</a>
 
                 <input type="submit" name="submit" value="提交" class="btn btn-warning" style="background:#FF4400;width:100%;margin-top:20px;">

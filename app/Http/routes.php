@@ -19,6 +19,7 @@ Route::post("register_check","UserController@register_check");
 Route::get("login","UserController@login");
 Route::post("login_check","UserController@login_check");
 Route::get("logout","UserController@login_out");
+Route::get("forgetPassword","UserController@forgetPassword");
 
 //网站的首页部分以及一些功能
 Route::get("index","IndexController@index");

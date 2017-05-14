@@ -92,5 +92,7 @@ class UserController extends Controller {
         return redirect('index');
     }
 
-
+    public function forgetPassword(){
+        return view('taojianzhi.zhaohuimima-xin');
+    }
 }
