@@ -74,7 +74,11 @@
                     <div id="history">
                         <h2 class="glyphicon glyphicon-eye-open open-eye" aria-hidden="true"></h2>
                         <span>查看人数</span>
-                        <h2 class="glyphicon glyphicon-star-empty collect" aria-hidden="true"></h2>
+                        @if($isCollected)
+                            <h2 class="glyphicon glyphicon-star collect" aria-hidden="true"></h2>
+                        @else
+                            <h2 class="glyphicon glyphicon-star-empty collect" aria-hidden="true"></h2>
+                        @endif
                         <span>收藏人数</span>
                         <br>
                         <a href="{{url("import")}}">一键导出</a>

@@ -21,7 +21,15 @@ class resume_save extends Model
         $this->save();
         return 0;
     }
-    public function removeCollect($data){
-        $this->where(['user_id'=>$data->user_id,'resume_id'=>$data->resume_id])->first()->delete();
+    public function removeCollect($resume_id,$user_id){
+        return $this->where(['user_id'=>$user_id,'resume_id'=>$resume_id])->delete();
+    }
+    public function collectionExist($resume_id,$user_id){
+        $get=$this->where(['resume_id'=>$resume_id,'user_id'=>$user_id])->first();
+        if(!$get){
+            return false;
+        }else{
+            return true;
+        }
     }
 }

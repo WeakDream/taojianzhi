@@ -46,6 +46,7 @@ Route::post("complate_resume","ResumeController@complate_resume");
 Route::post("update_user_head","ResumeController@update_user_head");
 Route::get("resume/{user_name}",['as'=>'resume','uses'=>'ResumeController@personal_resume']);
 Route::post("information/{bigName}/resumeCollect",['as'=>'resumeCollect','uses'=>'ResumeController@resumeSave']);
+Route::get("information/{bigName}/removeCollect","ResumeController@removeCollection");
 
 //收藏与交易的部分
 Route::get("info/{name}","CompanyController@info");

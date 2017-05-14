@@ -250,9 +250,12 @@ class IndexController extends Controller {
         $resumes = new resume_TJZ();
         $name=Session::get("username");
         $userId=$user->nameFindId($name);
-        $collections = $resume_save->getResume($userId);
-        dd($collections);
-        return view('taojianzhi.person_information');
+        $resumeId=$resumes->getResumeId($bigName);
+        if($resume_save->collectionExist($resumeId,$userId)){
+            return view('taojianzhi.person_information',["isCollected"=>true]);
+        }else{
+            return view('taojianzhi.person_information',["isCollected"=>false]);
+        }
     }
 
 }

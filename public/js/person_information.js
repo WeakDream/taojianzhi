@@ -29,7 +29,6 @@ $(document).ready(function(){
         var url=window.location.href;
         var urls=url.split('/');
         var bigName=decodeURIComponent(urls[4],"utf-8");
-        console.log(bigName);
         //console.log(urls);
         // $(this.data(urls))
         //var url = 'resume'+bigName+'resumeCollect';
@@ -58,10 +57,10 @@ $(document).ready(function(){
             })
         }else{
             $.ajax({
-                url:urls+"/resumeCollect",
-                type:'POST',
+                url:urls[0]+"//"+urls[2]+"/"+urls[3]+"/"+bigName+"/removeCollect",
+                type:'GET',
                 data:{
-                    isCollected:false,
+                    isCollected:false
                     //bigName:'用户的真名',//发送用户的真实名字，暂时写到session
                 },
                 timeout:5000,
