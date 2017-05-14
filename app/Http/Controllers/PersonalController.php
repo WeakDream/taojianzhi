@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
+use phpDocumentor\Reflection\Types\Array_;
 
 class PersonalController extends Controller {
     public function is_login()
@@ -69,19 +70,25 @@ class PersonalController extends Controller {
         $return=DB::table('user_logs')->where('company_name',$company_name)->delete();
         return redirect()->to('personal_center');
     }
-    public function  save()
+    public function save()
     {
         $name=Session::get("username");
         $user_id = DB::table("users")->where("nickname",$name)->value('id');
-        $gets_job=DB::table("job_save")->where("username",$name)->get();
-        $gets_resume=DB::table("resume_save")->where('user_id',$user_id)->value('resume_id');
+        $gets_job=DB::table("job_save")->where("username",$name)->get();//收藏的公司
+        $gets_resume=DB::table("resume_save")->where('user_id',$user_id)->get(['resume_id']);//获取所有被该用户收藏的简历id
+        //dd($gets_resume);
         $resume = new resume_TJZ();
         $i=0;
-        foreach ($gets_resume as $resume_id){
-            $resumes[$i] = $resume->display($resume_id);
-            $i++;
+        $resumes = Array();
+        if($gets_resume){
+            foreach ($gets_resume as $resume_id){
+                $resumes[$i] = $resume->display($resume_id->resume_id);
+                $i++;
+            }
+            return view("taojianzhi/save",['job_gets'=>$gets_job,'resume_gets'=>$resumes]);
+        }else{
+            return view("taojianzhi/save",['job_gets'=>$gets_job,'resume_gets'=>$gets_resume]);
         }
-        return view("taojianzhi/save",['job_gets'=>$gets_job,'resume_gets'=>$resumes]);
     }
     public function finish($company_name,$name)
     {
