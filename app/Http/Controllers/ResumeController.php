@@ -90,7 +90,7 @@ class ResumeController extends Controller {
         $entension = $file->getClientOriginalExtension();
         $newName = $UserId."face".".".$entension;
         $path = $file -> move('public/facebook',$newName);
-        $save_path='/public/facebook/'.$newName;
+        $save_path='/home/www/taojianzhi/public/facebook/'.$newName;
         //dd($save_path);
         DB::table('resumes')->where('user_id',$user_data->id)->update(array('photo'=>$save_path));
         //dd($g);

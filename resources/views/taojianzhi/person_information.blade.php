@@ -58,7 +58,7 @@
                     <div id="personal_message">
                             <dl class="dl-horizontal">
                                 <dt>姓名</dt>
-                                <dd>aasa</dd>
+                                    <dd>aasa</dd>
                                 <dt>性别</dt>
                                 <dd>bbbb</dd>
                                 <dt>年龄</dt>

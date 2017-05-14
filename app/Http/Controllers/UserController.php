@@ -83,7 +83,6 @@ class UserController extends Controller {
                 //return view("taojianzhi/login",["m"=>"密码错误"]);
                 return redirect()->back()->withErrors(['error1' => "密码错误"]);
             }
-
         }
     }
     public function login_out()

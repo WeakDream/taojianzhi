@@ -3,6 +3,9 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\resume_save;
+use App\resume_TJZ;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
@@ -10,6 +13,18 @@ use App\job2;
 use App\company;
 
 class IndexController extends Controller {
+    public function is_login()
+    {
+        $name=Session::get("username");
+        if($name)
+        {
+            return 1;
+        }
+        else
+        {
+            return 0;
+        }
+    }
 
     public function index()
     {
@@ -220,6 +235,23 @@ class IndexController extends Controller {
     }
 
     public function getPersonInformation($bigName){
+        //没有账号的人无法访问
+        if(!$this->is_login())
+        {
+            return redirect()->to("login");
+        }
+        //一、是否已经收藏
+        //1.通过session获取用户id
+        //2.根据id查找用户是否收藏了改简历
+        //3.传数据给前端设置样式
+        //二、通过真实姓名渲染页面
+        $resume_save = new resume_save();
+        $user = new User();
+        $resumes = new resume_TJZ();
+        $name=Session::get("username");
+        $userId=$user->nameFindId($name);
+        $collections = $resume_save->getResume($userId);
+        dd($collections);
         return view('taojianzhi.person_information');
     }
 

@@ -31,8 +31,8 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 */
 	protected $hidden = ['password', 'remember_token'];
 
-	public function find_name($name){
-		return $this->where('nikename','$name')->get();
-	}
+	public function nameFindId($name){
+        return $this->where('nickname',$name)->first()->id;
+    }
 
 }
