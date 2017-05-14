@@ -152,6 +152,7 @@
                             "name":name
                         },
                         type:"get",
+                        dataType:'json',
                         success:function (data) {
                             //alert("hello");
                            if(data.comment==0)
@@ -706,13 +707,13 @@
             </div><!-- /.modal -->
         </div>
         <div class="n2tan" style="border: 0px solid red;width: 500px;left: 50px;height:450px;margin-left:80px;">
-            <table width="500" height="300" border="2" frame="hsides"rules="rows">
+            <table width="500" height="300" border="2" frame="hsides" rules="rows">
 
                 @if(isset($comments))
                     @if(!empty($comments))
 
                         @foreach($comments as $comment)
-               <tr style="height: 5px">
+               <tr style="vertical-align: top;line-height: 4">
                    <td><span style="font-size: 16px;color: blue">{{$comment->username}}</span>&nbsp &nbsp &nbsp说:
                    <span>{{$comment->comment}}</span></td>
                </tr>
