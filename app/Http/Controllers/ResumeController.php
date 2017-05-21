@@ -118,14 +118,19 @@ class ResumeController extends Controller {
 
             //dd($collect);
             $resume_save->saveCollect($data);
+            $collectNum=$resume_save->collectNum($resume_id);
             //Session::put("resume_collect",$resume_name);
-            return response()->json(["state"=>"success","collect"=>$collect]);
+            return response()->json(["state"=>"success","collect"=>$collect,"collectNum"=>$collectNum]);
             //保存简历成功
         }
     }
     public function removeCollection($bigName,Request $resumeSaveRequest){
+        if(!Session::get('username')){
+            return redirect()->to("login");
+        }
         $resume_save = new resume_save();
         $collect=$resumeSaveRequest->get('isCollected');
+
         $username = Session::get('username');
 
         $user = DB::table("users")->where("nickname",$username)->first();
@@ -133,11 +138,13 @@ class ResumeController extends Controller {
 
         $resume = DB::table("resumes")->where("name",$bigName)->first();
         $resume_id=$resume->id;
-        //if(!$collect){
+        if($collect === 'false'){
             //Session::unset("resume_collect",$resume_name);
             $message=$resume_save->removeCollect($resume_id,$user_id);
-            return response()->json(["state"=>"success","collect"=>$collect,"message"=>$message]);
+            $collectNum=$resume_save->collectNum($resume_id);
+            return response()->json(["state"=>"success","collect"=>$collect,"collectNum"=>$collectNum]);
             //删除简历成功
-        //}
+        }
     }
+
 }

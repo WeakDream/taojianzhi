@@ -53,33 +53,38 @@
             <div class="row">
                 <div class="col-md-3" id="left_information">
                     <div id="head">
-                        <img class="img-rounded center-block" id="user_head" src="../public/facebook/1031face.png">
+                        <img class="img-rounded center-block" id="user_head" src="{{$resume->photo}}">
                     </div>
                     <div id="personal_message">
                             <dl class="dl-horizontal">
                                 <dt>姓名</dt>
-                                    <dd>aasa</dd>
+                                    <dd>{{$resume->name}}</dd>
                                 <dt>性别</dt>
-                                <dd>bbbb</dd>
+                                @if($resume->sex == '0')
+                                    <dd>男</dd>
+                                @elseif($resume->sex == '1')
+                                    <dd>女</dd>
+                                @endif
                                 <dt>年龄</dt>
                                 <dd></dd>
                                 <dt>学历</dt>
-                                <dd></dd>
+                                <dd>{{$resume->school}}</dd>
                                 <dt>籍贯</dt>
-                                <dd></dd>
+                                <dd>{{$resume->city}}</dd>
                                 <dt>期望的工作地点</dt>
-                                <dd></dd>
+                                <dd>{{$resume->expect_location}}</dd>
                             </dl>
                     </div>
                     <div id="history">
                         <h2 class="glyphicon glyphicon-eye-open open-eye" aria-hidden="true"></h2>
-                        <span>查看人数</span>
                         @if($isCollected)
                             <h2 class="glyphicon glyphicon-star collect" aria-hidden="true"></h2>
                         @else
                             <h2 class="glyphicon glyphicon-star-empty collect" aria-hidden="true"></h2>
                         @endif
-                        <span>收藏人数</span>
+                        @if(isset($collectNum))
+                            <span id="collectNum">{{$collectNum}}</span>
+                        @endif
                         <br>
                         <a href="{{url("import")}}">一键导出</a>
                     </div>

@@ -25,7 +25,6 @@ class IndexController extends Controller {
             return 0;
         }
     }
-
     public function index()
     {
         $role_id=null;
@@ -233,9 +232,9 @@ class IndexController extends Controller {
         }
         return view("taojianzhi/index_more2",["companys2"=>$companys2]);
     }
-
     public function getPersonInformation($bigName){
         //没有账号的人无法访问
+        $watch=0;
         if(!$this->is_login())
         {
             return redirect()->to("login");
@@ -245,16 +244,20 @@ class IndexController extends Controller {
         //2.根据id查找用户是否收藏了改简历
         //3.传数据给前端设置样式
         //二、通过真实姓名渲染页面
+        //浏览记录
+        $watch=0;
         $resume_save = new resume_save();
         $user = new User();
         $resumes = new resume_TJZ();
         $name=Session::get("username");
         $userId=$user->nameFindId($name);
         $resumeId=$resumes->getResumeId($bigName);
+        $collectNum=$resume_save->collectNum($resumeId);//该人物resume的收藏人数
+        $resumeData=$resumes->display($resumeId);
         if($resume_save->collectionExist($resumeId,$userId)){
-            return view('taojianzhi.person_information',["isCollected"=>true]);
+            return view('taojianzhi.person_information',["isCollected"=>true,"collectNum"=>$collectNum,"resume"=>$resumeData]);
         }else{
-            return view('taojianzhi.person_information',["isCollected"=>false]);
+            return view('taojianzhi.person_information',["isCollected"=>false,"collectNum"=>$collectNum,"resume"=>$resumeData]);
         }
     }
 

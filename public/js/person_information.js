@@ -53,6 +53,7 @@ $(document).ready(function(){
                     }else{
                         alert('error');
                     }
+                    $("#collectNum").html(json.collectNum);
                 }
             })
         }else{
@@ -73,6 +74,7 @@ $(document).ready(function(){
                     }else{
                         alert('error');
                     }
+                    $("#collectNum").html(json.collectNum);
                     //alert(json.collect);
                 }
                 // error:function (xhr,textStatues) {

@@ -32,4 +32,7 @@ class resume_save extends Model
             return true;
         }
     }
+    public function collectNum($resume_id){
+        return $this->where(['resume_id'=>$resume_id])->count();
+    }
 }
